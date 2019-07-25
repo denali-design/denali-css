@@ -1,0 +1,58 @@
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+// Margins
+@for $i from 0 through 10 {
+  .m-#{$i} {
+    margin: 10px * $i;
+  }
+}
+
+.m-auto {
+  margin: auto;
+}
+
+// Margin Top
+@for $i from 0 through 10 {
+  .m-t-#{$i} {
+    margin-top: 10px * $i;
+  }
+}
+
+// Margin Right
+@for $i from 0 through 10 {
+  .m-r-#{$i} {
+    margin-right: 10px * $i;
+  }
+}
+
+// Margin Bottom
+@for $i from 0 through 10 {
+  .m-b-#{$i} {
+    margin-bottom: 10px * $i;
+  }
+}
+
+// Margin Left
+@for $i from 0 through 10 {
+  .m-l-#{$i} {
+    margin-left: 10px * $i;
+  }
+}
+
+// Margin Horizontal
+@for $i from 0 through 10 {
+  .m-x-#{$i} {
+    margin-left: 10px * $i;
+    margin-right: 10px * $i;
+  }
+}
+
+// Margin Vertical
+@for $i from 0 through 10 {
+  .m-y-#{$i} {
+    margin-top: 10px * $i;
+    margin-bottom: 10px * $i;
+  }
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Component Demo</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32">
+    <!-- Sharing Meta Tags -->
+    <meta property="og:title" content="Denali CSS Component Demo">
+    <meta property="og:description" content="This page demostrates all Denali's CSS web components in all configurations.">
+    <meta property="og:site_name" content="Denali CSS Component Demo">
+    <!-- Denali CSS & Icons -->
+    <link rel="stylesheet" href="css/denali-v0.4.2.css">
+    <link rel="stylesheet" href="css/denali-icon-font-v1.0.0.css">
+    <!-- Scripts -->
+    <script src="js/include.js" charset="utf-8"></script>
+    <!-- Style Relavate to this page -->
+    <style media="screen">
+      * {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body class="denali-default-theme">
+
+    <nav class="nav">
+      <div class="nav-left">
+        <a onclick="toggleTabsLeft()" class="nav-icon hide-small-desktop-up"><i class="d-icon d-menu-hamburger"></i></a>
+        <a href="#top" class="nav-brand"><img src="images/denali-logo.svg" alt=""></img></a>
+        <span class="chips is-small is-bold is-grey-100 has-bg-brand-400 hide-tablet-down">CSS</span>
+      </div>
+      <div id="collapseDropdown" class="collapse-dropdown">
+        <div class="nav-center">
+          <div class="toggle is-small is-inverse">
+            <ul>
+              <li id="defaultTheme" class="is-active"><a>Denali</a></li>
+              <li id="darkTheme"><a>Denali Dark</a></li>
+              <!-- <li class="is-disabled"><a>Verizon</a></li> -->
+            </ul>
+          </div>
+        </div>
+        <div class="nav-right">
+          <div class="menu">
+            <a class="nav-item menu-trigger" tabindex="0">Styleguide<i class="d-icon d-arrowhead-down is-small is-sub"></i></a>
+            <div class="menu-content">
+              <a href="https://github.com/pages/denali-system-language/denali-styleguide/">Denali Home</a>
+              <hr>
+              <a href="https://github.com/pages/denali-system-language/denali-styleguide/documentation/get-started">Documentation</a>
+              <a href="https://github.com/pages/denali-system-language/denali-styleguide/principles/introduction">Principles</a>
+              <a href="https://github.com/pages/denali-system-language/denali-styleguide/resource-downloads">Resources</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a class="nav-item menu-trigger" tabindex="0">Components<i class="d-icon d-arrowhead-down is-small is-sub"></i></a>
+            <div class="menu-content">
+              <h5 class="upper is-grey-600">Frameworks</h5>
+              <a class="is-bold is-grey-800" href="https://github.com/pages/denali-system-language/denali-css/dist/index.html">CSS</a>
+              <a href="https://github.com/pages/denchen/denali-react/">React</a>
+              <a href="https://github.com/pages/real/ember-denali/#/docs/components/alerts">Ember</a>
+              <hr>
+              <a href="https://github.com/pages/denali-system-language/denali-styleguide/documentation/components/alerts">Component Docs</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a class="nav-item menu-trigger is-inverse" tabindex="0">Icons<i class="d-icon d-arrowhead-down is-small is-sub"></i></a>
+            <div class="menu-content">
+              <h5 class="upper is-grey-600">Frameworks</h5>
+              <a href="https://github.com/pages/denali-system-language/denali-icons/dist/">CSS</a>
+              <a href="https://github.com/pages/denchen/denali-react-icons/">React</a>
+              <hr>
+              <a href="https://github.com/pages/denali-system-language/denali-styleguide/documentation/aesthetics/icons">Icon Docs</a>
+            </div>
+          </div>
+
+          <a href="https://ouroath.slack.com/app_redirect?channel=denali" target="_blank" class="nav-icon">
+              <i class="d-icon d-slack"></i>
+              <span class="nav-icon-text">Slack</span>
+            </a>
+          <a href="https://github.com/denali-system-language/" target="_blank" class="nav-icon">
+              <i class="d-icon d-github"></i>
+              <span class="nav-icon-text">Github</span>
+            </a>
+
+          <div class="menu is-right">
+            <a class="nav-item menu-trigger"><i class="d-icon d-help-circle"></i></a>
+            <div class="menu-content">
+              <a href="https://github.com/denali-system-language/denali-styleguide/issues/new?labels=feature-request" target="_blank">Feature Requests</a>
+              <a href="https://github.com/denali-system-language/denali-styleguide/milestones" target="_blank">Roadmap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="navDropdownToggle" class="nav-toggle-dropdown">
+        <a class="nav-icon"><i class="d-icon d-more-vertical"></i></a>
+      </div>
+    </nav>
+
+    <div class="flex h-minus-nav">
+      <div id="toggleTabsLeft" class="tabs is-primary is-vertical tablet-down-hide-left">
+        <ul id="navLinks">
+          <li><a href="#alerts" class="is-active">Alerts</a></li>
+          <li><a href="#box">Box</a></li>
+          <li><a href="#buttons">Buttons</a></li>
+          <li><a href="#chips">Chips</a></li>
+          <li><a href="#controls">Controls</a></li>
+          <li><a href="#dropdown">Dropdown</a></li>
+          <li><a href="#inputs">Inputs</a></li>
+          <li><a href="#search">Search</a></li>
+          <li><a href="#links">Links</a></li>
+          <li><a href="#loader">Loader</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#modal">Modal</a></li>
+          <li><a href="#navbar">Navbar</a></li>
+          <li><a href="#tables">Tables</a></li>
+          <li><a href="#tabs">Tabs</a></li>
+          <li><a href="#tags">Tags</a></li>
+          <li><a href="#toggles">Toggles</a></li>
+          <li><a href="#titles">Titles</a></li>
+        </ul>
+      </div>
+
+      <div id="container" class="overflow-y-auto flex-auto">
+        <div class="container-fluid m-b-5">
+          <div id="top"></div>
+          <!-- Alerts -->
+          <div id="alerts" class="p-t-3 m-b-3">
+            <h2>Alerts</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/alerts.html"></div>
+          </div>
+          <!-- Boxes -->
+          <div id="box" class="p-t-3 m-b-3">
+            <h2>Boxes</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/boxes.html"></div>
+          </div>
+          <!-- Buttons -->
+          <div id="buttons" class="p-t-3 m-b-3">
+            <h2>Buttons</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/buttons.html"></div>
+          </div>
+          <!-- Chips -->
+          <div id="chips" class="p-t-3 m-b-3">
+            <h2>Chips</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/chips.html"></div>
+          </div>
+          <!-- Controls -->
+          <div id="controls" class="p-t-3 m-b-3">
+            <h2>Controls</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/controls.html"></div>
+          </div>
+          <!-- Dropdown -->
+          <div id="dropdown" class="p-t-3 m-b-3">
+            <h2>Dropdown</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/dropdown.html"></div>
+          </div>
+          <!-- Inputs -->
+          <div id="inputs" class="p-t-3 m-b-3">
+            <h2>Inputs</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/inputs.html"></div>
+          </div>
+          <!-- Search Input -->
+          <div id="search" class="p-t-3 m-b-3">
+            <h2>Input Search</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/inputSearch.html"></div>
+          </div>
+          <!-- Links -->
+          <div id="links" class="p-t-3 m-b-3">
+            <h2>Links</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/links.html"></div>
+          </div>
+          <!-- Loader -->
+          <div id="loader" class="p-t-3 m-b-3">
+            <h2>Loader</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/loader.html"></div>
+          </div>
+          <!-- Menu -->
+          <div id="menu" class="p-t-3 m-b-3">
+            <h2>Menu</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/menu.html"></div>
+          </div>
+          <!-- Modal -->
+          <div id="modal" class="p-t-3 m-b-3">
+            <h2>Modal</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/modal.html"></div>
+          </div>
+          <!-- Navbar -->
+          <div id="navbar" class="p-t-3 m-b-3">
+            <h2>Navbar</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/navbar.html"></div>
+          </div>
+          <!-- Tables -->
+          <div id="tables" class="p-t-3 m-b-3">
+            <h2>Tables</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/tables.html"></div>
+          </div>
+          <!-- Tabs -->
+          <div id="tabs" class="p-t-3 m-b-3">
+            <h2>Tabs</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/tabs.html"></div>
+          </div>
+          <!-- Tags -->
+          <div id="tags" class="p-t-3 m-b-3">
+            <h2>Tags</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/tags.html"></div>
+          </div>
+          <!-- Toggle -->
+          <div id="toggles" class="p-t-3 m-b-3">
+            <h2>Toggles</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/toggles.html"></div>
+          </div>
+          <!-- Titles -->
+          <div id="titles" class="p-t-3 m-b-3">
+            <h2>Titles</h2>
+            <hr class="m-b-3">
+            <div include-html="includes/titles.html"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // Function runs top script
+      includeHTML();
+
+      // Toggle Tabs
+      function toggleTabsLeft() {
+        var toggleTabsLeft = document.getElementById("toggleTabsLeft");
+        toggleTabsLeft.classList.toggle('tablet-down-toggle-tabs-left');
+      };
+
+      // Nav Dropdown on Mobile
+      document.getElementById("navDropdownToggle").addEventListener("click", function() {
+        var element = document.getElementById("collapseDropdown");
+        element.classList.toggle("show");
+      });
+
+      // Nav Active Scroll
+      var content = document.getElementById("container");
+
+      function activeScroll() {
+        var nav = document.getElementById('navLinks');
+        var navGrandChild = nav.querySelectorAll("li > a");
+
+        for (var i = 0; i < navGrandChild.length; i++) {
+          var activeArea = navGrandChild[i].textContent.toLowerCase()
+          if (content.scrollTop >= document.getElementById(activeArea).offsetTop - 60 && content.scrollTop <= document.getElementById(
+              activeArea).offsetHeight + document.getElementById(activeArea).offsetTop - 60) {
+            navGrandChild[i].classList.add("is-active");
+          } else {
+            navGrandChild[i].classList.remove("is-active");
+          }
+        }
+      };
+      content.addEventListener("scroll", activeScroll);
+
+      // Theme Switcher
+      document.getElementById("darkTheme").addEventListener("click", function(){
+        var x = document.getElementsByTagName("BODY")[0];
+        x.classList.add("denali-dark-theme");
+        x.classList.remove("denali-default-theme");
+        this.classList.add("is-active");
+        document.getElementById("defaultTheme").classList.remove("is-active");
+      });
+
+      document.getElementById("defaultTheme").addEventListener("click", function(){
+        var x = document.getElementsByTagName("BODY")[0];
+        x.classList.remove("denali-dark-theme");
+        x.classList.add("denali-default-theme");
+        this.classList.add("is-active");
+        document.getElementById("darkTheme").classList.remove("is-active");
+      });
+
+    </script>
+  </body>
+
+</html>

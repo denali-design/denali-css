@@ -1,0 +1,88 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+@mixin links-base-theme($theme-config) {
+  a {
+    // Standard
+    color: deep-map-get($theme-config, "links", "text-color");
+    text-decoration: none;
+    transition: 300ms;
+    font-size: inherit;
+
+    // Hover
+    &:hover {
+      color: deep-map-get($theme-config, "links", "hover-text-color");
+    }
+
+    // Active
+    &.is-active {
+      color: deep-map-get($theme-config, "links", "hover-text-color");
+    }
+
+    // Disabled
+    &[disabled],
+    &.is-disabled {
+      color: deep-map-get($theme-config, "links", "disabled-text-color");
+      cursor: not-allowed;
+    }
+
+    // Inverse
+    &.is-inverse {
+      color: deep-map-get($theme-config, "links", "inverse", "text-color");
+      &:hover {
+        color: deep-map-get($theme-config, "links", "inverse", "hover-text-color");
+      }
+    }
+
+    // Size
+    &.is-small {
+      font-size: deep-map-get($theme-config, "links", "small", "text-size");
+    }
+
+    // Sub-action
+    &.is-sub,
+    .is-sub {
+      opacity: .5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    // Secondary Links
+    &.is-secondary {
+      color: deep-map-get($theme-config, "links", "secondary", "text-color");
+      &:hover {
+        color: deep-map-get($theme-config, "links", "secondary", "hover-text-color");
+      }
+    }
+
+    // Icons
+    &.has-icon-front {
+      .d-icon {
+        margin-right: 4px;
+        font-size: 1.4rem !important;
+        vertical-align: sub;
+      }
+    }
+    &.has-icon-back {
+      .d-icon {
+        margin-left: 2px;
+        font-size: 1.2rem !important;
+        vertical-align: middle;
+      }
+      &.is-small .d-icon {
+        vertical-align: text-top;
+      }
+    }
+    &:hover > .d-icon.is-sub {
+      color: deep-map-get($theme-config, "links", "hover-text-color");
+      opacity: 1;
+    }
+    &.is-secondary:hover > .d-icon.is-sub {
+      color: deep-map-get($theme-config, "links", "secondary", "hover-text-color");
+      opacity: 1;
+    }
+  }
+}

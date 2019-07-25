@@ -1,0 +1,25 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+// Row
+.row {
+  display: flex;
+  flex-direction: row;
+
+  &.reversed {
+    flex-direction: row-reverse;
+  }
+
+  &.tablet-up-reversed {
+    @include media-size-up(tablet) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @include media-size-down(mobile) {
+    flex-direction: column;
+  }
+
+}

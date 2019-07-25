@@ -1,0 +1,48 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+// DENALI SCSS :: ROLLUP
+
+@import "maps/all";
+@import "utilities/all";
+@import "layout/all";
+
+// THEMES
+@import "themes/global";
+@import "resets/all";
+@import "components/all";
+
+@mixin generate-theme($theme-config) {
+  @include resets-base-theme($theme-config);
+  @include type-base-theme($theme-config);
+  @include alerts-base-theme($theme-config);
+  @include box-base-theme($theme-config);
+  @include buttons-base-theme($theme-config);
+  @include checkbox-base-theme($theme-config);
+  @include chips-base-theme($theme-config);
+  @include fields-base-theme($theme-config);
+  @include icons-base-theme($theme-config);
+  @include links-base-theme($theme-config);
+  @include loaders-base-theme($theme-config);
+  @include menus-base-theme($theme-config);
+  @include modals-base-theme($theme-config);
+  @include navbar-base-theme($theme-config);
+  @include radios-base-theme($theme-config);
+  @include selects-base-theme($theme-config);
+  @include switch-base-theme($theme-config);
+  @include tables-base-theme($theme-config);
+  @include tabs-base-theme($theme-config);
+  @include tags-base-theme($theme-config);
+  @include titles-base-theme($theme-config);
+  @include toggles-base-theme($theme-config);
+}
+
+// BUILDOUT
+@each $theme, $theme-config in $app-themes {
+  .#{$theme}-theme {
+    @include generate-theme($theme-config);
+  }
+}
+
+@import "helpers/all";

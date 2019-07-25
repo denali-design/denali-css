@@ -1,0 +1,42 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// DENALI SCSS :: DENALI RESET
+
+html {
+  font-size: 10px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: Helvetica, "Arial", sans-serif;
+
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1.4rem;
+  transition: 200ms;
+}
+
+hr {
+  background-color: #d8d8d8;
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: 15px 0;
+}
+
+.denali-dark-theme {
+  hr {
+    background-color: rgba(#fff, .2);
+  }
+}
+
+@mixin resets-base-theme($theme-config) {
+  background: deep-map-get($theme-config, "global", "body-background-color");
+  color: deep-map-get($theme-config, "global", "text-color");
+}

@@ -1,0 +1,127 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+@mixin switch-base-theme($theme-config) {
+  .switch {
+    box-sizing: border-box;
+    display: inline-flex;
+    height: 16px;
+    position: relative;
+    margin: 5px 10px;
+  }
+
+  .switch > input[type="checkbox"] {
+    display: none;
+  }
+
+  /* Horizontal line */
+  .switch > .slider {
+    background-color: deep-map-get($theme-config, "switch", "slider", "standard-color");
+    border-radius: 34px;
+    bottom: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 4px;
+    left: 0;
+    position: relative;
+    right: 0;
+    transition: all 0.4s;
+    width: 34px;
+  }
+
+  /* Make it easier to click the empty space to the side of the Toggle circle */
+  .switch > .slider:before {
+    background-color: transparent;
+    box-sizing: border-box;
+    content: " ";
+    height: 18px;
+    left: 0;
+    position: absolute;
+    top: -8px;
+    width: 34px;
+  }
+
+  /* Toggle circle */
+  .switch > .slider:after {
+    background-color: deep-map-get($theme-config, "switch", "circle", "background-color", "standard");
+    bottom: -8px;
+    border: 2px solid;
+    border-color: deep-map-get($theme-config, "switch", "circle", "border-color", "standard");
+    border-radius: 50%;
+    box-sizing: border-box;
+    content: "";
+    height: 20px;
+    left: 0;
+    position: absolute;
+    transition: all 0.4s;
+    width: 20px;
+  }
+
+  .switch > input[type="checkbox"]:hover ~ .slider:after {
+    border-color: deep-map-get($theme-config, "switch", "circle", "border-color", "hover");
+  }
+
+  .switch > input[type="checkbox"]:checked ~ .slider {
+    background-color: deep-map-get($theme-config, "switch", "slider", "active-color");
+  }
+
+  .switch > input[type="checkbox"]:checked ~ .slider:after {
+    background: deep-map-get($theme-config, "switch", "circle", "background-color", "active");
+    border-color: deep-map-get($theme-config, "switch", "circle", "border-color", "active");
+    transform: translateX(16px);
+  }
+
+  .switch.disabled > input[type="checkbox"] ~ .slider,
+  .switch > input[type="checkbox"]:disabled ~ .slider,
+  .switch > input[type="checkbox"]:checked:disabled ~ .slider {
+    background-color: deep-map-get($theme-config, "switch", "slider", "disabled-color");
+    cursor: not-allowed;
+  }
+
+  .switch.disabled > input[type="checkbox"] ~ .slider:after,
+  .switch > input[type="checkbox"]:disabled ~ .slider:after,
+  .switch > input[type="checkbox"]:checked:disabled ~ .slider:after {
+    border-color: deep-map-get($theme-config, "switch", "circle", "border-color", "disabled");
+    cursor: not-allowed;
+  }
+
+  .switch.disabled > input[type="checkbox"]:checked ~ .slider:after,
+  .switch > input[type="checkbox"]:checked:disabled ~ .slider:after {
+    background: deep-map-get($theme-config, "switch", "circle", "background-color", "disabled");
+  }
+
+  .switch > .label {
+    color: deep-map-get($theme-config, "switch", "label", "text-color");
+    font-size: 14px;
+    font-family: helvetica, sans-serif;
+    font-weight: normal;
+    margin-left: 10px;
+    position: relative;
+    top: -8px;
+    white-space: nowrap;
+  }
+
+  .switch.disabled > .label,
+  .switch > input[type="checkbox"]:disabled ~ .label,
+  .switch > input[type="checkbox"]:checked:disabled ~ .label {
+    color: deep-map-get($theme-config, "switch", "label", "disabled-text-color");
+  }
+
+  .switch > input[type="checkbox"]:checked ~ .off {
+    display: none;
+  }
+
+  .switch > input[type="checkbox"]:not(:checked) ~ .off {
+    display: inline;
+  }
+
+  .switch > input[type="checkbox"]:checked ~ .on {
+    display: inline;
+  }
+
+  .switch > input[type="checkbox"]:not(:checked) ~ .on {
+    display: none;
+  }
+}

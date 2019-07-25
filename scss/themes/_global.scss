@@ -1,0 +1,14 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+// DENALI SCSS :: CONFIGS ROLLUP
+
+@import 'denali-default-theme';
+@import 'denali-dark-theme';
+
+$app-themes: (
+  denali-default: $denali-default-theme,
+  denali-dark: $denali-dark-theme,
+);

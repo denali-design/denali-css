@@ -1,0 +1,15 @@
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+// Width
+@for $i from 0 through 30 {
+  .w-#{$i} {
+    width: 10px * $i;
+  }
+}
+
+// Height
+.h-minus-nav {
+  height: calc(100vh - 60px) !important;
+}

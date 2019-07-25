@@ -1,0 +1,54 @@
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+// Paddings
+@for $i from 0 through 10 {
+  .p-#{$i} {
+    padding: 10px * $i;
+  }
+}
+
+// Padding Top
+@for $i from 0 through 10 {
+  .p-t-#{$i} {
+    padding-top: 10px * $i;
+  }
+}
+
+// Padding Right
+@for $i from 0 through 10 {
+  .p-r-#{$i} {
+    padding-right: 10px * $i;
+  }
+}
+
+// Padding Bottom
+@for $i from 0 through 10 {
+  .p-b-#{$i} {
+    padding-bottom: 10px * $i;
+  }
+}
+
+// Padding Left
+@for $i from 0 through 10 {
+  .p-l-#{$i} {
+    padding-left: 10px * $i;
+  }
+}
+
+// Padding Horizontal
+@for $i from 0 through 10 {
+  .p-x-#{$i} {
+    padding-left: 10px * $i;
+    padding-right: 10px * $i;
+  }
+}
+
+// Padding Vertical
+@for $i from 0 through 10 {
+  .p-y-#{$i} {
+    padding-top: 10px * $i;
+    padding-bottom: 10px * $i;
+  }
+}

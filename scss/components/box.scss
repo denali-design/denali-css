@@ -1,0 +1,46 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+.box {
+  footer {
+    border-top-style: solid;
+  }
+}
+
+@mixin box-base-theme($theme-config) {
+  .box {
+    // STRUCTURE
+    // PADDING
+    padding-top: deep-map-get($theme-config, "box", "padding", "top");
+    padding-bottom: deep-map-get($theme-config, "box", "padding", "bottom");
+    padding-left: deep-map-get($theme-config, "box", "padding", "left");
+    padding-right: deep-map-get($theme-config, "box", "padding", "right");
+
+    // STYLE
+    background: deep-map-get($theme-config, "box", "background");
+    border-radius: deep-map-get($theme-config, "box", "border-radius");
+    border-color: deep-map-get($theme-config, "box", "border", "color");
+    border-width: deep-map-get($theme-config, "box", "border", "width");
+    border-style: deep-map-get($theme-config, "box", "border", "style");
+
+    footer {
+      // STRUCTURE
+      // MARGIN
+      margin-top: deep-map-get($theme-config, "box", "footer", "margin", "top");
+      margin-bottom: deep-map-get($theme-config, "box", "footer", "margin", "bottom");
+      margin-left: deep-map-get($theme-config, "box", "footer", "margin", "left");
+      margin-right: deep-map-get($theme-config, "box", "footer", "margin", "right");
+      // PADDING
+      padding-top: deep-map-get($theme-config, "box", "footer", "padding", "top");
+      padding-bottom: deep-map-get($theme-config, "box", "footer", "padding", "bottom");
+      padding-left: deep-map-get($theme-config, "box", "footer", "padding", "left");
+      padding-right: deep-map-get($theme-config, "box", "footer", "padding", "right");
+
+      // STYLE
+      border-top-color: deep-map-get($theme-config, "box", "border", "color");
+      border-top-width: deep-map-get($theme-config, "box", "border", "width");
+    }
+  }
+}

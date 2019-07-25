@@ -1,0 +1,109 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+@mixin menus-base-theme($theme-config) {
+  .menu {
+    display: inline-flex !important;
+    justify-content: center;
+    position: relative;
+
+    &.is-left {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    &.is-right {
+      justify-content: flex-end;
+    }
+    a.menu-trigger:hover + div.menu-content,
+    a.menu-trigger:focus + div.menu-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    div.menu-content {
+      min-width: max-content;
+      width: auto;
+      float: left;
+      opacity: 0;
+      visibility: hidden;
+      background: deep-map-get($theme-config, "menus", "background-color");
+      border-color: deep-map-get($theme-config, "menus", "border", "color");
+      border-width: deep-map-get($theme-config, "menus", "border", "width");
+      border-style: deep-map-get($theme-config, "menus", "border", "style");
+      border-radius: deep-map-get($theme-config, "menus", "corner-radius");
+      box-shadow: deep-map-get($theme-config, "menus", "shadow");
+      padding: 16px 18px;
+      position: absolute;
+      margin-top: 40px;
+      height: auto;
+      white-space: nowrap;
+      z-index: $zindex-menu;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      -webkit-transition: all .3s .1s;
+      -moz-transition: all .3s .1s;
+      -o-transition: all .3s .1s;
+      transition: all .3s .1s;
+
+      ul {
+        li {
+          a {
+            line-height: 28px;
+          }
+        }
+      }
+
+      hr {
+        background-color: deep-map-get($theme-config, "menus", "line-break", "color");
+        height: deep-map-get($theme-config, "menus", "line-break", "size");
+        width: calc(100% + 36px);
+        margin: 14px 0px;
+        margin-left: -18px;
+      }
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  /*Pointer*/
+
+  div.menu-content:after, div.menu-content:before {
+  	bottom: 100%;
+  	left: 50%;
+  	border: solid transparent;
+  	content: " ";
+  	height: 0;
+  	width: 0;
+  	position: absolute;
+  	pointer-events: none;
+  }
+  div.menu-content:after {
+  	border-color: transparent;
+  	border-bottom-color: deep-map-get($theme-config, "menus", "background-color");
+  	border-width: 10px;
+  	margin-left: -10px;
+  }
+  div.menu-content:before {
+  	border-bottom-color: deep-map-get($theme-config, "menus", "border", "color");
+  	border-width: 13px;
+  	margin-left: -13px;
+  }
+
+  /* Pointer Positioning */
+
+  .menu.is-left > .menu-content:after, .menu.is-left > .menu-content:before {
+    left: 20px;
+  }
+  .menu.is-right > .menu-content:after, .menu.is-right > .menu-content:before {
+    left: calc(100% - 20px);
+  }
+}

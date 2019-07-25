@@ -1,0 +1,230 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+@mixin buttons-base-theme($theme-config) {
+  .button {
+    // RESET
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    // STRUCTURE
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px 10px;
+    padding-bottom: 1px;
+    height: deep-map-get($theme-config, "buttons", "sizes", "default", "height");
+    min-width: deep-map-get($theme-config, "buttons", "sizes", "default", "min-width");
+    transition: 300ms;
+
+    // STYLE
+    font-size: deep-map-get($theme-config, "buttons", "sizes", "default", "font-size");
+    border-radius: deep-map-get($theme-config, "buttons", "border-radius");
+
+    &.is-solid {
+      background: deep-map-get($theme-config, "buttons", "solid", "default", "background-color");
+      color: deep-map-get($theme-config, "buttons", "solid", "default", "text-color");
+      &.is-inverse {
+        background: deep-map-get($theme-config, "buttons", "solid", "default", "inverse", "background-color");
+        color: deep-map-get($theme-config, "buttons", "solid", "default", "inverse", "text-color");
+      }
+    }
+
+    &.is-outline {
+      background: transparent;
+      color: deep-map-get($theme-config, "buttons", "outline", "default", "text-color");
+      border-width: deep-map-get($theme-config, "buttons", "outline", "default", "border", "width");
+      border-color: deep-map-get($theme-config, "buttons", "outline", "default", "border", "color");
+      border-style: deep-map-get($theme-config, "buttons", "outline", "default", "border", "style");
+      &.is-inverse {
+        background: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "background-color");
+        color: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "text-color");
+        border-width: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "border", "width");
+        border-color: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "border", "color");
+        border-style: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "border", "style");
+      }
+    }
+
+    &.is-ghost {
+      background: deep-map-get($theme-config, "buttons", "ghost", "default", "background-color");
+      color: deep-map-get($theme-config, "buttons", "ghost", "default", "text-color");
+      &.is-inverse {
+        background: deep-map-get($theme-config, "buttons", "ghost", "default", "inverse", "background-color");
+        color: deep-map-get($theme-config, "buttons", "ghost", "default", "inverse", "text-color");
+      }
+    }
+
+    &.is-text {
+      background: deep-map-get($theme-config, "buttons", "text", "default", "background-color");
+      color: deep-map-get($theme-config, "buttons", "text", "default", "text-color");
+      &.is-inverse {
+        background: deep-map-get($theme-config, "buttons", "text", "default", "inverse", "background-color");
+        color: deep-map-get($theme-config, "buttons", "text", "default", "inverse", "text-color");
+      }
+    }
+
+    &.is-danger {
+      background: deep-map-get($theme-config, "buttons", "danger", "default", "background-color");
+      color: deep-map-get($theme-config, "buttons", "danger", "default", "text-color");
+      &.is-inverse {
+        background: deep-map-get($theme-config, "buttons", "danger", "default", "inverse", "background-color");
+        color: deep-map-get($theme-config, "buttons", "danger", "default", "inverse", "text-color");
+      }
+    }
+
+    &:hover,
+    &.is-active,
+    &.is-active:hover,
+    &:focus {
+      transition: 300ms;
+
+      &.is-solid {
+        background: deep-map-get($theme-config, "buttons", "solid", "focus", "background-color");
+        color: deep-map-get($theme-config, "buttons", "solid", "focus", "text-color");
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "solid", "focus", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "solid", "focus", "inverse", "text-color");
+        }
+      }
+
+      &.is-outline {
+        background: deep-map-get($theme-config, "buttons", "outline", "focus", "background-color");
+        color: deep-map-get($theme-config, "buttons", "outline", "focus", "text-color");
+        border-width: deep-map-get($theme-config, "buttons", "outline", "focus", "border", "width");
+        border-color: deep-map-get($theme-config, "buttons", "outline", "focus", "border", "color");
+        border-style: deep-map-get($theme-config, "buttons", "outline", "focus", "border", "style");
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "text-color");
+          border-width: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "border", "width");
+          border-color: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "border", "color");
+          border-style: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "border", "style");
+        }
+      }
+
+      &.is-ghost {
+        background: deep-map-get($theme-config, "buttons", "ghost", "focus", "background-color");
+        color: deep-map-get($theme-config, "buttons", "ghost", "focus", "text-color");
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "ghost", "focus", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "ghost", "focus", "inverse", "text-color");
+        }
+      }
+
+      &.is-text {
+        background: deep-map-get($theme-config, "buttons", "text", "focus", "background-color");
+        color: deep-map-get($theme-config, "buttons", "text", "focus", "text-color");
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "text", "focus", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "text", "focus", "inverse", "text-color");
+        }
+      }
+
+      &.is-danger {
+        background: deep-map-get($theme-config, "buttons", "danger", "focus", "background-color");
+        color: deep-map-get($theme-config, "buttons", "danger", "focus", "text-color");
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "danger", "focus", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "danger", "focus", "inverse", "text-color");
+        }
+      }
+    }
+
+    &.is-disabled,
+    &[disabled],
+    &.is-disabled:hover,
+    &:hover[disabled] {
+      box-shadow: none;
+      cursor: not-allowed;
+
+
+      &.is-solid {
+        background: deep-map-get($theme-config, "buttons", "solid", "disabled", "background-color");
+        color: deep-map-get($theme-config, "buttons", "solid", "disabled", "text-color");
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "solid", "disabled", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "solid", "disabled", "inverse", "text-color");
+        }
+      }
+
+      &.is-outline {
+        background: deep-map-get($theme-config, "buttons", "outline", "disabled", "background-color");
+        color: deep-map-get($theme-config, "buttons", "outline", "disabled", "text-color");
+        border-width: deep-map-get($theme-config, "buttons", "outline", "disabled", "border", "width");
+        border-color: deep-map-get($theme-config, "buttons", "outline", "disabled", "border", "color");
+        border-style: deep-map-get($theme-config, "buttons", "outline", "disabled", "border", "style");
+
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "text-color");
+          border-width: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "border", "width");
+          border-color: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "border", "color");
+          border-style: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "border", "style");
+        }
+      }
+
+      &.is-ghost {
+        background: deep-map-get($theme-config, "buttons", "ghost", "disabled", "background-color");
+        color: deep-map-get($theme-config, "buttons", "ghost", "disabled", "text-color");
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "ghost", "disabled", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "ghost", "disabled", "inverse", "text-color");
+        }
+      }
+
+      &.is-text {
+        background: deep-map-get($theme-config, "buttons", "text", "disabled", "background-color");
+        color: deep-map-get($theme-config, "buttons", "text", "disabled", "text-color");
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "text", "disabled", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "text", "disabled", "inverse", "text-color");
+        }
+      }
+
+      &.is-danger {
+        background: deep-map-get($theme-config, "buttons", "danger", "disabled", "background-color");
+        color: deep-map-get($theme-config, "buttons", "danger", "disabled", "text-color");
+        &.is-inverse {
+          background: deep-map-get($theme-config, "buttons", "danger", "disabled", "inverse", "background-color");
+          color: deep-map-get($theme-config, "buttons", "danger", "disabled", "inverse", "text-color");
+        }
+      }
+    }
+
+    // MODIFIERS
+    // SIZES
+    &.is-small {
+      height: deep-map-get($theme-config, "buttons", "sizes", "small", "height");
+      font-size: deep-map-get($theme-config, "buttons", "sizes", "small", "font-size");
+      min-width: deep-map-get($theme-config, "buttons", "sizes", "small", "min-width");
+    }
+    &.is-medium {
+      height: deep-map-get($theme-config, "buttons", "sizes", "medium", "height");
+      font-size: deep-map-get($theme-config, "buttons", "sizes", "medium", "font-size");
+      min-width: deep-map-get($theme-config, "buttons", "sizes", "medium", "min-width");
+    }
+    &.is-large {
+      height: deep-map-get($theme-config, "buttons", "sizes", "large", "height");
+      font-size: deep-map-get($theme-config, "buttons", "sizes", "large", "font-size");
+      min-width: deep-map-get($theme-config, "buttons", "sizes", "large", "min-width");
+    }
+    &.is-full {
+      width: 100%;
+    }
+
+    // ICONS
+    &.has-icon {
+      min-width: 0px;
+    }
+    .d-icon {
+      vertical-align: middle;
+      font-size: 18px;
+      margin: 0px 6px;
+    }
+  }
+}

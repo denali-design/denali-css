@@ -1,0 +1,30 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+
+.chips {
+  font-size: inherit;
+}
+
+@mixin chips-base-theme($theme-config) {
+  .chips {
+    background: deep-map-get($theme-config, "chips", "background-color");
+    border-radius: deep-map-get($theme-config, "chips", "border-radius");
+    color: deep-map-get($theme-config, "chips", "color");
+
+    padding-top: deep-map-get($theme-config, "chips", "padding", "top");
+    padding-bottom: deep-map-get($theme-config, "chips", "padding", "bottom");
+    padding-left: deep-map-get($theme-config, "chips", "padding", "left");
+    padding-right: deep-map-get($theme-config, "chips", "padding", "right");
+
+    &.is-small {
+      font-size: deep-map-get($theme-config, "chips", "small", "font-size");
+
+      padding-top: deep-map-get($theme-config, "chips", "small", "padding", "top");
+      padding-bottom: deep-map-get($theme-config, "chips", "small", "padding", "bottom");
+      padding-left: deep-map-get($theme-config, "chips", "small", "padding", "left");
+      padding-right: deep-map-get($theme-config, "chips", "small", "padding", "right");
+    }
+  }
+}
