@@ -6,14 +6,14 @@
   "private": false,
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-cache": "^0.4.5",
-    "gulp-clean-css": "^3.0.2",
-    "gulp-imagemin": "^3.0.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.0.6",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cache": "^1.1.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-ruby-sass": "^4.0.0",
     "gulp-webserver": "^0.9.1"
   }
 }

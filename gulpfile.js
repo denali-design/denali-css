@@ -26,8 +26,9 @@ gulp.task('watch', function() {
 	gulp.watch('scss/**/*.scss', ['styles']);
 });
 
+// Server for site
 gulp.task('server', function() {
-  gulp.src('./dist/')	// <-- your app folder
+  gulp.src('./dist/')
     .pipe(server({
       livereload: true,
       open: true,
