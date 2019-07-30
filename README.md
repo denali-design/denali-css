@@ -69,7 +69,7 @@ gulp watch
 -  **Safari** on iOS and macOS
 
 ## Versioning
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this [repository]().
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this [repository](https://github.com/denali-design/denali-css/tags).
 
 ## Contribute
 To start contributing to Denali, have a look at our guidelines, as well as pointers on where to start making changes, in our [contributing guide](CONTRIBUTE.md).
