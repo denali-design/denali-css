@@ -1,24 +1,24 @@
 # Denali CSS Library
 
-![version](https://img.shields.io/badge/version-0.4.1-blue.svg) [![slack](https://img.shields.io/badge/slack-Denali-3570f4.svg)]()
+![version](https://img.shields.io/badge/version-0.4.1-blue.svg) [![slack](https://img.shields.io/badge/slack-Denali-3570f4.svg)](https://denali-design.slack.com/app_redirect?channel=general)
 <!-- ![npm](https://img.shields.io/badge/npm-1.2.3-red.svg) -->
 <!-- ![build](https://img.shields.io/badge/build-1.2.3-brightgreen.svg) -->
 
 ## Table of contents
-- [Background]()
-- [Install]()
-- [Usage]()
-- [Browser support]()
-- [Versioning]()
-- [Contribute]()
-- [License]()
+- [Background](#background)
+- [Install](#install)
+- [Usage](#usage)
+- [Browser support](#browser-support)
+- [Versioning](#versioning)
+- [Contribute](#contribute)
+- [License](#license)
 
 ---
 
 ## Background
 The Denali System Language was created by the Platforms and Technology Design team at Verizon Media as a scalable method for designing and developing visually consistent and functional internal products. Denali’s CSS framework allows developers to implement the Denali System Language in their projects. The framework is lightweight and flexible. It supports theming through custom variables which means the visual appearance of Denali’s components can be easily adapted to fit the visual style of any brand. Additionally, components are framework independent allowing you to take what you need and leave the rest.
 
-You can view the Denali’s entire component library complete with corresponding code snippets and documentation on the [getting started page]().
+You can view the Denali’s entire component library complete with corresponding code snippets and documentation on the [getting started page](https://denali-design.github.io/denali-site/documentation/get-started).
 
 ## Install
 
@@ -27,7 +27,7 @@ You will need the following installed to run the site:
 
 1. [Node](https://nodejs.org/en/)
 2. [NPM](https://www.npmjs.com/)
-3. [Ruby](ttps://www.ruby-lang.org/)
+3. [Ruby](https://www.ruby-lang.org/)
 4. [Sass](http://compass-style.org/)
 5. [Gulp](https://gulpjs.com/)
 
@@ -69,7 +69,7 @@ gulp watch
 -  **Safari** on iOS and macOS
 
 ## Versioning
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this [repository]().
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this [repository](https://github.com/denali-design/denali-css/tags).
 
 ## Contribute
 To start contributing to Denali, have a look at our guidelines, as well as pointers on where to start making changes, in our [contributing guide](CONTRIBUTE.md).
