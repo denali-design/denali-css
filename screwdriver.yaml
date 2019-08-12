@@ -1,0 +1,18 @@
+shared:
+    image: node:8
+
+jobs:
+    main:
+        requires: [~pr, ~commit]
+        steps:
+            - install: npm install
+            - test: npm test
+
+    publish:
+        requires: main
+        template: screwdriver-cd/semantic-release
+        secrets:
+            # Publishing to NPM
+            - NPM_TOKEN
+            # Github token to push tags to Git
+            - GH_TOKEN
