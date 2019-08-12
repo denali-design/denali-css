@@ -9,6 +9,10 @@
     "test": "echo 'ok'",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:adong/denali-css.git"
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
