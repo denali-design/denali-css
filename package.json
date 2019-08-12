@@ -6,7 +6,8 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "test": "echo 'ok'"
+    "test": "echo 'ok'",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
@@ -18,5 +19,11 @@
     "gulp-rename": "^1.4.0",
     "gulp-ruby-sass": "^4.0.0",
     "gulp-webserver": "^0.9.1"
+  },
+  "release": {
+    "debug": false,
+    "verifyConditions": {
+      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
+    }
   }
 }
