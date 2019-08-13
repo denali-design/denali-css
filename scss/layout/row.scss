@@ -7,9 +7,23 @@
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
   &.reversed {
     flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+
+    .col {
+      &:first-child {
+        margin-right: 0px;
+        margin-left: 10px;
+      }
+
+      &:last-child {
+        margin-left: 0px;
+        margin-right: 10px;
+      }
+    }
   }
 
   &.tablet-up-reversed {
@@ -17,9 +31,4 @@
       flex-direction: row-reverse;
     }
   }
-
-  @include media-size-down(mobile) {
-    flex-direction: column;
-  }
-
 }

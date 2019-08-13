@@ -5,4 +5,5 @@
 // Overflow
 .overflow-y-auto {
   overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
 }

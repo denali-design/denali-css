@@ -21,12 +21,13 @@
   }
 
   &.is-gutterless {
-    .column {
+    .col {
       margin-left: 0px !important;
       margin-right: 0px !important;
     }
   }
 }
+
 
 // Container Fluid
 .container-fluid {
@@ -45,7 +46,7 @@
   }
 
   &.is-gutterless {
-    .column {
+    .col {
       margin-left: 0px !important;
       margin-right: 0px !important;
     }
