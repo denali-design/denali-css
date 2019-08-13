@@ -5,6 +5,7 @@
 
 @mixin tabs-base-theme($theme-config) {
   .tabs {
+    -webkit-overflow-scrolling: touch;
 
     // Primary
     &.is-primary {
