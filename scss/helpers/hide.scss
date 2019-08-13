@@ -6,14 +6,12 @@
 .hide {
   display: none !important;
 }
-
 // Media Size Up
 .hide-small-desktop-up {
   @include media-size-up(small-desktop) {
     display: none !important;
   }
 }
-
 // Media Size Down
 .hide-small-desktop-down {
   @include media-size-down(small-desktop) {
@@ -25,10 +23,37 @@
     display: none !important;
   }
 }
-
 // Media Size Only
 .hide-mobile {
   @include media-size-only(mobile) {
+    display: none !important;
+  }
+}
+
+
+
+.xs-hide {
+  @include media-size-only(mobile) {
+    display: none !important;
+  }
+}
+.sm-hide {
+  @include media-size-only(tablet) {
+    display: none !important;
+  }
+}
+.md-hide {
+  @include media-size-only(small-desktop) {
+    display: none !important;
+  }
+}
+.lg-hide {
+  @include media-size-only(desktop) {
+    display: none !important;
+  }
+}
+.xl-hide {
+  @include media-size-only(hd) {
     display: none !important;
   }
 }
