@@ -5,11 +5,11 @@
 /* denali-icon-font-v1.0.0 Webfont */
 @font-face {
  font-family: 'denali-icon-font-v1.0.0';
- src: url('../fonts/denali-icon-font-v1.0.0.eot?1559610103124');
- src: url('../fonts/denali-icon-font-v1.0.0.eot?#iefix-1559610103124') format('embedded-opentype'),
-  url('../fonts/denali-icon-font-v1.0.0.svg?1559610103124') format('svg'),
-  url('../fonts/denali-icon-font-v1.0.0.woff?1559610103124') format('woff'),
-  url('../fonts/denali-icon-font-v1.0.0.ttf?1559610103124') format('truetype');
+ src: url('dist/fonts/denali-icon-font-v1.0.0.eot?1559610103124');
+ src: url('dist/fonts/denali-icon-font-v1.0.0.eot?#iefix-1559610103124') format('embedded-opentype'),
+  url('dist/fonts/denali-icon-font-v1.0.0.svg?1559610103124') format('svg'),
+  url('dist/fonts/denali-icon-font-v1.0.0.woff?1559610103124') format('woff'),
+  url('dist/fonts/denali-icon-font-v1.0.0.ttf?1559610103124') format('truetype');
  font-weight: normal;
  font-style: normal;
 }

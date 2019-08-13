@@ -1,6 +1,6 @@
 # Denali CSS Library
 
-![version](https://img.shields.io/badge/version-0.4.1-blue.svg) [![slack](https://img.shields.io/badge/slack-Denali-3570f4.svg)](https://denali-design.slack.com/app_redirect?channel=general)
+![version](https://img.shields.io/badge/version-0.4.3-blue.svg) [![slack](https://img.shields.io/badge/slack-Denali-3570f4.svg)](https://denali-design.slack.com/app_redirect?channel=general)
 <!-- ![npm](https://img.shields.io/badge/npm-1.2.3-red.svg) -->
 <!-- ![build](https://img.shields.io/badge/build-1.2.3-brightgreen.svg) -->
 
@@ -53,14 +53,10 @@ npm install
 
 #### Usage
 
-To spin up local server to view demo files use the command below. After you should be prompted with a success message with the localhost url available to view.
-```
-gulp server
-```
+To spin up local server to view demo files use the command below. This will also watch the SCSS files for any changes and will output a CSS file in the dist/css folder. After you should be prompted with a success message with the localhost url available to view.
 
-If you plan to generate new css when updates are made to sass use the command below. After you should be prompted with a success message and new files are available in the dist/css folder.
 ```
-gulp watch
+gulp serve
 ```
 
 ## Browser Support
