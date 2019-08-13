@@ -1,6 +1,6 @@
 {
-  "name": "denali-css",
-  "version": "0.4.2",
+  "name": "Denali CSS",
+  "version": "0.4.3",
   "author": "Chas Turansky",
   "description": "Denali CSS Framework",
   "private": false,
@@ -14,15 +14,12 @@
     "url": "git@github.com:denali-design/denali-css.git"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-cache": "^1.1.2",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-imagemin": "^6.0.0",
-    "gulp-notify": "^3.2.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
-    "gulp-ruby-sass": "^4.0.0",
-    "gulp-webserver": "^0.9.1"
+    "gulp-sass": "^4.0.2"
   },
   "release": {
     "debug": false,

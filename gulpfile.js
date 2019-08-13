@@ -1,38 +1,46 @@
-// Plugins
-var gulp = require('gulp'),
-	autoprefixer = require('gulp-autoprefixer'),
-	cache = require('gulp-cache')
-	cleancss = require('gulp-clean-css'),
-	imagemin = require('gulp-imagemin'),
-	notify = require('gulp-notify'),
-	rename = require('gulp-rename'),
-	sass = require('gulp-ruby-sass'),
-	server = require('gulp-webserver')
+'use strict';
 
-// Compile all the styles
-gulp.task('styles', function() {
-	return sass('scss/denali-v0.4.2.scss', { style: 'expanded' })
-		.pipe(autoprefixer('last 3 versions'))
-		.pipe(gulp.dest('dist/css/'))
-		.pipe(rename({suffix: '.min'}))
-		.pipe(cleancss())
-		.pipe(gulp.dest('dist/css/'))
-		.pipe(notify({ message: 'Styles task complete' }));
-});
+const gulp = require('gulp');
+const connect = require('gulp-connect-php');
+const browserSync = require('browser-sync').create();
+const sass = require('gulp-sass');
+const plumber = require('gulp-plumber');
+const rename = require('gulp-rename');
 
-// Watch for updates; compile on save
-gulp.task('watch', function() {
-	// Watch SCSS files
-	gulp.watch('scss/**/*.scss', ['styles']);
-});
+// const images = () => {
+//   return gulp.src('assets/images/**/*')
+//     .pipe(gulp.dest('assets/images'))
+//     .pipe(browserSync.stream());
+// };
 
-// Server for site
-gulp.task('server', function() {
-  gulp.src('./dist/')
-    .pipe(server({
-      livereload: true,
-      open: true,
-      port: 6639,	// set a port to avoid conflicts with other local apps
-      fallback: './dist/index.html'
-    }));
-});
+const siteSass = () => {
+  return gulp.src('scss/denali.scss')
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(rename('denali.css'))
+    .pipe(gulp.dest('css'))
+    .pipe(browserSync.stream());
+};
+
+const disconnect = () => {
+  connect.closeServer();
+};
+
+gulp.task('serve', gulp.series(siteSass, () => {
+  connect.server({
+    base: '.',
+    port: 4000
+  }, () => {
+    browserSync.init({
+      injectChanges: true,
+      proxy: '127.0.0.1:4000'
+    });
+  });
+
+  // gulp.watch('assets/images/**/*', images).on('change', browserSync.reload);
+  gulp.watch('scss/**/*.scss', siteSass).on('change', browserSync.reload);
+  // gulp.watch('assets/js/*.js').on('change', browserSync.reload);
+  gulp.watch('dist/**/*.html').on('change', browserSync.reload);
+}));
+
+gulp.task('default', gulp.series('serve', disconnect));
