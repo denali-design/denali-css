@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:adong/denali-css.git"
+    "url": "git@github.com:denali-design/denali-css.git"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
