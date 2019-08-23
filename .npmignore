@@ -1,1 +1,6 @@
-dist
+docs/
+screwdriver.yaml
+NOTICES.md
+Code-of-Conduct.md
+CONTRIBUTE.md
+node_modules

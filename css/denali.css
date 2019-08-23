@@ -12,7 +12,7 @@
     .container {
       width: 1140px;
       margin: 0px auto; } }
-  .container.is-gutterless .col {
+  .container.is-gutterless [class^="col"] {
     margin-left: 0px !important;
     margin-right: 0px !important; }
 
@@ -27,7 +27,7 @@
   .container-fluid.is-marginless {
     padding-left: 0px !important;
     padding-right: 0px !important; }
-  .container-fluid.is-gutterless .col {
+  .container-fluid.is-gutterless [class^="col"] {
     margin-left: 0px !important;
     margin-right: 0px !important; }
 
@@ -35,30 +35,41 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; }
+  .row .col:first-child {
+    margin-right: 10px;
+    margin-left: 0px; }
+    @media (min-width: 600px) {
+      .row .col:first-child {
+        margin-right: 20px; } }
+  .row .col:last-child {
+    margin-left: 10px;
+    margin-right: 0px; }
+    @media (min-width: 600px) {
+      .row .col:last-child {
+        margin-left: 20px; } }
   .row.reversed {
     flex-direction: row-reverse;
     flex-wrap: wrap-reverse; }
     .row.reversed .col:first-child {
       margin-right: 0px;
       margin-left: 10px; }
+      @media (min-width: 600px) {
+        .row.reversed .col:first-child {
+          margin-left: 20px; } }
     .row.reversed .col:last-child {
       margin-left: 0px;
       margin-right: 10px; }
+      @media (min-width: 600px) {
+        .row.reversed .col:last-child {
+          margin-right: 20px; } }
   @media (min-width: 600px) {
     .row.tablet-up-reversed {
       flex-direction: row-reverse; } }
 
-.col {
+[class^="col"] {
   display: flex;
   flex: 1;
-  margin: 0px 5px; }
-  .col:first-child {
-    margin-left: 0px; }
-  .col:last-child {
-    margin-right: 0px; }
-  @media (min-width: 600px) and (max-width: 899px) {
-    .col {
-      margin: 0px 10px; } }
+  box-sizing: border-box; }
 
 .col-1-1,
 .col-2-2,
