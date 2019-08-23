@@ -2,12 +2,29 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-
 // Row
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
+  .col {
+    &:first-child {
+      margin-right: 10px;
+      margin-left: 0px;
+      @include media-size-up(tablet) {
+        margin-right: 20px;
+      }
+    }
+
+    &:last-child {
+      margin-left: 10px;
+      margin-right: 0px;
+      @include media-size-up(tablet) {
+        margin-left: 20px;
+      }
+    }
+  }
 
   &.reversed {
     flex-direction: row-reverse;
@@ -17,11 +34,17 @@
       &:first-child {
         margin-right: 0px;
         margin-left: 10px;
+        @include media-size-up(tablet) {
+          margin-left: 20px;
+        }
       }
 
       &:last-child {
         margin-left: 0px;
         margin-right: 10px;
+        @include media-size-up(tablet) {
+          margin-right: 20px;
+        }
       }
     }
   }
