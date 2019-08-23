@@ -1,6 +1,6 @@
 {
-  "name": "Denali CSS",
-  "version": "0.4.3",
+  "name": "denli-css",
+  "version": "1.0.1",
   "author": "Chas Turansky",
   "description": "Denali CSS Framework",
   "private": false,
