@@ -2,7 +2,6 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-
 @mixin menus-base-theme($theme-config) {
   .menu {
     display: inline-flex !important;
@@ -45,10 +44,10 @@
       flex-direction: column;
       align-items: flex-start;
 
-      -webkit-transition: all .3s .1s;
-      -moz-transition: all .3s .1s;
-      -o-transition: all .3s .1s;
-      transition: all .3s .1s;
+      -webkit-transition: all 0.3s 0.1s;
+      -moz-transition: all 0.3s 0.1s;
+      -o-transition: all 0.3s 0.1s;
+      transition: all 0.3s 0.1s;
 
       ul {
         li {
@@ -59,7 +58,12 @@
       }
 
       hr {
-        background-color: deep-map-get($theme-config, "menus", "line-break", "color");
+        background-color: deep-map-get(
+          $theme-config,
+          "menus",
+          "line-break",
+          "color"
+        );
         height: deep-map-get($theme-config, "menus", "line-break", "size");
         width: calc(100% + 36px);
         margin: 14px 0px;
@@ -76,34 +80,46 @@
 
   /*Pointer*/
 
-  div.menu-content:after, div.menu-content:before {
-  	bottom: 100%;
-  	left: 50%;
-  	border: solid transparent;
-  	content: " ";
-  	height: 0;
-  	width: 0;
-  	position: absolute;
-  	pointer-events: none;
+  div.menu-content:after,
+  div.menu-content:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
   }
   div.menu-content:after {
-  	border-color: transparent;
-  	border-bottom-color: deep-map-get($theme-config, "menus", "background-color");
-  	border-width: 10px;
-  	margin-left: -10px;
+    border-color: transparent;
+    border-bottom-color: deep-map-get(
+      $theme-config,
+      "menus",
+      "background-color"
+    );
+    border-width: 10px;
+    margin-left: -10px;
   }
   div.menu-content:before {
-  	border-bottom-color: deep-map-get($theme-config, "menus", "border", "color");
-  	border-width: 13px;
-  	margin-left: -13px;
+    border-bottom-color: deep-map-get(
+      $theme-config,
+      "menus",
+      "border",
+      "color"
+    );
+    border-width: 13px;
+    margin-left: -13px;
   }
 
   /* Pointer Positioning */
 
-  .menu.is-left > .menu-content:after, .menu.is-left > .menu-content:before {
+  .menu.is-left > .menu-content:after,
+  .menu.is-left > .menu-content:before {
     left: 20px;
   }
-  .menu.is-right > .menu-content:after, .menu.is-right > .menu-content:before {
+  .menu.is-right > .menu-content:after,
+  .menu.is-right > .menu-content:before {
     left: calc(100% - 20px);
   }
 }
