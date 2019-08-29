@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="Denali CSS Component Demo">
     <!-- Denali CSS & Icons -->
     <link rel="stylesheet" href="../css/denali.css">
-    <link rel="stylesheet" href="../css/denali-icon-font-v1.0.0.css">
+    <link rel="stylesheet" href="fonts/denali-icon-font.css">
     <!-- Scripts -->
     <script src="js/include.js" charset="utf-8"></script>
     <!-- Style Relavate to this page -->
@@ -32,19 +32,38 @@
       <div class="nav-left">
         <a onclick="toggleTabsLeft()" class="nav-icon hide-small-desktop-up"><i class="d-icon d-menu-hamburger"></i></a>
         <a href="#top" class="nav-brand"><img src="images/denali-logo.svg" alt=""></img></a>
-        <span class="chips is-small is-bold is-grey-100 has-bg-brand-400 hide-tablet-down">CSS</span>
+        <span class="chips is-small is-bold is-grey-100 has-bg-brand-400 hide-tablet-down m-l-10">CSS</span>
       </div>
-      <div id="collapseDropdown" class="collapse-dropdown">
-        <div class="nav-center">
+
+      <div class="nav-right hide-small-desktop-up">
+        <a href="https://denali-design.slack.com/app_redirect?channel=general" target="_blank" class="nav-icon">
+          <i class="d-icon d-slack"></i>
+        </a>
+        <a href="https://github.com/denali-design" target="_blank" class="nav-icon">
+          <i class="d-icon d-github"></i>
+        </a>
+        <div class="menu is-right">
+          <a class="nav-icon menu-trigger"><i class="d-icon d-help-circle"></i></a>
+          <div class="menu-content">
+            <a href="https://github.com/denali-design/denali-site/issues/new?labels=feature-request" target="_blank">Feature Requests</a>
+            <a href="https://github.com/denali-design/denali-site/milestones" target="_blank">Roadmap</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="nav-icon nav-toggle-dropdown"><i class="d-icon d-more-vertical"></i></a>
+      <div class="nav-right space-between responsive">
+
+        <div class="nav-group">
           <div class="toggle is-small is-inverse">
             <ul>
               <li id="defaultTheme" class="is-active"><a>Denali</a></li>
               <li id="darkTheme"><a>Denali Dark</a></li>
-              <!-- <li class="is-disabled"><a>Verizon</a></li> -->
             </ul>
           </div>
         </div>
-        <div class="nav-right">
+
+        <div class="nav-group">
           <div class="menu">
             <a class="nav-item menu-trigger" tabindex="0">Styleguide<i class="d-icon d-arrowhead-down is-small is-sub"></i></a>
             <div class="menu-content">
@@ -68,32 +87,28 @@
             <a class="nav-item menu-trigger is-inverse" tabindex="0">Icons<i class="d-icon d-arrowhead-down is-small is-sub"></i></a>
             <div class="menu-content">
               <h5 class="upper is-grey-600">Frameworks</h5>
-              <a href="https://denali-design.github.io/denali-icon-font/dist/">CSS</a>
+              <a href="https://denali-design.github.io/denali-icon-font/docs/">CSS</a>
               <hr>
               <a href="https://denali-design.github.io/denali-site/documentation/aesthetics/icons">Icon Docs</a>
             </div>
           </div>
 
-          <a href="https://denali-design.slack.com/app_redirect?channel=general" target="_blank" class="nav-icon">
-              <i class="d-icon d-slack"></i>
-              <span class="nav-icon-text">Slack</span>
-            </a>
-          <a href="https://github.com/denali-design" target="_blank" class="nav-icon">
-              <i class="d-icon d-github"></i>
-              <span class="nav-icon-text">Github</span>
-            </a>
 
+          <a href="https://denali-design.slack.com/app_redirect?channel=general" target="_blank" class="nav-icon hide-tablet-down">
+            <i class="d-icon d-slack"></i>
+          </a>
+          <a href="https://github.com/denali-design" target="_blank" class="nav-icon hide-tablet-down">
+            <i class="d-icon d-github"></i>
+          </a>
           <div class="menu is-right">
-            <a class="nav-item menu-trigger"><i class="d-icon d-help-circle"></i></a>
+            <a class="nav-icon menu-trigger hide-tablet-down"><i class="d-icon d-help-circle"></i></a>
             <div class="menu-content">
               <a href="https://github.com/denali-design/denali-site/issues/new?labels=feature-request" target="_blank">Feature Requests</a>
               <a href="https://github.com/denali-design/denali-site/milestones" target="_blank">Roadmap</a>
             </div>
           </div>
         </div>
-      </div>
-      <div id="navDropdownToggle" class="nav-toggle-dropdown">
-        <a class="nav-icon"><i class="d-icon d-more-vertical"></i></a>
+
       </div>
     </nav>
 
@@ -122,114 +137,114 @@
       </div>
 
       <div id="container" class="overflow-y-auto flex-auto">
-        <div class="container-fluid m-b-5">
+        <div class="container-fluid m-b-50">
           <div id="top"></div>
           <!-- Alerts -->
-          <div id="alerts" class="p-t-3 m-b-3">
+          <div id="alerts" class="p-t-30 m-b-30">
             <h2>Alerts</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/alerts.html"></div>
           </div>
           <!-- Boxes -->
-          <div id="box" class="p-t-3 m-b-3">
+          <div id="box" class="p-t-30 m-b-30">
             <h2>Boxes</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/boxes.html"></div>
           </div>
           <!-- Buttons -->
-          <div id="buttons" class="p-t-3 m-b-3">
+          <div id="buttons" class="p-t-30 m-b-30">
             <h2>Buttons</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/buttons.html"></div>
           </div>
           <!-- Chips -->
-          <div id="chips" class="p-t-3 m-b-3">
+          <div id="chips" class="p-t-30 m-b-30">
             <h2>Chips</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/chips.html"></div>
           </div>
           <!-- Controls -->
-          <div id="controls" class="p-t-3 m-b-3">
+          <div id="controls" class="p-t-30 m-b-30">
             <h2>Controls</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/controls.html"></div>
           </div>
           <!-- Dropdown -->
-          <div id="dropdown" class="p-t-3 m-b-3">
+          <div id="dropdown" class="p-t-30 m-b-30">
             <h2>Dropdown</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/dropdown.html"></div>
           </div>
           <!-- Inputs -->
-          <div id="inputs" class="p-t-3 m-b-3">
+          <div id="inputs" class="p-t-30 m-b-30">
             <h2>Inputs</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/inputs.html"></div>
           </div>
           <!-- Search Input -->
-          <div id="search" class="p-t-3 m-b-3">
+          <div id="search" class="p-t-30 m-b-30">
             <h2>Input Search</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/inputSearch.html"></div>
           </div>
           <!-- Links -->
-          <div id="links" class="p-t-3 m-b-3">
+          <div id="links" class="p-t-30 m-b-30">
             <h2>Links</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/links.html"></div>
           </div>
           <!-- Loader -->
-          <div id="loader" class="p-t-3 m-b-3">
+          <div id="loader" class="p-t-30 m-b-30">
             <h2>Loader</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/loader.html"></div>
           </div>
           <!-- Menu -->
-          <div id="menu" class="p-t-3 m-b-3">
+          <div id="menu" class="p-t-30 m-b-30">
             <h2>Menu</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/menu.html"></div>
           </div>
           <!-- Modal -->
-          <div id="modal" class="p-t-3 m-b-3">
+          <div id="modal" class="p-t-30 m-b-30">
             <h2>Modal</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/modal.html"></div>
           </div>
           <!-- Navbar -->
-          <div id="navbar" class="p-t-3 m-b-3">
+          <div id="navbar" class="p-t-30 m-b-30">
             <h2>Navbar</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/navbar.html"></div>
           </div>
           <!-- Tables -->
-          <div id="tables" class="p-t-3 m-b-3">
+          <div id="tables" class="p-t-30 m-b-30">
             <h2>Tables</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/tables.html"></div>
           </div>
           <!-- Tabs -->
-          <div id="tabs" class="p-t-3 m-b-3">
+          <div id="tabs" class="p-t-30 m-b-30">
             <h2>Tabs</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/tabs.html"></div>
           </div>
           <!-- Tags -->
-          <div id="tags" class="p-t-3 m-b-3">
+          <div id="tags" class="p-t-30 m-b-30">
             <h2>Tags</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/tags.html"></div>
           </div>
           <!-- Toggle -->
-          <div id="toggles" class="p-t-3 m-b-3">
+          <div id="toggles" class="p-t-30 m-b-30">
             <h2>Toggles</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/toggles.html"></div>
           </div>
           <!-- Titles -->
-          <div id="titles" class="p-t-3 m-b-3">
+          <div id="titles" class="p-t-30 m-b-30">
             <h2>Titles</h2>
-            <hr class="m-b-3">
+            <hr class="m-b-30">
             <div include-html="includes/titles.html"></div>
           </div>
         </div>
@@ -245,12 +260,6 @@
         var toggleTabsLeft = document.getElementById("toggleTabsLeft");
         toggleTabsLeft.classList.toggle('tablet-down-toggle-tabs-left');
       };
-
-      // Nav Dropdown on Mobile
-      document.getElementById("navDropdownToggle").addEventListener("click", function() {
-        var element = document.getElementById("collapseDropdown");
-        element.classList.toggle("show");
-      });
 
       // Nav Active Scroll
       var content = document.getElementById("container");

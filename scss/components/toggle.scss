@@ -2,40 +2,94 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-
 @mixin toggles-base-theme($theme-config) {
   .toggle {
     ul {
       list-style: none;
       font-size: 0;
+      white-space: nowrap;
       li {
         cursor: pointer;
         display: inline-block;
         border: none;
         background: deep-map-get($theme-config, "toggles", "background-color");
         &:first-of-type {
-          border-top-left-radius: deep-map-get($theme-config, "toggles", "corner-radius");
-          border-bottom-left-radius: deep-map-get($theme-config, "toggles", "corner-radius");
+          border-top-left-radius: deep-map-get(
+            $theme-config,
+            "toggles",
+            "corner-radius"
+          );
+          border-bottom-left-radius: deep-map-get(
+            $theme-config,
+            "toggles",
+            "corner-radius"
+          );
         }
         &:last-of-type {
           border: none;
-          border-top-right-radius: deep-map-get($theme-config, "toggles", "corner-radius");
-          border-bottom-right-radius: deep-map-get($theme-config, "toggles", "corner-radius");
+          border-top-right-radius: deep-map-get(
+            $theme-config,
+            "toggles",
+            "corner-radius"
+          );
+          border-bottom-right-radius: deep-map-get(
+            $theme-config,
+            "toggles",
+            "corner-radius"
+          );
         }
         &.is-active {
-          background: deep-map-get($theme-config, "toggles", "active", "background-color");
-          border-color: deep-map-get($theme-config, "toggles", "active", "border", "color");
-          border-width: deep-map-get($theme-config, "toggles", "active", "border", "width");
-          border-style: deep-map-get($theme-config, "toggles", "active", "border", "style");
-          border-radius: deep-map-get($theme-config, "toggles", "active", "corner-radius");
+          background: deep-map-get(
+            $theme-config,
+            "toggles",
+            "active",
+            "background-color"
+          );
+          border-color: deep-map-get(
+            $theme-config,
+            "toggles",
+            "active",
+            "border",
+            "color"
+          );
+          border-width: deep-map-get(
+            $theme-config,
+            "toggles",
+            "active",
+            "border",
+            "width"
+          );
+          border-style: deep-map-get(
+            $theme-config,
+            "toggles",
+            "active",
+            "border",
+            "style"
+          );
+          border-radius: deep-map-get(
+            $theme-config,
+            "toggles",
+            "active",
+            "corner-radius"
+          );
           a {
-            color: deep-map-get($theme-config, "toggles", "active", "text-color");
+            color: deep-map-get(
+              $theme-config,
+              "toggles",
+              "active",
+              "text-color"
+            );
           }
         }
         &.is-disabled {
           cursor: not-allowed;
           a {
-            color: deep-map-get($theme-config, "toggles", "disabled", "text-color");
+            color: deep-map-get(
+              $theme-config,
+              "toggles",
+              "disabled",
+              "text-color"
+            );
           }
         }
         a {
@@ -58,7 +112,7 @@
     &.is-inverse {
       ul {
         li {
-          background: rgba(#fff, .1);
+          background: rgba(#fff, 0.1);
           &.is-active {
             background: transparent;
             a {
@@ -67,11 +121,11 @@
           }
           &.is-disabled {
             a {
-              color: rgba(#fff, .5);
+              color: rgba(#fff, 0.5);
             }
           }
           a {
-            color: map-get($denali-brand-colors, '500');
+            color: map-get($denali-brand-colors, "500");
           }
         }
       }

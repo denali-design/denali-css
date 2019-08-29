@@ -1,7 +1,6 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-
 // Flexbox
 .flex {
   display: flex !important;
@@ -24,7 +23,7 @@
 
 .flex-column {
   flex-direction: column !important;
-  &-column-reverse{
+  &-column-reverse {
     flex-direction: column-reverse !important;
   }
 }
@@ -42,8 +41,57 @@
   }
 }
 
+// Space Between
 .space-between {
   justify-content: space-between !important;
+}
+// Media Size Up
+.space-between-small-desktop-up {
+  @include media-size-up(small-desktop) {
+    justify-content: space-between !important;
+  }
+}
+// Media Size Down
+.space-between-small-desktop-down {
+  @include media-size-down(small-desktop) {
+    justify-content: space-between !important;
+  }
+}
+.space-between-tablet-down {
+  @include media-size-down(tablet) {
+    justify-content: space-between !important;
+  }
+}
+// Media Size Only
+.space-between-mobile {
+  @include media-size-only(mobile) {
+    justify-content: space-between !important;
+  }
+}
+.xs-space-between {
+  @include media-size-only(mobile) {
+    justify-content: space-between !important;
+  }
+}
+.sm-space-between {
+  @include media-size-only(tablet) {
+    justify-content: space-between !important;
+  }
+}
+.md-space-between {
+  @include media-size-only(small-desktop) {
+    justify-content: space-between !important;
+  }
+}
+.lg-space-between {
+  @include media-size-only(desktop) {
+    justify-content: space-between !important;
+  }
+}
+.xl-space-between {
+  @include media-size-only(hd) {
+    justify-content: space-between !important;
+  }
 }
 
 .space-around {
