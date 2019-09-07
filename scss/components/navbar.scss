@@ -112,7 +112,8 @@
           overflow-x: auto;
           z-index: 100;
           &:hover,
-          &:focus {
+          &:focus,
+          &:focus-within {
             opacity: 1;
             visibility: visible;
           }

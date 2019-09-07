@@ -16,18 +16,18 @@
     margin-left: 0px !important;
     margin-right: 0px !important; }
 
-.container-fluid {
+.container-full {
   padding: 0px 10px; }
   @media (min-width: 600px) {
-    .container-fluid {
+    .container-full {
       padding: 0px 20px; } }
   @media (min-width: 900px) {
-    .container-fluid {
+    .container-full {
       padding: 0px 30px; } }
-  .container-fluid.is-marginless {
+  .container-full.is-marginless {
     padding-left: 0px !important;
     padding-right: 0px !important; }
-  .container-fluid.is-gutterless [class^="col"] {
+  .container-full.is-gutterless [class^="col"] {
     margin-left: 0px !important;
     margin-right: 0px !important; }
 
@@ -35,33 +35,27 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; }
+  .row .col:not(:first-child), .row .col:not(:last-child) {
+    margin: 0px 10px; }
+    @media (min-width: 600px) {
+      .row .col:not(:first-child), .row .col:not(:last-child) {
+        margin: 0px 20px; } }
   .row .col:first-child {
-    margin-right: 10px;
     margin-left: 0px; }
-    @media (min-width: 600px) {
-      .row .col:first-child {
-        margin-right: 20px; } }
   .row .col:last-child {
-    margin-left: 10px;
     margin-right: 0px; }
-    @media (min-width: 600px) {
-      .row .col:last-child {
-        margin-left: 20px; } }
   .row.reversed {
     flex-direction: row-reverse;
     flex-wrap: wrap-reverse; }
     .row.reversed .col:first-child {
-      margin-right: 0px;
-      margin-left: 10px; }
-      @media (min-width: 600px) {
-        .row.reversed .col:first-child {
-          margin-left: 20px; } }
+      margin-right: 0px !important; }
     .row.reversed .col:last-child {
-      margin-left: 0px;
-      margin-right: 10px; }
+      margin-left: 0px !important; }
+    .row.reversed .col:not(:first-child), .row.reversed .col:not(:last-child) {
+      margin: 0px 10px; }
       @media (min-width: 600px) {
-        .row.reversed .col:last-child {
-          margin-right: 20px; } }
+        .row.reversed .col:not(:first-child), .row.reversed .col:not(:last-child) {
+          margin: 0px 20px; } }
   @media (min-width: 600px) {
     .row.tablet-up-reversed {
       flex-direction: row-reverse; } }
@@ -2491,8 +2485,8 @@ hr {
       padding: 6px 12px;
       text-align: left;
       transition: 200ms;
-      min-width: 250px;
-      max-width: 400px;
+      width: inherit;
+      max-width: 100%;
       min-height: 90px; }
       .denali-default-theme .input textarea:active, .denali-default-theme .input textarea:focus {
         border-bottom-style: solid;
@@ -2561,6 +2555,14 @@ hr {
         margin-top: 0px; }
       .denali-default-theme .input-group.is-stacked .input {
         margin-top: 4px; }
+    @media (max-width: 599px) {
+      .denali-default-theme .input-group.responsive {
+        flex-direction: column; }
+        .denali-default-theme .input-group.responsive label {
+          margin-top: 0px; }
+        .denali-default-theme .input-group.responsive .input {
+          width: 100%;
+          margin-top: 4px; } }
   .denali-default-theme .input.has-icon-back input {
     padding-right: 34px; }
   .denali-default-theme .input.has-icon-back .d-icon {
@@ -2717,15 +2719,13 @@ hr {
       -moz-transition: all 0.3s 0.1s;
       -o-transition: all 0.3s 0.1s;
       transition: all 0.3s 0.1s; }
-      .denali-default-theme .menu div.menu-content ul li a {
-        line-height: 28px; }
       .denali-default-theme .menu div.menu-content hr {
         background-color: #e8e8e8;
         height: 2px;
         width: calc(100% + 36px);
         margin: 14px 0px;
         margin-left: -18px; }
-      .denali-default-theme .menu div.menu-content:hover, .denali-default-theme .menu div.menu-content:focus {
+      .denali-default-theme .menu div.menu-content:hover, .denali-default-theme .menu div.menu-content:focus, .denali-default-theme .menu div.menu-content:focus-within {
         opacity: 1;
         visibility: visible; }
   .denali-default-theme div.menu-content:after,
@@ -2913,7 +2913,7 @@ hr {
           width: 100%;
           overflow-x: auto;
           z-index: 100; }
-          .denali-default-theme nav.nav .nav-right.responsive:hover, .denali-default-theme nav.nav .nav-right.responsive:focus {
+          .denali-default-theme nav.nav .nav-right.responsive:hover, .denali-default-theme nav.nav .nav-right.responsive:focus, .denali-default-theme nav.nav .nav-right.responsive:focus-within {
             opacity: 1;
             visibility: visible; } }
   @media (max-width: 899px) and (min-width: 600px) {
@@ -3787,8 +3787,8 @@ hr {
       padding: 6px 12px;
       text-align: left;
       transition: 200ms;
-      min-width: 250px;
-      max-width: 400px;
+      width: inherit;
+      max-width: 100%;
       min-height: 90px; }
       .denali-dark-theme .input textarea:active, .denali-dark-theme .input textarea:focus {
         border-bottom-style: solid;
@@ -3857,6 +3857,14 @@ hr {
         margin-top: 0px; }
       .denali-dark-theme .input-group.is-stacked .input {
         margin-top: 4px; }
+    @media (max-width: 599px) {
+      .denali-dark-theme .input-group.responsive {
+        flex-direction: column; }
+        .denali-dark-theme .input-group.responsive label {
+          margin-top: 0px; }
+        .denali-dark-theme .input-group.responsive .input {
+          width: 100%;
+          margin-top: 4px; } }
   .denali-dark-theme .input.has-icon-back input {
     padding-right: 34px; }
   .denali-dark-theme .input.has-icon-back .d-icon {
@@ -4013,15 +4021,13 @@ hr {
       -moz-transition: all 0.3s 0.1s;
       -o-transition: all 0.3s 0.1s;
       transition: all 0.3s 0.1s; }
-      .denali-dark-theme .menu div.menu-content ul li a {
-        line-height: 28px; }
       .denali-dark-theme .menu div.menu-content hr {
         background-color: #606060;
         height: 2px;
         width: calc(100% + 36px);
         margin: 14px 0px;
         margin-left: -18px; }
-      .denali-dark-theme .menu div.menu-content:hover, .denali-dark-theme .menu div.menu-content:focus {
+      .denali-dark-theme .menu div.menu-content:hover, .denali-dark-theme .menu div.menu-content:focus, .denali-dark-theme .menu div.menu-content:focus-within {
         opacity: 1;
         visibility: visible; }
   .denali-dark-theme div.menu-content:after,
@@ -4209,7 +4215,7 @@ hr {
           width: 100%;
           overflow-x: auto;
           z-index: 100; }
-          .denali-dark-theme nav.nav .nav-right.responsive:hover, .denali-dark-theme nav.nav .nav-right.responsive:focus {
+          .denali-dark-theme nav.nav .nav-right.responsive:hover, .denali-dark-theme nav.nav .nav-right.responsive:focus, .denali-dark-theme nav.nav .nav-right.responsive:focus-within {
             opacity: 1;
             visibility: visible; } }
   @media (max-width: 899px) and (min-width: 600px) {

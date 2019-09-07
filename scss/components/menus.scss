@@ -49,14 +49,6 @@
       -o-transition: all 0.3s 0.1s;
       transition: all 0.3s 0.1s;
 
-      ul {
-        li {
-          a {
-            line-height: 28px;
-          }
-        }
-      }
-
       hr {
         background-color: deep-map-get(
           $theme-config,
@@ -71,7 +63,8 @@
       }
 
       &:hover,
-      &:focus {
+      &:focus,
+      &:focus-within {
         opacity: 1;
         visibility: visible;
       }

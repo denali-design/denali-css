@@ -30,7 +30,7 @@
 
     <nav class="nav">
       <div class="nav-left">
-        <a onclick="toggleTabsLeft()" class="nav-icon hide-small-desktop-up"><i class="d-icon d-menu-hamburger"></i></a>
+        <a onclick="toggleTabsLeft()" tabindex="0" id="toggleTab" class="nav-icon hide-small-desktop-up"><i class="d-icon d-menu-hamburger"></i></a>
         <a href="#top" class="nav-brand"><img src="images/denali-logo.svg" alt=""></img></a>
         <span class="chips is-small is-bold is-grey-100 has-bg-brand-400 hide-tablet-down m-l-10">CSS</span>
       </div>
@@ -43,7 +43,7 @@
           <i class="d-icon d-github"></i>
         </a>
         <div class="menu is-right">
-          <a class="nav-icon menu-trigger"><i class="d-icon d-help-circle"></i></a>
+          <a class="nav-icon menu-trigger" tabindex="0"><i class="d-icon d-help-circle"></i></a>
           <div class="menu-content">
             <a href="https://github.com/denali-design/denali-site/issues/new?labels=feature-request" target="_blank">Feature Requests</a>
             <a href="https://github.com/denali-design/denali-site/milestones" target="_blank">Roadmap</a>
@@ -51,14 +51,14 @@
         </div>
       </div>
 
-      <a class="nav-icon nav-toggle-dropdown"><i class="d-icon d-more-vertical"></i></a>
+      <a class="nav-icon nav-toggle-dropdown" tabindex="0"><i class="d-icon d-more-vertical"></i></a>
       <div class="nav-right space-between responsive">
 
         <div class="nav-group">
           <div class="toggle is-small is-inverse">
             <ul>
-              <li id="defaultTheme" class="is-active"><a>Denali</a></li>
-              <li id="darkTheme"><a>Denali Dark</a></li>
+              <li id="defaultTheme" class="is-active" tabindex="0"><a>Denali</a></li>
+              <li id="darkTheme" tabindex="0"><a>Denali Dark</a></li>
             </ul>
           </div>
         </div>
@@ -87,7 +87,7 @@
             <a class="nav-item menu-trigger is-inverse" tabindex="0">Icons<i class="d-icon d-arrowhead-down is-small is-sub"></i></a>
             <div class="menu-content">
               <h5 class="upper is-grey-600">Frameworks</h5>
-              <a href="https://denali-design.github.io/denali-icon-font/docs/">CSS</a>
+              <a href="https://denali-design.github.io/denali-icon-font/docs/">Icon Font</a>
               <hr>
               <a href="https://denali-design.github.io/denali-site/documentation/aesthetics/icons">Icon Docs</a>
             </div>
@@ -101,7 +101,7 @@
             <i class="d-icon d-github"></i>
           </a>
           <div class="menu is-right">
-            <a class="nav-icon menu-trigger hide-tablet-down"><i class="d-icon d-help-circle"></i></a>
+            <a class="nav-icon menu-trigger hide-tablet-down" tabindex="0"><i class="d-icon d-help-circle"></i></a>
             <div class="menu-content">
               <a href="https://github.com/denali-design/denali-site/issues/new?labels=feature-request" target="_blank">Feature Requests</a>
               <a href="https://github.com/denali-design/denali-site/milestones" target="_blank">Roadmap</a>
@@ -137,7 +137,7 @@
       </div>
 
       <div id="container" class="overflow-y-auto flex-auto">
-        <div class="container-fluid m-b-50">
+        <div class="container-full m-b-50">
           <div id="top"></div>
           <!-- Alerts -->
           <div id="alerts" class="p-t-30 m-b-30">
@@ -260,6 +260,12 @@
         var toggleTabsLeft = document.getElementById("toggleTabsLeft");
         toggleTabsLeft.classList.toggle('tablet-down-toggle-tabs-left');
       };
+      document.getElementById("toggleTab").addEventListener("keyup", function(event){
+        if (event.keyCode === 13) {
+          var toggleTabsLeft = document.getElementById("toggleTabsLeft");
+          toggleTabsLeft.classList.toggle('tablet-down-toggle-tabs-left');
+        }
+      });
 
       // Nav Active Scroll
       var content = document.getElementById("container");
@@ -288,6 +294,15 @@
         this.classList.add("is-active");
         document.getElementById("defaultTheme").classList.remove("is-active");
       });
+      document.getElementById("darkTheme").addEventListener("keyup", function(event){
+        if (event.keyCode === 13) {
+          var x = document.getElementsByTagName("BODY")[0];
+          x.classList.add("denali-dark-theme");
+          x.classList.remove("denali-default-theme");
+          this.classList.add("is-active");
+          document.getElementById("defaultTheme").classList.remove("is-active");
+        }
+      });
 
       document.getElementById("defaultTheme").addEventListener("click", function(){
         var x = document.getElementsByTagName("BODY")[0];
@@ -295,6 +310,15 @@
         x.classList.add("denali-default-theme");
         this.classList.add("is-active");
         document.getElementById("darkTheme").classList.remove("is-active");
+      });
+      document.getElementById("defaultTheme").addEventListener("keyup", function(event){
+        if (event.keyCode === 13) {
+          var x = document.getElementsByTagName("BODY")[0];
+          x.classList.remove("denali-dark-theme");
+          x.classList.add("denali-default-theme");
+          this.classList.add("is-active");
+          document.getElementById("darkTheme").classList.remove("is-active");
+        }
       });
 
     </script>
