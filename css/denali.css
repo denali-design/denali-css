@@ -60,10 +60,15 @@
     .row.tablet-up-reversed {
       flex-direction: row-reverse; } }
 
-[class^="col"] {
+.col,
+[class^="col-"] {
   display: flex;
+  flex-direction: column;
   flex: 1;
   box-sizing: border-box; }
+
+[class*="-col-"] {
+  padding: 0px 10px; }
 
 .col-1-1,
 .col-2-2,
@@ -2679,8 +2684,8 @@ hr {
     width: 36px;
     height: 36px; }
   .denali-default-theme .loader.is-large {
-    width: 38px;
-    height: 38px; }
+    width: 48px;
+    height: 48px; }
   .denali-default-theme .menu {
     display: inline-flex !important;
     justify-content: center;
@@ -3981,8 +3986,8 @@ hr {
     width: 36px;
     height: 36px; }
   .denali-dark-theme .loader.is-large {
-    width: 38px;
-    height: 38px; }
+    width: 48px;
+    height: 48px; }
   .denali-dark-theme .menu {
     display: inline-flex !important;
     justify-content: center;

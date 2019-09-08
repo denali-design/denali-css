@@ -3,10 +3,16 @@
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
 // Columns
-[class^="col"] {
+.col,
+[class^="col-"] {
   display: flex;
+  flex-direction: column;
   flex: 1;
   box-sizing: border-box;
+}
+
+[class*="-col-"] {
+  padding: 0px 10px;
 }
 
 // Sizes
