@@ -9,20 +9,19 @@
   flex-wrap: wrap;
 
   .col {
-    &:first-child {
-      margin-right: 10px;
-      margin-left: 0px;
+    &:not(:first-child),
+    &:not(:last-child) {
+      margin: 0px 10px;
       @include media-size-up(tablet) {
-        margin-right: 20px;
+        margin: 0px 20px;
       }
+    }
+    &:first-child {
+      margin-left: 0px;
     }
 
     &:last-child {
-      margin-left: 10px;
       margin-right: 0px;
-      @include media-size-up(tablet) {
-        margin-left: 20px;
-      }
     }
   }
 
@@ -32,18 +31,17 @@
 
     .col {
       &:first-child {
-        margin-right: 0px;
-        margin-left: 10px;
-        @include media-size-up(tablet) {
-          margin-left: 20px;
-        }
+        margin-right: 0px !important;
       }
 
       &:last-child {
-        margin-left: 0px;
-        margin-right: 10px;
+        margin-left: 0px !important;
+      }
+      &:not(:first-child),
+      &:not(:last-child) {
+        margin: 0px 10px;
         @include media-size-up(tablet) {
-          margin-right: 20px;
+          margin: 0px 20px;
         }
       }
     }

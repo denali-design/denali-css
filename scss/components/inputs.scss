@@ -86,8 +86,8 @@
       padding: 6px 12px;
       text-align: left;
       transition: 200ms;
-      min-width: 250px;
-      max-width: 400px;
+      width: inherit;
+      max-width: 100%;
       min-height: 90px;
 
       &:active,
@@ -192,11 +192,23 @@
     &.is-stacked {
       flex-direction: column;
       label {
-        // align-self: self-start;
         margin-top: 0px;
       }
       .input {
         margin-top: 4px;
+      }
+    }
+
+    &.responsive {
+      @include media-size-down(mobile) {
+        flex-direction: column;
+        label {
+          margin-top: 0px;
+        }
+        .input {
+          width: 100%;
+          margin-top: 4px;
+        }
       }
     }
   }
