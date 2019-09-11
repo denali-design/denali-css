@@ -27,4 +27,18 @@
       padding-right: deep-map-get($theme-config, "chips", "small", "padding", "right");
     }
   }
+
+  .chip-group {
+    .chips {
+      border-radius: 0px !important;
+      &:first-child {
+        border-top-left-radius: deep-map-get($theme-config, "chips", "border-radius") !important;
+        border-bottom-left-radius: deep-map-get($theme-config, "chips", "border-radius") !important;
+      }
+      &:last-child {
+        border-top-right-radius: deep-map-get($theme-config, "chips", "border-radius") !important;
+        border-bottom-right-radius: deep-map-get($theme-config, "chips", "border-radius") !important;
+      }
+    }
+  }
 }

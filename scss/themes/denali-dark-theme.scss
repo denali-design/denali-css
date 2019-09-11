@@ -408,7 +408,7 @@ $denali-dark-theme: (
       small: 18px,
       default: 24px,
       medium: 36px,
-      large: 38px,
+      large: 48px,
     )
   ),
 
@@ -534,7 +534,7 @@ $denali-dark-theme: (
   tabs: (
     text-size: 1.6rem,
     primary: (
-      background-color: rgba(#2A3035,.5),
+      background-color: #1E242A,
       padding: 20px 0px 0px 30px,
       tab-item: (
         height: 40px,

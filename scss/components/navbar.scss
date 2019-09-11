@@ -2,268 +2,149 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-
 @mixin navbar-base-theme($theme-config) {
   nav.nav {
     background: deep-map-get($theme-config, "navbar", "background-color");
-    width: 100%;
     height: deep-map-get($theme-config, "navbar", "height");
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
-    align-items: flex-start;
-    padding: 0px 18px;
-    div.collapse-dropdown {
-      flex: auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+    justify-content: space-between;
+    padding: 0px 10px;
+    position: relative;
+    @include media-size-up(tablet) {
+      padding: 0px 20px;
     }
-    div.nav-toggle-dropdown {
-      flex: 1;
+    @include media-size-up(small-desktop) {
+      padding: 0px 30px;
+    }
+
+    .nav-icon {
+      height: deep-map-get($theme-config, "navbar", "height");
+      width: 48px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: deep-map-get($theme-config, "navbar", "text-color") !important;
+      &:hover {
+        opacity: 0.4;
+      }
+      .nav-icon-text {
+        display: none;
+      }
+    }
+
+    .nav-item {
+      height: deep-map-get($theme-config, "navbar", "height");
+      display: inline-flex;
+      align-items: center;
+      font-size: 1.6rem;
+      padding: 0px 12px;
+      color: deep-map-get($theme-config, "navbar", "text-color") !important;
+      &:hover {
+        opacity: 0.4;
+      }
+      &.is-active {
+        box-shadow: inset 0 -4px 0 deep-map-get($theme-config, "navbar", "nav-items", "active-border-color");
+      }
+    }
+
+    .nav-brand {
+      height: 34px;
       width: auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
+      flex: none;
     }
-    div.nav-left {
-      width: calc(300px - 18px);
+
+    // Nav Positioning
+    .nav-left,
+    .nav-right {
+      height: deep-map-get($theme-config, "navbar", "height");
       display: flex;
-      justify-content: flex-start;
       align-items: center;
-      height: 60px;
-      position: relative;
-      .nav-brand {
-        padding: 0px 12px;
-        height: 34px;
+    }
+
+    .nav-left {
+      flex: none;
+      margin-right: 24px;
+
+      @include media-size-up(small-desktop) {
+        width: 270px;
+        margin-right: 0px;
       }
     }
-    div.nav-center {
-      flex: auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      height: 60px;
-      .input {
-        margin-bottom: 0px;
+
+    .trigger:hover ~ .nav-right.responsive {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // Responsive toggle
+    .nav-toggle-dropdown {
+      &:hover ~ .nav-right.responsive,
+      &:focus ~ .nav-right.responsive {
+        opacity: 1;
+        visibility: visible;
+        transition: 300ms;
+      }
+      @include media-size-up(small-desktop) {
+        display: none;
       }
     }
-    div.nav-right {
+
+    .nav-right {
+      justify-content: flex-end;
       flex: auto;
+
+      &.responsive {
+        @include media-size-down(tablet) {
+          opacity: 0;
+          visibility: hidden;
+          transition: 300ms;
+          justify-content: flex-end;
+          flex: auto;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          margin-top: 60px;
+          background: deep-map-get($theme-config, "navbar", "background-color");
+          padding: 0px 10px;
+          margin-left: -10px;
+          width: 100%;
+          overflow-x: auto;
+          z-index: 100;
+          &:hover,
+          &:focus,
+          &:focus-within {
+            opacity: 1;
+            visibility: visible;
+          }
+          @include media-size-up(tablet) {
+            padding: 0px 20px;
+            margin-left: -20px;
+          }
+          @include media-size-up(small-desktop) {
+            padding: 0px 30px;
+            margin-left: -30px;
+          }
+        }
+      }
+    }
+
+    // Nav-group
+    .nav-group {
+      height: deep-map-get($theme-config, "navbar", "height");
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      height: 60px;
+      &:last-child {
+        margin-left: 12px;
+      }
     }
+
+    // menu
     .menu {
+      // margin-top: 7px;
       .menu-content {
         margin-top: 54px;
-      }
-    }
-  }
-
-  .nav-icon {
-    padding: 18px 12px;
-    height: 100%;
-    font-size: 24px;
-    line-height: 0px;
-    color: deep-map-get($theme-config, "navbar", "text-color") !important;
-    &:hover {
-      color: deep-map-get($theme-config, "navbar", "text-color") !important;
-      opacity: .4;
-    }
-  }
-
-  .nav-item {
-    font-size: 16px;
-    padding: 17px 12px;
-    color: deep-map-get($theme-config, "navbar", "nav-items", "text-color") !important;
-    height: 100%;
-    &:hover {
-      color: deep-map-get($theme-config, "navbar", "nav-items", "text-color") !important;
-      opacity: .4;
-    }
-    &.is-active {
-      color: deep-map-get($theme-config, "navbar", "nav-items", "text-color") !important;
-      box-shadow: inset 0 -4px 0 deep-map-get($theme-config, "navbar", "nav-items", "active-border-color");
-    }
-  }
-
-  @include media-size-down(tablet) {
-    nav.nav {
-      div.nav-center {
-        flex-grow: 8;
-        margin-left: 0px;
-        justify-content: flex-end;
-      }
-      div.collapse-dropdown:after, div.collapse-dropdown:before {
-      	bottom: 100%;
-      	left: 50%;
-      	border: solid transparent;
-      	content: " ";
-      	height: 0;
-      	width: 0;
-      	position: absolute;
-      	pointer-events: none;
-        z-index: $zindex-menu;
-      }
-      div.collapse-dropdown:after {
-      	border-color: transparent;
-      	border-bottom-color: #ffffff;
-      	border-width: 10px;
-      	margin-left: -10px;
-        left: calc(100% - 20px);
-      }
-      div.collapse-dropdown:before {
-      	border-color: rgba(194, 225, 245, 0);
-      	border-bottom-color: #e8e8e8;
-      	border-width: 13px;
-      	margin-left: -13px;
-        left: calc(100% - 20px);
-      }
-      div.collapse-dropdown {
-        // Temporary fix
         position: fixed;
-        flex-direction: column;
-        background: $grey-100;
-        margin-top: 56px;
-        right: 20px;
-        height: auto;
-        width: auto;
-        align-items: flex-start;
-        padding: 10px 18px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-        border: 2px solid #e8e8e8;
-        border-radius: 2px;
-        margin-left: 0px;
-        opacity: 0;
-        visibility: hidden;
-        transition: 300ms;
-        z-index: 99;
-        &.show {
-          visibility: visible;
-          opacity: 1;
-          transition: 300ms;
-          margin-left: 20px;
-        }
-
-        div {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          height: auto;
-          input[type="text"] {
-            background: rgba(53, 112, 244, 0.05);
-            color: #303030;
-            margin-top: 12px;
-
-            &::placeholder {
-              color: rgba(48, 48, 48, 0.6);
-            }
-          }
-          button {
-            width: 100%;
-            margin: 0px;
-            margin-top: 5px;
-            margin-bottom: 16px;
-          }
-
-          &.nav-center {
-            margin: 0px;
-            height: 100%;
-          }
-
-          &.nav-right {
-            margin: 0px;
-            height: auto;
-          }
-
-
-          a.nav-icon {
-            color: #000;
-            padding: 0px;
-            height: auto;
-            &:hover {
-              opacity: 1;
-            }
-
-            .nav-icon-text {
-              color: $brand-600;
-              font-size: 16px;
-              display: block;
-              line-height: 20px;
-              padding: 4px 0px;
-              &:hover {
-                color: $brand-800;
-                opacity: 1;
-              }
-            }
-
-            .d-icon {
-              display: none;
-            }
-          }
-
-          .nav-item {
-            display: block;
-            color: #000;
-            padding: 0px;
-            height: auto;
-            color: $brand-600;
-            line-height: 20px;
-            padding: 4px 0px;
-            &:hover {
-              color: $brand-800;
-              opacity: 1;
-            }
-
-            &.is-active {
-              box-shadow: none;
-            }
-          }
-
-          .menu {
-            display: block;
-            height: auto;
-            background: none;
-            .menu-content {
-              font-size: 14px;
-              line-height: 24px;
-              visibility: inherit;
-              opacity: 1;
-              padding: 0px;
-              margin-left: 12px;
-              margin-top: 0px;
-              width: auto;
-              height: auto;
-              display: flex;
-              position: initial;
-              border: none;
-              box-shadow: none;
-              &:before {
-                display: none;
-              }
-              &:after {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  @include media-size-up(small-desktop) {
-    nav.nav {
-      div {
-        &.nav-toggle-dropdown {
-          display: none;
-        }
-      }
-      .nav-icon {
-        .nav-icon-text {
-          display: none;
-        }
       }
     }
   }

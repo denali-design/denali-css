@@ -2,7 +2,6 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-
 // Container Default
 .container {
   margin: 0px 10px;
@@ -21,15 +20,15 @@
   }
 
   &.is-gutterless {
-    .column {
+    [class^="col"] {
       margin-left: 0px !important;
       margin-right: 0px !important;
     }
   }
 }
 
-// Container Fluid
-.container-fluid {
+// Container Full
+.container-full {
   padding: 0px 10px;
 
   @include media-size-up(tablet) {
@@ -45,7 +44,7 @@
   }
 
   &.is-gutterless {
-    .column {
+    [class^="col"] {
       margin-left: 0px !important;
       margin-right: 0px !important;
     }
