@@ -2,14 +2,48 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../themes/denali-default-theme.scss';
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+
+table > tbody > tr > th {
+  color: deep-map-get($denali-default-theme, "tables", "header", "text", "color");
+  font-size: deep-map-get($denali-default-theme, "tables", "header", "text", "size");
+  font-weight: deep-map-get($denali-default-theme, "tables", "header", "text", "weight");
+  text-transform: deep-map-get($denali-default-theme, "tables", "header", "text", "transform");
+  padding: deep-map-get($denali-default-theme, "tables", "header", "padding");
+  border-bottom: deep-map-get($denali-default-theme, "tables", "header", "border-bottom");
+  background: deep-map-get($denali-default-theme, "tables", "header", "background-color");
+}
+
+table > tbody > tr > td {
+  padding: deep-map-get($denali-default-theme, "tables", "row", "padding");
+  border-bottom: deep-map-get($denali-default-theme, "tables", "row", "border-bottom");
+}
+
+table.is-striped > tbody > tr > td {
+  border: none;
+}
+
+table.is-striped > tbody > tr:nth-child(even) {
+  background: deep-map-get($denali-default-theme, "tables", "striped-row", "background-color");
+}
+
+table > tbody > tr > td.is-center,
+table > tbody > tr > th.is-center {
+  text-align: center;
+}
+
+table > tbody > tr > td.is-right,
+table > tbody > tr > th.is-right {
+  text-align: right;
+}
 
 @mixin tables-base-theme($theme-config) {
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    text-align: left;
-  }
-
   table > tbody > tr > th {
     color: deep-map-get($theme-config, "tables", "header", "text", "color");
     font-size: deep-map-get($theme-config, "tables", "header", "text", "size");
@@ -25,21 +59,7 @@
     border-bottom: deep-map-get($theme-config, "tables", "row", "border-bottom");
   }
 
-  table.is-striped > tbody > tr > td {
-    border: none;
-  }
-
   table.is-striped > tbody > tr:nth-child(even) {
     background: deep-map-get($theme-config, "tables", "striped-row", "background-color");
-  }
-
-  table > tbody > tr > td.is-center,
-  table > tbody > tr > th.is-center {
-    text-align: center;
-  }
-
-  table > tbody > tr > td.is-right,
-  table > tbody > tr > th.is-right {
-    text-align: right;
   }
 }

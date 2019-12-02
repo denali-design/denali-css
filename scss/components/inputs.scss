@@ -2,39 +2,289 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+// Reset
+.input {
+  position: relative;
+  z-index: 0;
+
+  input,
+  textarea {
+    appearance: none;
+    border: none;
+    box-shadow: none;
+    flex: 1 0 auto;
+    font: inherit;
+    outline: none;
+    transition: 200ms;
+    text-align: left;
+  }
+}
+
+@import '../themes/denali-default-theme.scss';
+
+.input {
+  min-width: deep-map-get($denali-default-theme, "fields", "sizes", "default", "width");
+  width: deep-map-get($denali-default-theme, "fields", "sizes", "default", "width");
+
+  // Input
+  input {
+    border-bottom: solid 2px transparent;
+    background: deep-map-get($denali-default-theme, "fields", "default", "background");
+    border-radius: deep-map-get($denali-default-theme, "fields", "corner-radius");
+    color: deep-map-get($denali-default-theme, "fields", "default", "text-color");
+    height: deep-map-get($denali-default-theme, "fields", "sizes", "default", "height");
+    margin: 0;
+    padding: 12px;
+    width: inherit;
+
+    &:active,
+    &:focus {
+      border-bottom-style: solid;
+      border-bottom-width: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "size");
+      border-bottom-color: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "color");
+      transition: 200ms;
+    }
+
+    &::placeholder {
+      color: deep-map-get($denali-default-theme, "fields", "placeholder", "text-color");
+    }
+
+    &[disabled] {
+
+      background: deep-map-get($denali-default-theme, "fields", "disabled", "background");
+      color: deep-map-get($denali-default-theme, "fields", "disabled", "text-color");
+      border-bottom-style: solid;
+      border-bottom-width: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "size");
+      border-bottom-color: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "color");
+      &::placeholder {
+        color: deep-map-get($denali-default-theme, "fields", "disabled", "text-color");
+      }
+    }
+  }
+
+  &.is-active > input {
+    border-bottom-style: solid;
+    border-bottom-width: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "size");
+    border-bottom-color: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "color");
+  }
+  &.is-disabled > input {
+    background: deep-map-get($denali-default-theme, "fields", "disabled", "background");
+    color: deep-map-get($denali-default-theme, "fields", "disabled", "text-color");
+    border-bottom-style: solid;
+    border-bottom-width: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "size");
+    border-bottom-color: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "color");
+  }
+
+
+  // Textarea
+  textarea {
+    background: deep-map-get($denali-default-theme, "fields", "default", "background");
+    border-bottom: solid 2px transparent;
+    border-radius: deep-map-get($denali-default-theme, "fields", "corner-radius");
+    color: deep-map-get($denali-default-theme, "fields", "default", "text-color");
+    height: 36px;
+    margin: 0;
+    padding: 6px 12px;
+    width: inherit;
+    max-width: 100%;
+    min-height: 90px;
+
+    &:active,
+    &:focus {
+      border-bottom-style: solid;
+      border-bottom-width: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "size");
+      border-bottom-color: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "color");
+    }
+
+    &::placeholder {
+      color: deep-map-get($denali-default-theme, "fields", "placeholder", "text-color");
+    }
+
+    &[disabled] {
+      background: deep-map-get($denali-default-theme, "fields", "disabled", "background");
+      color: deep-map-get($denali-default-theme, "fields", "disabled", "text-color");
+      border-bottom-style: solid;
+      border-bottom-width: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "size");
+      border-bottom-color: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "color");
+    }
+  }
+
+  &.is-active > textarea {
+    border-bottom-style: solid;
+    border-bottom-width: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "size");
+    border-bottom-color: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "color");
+  }
+  &.is-disabled > textarea {
+    background: deep-map-get($denali-default-theme, "fields", "disabled", "background");
+    color: deep-map-get($denali-default-theme, "fields", "disabled", "text-color");
+    border-bottom-style: solid;
+    border-bottom-width: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "size");
+    border-bottom-color: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "color");
+  }
+
+  // Sizes
+  &.is-medium > input{
+    height: deep-map-get($denali-default-theme, "fields", "sizes", "medium", "height");
+  }
+  &.is-small > input{
+    height: deep-map-get($denali-default-theme, "fields", "sizes", "small", "height");
+  }
+
+  // Dark State
+  &.is-inverse {
+    input {
+      background: rgba(138, 197, 237, 0.10);
+      color: $grey-100;
+    }
+    input:active {
+      border-bottom: 2px solid rgba($brand-700, 1);
+      color: $grey-100;
+    }
+    input::placeholder {
+      color: rgba($grey-100, 0.5);
+    }
+    label {
+      color: $grey-100;
+    }
+  }
+
+  // Error State
+  &.is-error > input,
+  input:invalid,
+  &.is-error > textarea,
+  textarea:invalid {
+    border-bottom-style: solid;
+    border-bottom-width: deep-map-get($denali-default-theme, "fields", "error", "border-bottom", "size");
+    border-bottom-color: deep-map-get($denali-default-theme, "fields", "error", "border-bottom", "color");
+  }
+
+  // Message under input
+  .message {
+    width: inherit;
+    font-size: 11px !important;
+    font-weight: normal;
+    line-height: 1.6rem;
+    position: absolute;
+  }
+  &.is-error > .message {
+    color: $status-danger;
+  }
+}
+
+// Label Positioning
+.input-group {
+  display: flex;
+  align-items: center;
+  label {
+    min-width: 110px;
+    font-size: 14px;
+    font-weight: bold;
+    align-self: center;
+    margin-right: 10px;
+  }
+  &.is-stacked {
+    flex-direction: column;
+    align-items: flex-start;
+    label {
+      margin-top: 0px;
+      align-self: flex-start;
+      margin-bottom: 4px;
+    }
+  }
+
+  &.responsive {
+    @include media-size-down(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      label {
+        margin-top: 0px;
+        align-self: flex-start;
+        margin-bottom: 4px;
+      }
+      .input {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Input with icon
+.input.has-icon-back {
+  input {
+    padding-right: 34px;
+  }
+  .d-icon {
+    font-size: 18px;
+    position: relative;
+    margin-top: 0;
+    margin-left: 0;
+    pointer-events: none;
+    &::before {
+      position: absolute;
+      top: -1px;
+      right: 10px;
+    }
+  }
+}
+.input.has-icon-front {
+  input {
+    padding-left: 34px;
+  }
+  .d-icon {
+    font-size: 18px;
+    margin-top: 9px;
+    position: absolute;
+    margin-left: 10px;
+  }
+}
+
+// Input with button
+.input-group.has-button {
+  input {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  button.button {
+    margin: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+// Input with dropdown
+.input-group.has-dropdown {
+  .input {
+    min-width: 0px;
+    width: auto;
+    input {
+      min-width: 250px;
+      border-radius: 0px;
+    }
+    select {
+      width: inherit;
+      padding-right: 34px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+}
 
 @mixin fields-base-theme($theme-config) {
   .input {
     min-width: deep-map-get($theme-config, "fields", "sizes", "default", "width");
     width: deep-map-get($theme-config, "fields", "sizes", "default", "width");
-    position: relative;
-    z-index: 0;
 
     // Input
     input {
-      appearance: none;
-      border: none;
-      border-bottom: solid 2px transparent;
-      box-shadow: none;
       background: deep-map-get($theme-config, "fields", "default", "background");
       border-radius: deep-map-get($theme-config, "fields", "corner-radius");
       color: deep-map-get($theme-config, "fields", "default", "text-color");
-      flex: 1 0 auto;
-      font: inherit;
       height: deep-map-get($theme-config, "fields", "sizes", "default", "height");
-      margin: 0;
-      outline: none;
-      padding: 12px;
-      text-align: left;
-      transition: 200ms;
-      width: inherit;
 
       &:active,
       &:focus {
-        border-bottom-style: solid;
         border-bottom-width: deep-map-get($theme-config, "fields", "focus", "border-bottom", "size");
         border-bottom-color: deep-map-get($theme-config, "fields", "focus", "border-bottom", "color");
-        transition: 200ms;
       }
 
       &::placeholder {
@@ -42,10 +292,9 @@
       }
 
       &[disabled] {
-        cursor: not-allowed;
+
         background: deep-map-get($theme-config, "fields", "disabled", "background");
         color: deep-map-get($theme-config, "fields", "disabled", "text-color");
-        border-bottom-style: solid;
         border-bottom-width: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "size");
         border-bottom-color: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "color");
         &::placeholder {
@@ -55,15 +304,12 @@
     }
 
     &.is-active > input {
-      border-bottom-style: solid;
       border-bottom-width: deep-map-get($theme-config, "fields", "focus", "border-bottom", "size");
       border-bottom-color: deep-map-get($theme-config, "fields", "focus", "border-bottom", "color");
     }
     &.is-disabled > input {
-      cursor: not-allowed;
       background: deep-map-get($theme-config, "fields", "disabled", "background");
       color: deep-map-get($theme-config, "fields", "disabled", "text-color");
-      border-bottom-style: solid;
       border-bottom-width: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "size");
       border-bottom-color: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "color");
     }
@@ -71,28 +317,12 @@
 
     // Textarea
     textarea {
-      appearance: none;
       background: deep-map-get($theme-config, "fields", "default", "background");
-      border: none;
-      border-bottom: solid 2px transparent;
       border-radius: deep-map-get($theme-config, "fields", "corner-radius");
-      box-shadow: none;
       color: deep-map-get($theme-config, "fields", "default", "text-color");
-      flex: 1 0 auto;
-      font: inherit;
-      height: 36px;
-      margin: 0;
-      outline: none;
-      padding: 6px 12px;
-      text-align: left;
-      transition: 200ms;
-      width: inherit;
-      max-width: 100%;
-      min-height: 90px;
 
       &:active,
       &:focus {
-        border-bottom-style: solid;
         border-bottom-width: deep-map-get($theme-config, "fields", "focus", "border-bottom", "size");
         border-bottom-color: deep-map-get($theme-config, "fields", "focus", "border-bottom", "color");
       }
@@ -102,29 +332,23 @@
       }
 
       &[disabled] {
-        cursor: not-allowed;
         background: deep-map-get($theme-config, "fields", "disabled", "background");
         color: deep-map-get($theme-config, "fields", "disabled", "text-color");
-        border-bottom-style: solid;
         border-bottom-width: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "size");
         border-bottom-color: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "color");
       }
     }
 
     &.is-active > textarea {
-      border-bottom-style: solid;
       border-bottom-width: deep-map-get($theme-config, "fields", "focus", "border-bottom", "size");
       border-bottom-color: deep-map-get($theme-config, "fields", "focus", "border-bottom", "color");
     }
     &.is-disabled > textarea {
-      cursor: not-allowed;
       background: deep-map-get($theme-config, "fields", "disabled", "background");
       color: deep-map-get($theme-config, "fields", "disabled", "text-color");
-      border-bottom-style: solid;
       border-bottom-width: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "size");
       border-bottom-color: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "color");
     }
-
 
     // Sizes
     &.is-medium > input{
@@ -134,146 +358,16 @@
       height: deep-map-get($theme-config, "fields", "sizes", "small", "height");
     }
 
-
-    // Dark State
-    &.is-inverse {
-      input {
-        background: rgba(138, 197, 237, 0.10);
-        color: $grey-100;
-      }
-      input:active {
-        border-bottom: 2px solid rgba($brand-700, 1);
-        color: $grey-100;
-      }
-      input::placeholder {
-        color: rgba($grey-100, 0.5);
-      }
-      label {
-        color: $grey-100;
-      }
-    }
-
-
     // Error State
     &.is-error > input,
     input:invalid,
     &.is-error > textarea,
     textarea:invalid {
-      border-bottom-style: solid;
       border-bottom-width: deep-map-get($theme-config, "fields", "error", "border-bottom", "size");
       border-bottom-color: deep-map-get($theme-config, "fields", "error", "border-bottom", "color");
     }
-
-
-    // Message under input
-    .message {
-      width: inherit;
-      font-size: 11px !important;
-      font-weight: normal;
-      line-height: 1.6rem;
-      position: absolute;
-    }
-    &.is-error > .message {
-      color: $status-danger;
-    }
   }
 
 
-  // Label Positioning
-  .input-group {
-    display: flex;
-    label {
-      min-width: 110px;
-      font-size: 14px;
-      font-weight: bold;
-      align-self: flex-start;
-      margin-top: 6px;
-    }
-    &.is-stacked {
-      flex-direction: column;
-      label {
-        margin-top: 0px;
-      }
-      .input {
-        margin-top: 4px;
-      }
-    }
 
-    &.responsive {
-      @include media-size-down(mobile) {
-        flex-direction: column;
-        label {
-          margin-top: 0px;
-        }
-        .input {
-          width: 100%;
-          margin-top: 4px;
-        }
-      }
-    }
-  }
-
-
-  // Input with icon
-  .input.has-icon-back {
-    input {
-      padding-right: 34px;
-    }
-    .d-icon {
-      font-size: 18px;
-      position: relative;
-      margin-top: 0;
-      margin-left: 0;
-      pointer-events: none;
-      &::before {
-        position: absolute;
-        top: -1px;
-        right: 10px;
-      }
-    }
-  }
-  .input.has-icon-front {
-    input {
-      padding-left: 34px;
-    }
-    .d-icon {
-      font-size: 18px;
-      margin-top: 9px;
-      position: absolute;
-      margin-left: 10px;
-    }
-  }
-
-
-  // Input with button
-  .input-group.has-button {
-    input {
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-    }
-    button.button {
-      margin: 0px;
-      border-top-left-radius: 0px;
-      border-bottom-left-radius: 0px;
-    }
-  }
-
-
-  // Input with dropdown
-  .input-group.has-dropdown {
-    .input {
-      min-width: 0px;
-      width: auto;
-      input {
-        min-width: 250px;
-        border-radius: 0px;
-      }
-      select {
-        width: inherit;
-        padding-right: 34px;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-      }
-    }
-  }
 }

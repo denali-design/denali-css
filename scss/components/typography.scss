@@ -2,6 +2,67 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../themes/denali-default-theme.scss';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: deep-map-get($denali-default-theme, "type", "global", "font-family");
+  color: deep-map-get($denali-default-theme, "type", "global", "text-color");
+}
+
+h1 {
+  font-size: deep-map-get($denali-default-theme, "type", "headline-1", "font", "size");
+  font-style: deep-map-get($denali-default-theme, "type", "headline-1", "font", "style");
+  font-weight: deep-map-get($denali-default-theme, "type", "headline-1", "font", "weight");
+  line-height: deep-map-get($denali-default-theme, "type", "headline-1", "line-height");
+}
+
+h2 {
+  font-size: deep-map-get($denali-default-theme, "type", "headline-2", "font", "size");
+  font-style: deep-map-get($denali-default-theme, "type", "headline-2", "font", "style");
+  font-weight: deep-map-get($denali-default-theme, "type", "headline-2", "font", "weight");
+  line-height: deep-map-get($denali-default-theme, "type", "headline-2", "line-height");
+}
+
+h3 {
+  font-size: deep-map-get($denali-default-theme, "type", "headline-3", "font", "size");
+  font-style: deep-map-get($denali-default-theme, "type", "headline-3", "font", "style");
+  font-weight: deep-map-get($denali-default-theme, "type", "headline-3", "font", "weight");
+  line-height: deep-map-get($denali-default-theme, "type", "headline-3", "line-height");
+}
+
+h4 {
+  font-size: deep-map-get($denali-default-theme, "type", "headline-4", "font", "size");
+  font-style: deep-map-get($denali-default-theme, "type", "headline-4", "font", "style");
+  font-weight: deep-map-get($denali-default-theme, "type", "headline-4", "font", "weight");
+  line-height: deep-map-get($denali-default-theme, "type", "headline-4", "line-height");
+}
+
+h5 {
+  font-size: deep-map-get($denali-default-theme, "type", "headline-5", "font", "size");
+  font-style: deep-map-get($denali-default-theme, "type", "headline-5", "font", "style");
+  font-weight: deep-map-get($denali-default-theme, "type", "headline-5", "font", "weight");
+  line-height: deep-map-get($denali-default-theme, "type", "headline-5", "line-height");
+}
+
+h6 {
+  font-size: deep-map-get($denali-default-theme, "type", "headline-6", "font", "size");
+  font-style: deep-map-get($denali-default-theme, "type", "headline-6", "font", "style");
+  font-weight: deep-map-get($denali-default-theme, "type", "headline-6", "font", "weight");
+  line-height: deep-map-get($denali-default-theme, "type", "headline-6", "line-height");
+}
+
+p {
+  font-size: deep-map-get($denali-default-theme, "type", "paragraph", "font", "size");
+  font-style: deep-map-get($denali-default-theme, "type", "paragraph", "font", "style");
+  font-weight: deep-map-get($denali-default-theme, "type", "paragraph", "font", "weight");
+  line-height: deep-map-get($denali-default-theme, "type", "paragraph", "line-height");
+}
 
 @mixin type-base-theme($theme-config) {
   h1,

@@ -26,15 +26,15 @@
 
 <!-- Radio Controls -->
 <div class="radio">
-  <input type="radio" value="A" name="sample" id="radio-sample-a">
+  <input type="radio" value="" name="sample-one" id="radio-sample-a">
   <label for="radio-sample-a">Radio</label>
 </div>
 <div class="radio">
-  <input type="radio" value="B" name="sample" id="radio-sample-b" checked>
+  <input type="radio" value="" name="sample-one" id="radio-sample-b" checked>
   <label for="radio-sample-b">Radio</label>
 </div>
 <div class="radio">
-  <input type="radio" value="C" name="sample" id="radio-sample-c" disabled>
+  <input type="radio" value="" name="sample-one" id="radio-sample-c" disabled>
   <label for="radio-sample-c">Radio disabled</label>
 </div>
 
@@ -42,18 +42,58 @@
 
 <!-- Checkbox -->
 <div class="checkbox">
-  <input id="denali-checkbox-1" type="checkbox" value="value1">
+  <input id="denali-checkbox-1" type="checkbox" value="">
   <label for="denali-checkbox-1">Checkbox</label>
 </div>
 <div class="checkbox">
-  <input id="denali-checkbox-2" type="checkbox" value="value1" checked>
+  <input id="denali-checkbox-2" type="checkbox" value="" checked>
   <label for="denali-checkbox-2">Checkbox</label>
 </div>
 <div class="checkbox">
-  <input id="denali-checkbox-3" type="checkbox" value="value1" disabled>
+  <input id="denali-checkbox-3" type="checkbox" value="" disabled>
   <label for="denali-checkbox-3">Checkbox disabled</label>
 </div>
 <div class="checkbox">
-  <input id="denali-checkbox-5" type="checkbox" value="value1" data-partial>
-  <label for="denali-checkbox-5">Checkbox partially</label>
+  <input id="denali-checkbox-4" type="checkbox" value="" data-partial>
+  <label for="denali-checkbox-4">Checkbox partially</label>
+</div>
+
+<br><br><br>
+
+<!-- Input Groups -->
+<div class="input-group">
+  <label>Radio Group</label>
+  <div class="radio">
+    <input type="radio" value="" name="sample-two" id="radio-sample-d">
+    <label for="radio-sample-d">Radio</label>
+  </div>
+  <div class="radio">
+    <input type="radio" value="" name="sample-two" id="radio-sample-e">
+    <label for="radio-sample-e">Radio</label>
+  </div>
+</div>
+
+<br><br>
+
+<div class="input-group">
+  <label>Checkbox Grouping</label>
+  <div class="checkbox">
+    <input id="denali-checkbox-5" type="checkbox" value="">
+    <label for="denali-checkbox-5">Checkbox</label>
+  </div>
+  <div class="checkbox">
+    <input id="denali-checkbox-6" type="checkbox" value="">
+    <label for="denali-checkbox-6">Checkbox</label>
+  </div>
+</div>
+
+<br><br>
+
+<div class="input-group">
+  <label>Switch Group</label>
+  <label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider"></span>
+    <span class="label">Toggle in input group</span>
+  </label>
 </div>

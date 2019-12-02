@@ -26,7 +26,7 @@
     </style>
   </head>
 
-  <body class="denali-default-theme">
+  <body class="">
 
     <nav class="nav">
       <div class="nav-left">
@@ -307,7 +307,6 @@
       document.getElementById("defaultTheme").addEventListener("click", function(){
         var x = document.getElementsByTagName("BODY")[0];
         x.classList.remove("denali-dark-theme");
-        x.classList.add("denali-default-theme");
         this.classList.add("is-active");
         document.getElementById("darkTheme").classList.remove("is-active");
       });
@@ -315,7 +314,6 @@
         if (event.keyCode === 13) {
           var x = document.getElementsByTagName("BODY")[0];
           x.classList.remove("denali-dark-theme");
-          x.classList.add("denali-default-theme");
           this.classList.add("is-active");
           document.getElementById("darkTheme").classList.remove("is-active");
         }

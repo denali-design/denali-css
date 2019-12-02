@@ -36,6 +36,10 @@ hr {
   }
 }
 
+[disabled] {
+  cursor: not-allowed;
+}
+
 @mixin resets-base-theme($theme-config) {
   background: deep-map-get($theme-config, "global", "body-background-color");
   color: deep-map-get($theme-config, "global", "text-color");

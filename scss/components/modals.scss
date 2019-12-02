@@ -2,108 +2,141 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../themes/denali-default-theme.scss';
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal-background;
+  opacity:0;
+  -webkit-transition: opacity 300ms ease-in;
+  -moz-transition: opacity 300ms ease-in;
+  transition: opacity 300ms ease-in;
+  pointer-events: none;
+  background: deep-map-get($denali-default-theme, "modals", "overlay-color");
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div.modal-container {
+    width: 450px;
+    margin: 20px;
+    position: relative;
+    background: deep-map-get($denali-default-theme, "modals", "modal-container", "background-color");
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+    border-width: deep-map-get($denali-default-theme, "modals", "modal-container", "border", "width");
+    border-style: deep-map-get($denali-default-theme, "modals", "modal-container", "border", "style");
+    border-color: deep-map-get($denali-default-theme, "modals", "modal-container", "border", "color");
+    border-radius: deep-map-get($denali-default-theme, "modals", "corner-radius");
+    display: flex;
+    flex-direction: column;
+
+    .close {
+      color: deep-map-get($denali-default-theme, "modals", "modal-container", "close-icon-color");
+      opacity: .4;
+      line-height: 14px;
+      position: absolute;
+      z-index: $zindex-modal;
+      right: 14px;
+      top: 14px;
+    }
+
+    .close:hover {
+      color: deep-map-get($denali-default-theme, "modals", "modal-container", "close-icon-color");
+      opacity: .6;
+    }
+
+    div.modal-content {
+      padding: 24px 30px 24px 30px;
+    }
+
+    div.modal-header {
+      border-bottom-width: deep-map-get($denali-default-theme, "modals", "modal-container", "border", "width");
+      border-bottom-style: deep-map-get($denali-default-theme, "modals", "modal-container", "border", "style");
+      border-bottom-color: deep-map-get($denali-default-theme, "modals", "modal-container", "border", "color");
+      display: flex;
+      align-items: center;
+      padding: 15px 58px 13px 30px;
+      width: 100%;
+    }
+
+    div.modal-footer {
+      border-top-width: deep-map-get($denali-default-theme, "modals", "modal-container", "border", "width");
+      border-top-style: deep-map-get($denali-default-theme, "modals", "modal-container", "border", "style");
+      border-top-color: deep-map-get($denali-default-theme, "modals", "modal-container", "border", "color");
+      margin-bottom:0px;
+      display: flex;
+      align-items: center;
+      padding: 20px 30px 20px 30px;
+      width: 100%;
+    }
+  }
+
+  div.is-full {
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+
+    div.modal-content {
+      padding: 24px 58px 24px 58px;
+      height: 100%;
+      overflow-y: scroll;
+    }
+  }
+}
+
+.modal:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+@include media-size-down(tablet) {
+  .modal {
+    div.is-full {
+      div.modal-content {
+        padding: 24px 30px 24px 30px;
+      }
+    }
+  }
+}
 
 @mixin modals-base-theme($theme-config) {
   .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: $zindex-modal-background;
-    opacity:0;
-    -webkit-transition: opacity 300ms ease-in;
-    -moz-transition: opacity 300ms ease-in;
-    transition: opacity 300ms ease-in;
-    pointer-events: none;
     background: deep-map-get($theme-config, "modals", "overlay-color");
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     div.modal-container {
-      width: 450px;
-      margin: 20px;
-      position: relative;
       background: deep-map-get($theme-config, "modals", "modal-container", "background-color");
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
       border-width: deep-map-get($theme-config, "modals", "modal-container", "border", "width");
       border-style: deep-map-get($theme-config, "modals", "modal-container", "border", "style");
       border-color: deep-map-get($theme-config, "modals", "modal-container", "border", "color");
       border-radius: deep-map-get($theme-config, "modals", "corner-radius");
-      display: flex;
-      flex-direction: column;
 
       .close {
         color: deep-map-get($theme-config, "modals", "modal-container", "close-icon-color");
-        opacity: .4;
-        line-height: 14px;
-        position: absolute;
-        z-index: $zindex-modal;
-        right: 14px;
-        top: 14px;
       }
 
       .close:hover {
         color: deep-map-get($theme-config, "modals", "modal-container", "close-icon-color");
-        opacity: .6;
-      }
-
-      div.modal-content {
-        padding: 24px 30px 24px 30px;
       }
 
       div.modal-header {
         border-bottom-width: deep-map-get($theme-config, "modals", "modal-container", "border", "width");
         border-bottom-style: deep-map-get($theme-config, "modals", "modal-container", "border", "style");
         border-bottom-color: deep-map-get($theme-config, "modals", "modal-container", "border", "color");
-        display: flex;
-        align-items: center;
-        padding: 15px 58px 13px 30px;
-        width: 100%;
       }
 
       div.modal-footer {
         border-top-width: deep-map-get($theme-config, "modals", "modal-container", "border", "width");
         border-top-style: deep-map-get($theme-config, "modals", "modal-container", "border", "style");
         border-top-color: deep-map-get($theme-config, "modals", "modal-container", "border", "color");
-        margin-bottom:0px;
-        display: flex;
-        align-items: center;
-        padding: 20px 30px 20px 30px;
-        width: 100%;
-      }
-    }
-
-    div.is-full {
-      width: 100%;
-      height: 100%;
-      box-shadow: none;
-      border: none;
-      border-radius: 0px;
-      margin: 0px;
-      padding: 0px;
-
-      div.modal-content {
-        padding: 24px 58px 24px 58px;
-        height: 100%;
-        overflow-y: scroll;
-      }
-    }
-  }
-
-  .modal:target {
-    opacity:1;
-    pointer-events: auto;
-  }
-
-  @include media-size-down(tablet) {
-    .modal {
-      div.is-full {
-        div.modal-content {
-          padding: 24px 30px 24px 30px;
-        }
       }
     }
   }
