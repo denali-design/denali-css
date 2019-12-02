@@ -2,133 +2,177 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@mixin toggles-base-theme($theme-config) {
-  .toggle {
-    ul {
-      list-style: none;
-      font-size: 0;
-      white-space: nowrap;
-      li {
-        cursor: pointer;
-        display: inline-block;
-        border: none;
-        background: deep-map-get($theme-config, "toggles", "background-color");
-        &:first-of-type {
-          border-top-left-radius: deep-map-get(
-            $theme-config,
-            "toggles",
-            "corner-radius"
-          );
-          border-bottom-left-radius: deep-map-get(
-            $theme-config,
-            "toggles",
-            "corner-radius"
-          );
-        }
-        &:last-of-type {
-          border: none;
-          border-top-right-radius: deep-map-get(
-            $theme-config,
-            "toggles",
-            "corner-radius"
-          );
-          border-bottom-right-radius: deep-map-get(
-            $theme-config,
-            "toggles",
-            "corner-radius"
-          );
-        }
-        &.is-active {
-          background: deep-map-get(
-            $theme-config,
-            "toggles",
-            "active",
-            "background-color"
-          );
-          border-color: deep-map-get(
-            $theme-config,
-            "toggles",
-            "active",
-            "border",
-            "color"
-          );
-          border-width: deep-map-get(
-            $theme-config,
-            "toggles",
-            "active",
-            "border",
-            "width"
-          );
-          border-style: deep-map-get(
-            $theme-config,
-            "toggles",
-            "active",
-            "border",
-            "style"
-          );
-          border-radius: deep-map-get(
-            $theme-config,
-            "toggles",
-            "active",
-            "corner-radius"
-          );
-          a {
-            color: deep-map-get(
-              $theme-config,
-              "toggles",
-              "active",
-              "text-color"
-            );
-          }
-        }
-        &.is-disabled {
-          cursor: not-allowed;
-          a {
-            color: deep-map-get(
-              $theme-config,
-              "toggles",
-              "disabled",
-              "text-color"
-            );
-          }
-        }
-        a {
-          padding: deep-map-get($theme-config, "toggles", "padding");
-          display: block;
-          font-size: deep-map-get($theme-config, "toggles", "text-size");
-        }
-      }
+@import '../themes/denali-default-theme.scss';
+
+.toggle {
+  display: flex;
+  position: relative;
+  white-space: nowrap;
+  overflow: auto;
+  padding: deep-map-get($denali-default-theme, "toggles", "active", "border", "width");
+
+  input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+
+    &:checked + label {
+      box-shadow: none;
+      z-index: 1;
+      background-color: deep-map-get($denali-default-theme, "toggles", "active", "background-color");
+      color: deep-map-get($denali-default-theme, "toggles", "active", "text-color");
+      border-radius: deep-map-get($denali-default-theme, "toggles", "active", "corner-radius");
+      box-shadow: 0 0 0 deep-map-get($denali-default-theme, "toggles", "active", "border", "width") deep-map-get($denali-default-theme, "toggles", "active", "border", "color");
     }
-    &.is-small {
-      ul {
-        li {
-          a {
-            padding: deep-map-get($theme-config, "toggles", "small", "padding");
-          }
-        }
+  }
+
+  > ul {
+    display: flex;
+  }
+
+  label,
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease-in-out;
+    background: deep-map-get($denali-default-theme, "toggles", "background-color");
+    color: deep-map-get($denali-default-theme, "toggles", "text-color");
+    font-size: deep-map-get($denali-default-theme, "toggles", "text-size");
+    height: deep-map-get($denali-default-theme, "toggles", "height");
+    padding: deep-map-get($denali-default-theme, "toggles", "padding");
+
+    a {
+      color: inherit;
+    }
+
+    &.is-active {
+      box-shadow: none;
+      z-index: 1;
+      background-color: deep-map-get($denali-default-theme, "toggles", "active", "background-color");
+      color: deep-map-get($denali-default-theme, "toggles", "active", "text-color");
+      border-radius: deep-map-get($denali-default-theme, "toggles", "active", "corner-radius") !important;
+      box-shadow: 0 0 0 deep-map-get($denali-default-theme, "toggles", "active", "border", "width") deep-map-get($denali-default-theme, "toggles", "active", "border", "color");
+
+      a {
+        color: inherit;
       }
     }
 
+    &.is-disabled {
+      cursor: not-allowed;
+      color: deep-map-get($denali-default-theme, "toggles", "disabled", "text-color");
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: deep-map-get($denali-default-theme, "toggles", "text-hover-color");
+    }
+
+    &:first-of-type {
+      border-top-left-radius: deep-map-get($denali-default-theme, "toggles", "corner-radius");
+      border-bottom-left-radius: deep-map-get($denali-default-theme, "toggles", "corner-radius");
+    }
+
+    &:last-of-type {
+      border-top-right-radius: deep-map-get($denali-default-theme, "toggles", "corner-radius");
+      border-bottom-right-radius: deep-map-get($denali-default-theme, "toggles", "corner-radius");
+    }
+  }
+
+  // Sizes
+  &.is-small {
+    label,
+    li {
+      height: deep-map-get($denali-default-theme, "toggles", "small", "height");
+      padding: deep-map-get($denali-default-theme, "toggles", "small", "padding");
+    }
+  }
+
+  // Inverse
+  &.is-inverse {
+    label,
+    li {
+      color: deep-map-get($denali-default-theme, "toggles", "inverse", "text-color");
+      background: deep-map-get($denali-default-theme, "toggles", "inverse", "background-color");
+      &.is-active {
+        color: deep-map-get($denali-default-theme, "toggles", "inverse", "active", "text-color");
+        background: deep-map-get($denali-default-theme, "toggles", "inverse", "active", "background-color");
+      }
+    }
+  }
+}
+
+
+@mixin toggles-base-theme($theme-config) {
+
+  .toggle {
+    padding: deep-map-get($theme-config, "toggles", "active", "border", "width");
+
+    input {
+      &:checked + label {
+        background-color: deep-map-get($theme-config, "toggles", "active", "background-color");
+        color: deep-map-get($theme-config, "toggles", "active", "text-color");
+        border-radius: deep-map-get($theme-config, "toggles", "active", "corner-radius");
+        box-shadow: 0 0 0 deep-map-get($theme-config, "toggles", "active", "border", "width") deep-map-get($theme-config, "toggles", "active", "border", "color");
+      }
+    }
+
+    label,
+    li {
+      background: deep-map-get($theme-config, "toggles", "background-color");
+      color: deep-map-get($theme-config, "toggles", "text-color");
+      font-size: deep-map-get($theme-config, "toggles", "text-size");
+      height: deep-map-get($theme-config, "toggles", "height");
+      padding: deep-map-get($theme-config, "toggles", "padding");
+
+      &.is-active {
+        background-color: deep-map-get($theme-config, "toggles", "active", "background-color");
+        color: deep-map-get($theme-config, "toggles", "active", "text-color");
+        border-radius: deep-map-get($theme-config, "toggles", "active", "corner-radius") !important;
+        box-shadow: 0 0 0 deep-map-get($theme-config, "toggles", "active", "border", "width") deep-map-get($theme-config, "toggles", "active", "border", "color");
+      }
+
+      &.is-disabled {
+        color: deep-map-get($theme-config, "toggles", "disabled", "text-color");
+      }
+
+      &:hover {
+        color: deep-map-get($theme-config, "toggles", "text-hover-color");
+      }
+
+      &:first-of-type {
+        border-top-left-radius: deep-map-get($theme-config, "toggles", "corner-radius");
+        border-bottom-left-radius: deep-map-get($theme-config, "toggles", "corner-radius");
+      }
+
+      &:last-of-type {
+        border-top-right-radius: deep-map-get($theme-config, "toggles", "corner-radius");
+        border-bottom-right-radius: deep-map-get($theme-config, "toggles", "corner-radius");
+      }
+    }
+
+    // Sizes
+    &.is-small {
+      label,
+      li {
+        height: deep-map-get($theme-config, "toggles", "small", "height");
+        padding: deep-map-get($theme-config, "toggles", "small", "padding");
+      }
+    }
+
+    // Inverse
     &.is-inverse {
-      ul {
-        li {
-          background: rgba(#fff, 0.1);
-          &.is-active {
-            background: transparent;
-            a {
-              color: #fff;
-            }
-          }
-          &.is-disabled {
-            a {
-              color: rgba(#fff, 0.5);
-            }
-          }
-          a {
-            color: map-get($denali-brand-colors, "500");
-          }
+      label,
+      li {
+        color: deep-map-get($theme-config, "toggles", "inverse", "text-color");
+        background: deep-map-get($theme-config, "toggles", "inverse", "background-color");
+        &.is-active {
+          color: deep-map-get($theme-config, "toggles", "inverse", "active", "text-color");
+          background: deep-map-get($theme-config, "toggles", "inverse", "active", "background-color");
         }
       }
     }
   }
+
 }

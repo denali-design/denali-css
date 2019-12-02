@@ -2,20 +2,26 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../themes/denali-default-theme.scss';
 
 .alert {
   // STRUCTURE
   width: 400px;
   display: flex;
   box-sizing: border-box;
+  // STYLE
+  background: deep-map-get($denali-default-theme, "alert", "background");
+  color: deep-map-get($denali-default-theme, "alert", "color");
+  border-radius: deep-map-get($denali-default-theme, "alert", "border-radius");
+  box-shadow: deep-map-get($denali-default-theme, "alert", "box-shadow");
+  border-top-width: deep-map-get($denali-default-theme, "alert", "border-top", "width");
+  border-top-style: deep-map-get($denali-default-theme, "alert", "border-top", "style");
+  border-top-color: deep-map-get($denali-default-theme, "alert", "border-top", "color");
 
-  // INFORMATIVE ICON
-  .d-icon {
-    margin: 14px;
-    font-size: 28px !important;
+  @include media-size-down(mobile) {
+    width: 100%;
   }
 
-  // CONTENT AREA
   div {
     margin: 17px 0px 18px 0px;
     flex: auto;
@@ -26,6 +32,47 @@
       margin-top: 8px;
       margin-bottom: 0px;
       line-height: 15px;
+    }
+  }
+
+  // CLOSE ICON
+  a.close {
+    display: block;
+    padding: 16px 0px;
+    .d-icon {
+      font-size: 24px !important;
+      color: deep-map-get($denali-default-theme, "alert", "close-icon-color") !important;
+    }
+  }
+
+  // Close Icon
+  .d-icon {
+    margin: 14px;
+    font-size: 28px !important;
+    color: deep-map-get($denali-default-theme, "alert", "border-top", "color");
+  }
+
+  &.is-inline {
+    justify-content: deep-map-get($denali-default-theme, "alert-inline", "alignemnt", "justify-content");
+    padding-top: deep-map-get($denali-default-theme, "alert-inline", "padding", "top");
+    padding-bottom: deep-map-get($denali-default-theme, "alert-inline", "padding", "bottom");
+    padding-left: deep-map-get($denali-default-theme, "alert-inline", "padding", "left");
+    padding-right: deep-map-get($denali-default-theme, "alert-inline", "padding", "right");
+    // STYLE
+    background: deep-map-get($denali-default-theme, "alert-inline", "background");
+    color: deep-map-get($denali-default-theme, "alert-inline", "color");
+    font-size: deep-map-get($denali-default-theme, "alert-inline", "font-size");
+    // RESETS
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0px !important;
+    // STRUCTURE
+    width: 100%;
+    display: flex !important;
+
+    p {
+      text-align: deep-map-get($denali-default-theme, "alert-inline", "alignemnt", "text");
+      overflow: hidden;
     }
   }
 
@@ -54,33 +101,10 @@
       color: map-get($denali-status-colors, "danger") !important;
     }
   }
-
-  // Inline
-  &.is-inline {
-    // RESETS
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0px !important;
-    // STRUCTURE
-    width: 100%;
-    display: flex !important;
-
-    p {
-      overflow: hidden;
-    }
-  }
-}
-
-// BREAKPOINTS
-@include media-size-down(mobile) {
-  .alert {
-    width: 100%;
-  }
 }
 
 @mixin alerts-base-theme($theme-config) {
   .alert {
-    // STYLE
     background: deep-map-get($theme-config, "alert", "background");
     color: deep-map-get($theme-config, "alert", "color");
     border-radius: deep-map-get($theme-config, "alert", "border-radius");
@@ -91,10 +115,7 @@
 
     // CLOSE ICON
     a.close {
-      display: block;
-      padding: 16px 0px;
       .d-icon {
-        font-size: 24px !important;
         color: deep-map-get($theme-config, "alert", "close-icon-color") !important;
       }
     }
@@ -110,7 +131,6 @@
       padding-bottom: deep-map-get($theme-config, "alert-inline", "padding", "bottom");
       padding-left: deep-map-get($theme-config, "alert-inline", "padding", "left");
       padding-right: deep-map-get($theme-config, "alert-inline", "padding", "right");
-
       // STYLE
       background: deep-map-get($theme-config, "alert-inline", "background");
       color: deep-map-get($theme-config, "alert-inline", "color");

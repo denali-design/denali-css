@@ -2,9 +2,39 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../themes/denali-default-theme.scss';
 
 .chips {
   font-size: inherit;
+  background: deep-map-get($denali-default-theme, "chips", "background-color");
+  border-radius: deep-map-get($denali-default-theme, "chips", "border-radius");
+  color: deep-map-get($denali-default-theme, "chips", "color");
+  padding-top: deep-map-get($denali-default-theme, "chips", "padding", "top");
+  padding-bottom: deep-map-get($denali-default-theme, "chips", "padding", "bottom");
+  padding-left: deep-map-get($denali-default-theme, "chips", "padding", "left");
+  padding-right: deep-map-get($denali-default-theme, "chips", "padding", "right");
+
+  &.is-small {
+    font-size: deep-map-get($denali-default-theme, "chips", "small", "font-size");
+    padding-top: deep-map-get($denali-default-theme, "chips", "small", "padding", "top");
+    padding-bottom: deep-map-get($denali-default-theme, "chips", "small", "padding", "bottom");
+    padding-left: deep-map-get($denali-default-theme, "chips", "small", "padding", "left");
+    padding-right: deep-map-get($denali-default-theme, "chips", "small", "padding", "right");
+  }
+}
+
+.chip-group {
+  .chips {
+    border-radius: 0px !important;
+    &:first-child {
+      border-top-left-radius: deep-map-get($denali-default-theme, "chips", "border-radius") !important;
+      border-bottom-left-radius: deep-map-get($denali-default-theme, "chips", "border-radius") !important;
+    }
+    &:last-child {
+      border-top-right-radius: deep-map-get($denali-default-theme, "chips", "border-radius") !important;
+      border-bottom-right-radius: deep-map-get($denali-default-theme, "chips", "border-radius") !important;
+    }
+  }
 }
 
 @mixin chips-base-theme($theme-config) {
@@ -12,7 +42,6 @@
     background: deep-map-get($theme-config, "chips", "background-color");
     border-radius: deep-map-get($theme-config, "chips", "border-radius");
     color: deep-map-get($theme-config, "chips", "color");
-
     padding-top: deep-map-get($theme-config, "chips", "padding", "top");
     padding-bottom: deep-map-get($theme-config, "chips", "padding", "bottom");
     padding-left: deep-map-get($theme-config, "chips", "padding", "left");
@@ -20,7 +49,6 @@
 
     &.is-small {
       font-size: deep-map-get($theme-config, "chips", "small", "font-size");
-
       padding-top: deep-map-get($theme-config, "chips", "small", "padding", "top");
       padding-bottom: deep-map-get($theme-config, "chips", "small", "padding", "bottom");
       padding-left: deep-map-get($theme-config, "chips", "small", "padding", "left");
@@ -30,7 +58,6 @@
 
   .chip-group {
     .chips {
-      border-radius: 0px !important;
       &:first-child {
         border-top-left-radius: deep-map-get($theme-config, "chips", "border-radius") !important;
         border-bottom-left-radius: deep-map-get($theme-config, "chips", "border-radius") !important;

@@ -6,7 +6,6 @@
 // DENALI DEFAULT THEME
 $denali-default-theme: (
 
-
   // Global
   global: (
     body-background-color: map-get($denali-grey-colors, '100'),
@@ -553,6 +552,7 @@ $denali-default-theme: (
         padding: 12px 0px 40px 0px,
         tab-item: (
           height: 46px,
+          padding: 0px 14px,
           active: (
             background-color: map-get($denali-grey-colors, '100'),
             border-left: inset 4px 0px map-get($denali-brand-colors, '600'),
@@ -643,15 +643,16 @@ $denali-default-theme: (
 
   // Toggle
   toggles: (
-    corner-radius: 2px,
+    corner-radius: 4px,
     background-color: rgba(map-get($denali-brand-colors, '700'), .08),
+    text-color: map-get($denali-brand-colors, '600'),
+    text-hover-color: map-get($denali-brand-colors, '800'),
     text-size: 1.4rem,
     active: (
       text-color: map-get($denali-grey-colors, '800'),
       background-color: map-get($denali-grey-colors, '100'),
       corner-radius: 4px,
       border: (
-        style: solid,
         width: 2px,
         color: map-get($denali-brand-colors, '700'),
       )
@@ -659,9 +660,19 @@ $denali-default-theme: (
     disabled: (
       text-color: rgba(map-get($denali-grey-colors, '800'), 0.2),
     ),
-    padding: 7px 10px 8px 10px,
+    padding: 0px 14px,
+    height: 36px,
     small: (
-      padding: 3px 10px 4px 10px,
+      padding: 0px 10px,
+      height: 28px,
+    ),
+    inverse: (
+      text-color: map-get($denali-brand-colors, '500'),
+      background-color: rgba(#fff, 0.1),
+      active: (
+        text-color: map-get($denali-grey-colors, '100'),
+        background-color: transparent,
+      )
     )
   ),
 

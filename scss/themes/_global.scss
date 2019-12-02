@@ -4,11 +4,8 @@
 
 
 // DENALI SCSS :: CONFIGS ROLLUP
-
-@import 'denali-default-theme';
 @import 'denali-dark-theme';
 
 $app-themes: (
-  denali-default: $denali-default-theme,
   denali-dark: $denali-dark-theme,
 );

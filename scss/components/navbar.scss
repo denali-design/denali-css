@@ -2,129 +2,182 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../themes/denali-default-theme.scss';
+
+nav.nav {
+  background: deep-map-get($denali-default-theme, "navbar", "background-color");
+  height: deep-map-get($denali-default-theme, "navbar", "height");
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0px 10px;
+  position: relative;
+  @include media-size-up(tablet) {
+    padding: 0px 20px;
+  }
+  @include media-size-up(small-desktop) {
+    padding: 0px 30px;
+  }
+
+  .nav-icon {
+    height: deep-map-get($denali-default-theme, "navbar", "height");
+    width: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: deep-map-get($denali-default-theme, "navbar", "text-color") !important;
+    &:hover {
+      opacity: 0.4;
+    }
+    .nav-icon-text {
+      display: none;
+    }
+  }
+
+  .nav-item {
+    height: deep-map-get($denali-default-theme, "navbar", "height");
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.6rem;
+    padding: 0px 12px;
+    color: deep-map-get($denali-default-theme, "navbar", "text-color") !important;
+    &:hover {
+      opacity: 0.4;
+    }
+    &.is-active {
+      box-shadow: inset 0 -4px 0 deep-map-get($denali-default-theme, "navbar", "nav-items", "active-border-color");
+    }
+  }
+
+  .nav-brand {
+    height: 34px;
+    width: auto;
+    flex: none;
+  }
+
+  // Nav Positioning
+  .nav-left,
+  .nav-right {
+    height: deep-map-get($denali-default-theme, "navbar", "height");
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-left {
+    flex: none;
+    margin-right: 24px;
+
+    @include media-size-up(small-desktop) {
+      width: 270px;
+      margin-right: 0px;
+    }
+  }
+
+  .trigger:hover ~ .nav-right.responsive {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Responsive toggle
+  .nav-toggle-dropdown {
+    &:hover ~ .nav-right.responsive,
+    &:focus ~ .nav-right.responsive {
+      opacity: 1;
+      visibility: visible;
+      transition: 300ms;
+    }
+    @include media-size-up(small-desktop) {
+      display: none;
+    }
+  }
+
+  .nav-right {
+    justify-content: flex-end;
+    flex: auto;
+
+    &.responsive {
+      @include media-size-down(tablet) {
+        opacity: 0;
+        visibility: hidden;
+        transition: 300ms;
+        justify-content: flex-end;
+        flex: auto;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        margin-top: 60px;
+        background: deep-map-get($denali-default-theme, "navbar", "background-color");
+        padding: 0px 10px;
+        margin-left: -10px;
+        width: 100%;
+        overflow-x: auto;
+        z-index: 100;
+        &:hover,
+        &:focus,
+        &:focus-within {
+          opacity: 1;
+          visibility: visible;
+        }
+        @include media-size-up(tablet) {
+          padding: 0px 20px;
+          margin-left: -20px;
+        }
+        @include media-size-up(small-desktop) {
+          padding: 0px 30px;
+          margin-left: -30px;
+        }
+      }
+    }
+  }
+
+  // Nav-group
+  .nav-group {
+    height: deep-map-get($denali-default-theme, "navbar", "height");
+    display: flex;
+    align-items: center;
+    &:last-child {
+      margin-left: 12px;
+    }
+  }
+
+  // menu
+  .menu {
+    // margin-top: 7px;
+    .menu-content {
+      margin-top: 54px;
+      position: fixed;
+    }
+  }
+}
+
 @mixin navbar-base-theme($theme-config) {
   nav.nav {
     background: deep-map-get($theme-config, "navbar", "background-color");
     height: deep-map-get($theme-config, "navbar", "height");
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 0px 10px;
-    position: relative;
-    @include media-size-up(tablet) {
-      padding: 0px 20px;
-    }
-    @include media-size-up(small-desktop) {
-      padding: 0px 30px;
-    }
 
     .nav-icon {
       height: deep-map-get($theme-config, "navbar", "height");
-      width: 48px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
       color: deep-map-get($theme-config, "navbar", "text-color") !important;
-      &:hover {
-        opacity: 0.4;
-      }
-      .nav-icon-text {
-        display: none;
-      }
     }
 
     .nav-item {
       height: deep-map-get($theme-config, "navbar", "height");
-      display: inline-flex;
-      align-items: center;
-      font-size: 1.6rem;
-      padding: 0px 12px;
       color: deep-map-get($theme-config, "navbar", "text-color") !important;
-      &:hover {
-        opacity: 0.4;
-      }
       &.is-active {
         box-shadow: inset 0 -4px 0 deep-map-get($theme-config, "navbar", "nav-items", "active-border-color");
       }
-    }
-
-    .nav-brand {
-      height: 34px;
-      width: auto;
-      flex: none;
     }
 
     // Nav Positioning
     .nav-left,
     .nav-right {
       height: deep-map-get($theme-config, "navbar", "height");
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-left {
-      flex: none;
-      margin-right: 24px;
-
-      @include media-size-up(small-desktop) {
-        width: 270px;
-        margin-right: 0px;
-      }
-    }
-
-    .trigger:hover ~ .nav-right.responsive {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    // Responsive toggle
-    .nav-toggle-dropdown {
-      &:hover ~ .nav-right.responsive,
-      &:focus ~ .nav-right.responsive {
-        opacity: 1;
-        visibility: visible;
-        transition: 300ms;
-      }
-      @include media-size-up(small-desktop) {
-        display: none;
-      }
     }
 
     .nav-right {
-      justify-content: flex-end;
-      flex: auto;
-
       &.responsive {
         @include media-size-down(tablet) {
-          opacity: 0;
-          visibility: hidden;
-          transition: 300ms;
-          justify-content: flex-end;
-          flex: auto;
-          display: flex;
-          align-items: center;
-          position: absolute;
-          margin-top: 60px;
           background: deep-map-get($theme-config, "navbar", "background-color");
-          padding: 0px 10px;
-          margin-left: -10px;
-          width: 100%;
-          overflow-x: auto;
-          z-index: 100;
-          &:hover,
-          &:focus,
-          &:focus-within {
-            opacity: 1;
-            visibility: visible;
-          }
-          @include media-size-up(tablet) {
-            padding: 0px 20px;
-            margin-left: -20px;
-          }
-          @include media-size-up(small-desktop) {
-            padding: 0px 30px;
-            margin-left: -30px;
-          }
         }
       }
     }
@@ -132,20 +185,6 @@
     // Nav-group
     .nav-group {
       height: deep-map-get($theme-config, "navbar", "height");
-      display: flex;
-      align-items: center;
-      &:last-child {
-        margin-left: 12px;
-      }
-    }
-
-    // menu
-    .menu {
-      // margin-top: 7px;
-      .menu-content {
-        margin-top: 54px;
-        position: fixed;
-      }
     }
   }
 }
