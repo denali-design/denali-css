@@ -1,9 +1,10 @@
 # Denali CSS Library
 
 [![npm](https://img.shields.io/npm/v/denali-css?color=red)](https://www.npmjs.com/package/denali-css)
+[![Build Status][status-image]][status-url]
+![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/denali-design/denali-css)
 [![slack](https://img.shields.io/badge/slack-Denali-3570f4.svg)](https://denali-design.slack.com/app_redirect?channel=general)
 [![GitHub](https://img.shields.io/github/license/denali-design/denali-css)](https://github.com/denali-design/denali-css/blob/master/LICENSE.md)
-![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/denali-design/denali-css)
 
 ## Table of contents
 
@@ -112,3 +113,6 @@ To start contributing to Denali, have a look at our guidelines, as well as point
 ## License
 
 Code licensed under the MIT license. See [LICENSE file](https://github.com/denali-design/denali-css/blob/master/LICENSE.md) for terms.
+
+[status-image]: https://cd.screwdriver.cd/pipelines/3067/badge
+[status-url]: https://cd.screwdriver.cd/pipelines/3067
