@@ -2,43 +2,44 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 a {
   // Standard
-  color: deep-map-get($denali-default-theme, "links", "text-color");
+  color: var(--links-text-color);
   text-decoration: none;
-  transition: 300ms;
   font-size: inherit;
 
   // Hover
-  &:hover {
-    color: deep-map-get($denali-default-theme, "links", "hover-text-color");
-  }
-
-  // Active
+  &:hover,
   &.is-active {
-    color: deep-map-get($denali-default-theme, "links", "hover-text-color");
+    color: var(--links-hover-text-color) !important;
   }
 
   // Disabled
   &[disabled],
   &.is-disabled {
-    color: deep-map-get($denali-default-theme, "links", "disabled-text-color");
+    color: var(--links-disabled-text-color);
     cursor: not-allowed;
   }
 
   // Inverse
   &.is-inverse {
-    color: deep-map-get($denali-default-theme, "links", "inverse", "text-color");
+    color: var(--links-inverse-text-color);
     &:hover {
-      color: deep-map-get($denali-default-theme, "links", "inverse", "hover-text-color");
+      color: var(--links-inverse-hover-text-color);
     }
   }
 
   // Size
   &.is-small {
-    font-size: deep-map-get($denali-default-theme, "links", "small", "text-size");
+    font-size: var(--links-small-text-size);
+  }
+
+  // Secondary Links
+  &.is-secondary {
+    color: var(--links-secondary-text-color);
+    &:hover {
+      color: var(--links-secondary-hover-text-color) !important;
+    }
   }
 
   // Sub-action
@@ -50,13 +51,7 @@ a {
     }
   }
 
-  // Secondary Links
-  &.is-secondary {
-    color: deep-map-get($denali-default-theme, "links", "secondary", "text-color");
-    &:hover {
-      color: deep-map-get($denali-default-theme, "links", "secondary", "hover-text-color");
-    }
-  }
+
 
   // Icons
   &.has-icon-front {
@@ -77,12 +72,12 @@ a {
     }
   }
   &:hover > .d-icon.is-sub {
-    color: deep-map-get($denali-default-theme, "links", "hover-text-color");
+    color: var(--links-hover-text-color);
     opacity: 1;
   }
   &.is-secondary:hover > .d-icon.is-sub {
-    color: deep-map-get($denali-default-theme, "links", "secondary", "hover-text-color");
-    opacity: 1;  
+    color: var(--links-secondary-hover-text-color);
+    opacity: 1;
   }
 }
 

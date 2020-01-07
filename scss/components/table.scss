@@ -2,8 +2,6 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 table {
   border-collapse: collapse;
   width: 100%;
@@ -11,18 +9,18 @@ table {
 }
 
 table > tbody > tr > th {
-  color: deep-map-get($denali-default-theme, "tables", "header", "text", "color");
-  font-size: deep-map-get($denali-default-theme, "tables", "header", "text", "size");
-  font-weight: deep-map-get($denali-default-theme, "tables", "header", "text", "weight");
-  text-transform: deep-map-get($denali-default-theme, "tables", "header", "text", "transform");
-  padding: deep-map-get($denali-default-theme, "tables", "header", "padding");
-  border-bottom: deep-map-get($denali-default-theme, "tables", "header", "border-bottom");
-  background: deep-map-get($denali-default-theme, "tables", "header", "background-color");
+  color: var(--table-header-text-color);
+  font-size: var(--table-header-text-size);
+  font-weight: var(--table-header-text-weight);
+  text-transform: var(--table-header-text-transform);
+  padding: var(--table-header-padding);
+  border-bottom: var(--table-header-border-bottom);
+  background: var(--table-header-bg-color);
 }
 
 table > tbody > tr > td {
-  padding: deep-map-get($denali-default-theme, "tables", "row", "padding");
-  border-bottom: deep-map-get($denali-default-theme, "tables", "row", "border-bottom");
+  padding: var(--table-row-padding);
+  border-bottom: var(--table-row-border-bottom);
 }
 
 table.is-striped > tbody > tr > td {
@@ -30,7 +28,7 @@ table.is-striped > tbody > tr > td {
 }
 
 table.is-striped > tbody > tr:nth-child(even) {
-  background: deep-map-get($denali-default-theme, "tables", "striped-row", "background-color");
+  background: var(--table-striped-row-bg-color);
 }
 
 table > tbody > tr > td.is-center,

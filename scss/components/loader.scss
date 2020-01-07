@@ -2,16 +2,10 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
-// TODO: Needs to be rewritten. Should change to spinner.
-
 .loader {
-  width: deep-map-get($denali-default-theme, "loaders", "size", "default");
-  height: deep-map-get($denali-default-theme, "loaders", "size", "default");
+  width: var(--loader-size-default);
+  height: var(--loader-size-default);
 }
-
-// NOTE: Move this to buttons scss
 
 .button.has-loader {
   padding: 3px 7px;
@@ -42,23 +36,23 @@
 }
 
 .loader.is-extrasmall {
-  width: deep-map-get($denali-default-theme, "loaders", "size", "extrasmall");
-  height: deep-map-get($denali-default-theme, "loaders", "size", "extrasmall");
+  width: var(--loader-size-xs);
+  height: var(--loader-size-xs);
 }
 
 .loader.is-small {
-  width: deep-map-get($denali-default-theme, "loaders", "size", "small");
-  height: deep-map-get($denali-default-theme, "loaders", "size", "small");
+  width: var(--loader-size-sm);
+  height: var(--loader-size-sm);
 }
 
 .loader.is-medium {
-  width: deep-map-get($denali-default-theme, "loaders", "size", "medium");
-  height: deep-map-get($denali-default-theme, "loaders", "size", "medium");
+  width: var(--loader-size-md);
+  height: var(--loader-size-md);
 }
 
 .loader.is-large {
-  width: deep-map-get($denali-default-theme, "loaders", "size", "large");
-  height: deep-map-get($denali-default-theme, "loaders", "size", "large");
+  width: var(--loader-size-lg);
+  height: var(--loader-size-lg);
 }
 
 @mixin loaders-base-theme($theme-config) {
@@ -68,22 +62,22 @@
   }
 
   .loader.is-extrasmall {
-    width: deep-map-get($theme-config, "loaders", "size", "extrasmall");
-    height: deep-map-get($theme-config, "loaders", "size", "extrasmall");
+    width: deep-map-get($theme-config, "loaders", "size", "xs");
+    height: deep-map-get($theme-config, "loaders", "size", "xs");
   }
 
   .loader.is-small {
-    width: deep-map-get($theme-config, "loaders", "size", "small");
-    height: deep-map-get($theme-config, "loaders", "size", "small");
+    width: deep-map-get($theme-config, "loaders", "size", "sm");
+    height: deep-map-get($theme-config, "loaders", "size", "sm");
   }
 
   .loader.is-medium {
-    width: deep-map-get($theme-config, "loaders", "size", "medium");
-    height: deep-map-get($theme-config, "loaders", "size", "medium");
+    width: deep-map-get($theme-config, "loaders", "size", "md");
+    height: deep-map-get($theme-config, "loaders", "size", "md");
   }
 
   .loader.is-large {
-    width: deep-map-get($theme-config, "loaders", "size", "large");
-    height: deep-map-get($theme-config, "loaders", "size", "large");
+    width: deep-map-get($theme-config, "loaders", "size", "lg");
+    height: deep-map-get($theme-config, "loaders", "size", "lg");
   }
 }

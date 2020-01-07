@@ -2,14 +2,12 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 .toggle {
   display: flex;
   position: relative;
   white-space: nowrap;
   overflow: auto;
-  padding: deep-map-get($denali-default-theme, "toggles", "active", "border", "width");
+  padding: var(--toggle-active-border-width);
 
   input {
     position: absolute !important;
@@ -19,10 +17,10 @@
     &:checked + label {
       box-shadow: none;
       z-index: 1;
-      background-color: deep-map-get($denali-default-theme, "toggles", "active", "background-color");
-      color: deep-map-get($denali-default-theme, "toggles", "active", "text-color");
-      border-radius: deep-map-get($denali-default-theme, "toggles", "active", "corner-radius");
-      box-shadow: 0 0 0 deep-map-get($denali-default-theme, "toggles", "active", "border", "width") deep-map-get($denali-default-theme, "toggles", "active", "border", "color");
+      background-color: var(--toggle-active-bg-color);
+      color: var(--toggle-active-text-color);
+      border-radius: var(--toggle-active-corner-radius);
+      box-shadow: 0 0 0 var(--toggle-active-border-width) var(--toggle-active-border-color);
     }
   }
 
@@ -36,11 +34,11 @@
     justify-content: center;
     align-items: center;
     transition: all 300ms ease-in-out;
-    background: deep-map-get($denali-default-theme, "toggles", "background-color");
-    color: deep-map-get($denali-default-theme, "toggles", "text-color");
-    font-size: deep-map-get($denali-default-theme, "toggles", "text-size");
-    height: deep-map-get($denali-default-theme, "toggles", "height");
-    padding: deep-map-get($denali-default-theme, "toggles", "padding");
+    background: var(--toggle-bg-color);
+    color: var(--toggle-text-color);
+    font-size: var(--toggle-text-size);
+    height: var(--toggle-height);
+    padding: var(--toggle-padding);
 
     a {
       color: inherit;
@@ -49,10 +47,10 @@
     &.is-active {
       box-shadow: none;
       z-index: 1;
-      background-color: deep-map-get($denali-default-theme, "toggles", "active", "background-color");
-      color: deep-map-get($denali-default-theme, "toggles", "active", "text-color");
-      border-radius: deep-map-get($denali-default-theme, "toggles", "active", "corner-radius") !important;
-      box-shadow: 0 0 0 deep-map-get($denali-default-theme, "toggles", "active", "border", "width") deep-map-get($denali-default-theme, "toggles", "active", "border", "color");
+      background-color: var(--toggle-active-bg-color);
+      color: var(--toggle-active-text-color);
+      border-radius: var(--toggle-active-corner-radius) !important;
+      box-shadow: 0 0 0 var(--toggle-active-border-width) var(--toggle-active-border-color);
 
       a {
         color: inherit;
@@ -61,22 +59,22 @@
 
     &.is-disabled {
       cursor: not-allowed;
-      color: deep-map-get($denali-default-theme, "toggles", "disabled", "text-color");
+      color: var(--toggle-disabled-text-color);
     }
 
     &:hover {
       cursor: pointer;
-      color: deep-map-get($denali-default-theme, "toggles", "text-hover-color");
+      color: var(--toggle-text-hover-color);
     }
 
     &:first-of-type {
-      border-top-left-radius: deep-map-get($denali-default-theme, "toggles", "corner-radius");
-      border-bottom-left-radius: deep-map-get($denali-default-theme, "toggles", "corner-radius");
+      border-top-left-radius: var(--toggle-corner-radius);
+      border-bottom-left-radius: var(--toggle-corner-radius);
     }
 
     &:last-of-type {
-      border-top-right-radius: deep-map-get($denali-default-theme, "toggles", "corner-radius");
-      border-bottom-right-radius: deep-map-get($denali-default-theme, "toggles", "corner-radius");
+      border-top-right-radius: var(--toggle-corner-radius);
+      border-bottom-right-radius: var(--toggle-corner-radius);
     }
   }
 
@@ -84,8 +82,8 @@
   &.is-small {
     label,
     li {
-      height: deep-map-get($denali-default-theme, "toggles", "small", "height");
-      padding: deep-map-get($denali-default-theme, "toggles", "small", "padding");
+      height: var(--toggle-small-height);
+      padding: var(--toggle-small-padding);
     }
   }
 
@@ -93,11 +91,11 @@
   &.is-inverse {
     label,
     li {
-      color: deep-map-get($denali-default-theme, "toggles", "inverse", "text-color");
-      background: deep-map-get($denali-default-theme, "toggles", "inverse", "background-color");
+      color: var(--toggle-inverse-text-color);
+      background: var(--toggle-inverse-bg-color);
       &.is-active {
-        color: deep-map-get($denali-default-theme, "toggles", "inverse", "active", "text-color");
-        background: deep-map-get($denali-default-theme, "toggles", "inverse", "active", "background-color");
+        color: var(--toggle-inverse-active-text-color);
+        background: var(--toggle-inverse-active-bg-color);
       }
     }
   }

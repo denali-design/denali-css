@@ -5,10 +5,10 @@
 
 // DENALI SCSS :: UTILITIES ROLLUP
 
-
 // FUNCTIONS
 @import "color-functions",
         "misc-functions";
 
 // VARIABLES
-@import "derived-variables";
+@import "root-variables",
+        "derived-variables";

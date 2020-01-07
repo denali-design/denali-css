@@ -2,8 +2,6 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 .radio {
    backface-visibility: hidden;
    box-sizing: border-box;
@@ -26,7 +24,7 @@
    cursor: pointer;
    padding: 0;
    position: relative;
-   color: deep-map-get($denali-default-theme, "radios", "label", "text-color");
+   color: var(--radio-label-text-color);
    font-size: 14px;
    font-family: helvetica, sans-serif;
    font-weight: normal;
@@ -35,7 +33,7 @@
 
  .radio > label:before {
    border-radius: 50%;
-   box-shadow: 0 0 0 2px deep-map-get($denali-default-theme, "radios", "circle", "border-color", "standard");
+   box-shadow: var(--radio-circle-border-standard);
    box-sizing: border-box;
    content: "";
    display: inline-block;
@@ -48,28 +46,28 @@
 
  /* Button hover */
  .radio > input[type="radio"]:hover + label:before {
-   box-shadow: 0 0 0 2px deep-map-get($denali-default-theme, "radios", "circle", "border-color", "hover");
+   box-shadow: var(--radio-circle-border-hover);
  }
 
  /* Button checked */
  .radio > input[type="radio"]:checked + label:before {
-   box-shadow: 0 0 0 2px deep-map-get($denali-default-theme, "radios", "circle", "border-color", "active");
+   box-shadow: var(--radio-circle-border-active);
  }
 
  /* Disabled state label */
  .radio > input[type="radio"]:disabled + label {
-   color: deep-map-get($denali-default-theme, "radios", "label", "disabled-text-color");
+   color: var(--radio-label-disabled-text-color);
    cursor: not-allowed;
  }
 
  /* Disabled button */
  .radio > input[type="radio"]:disabled + label:before {
-   box-shadow: 0 0 0 2px deep-map-get($denali-default-theme, "radios", "circle", "border-color", "disabled");
+   box-shadow: var(--radio-circle-border-disabled);
  }
 
  /* Checkmark */
  .radio > input[type="radio"]:checked + label:after {
-   background-color: deep-map-get($denali-default-theme, "radios", "circle", "background-color", "active");
+   background-color: var(--radio-circle-bg-color-active);
    border-radius: 50%;
    box-sizing: border-box;
    content: "";
@@ -88,17 +86,17 @@
    }
 
    .radio > label:before {
-     box-shadow: 0 0 0 2px deep-map-get($theme-config, "radios", "circle", "border-color", "standard");
+     box-shadow: deep-map-get($theme-config, "radios", "circle", "border", "standard");
    }
 
    /* Button hover */
    .radio > input[type="radio"]:hover + label:before {
-     box-shadow: 0 0 0 2px deep-map-get($theme-config, "radios", "circle", "border-color", "hover");
+     box-shadow: deep-map-get($theme-config, "radios", "circle", "border", "hover");
    }
 
    /* Button checked */
    .radio > input[type="radio"]:checked + label:before {
-     box-shadow: 0 0 0 2px deep-map-get($theme-config, "radios", "circle", "border-color", "active");
+     box-shadow: deep-map-get($theme-config, "radios", "circle", "border", "active");
    }
 
    /* Disabled state label */
@@ -108,7 +106,7 @@
 
    /* Disabled button */
    .radio > input[type="radio"]:disabled + label:before {
-     box-shadow: 0 0 0 2px deep-map-get($theme-config, "radios", "circle", "border-color", "disabled");
+     box-shadow: deep-map-get($theme-config, "radios", "circle", "border", "disabled");
    }
 
    /* Checkmark */
