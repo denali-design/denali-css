@@ -2,51 +2,26 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 .box {
-  // STRUCTURE
-  // PADDING
-  padding-top: deep-map-get($denali-default-theme, "box", "padding", "top");
-  padding-bottom: deep-map-get($denali-default-theme, "box", "padding", "bottom");
-  padding-left: deep-map-get($denali-default-theme, "box", "padding", "left");
-  padding-right: deep-map-get($denali-default-theme, "box", "padding", "right");
-  // STYLE
-  background: deep-map-get($denali-default-theme, "box", "background");
-  border-radius: deep-map-get($denali-default-theme, "box", "border-radius");
-  border-color: deep-map-get($denali-default-theme, "box", "border", "color");
-  border-width: deep-map-get($denali-default-theme, "box", "border", "width");
-  border-style: deep-map-get($denali-default-theme, "box", "border", "style");
+  padding: var(--box-padding);
+  background: var(--box-bg-color);
+  border-radius: var(--box-corner-radius);
+  border-color: var(--box-border-color);
+  border-width: var(--box-border-width);
+  border-style: var(--box-border-style);
 
   footer {
+    margin: var(--box-footer-margin);
+    padding: var(--box-footer-padding);
     border-top-style: solid;
-    // STRUCTURE
-    // MARGIN
-    margin-top: deep-map-get($denali-default-theme, "box", "footer", "margin", "top");
-    margin-bottom: deep-map-get($denali-default-theme, "box", "footer", "margin", "bottom");
-    margin-left: deep-map-get($denali-default-theme, "box", "footer", "margin", "left");
-    margin-right: deep-map-get($denali-default-theme, "box", "footer", "margin", "right");
-    // PADDING
-    padding-top: deep-map-get($denali-default-theme, "box", "footer", "padding", "top");
-    padding-bottom: deep-map-get($denali-default-theme, "box", "footer", "padding", "bottom");
-    padding-left: deep-map-get($denali-default-theme, "box", "footer", "padding", "left");
-    padding-right: deep-map-get($denali-default-theme, "box", "footer", "padding", "right");
-
-    // STYLE
-    border-top-color: deep-map-get($denali-default-theme, "box", "border", "color");
-    border-top-width: deep-map-get($denali-default-theme, "box", "border", "width");
+    border-top-color: var(--box-border-color);
+    border-top-width: var(--box-border-width);
   }
 }
 
 @mixin box-base-theme($theme-config) {
   .box {
-    // STRUCTURE
-    // PADDING
-    padding-top: deep-map-get($theme-config, "box", "padding", "top");
-    padding-bottom: deep-map-get($theme-config, "box", "padding", "bottom");
-    padding-left: deep-map-get($theme-config, "box", "padding", "left");
-    padding-right: deep-map-get($theme-config, "box", "padding", "right");
-    // STYLE
+    padding: deep-map-get($theme-config, "box", "padding");
     background: deep-map-get($theme-config, "box", "background");
     border-radius: deep-map-get($theme-config, "box", "border-radius");
     border-color: deep-map-get($theme-config, "box", "border", "color");
@@ -54,18 +29,8 @@
     border-style: deep-map-get($theme-config, "box", "border", "style");
 
     footer {
-      // STRUCTURE
-      // MARGIN
-      margin-top: deep-map-get($theme-config, "box", "footer", "margin", "top");
-      margin-bottom: deep-map-get($theme-config, "box", "footer", "margin", "bottom");
-      margin-left: deep-map-get($theme-config, "box", "footer", "margin", "left");
-      margin-right: deep-map-get($theme-config, "box", "footer", "margin", "right");
-      // PADDING
-      padding-top: deep-map-get($theme-config, "box", "footer", "padding", "top");
-      padding-bottom: deep-map-get($theme-config, "box", "footer", "padding", "bottom");
-      padding-left: deep-map-get($theme-config, "box", "footer", "padding", "left");
-      padding-right: deep-map-get($theme-config, "box", "footer", "padding", "right");
-      // STYLE
+      margin: deep-map-get($theme-config, "box", "footer", "margin");
+      padding: deep-map-get($theme-config, "box", "footer", "padding");
       border-top-color: deep-map-get($theme-config, "box", "border", "color");
       border-top-width: deep-map-get($theme-config, "box", "border", "width");
     }

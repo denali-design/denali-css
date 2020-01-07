@@ -2,8 +2,6 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 .menu {
   display: inline-flex !important;
   justify-content: center;
@@ -28,12 +26,12 @@
     float: left;
     opacity: 0;
     visibility: hidden;
-    background: deep-map-get($denali-default-theme, "menus", "background-color");
-    border-color: deep-map-get($denali-default-theme, "menus", "border", "color");
-    border-width: deep-map-get($denali-default-theme, "menus", "border", "width");
-    border-style: deep-map-get($denali-default-theme, "menus", "border", "style");
-    border-radius: deep-map-get($denali-default-theme, "menus", "corner-radius");
-    box-shadow: deep-map-get($denali-default-theme, "menus", "shadow");
+    background: var(--menu-bg-color);
+    border-color: var(--menu-border-color);
+    border-width: var(--menu-border-width);
+    border-style: var(--menu-border-style);
+    border-radius: var(--menu-corner-radius);
+    box-shadow: var(--menu-shadow);
     padding: 16px 18px;
     position: absolute;
     margin-top: 40px;
@@ -51,13 +49,8 @@
     transition: all 0.3s 0.1s;
 
     hr {
-      background-color: deep-map-get(
-        $denali-default-theme,
-        "menus",
-        "line-break",
-        "color"
-      );
-      height: deep-map-get($denali-default-theme, "menus", "line-break", "size");
+      background-color: var(--menu-line-break-color);
+      height: var(--menu-line-break-size);
       width: calc(100% + 36px);
       margin: 14px 0px;
       margin-left: -18px;
@@ -87,21 +80,12 @@ div.menu-content:before {
 }
 div.menu-content:after {
   border-color: transparent;
-  border-bottom-color: deep-map-get(
-    $denali-default-theme,
-    "menus",
-    "background-color"
-  );
+  border-bottom-color: var(--menu-bg-color);
   border-width: 10px;
   margin-left: -10px;
 }
 div.menu-content:before {
-  border-bottom-color: deep-map-get(
-    $denali-default-theme,
-    "menus",
-    "border",
-    "color"
-  );
+  border-bottom-color: var(--menu-border-color);
   border-width: 13px;
   margin-left: -13px;
 }

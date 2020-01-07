@@ -2,21 +2,19 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 .alert {
   // STRUCTURE
   width: 400px;
   display: flex;
   box-sizing: border-box;
   // STYLE
-  background: deep-map-get($denali-default-theme, "alert", "background");
-  color: deep-map-get($denali-default-theme, "alert", "color");
-  border-radius: deep-map-get($denali-default-theme, "alert", "border-radius");
-  box-shadow: deep-map-get($denali-default-theme, "alert", "box-shadow");
-  border-top-width: deep-map-get($denali-default-theme, "alert", "border-top", "width");
-  border-top-style: deep-map-get($denali-default-theme, "alert", "border-top", "style");
-  border-top-color: deep-map-get($denali-default-theme, "alert", "border-top", "color");
+  background: var(--alert-bg-color);
+  color: var(--alert-text-color);
+  border-radius: var(--alert-corner-radius);
+  box-shadow: var(--alert-shadow);
+  border-top-width: var(--alert-border-width);
+  border-top-style: var(--alert-border-style);
+  border-top-color: var(--alert-border-color);
 
   @include media-size-down(mobile) {
     width: 100%;
@@ -41,7 +39,7 @@
     padding: 16px 0px;
     .d-icon {
       font-size: 24px !important;
-      color: deep-map-get($denali-default-theme, "alert", "close-icon-color") !important;
+      color: var(--alert-close-icon-color) !important;
     }
   }
 
@@ -49,19 +47,19 @@
   .d-icon {
     margin: 14px;
     font-size: 28px !important;
-    color: deep-map-get($denali-default-theme, "alert", "border-top", "color");
+    color: var(--alert-border-color);
   }
 
   &.is-inline {
-    justify-content: deep-map-get($denali-default-theme, "alert-inline", "alignemnt", "justify-content");
-    padding-top: deep-map-get($denali-default-theme, "alert-inline", "padding", "top");
-    padding-bottom: deep-map-get($denali-default-theme, "alert-inline", "padding", "bottom");
-    padding-left: deep-map-get($denali-default-theme, "alert-inline", "padding", "left");
-    padding-right: deep-map-get($denali-default-theme, "alert-inline", "padding", "right");
+    justify-content: var(--alert-inline-alignment-justify-content);
+    padding-top: var(--alert-inline-padding-top);
+    padding-bottom: var(--alert-inline-padding-bottom);
+    padding-left: var(--alert-inline-padding-left);
+    padding-right: var(--alert-inline-padding-right);
     // STYLE
-    background: deep-map-get($denali-default-theme, "alert-inline", "background");
-    color: deep-map-get($denali-default-theme, "alert-inline", "color");
-    font-size: deep-map-get($denali-default-theme, "alert-inline", "font-size");
+    background: var(--alert-inline-bg-color);
+    color: var(--alert-inline-text-color);
+    font-size: var(--alert-inline-font-size);
     // RESETS
     box-shadow: none !important;
     border: none !important;
@@ -71,34 +69,34 @@
     display: flex !important;
 
     p {
-      text-align: deep-map-get($denali-default-theme, "alert-inline", "alignemnt", "text");
+      text-align: var(--alert-inline-alignment-text);
       overflow: hidden;
     }
   }
 
   // STATUS MODIFIERS
   &.is-info {
-    border-top: 4px solid map-get($denali-status-colors, "info") !important;
+    border-color: var(--color-status-information) !important;
     .d-icon {
-      color: map-get($denali-status-colors, "info") !important;
+      color: var(--color-status-information) !important;
     }
   }
   &.is-warning {
-    border-top: 4px solid map-get($denali-status-colors, "warning") !important;
+    border-color: var(--color-status-warning) !important;
     .d-icon {
-      color: map-get($denali-status-colors, "warning") !important;
+      color: var(--color-status-warning) !important;
     }
   }
   &.is-success {
-    border-top: 4px solid map-get($denali-status-colors, "success") !important;
+    border-color: var(--color-status-success) !important;
     .d-icon {
-      color: map-get($denali-status-colors, "success") !important;
+      color: var(--color-status-success) !important;
     }
   }
   &.is-danger {
-    border-top: 4px solid map-get($denali-status-colors, "danger") !important;
+    border-color: var(--color-status-danger) !important;
     .d-icon {
-      color: map-get($denali-status-colors, "danger") !important;
+      color: var(--color-status-danger) !important;
     }
   }
 }
@@ -126,7 +124,7 @@
     }
 
     &.is-inline {
-      justify-content: deep-map-get($theme-config, "alert-inline", "alignemnt", "justify-content");
+      justify-content: deep-map-get($theme-config, "alert-inline", "alignment", "justify-content");
       padding-top: deep-map-get($theme-config, "alert-inline", "padding", "top");
       padding-bottom: deep-map-get($theme-config, "alert-inline", "padding", "bottom");
       padding-left: deep-map-get($theme-config, "alert-inline", "padding", "left");
@@ -137,7 +135,7 @@
       font-size: deep-map-get($theme-config, "alert-inline", "font-size");
 
       p {
-        text-align: deep-map-get($theme-config, "alert-inline", "alignemnt", "text");
+        text-align: deep-map-get($theme-config, "alert-inline", "alignment", "text");
       }
     }
   }

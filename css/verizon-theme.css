@@ -1,0 +1,91 @@
+@font-face {
+  font-family: NHaas-Rg;
+  font-style: normal;
+  font-weight: 400;
+  src: local("NHaasGroteskTXStd-55Rg"), url("https://ui.edgecast.com/assets/fonts/NHaasGroteskTXStd-55Rg.otf") format("truetype");
+}
+
+@font-face {
+  font-family: NHaas-Md;
+  font-style: normal;
+  font-weight: 600;
+  src: local("NHaasGroteskTXStd-65Md"), url("https://ui.edgecast.com/assets/fonts/NHaasGroteskTXStd-65Md.otf") format("truetype");
+}
+
+@font-face {
+  font-family: NHaas-Bd;
+  font-style: normal;
+  font-weight: 700;
+  src: local("NHaasGroteskTXStd-75Bd"), url("https://ui.edgecast.com/assets/fonts/NHaasGroteskTXStd-75Bd.otf") format("truetype");
+}
+
+
+/* Also can use :root */
+body.verizon {
+  /* Buttons */
+  --button-corner-radius: var(--border-radius-pill);
+
+  --button-solid-default-bg-color: #D52B1E;
+  --button-solid-focus-bg-color: #b32419;
+
+  --button-outline-default-bg-color: black;
+  --button-outline-default-text-color: #fff;
+  --button-outline-default-border: null;
+  --button-outline-focus-bg-color: black;
+  --button-outline-focus-text-color: #fff;
+  --button-outline-focus-border: null;
+
+  /* Checkbox */
+  --checkbox-box-border-color-standard: inset 0 0 0 1px var(--color-grey-500);
+  --checkbox-box-border-color-hover: inset 0 0 0 1px var(--color-grey-500);
+  --checkbox-box-border-color-active: inset 0 0 0 1px #D52B1E;
+  --checkbox-box-background-color-active: #D52B1E;
+
+  /* Fields */
+  --fields-corner-radius: 0px;
+  --fields-padding: 0px 0px;
+  --fields-placeholder-text-color: rgba(var(--color-grey-800-rgb), 0.6);
+  --fields-default-bg: transparent;
+  --fields-default-text-color: #353939;
+  --fields-default-border: inset 0 -1px #D3D6D6;
+  --fields-focus-border: inset 0 -1px #353939;
+
+  /* Links */
+  --links-text-color: #D52B1E;
+  --links-hover-text-color: #b32419;
+
+  /* Navbar */
+  --navbar-bg-color: #000000;
+  --navbar-item-text-color: #7B7F7F;
+  --navbar-item-hover-text-color: var(--color-grey-100);
+  --navbar-item-active-border-color: transparent;
+
+  /* Radio */
+  --radio-circle-border-standard: inset 0 0 0 1px var(--color-grey-500);
+  --radio-circle-border-hover: inset 0 0 0 1px var(--color-grey-500);
+  --radio-circle-border-active: inset 0 0 0 4px #D52B1E;
+  --radio-circle-bg-color-active: transparent;
+
+  /* Tabs */
+  --tabs-font-size: 1.4rem;
+
+  --tabs-primary-bg-color: #EDEFEF;
+  --tabs-parimary-tab-item-text-color: #4A4E4E;
+  --tabs-parimary-tab-item-active-text-color: #000000;
+
+  --tabs-primary-vertical-tab-item-height: 30px;
+  --tabs-primary-vertical-tab-item-active-border: inset 5px 0px #D52B1E;
+
+  --tabs-secondary-border: inset 0px -2px #D3D6D6;
+  --tabs-secondary-tab-item-height: 52px;
+  --tabs-secondary-tab-item-padding: 10px 17px;
+  --tabs-secondary-tab-item-text-color: #7B7F7F;
+  --tabs-secondary-tab-item-active-text-color: #000000;
+  --tabs-secondary-tab-item-active-border: inset 0px -2px #D52B1E;
+
+  /* Type */
+  --headline-font-family: "NHaas-Bd", sans-serif;
+  --headline-color: #000;
+
+  --h2-font-weight: 700;
+}

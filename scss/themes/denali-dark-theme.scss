@@ -34,7 +34,7 @@ $denali-dark-theme: (
     color: map-get($denali-grey-colors, '800'),
     background: rgba($brand-200,.4),
     font-size: inherit,
-    alignemnt: (
+    alignment: (
       text: center,
       justify-content: center,
     ),
@@ -56,28 +56,10 @@ $denali-dark-theme: (
       width: 1px,
       style: solid,
     ),
-    padding: (
-      all: null,
-      top: 20px,
-      bottom: 20px,
-      left: 20px,
-      right: 20px,
-    ),
+    padding: 20px,
     footer: (
-      padding: (
-        all: null,
-        top: 22px,
-        bottom: 0px,
-        left: 22px,
-        right: 22px,
-      ),
-      margin: (
-        all: null,
-        top: 22px,
-        bottom: 0px,
-        left: -20px,
-        right: -20px,
-      ),
+      padding: 22px 22px 0px 22px,
+      margin: 22px -20px 0px -20px,
     ),
   ),
 
@@ -284,8 +266,8 @@ $denali-dark-theme: (
         hover: map-get($denali-brand-colors, '600'),
         active: map-get($denali-brand-colors, '600'),
         disabled: rgba(map-get($denali-grey-colors, '100'), 0.2),
-        partial: rgba(map-get($denali-brand-colors, '600'), 1),
       ),
+      partial-color: rgba(map-get($denali-brand-colors, '600'), 1),
       background-color: (
         active: map-get($denali-brand-colors, '600'),
       )
@@ -302,22 +284,10 @@ $denali-dark-theme: (
     background-color: rgba(map-get($denali-brand-colors, '400'), .4),
     border-radius: 4px,
     color: map-get($denali-grey-colors, '100'),
-    padding: (
-      all: null,
-      top: 4px,
-      bottom: 4px,
-      left: 6px,
-      right: 6px,
-    ),
+    padding: 4px 6px,
     small: (
       font-size: 12px,
-      padding: (
-        all: null,
-        top: 2px,
-        bottom: 2px,
-        left: 4px,
-        right: 4px,
-      ),
+      padding: 2px 4px,
     ),
   ),
 
@@ -332,11 +302,9 @@ $denali-dark-theme: (
       ),
       medium: (
         height: 30px,
-        width: 250px,
       ),
       small: (
         height: 28px,
-        width: 250px,
       ),
     ),
     placeholder: (
@@ -345,26 +313,18 @@ $denali-dark-theme: (
     default: (
       background: rgba($brand-200, 0.1),
       text-color: $grey-100,
+      border: none,
     ),
     focus: (
-      border-bottom: (
-        size: 2px,
-        color: rgba($brand-700, 1),
-      )
+      border: inset 0 -2px rgba($brand-700, 1),
     ),
     disabled: (
       background: rgba($grey-100, 0.05),
       text-color: rgba($grey-100, 0.25),
-      border-bottom: (
-        size: 2px,
-        color: rgba($grey-100, 0.05),
-      )
+      border: inset 0 -2px rgba($grey-100, 0.05),
     ),
     error: (
-      border-bottom: (
-        size: 2px,
-        color: $status-danger,
-      )
+      border: inset 0 -2px $status-danger,
     ),
     dropdown-arrow-color: white,
   ),
@@ -373,10 +333,11 @@ $denali-dark-theme: (
   // Icons
   icons: (
     sizes: (
-      extra-small: 1.2rem,
-      small: 1.8rem,
-      medium: 3.6rem,
-      large: 4.8rem,
+      xs: 1.2rem,
+      sm: 1.8rem,
+      default: 2.4rem,
+      md: 3.6rem,
+      lg: 4.8rem,
     ),
   ),
 
@@ -452,6 +413,8 @@ $denali-dark-theme: (
     height: 60px,
     nav-items: (
       text-color: $grey-100,
+      hover-text-color: rgba($grey-100, 0.4),
+      active-text-color: $grey-100,
       active-border-color: #3697F2,
     )
   ),
@@ -460,11 +423,11 @@ $denali-dark-theme: (
   // Radio
   radios: (
     circle: (
-      border-color: (
-        standard: rgba(map-get($denali-brand-colors, '600'), 1),
-        hover: map-get($denali-brand-colors, '600'),
-        active: map-get($denali-brand-colors, '600'),
-        disabled: rgba(map-get($denali-grey-colors, '100'), 0.2),
+      border: (
+        standard: 0 0 0 2px rgba(map-get($denali-brand-colors, '600'), 1),
+        hover: 0 0 0 2px map-get($denali-brand-colors, '600'),
+        active: 0 0 0 2px map-get($denali-brand-colors, '600'),
+        disabled: 0 0 0 2px rgba(map-get($denali-grey-colors, '100'), 0.2),
       ),
       background-color: (
         active: map-get($denali-brand-colors, '600'),
@@ -536,6 +499,7 @@ $denali-dark-theme: (
       background-color: #1E242A,
       padding: 20px 0px 0px 30px,
       tab-item: (
+        text-color: map-get($denali-brand-colors, '500'),
         height: 40px,
         padding: 0px 20px,
         corner-radius: 2px,
@@ -555,7 +519,7 @@ $denali-dark-theme: (
           padding: 0px 14px,
           active: (
             background-color: #12191F,
-            border-left: inset 4px 0px map-get($denali-brand-colors, '600'),
+            border: inset 4px 0px map-get($denali-brand-colors, '600'),
           ),
           active-accordion: (
             background-color: rgba(#fff,.12),
@@ -567,13 +531,14 @@ $denali-dark-theme: (
       )
     ),
     secondary: (
-      border-bottom: inset 0px -2px rgba(map-get($denali-brand-colors, '700'), .05),
+      border: inset 0px -2px rgba(map-get($denali-brand-colors, '700'), .05),
       tab-item: (
+        text-color: map-get($denali-brand-colors, '500'),
         height: 40px,
         padding: 0px 20px,
         active: (
           text-color: map-get($denali-grey-colors, '100'),
-          border-bottom: solid 2px map-get($denali-brand-colors, '600'),
+          border: inset 0px -2px map-get($denali-brand-colors, '600'),
         )
       )
     )
@@ -687,64 +652,57 @@ $denali-dark-theme: (
     headline-1: (
       font: (
         size: 2.8rem,
-        style: null,
         weight: 600,
       ),
-      line-height: null,
+      line-height: 1.25,
     ),
 
     headline-2: (
       font: (
         size: 2.6rem,
-        style: null,
         weight: 600,
       ),
-      line-height: 3.2rem,
+      line-height: 1.25,
     ),
 
     headline-3: (
       font: (
         size: 2.0rem,
-        style: null,
         weight: 600,
       ),
-      line-height: null,
+      line-height: 1.5,
     ),
 
     headline-4: (
       font: (
         size: 1.6rem,
-        style: null,
         weight: 600,
       ),
-      line-height: null,
+      line-height: 1.5,
     ),
 
     headline-5: (
       font: (
         size: 1.4rem,
-        style: null,
         weight: 600,
       ),
-      line-height: null,
+      line-height: 1.5,
     ),
 
     headline-6: (
       font: (
         size: 1.2rem,
-        style: null,
         weight: 400,
       ),
-      line-height: 1.6rem,
+      line-height: 1.5,
     ),
 
     paragraph: (
       font: (
         size: 1.4rem,
-        style: null,
         weight: 400,
       ),
-      line-height: 2.2rem,
+      line-height: 1.75,
     ),
   ),
 );

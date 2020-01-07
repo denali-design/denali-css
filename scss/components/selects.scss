@@ -2,12 +2,10 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 .input {
 
   &.has-arrow:before {
-    content: url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path style="fill:#{deep-map-get($denali-default-theme, "fields", "dropdown-arrow-color")}" d="M24,27.17,13.4,16.59a2,2,0,0,0-3.05.25,2.07,2.07,0,0,0,.3,2.65L22.59,31.41a2,2,0,0,0,2.83,0L37.35,19.49a2.07,2.07,0,0,0,.3-2.65,2,2,0,0,0-3-.25Z"/></svg>');
+    content: url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path style="fill:var(--fields-dropdown-arrow-color)" d="M24,27.17,13.4,16.59a2,2,0,0,0-3.05.25,2.07,2.07,0,0,0,.3,2.65L22.59,31.41a2,2,0,0,0,2.83,0L37.35,19.49a2.07,2.07,0,0,0,.3-2.65,2,2,0,0,0-3-.25Z"/></svg>');
     pointer-events: none;
     opacity: .4;
     position: absolute;
@@ -19,29 +17,29 @@
 
   // Select dropdown
   select {
-    background: deep-map-get($denali-default-theme, "fields", "default", "background");
-    border-radius: deep-map-get($denali-default-theme, "fields", "corner-radius");
-    color: deep-map-get($denali-default-theme, "fields", "default", "text-color");
-    height: deep-map-get($denali-default-theme, "fields", "sizes", "default", "height");
+    background: var(--fields-default-bg);
+    border-radius: var(--fields-corner-radius);
+    color: var(--fields-default-text-color);
+    height: var(--fields-sizes-default-height);
+    box-shadow: var(--fields-default-border);
     appearance: none;
     -webkit-appearance: none;
     flex: 1 0 auto;
     font: inherit;
     outline: none;
-    transition: 200ms;
     border: none;
-    box-shadow: none;
     text-align: left;
     width: inherit;
     margin: 0;
     position: relative;
-    padding: 0px 12px;
+    padding: var(--fields-padding);
     border-bottom: solid 2px transparent;
 
     &:active,
     &:focus,
     &[disabled] {
       border-bottom-style: solid;
+      transition: 300ms;
     }
 
     &:invalid {
@@ -49,20 +47,17 @@
     }
 
     &::placeholder {
-      color: deep-map-get($denali-default-theme, "fields", "placeholder", "text-color");
+      color: var(--fields-placeholder-text-color);
     }
 
     &:active,
     &:focus {
-      border-bottom-width: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "size");
-      border-bottom-color: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "color");
+      box-shadow: var(--fields-focus-border);
     }
 
     &[disabled] {
-      background: deep-map-get($denali-default-theme, "fields", "disabled", "background");
-      color: deep-map-get($denali-default-theme, "fields", "disabled", "text-color");
-      border-bottom-width: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "size");
-      border-bottom-color: deep-map-get($denali-default-theme, "fields", "disabled", "border-bottom", "color");
+      background: var(--fields-disabled-bg);
+      box-shadow: var(--fields-disabled-border);
     }
   }
 
@@ -73,14 +68,12 @@
 
   // Forced Active State
   &.is-active > select {
-    border-bottom-width: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "size");
-    border-bottom-color: deep-map-get($denali-default-theme, "fields", "focus", "border-bottom", "color");
+    box-shadow: var(--fields-focus-border);
   }
 
   // Error state
   &.is-error > select {
-    border-bottom-width: deep-map-get($denali-default-theme, "fields", "error", "border-bottom", "size");
-    border-bottom-color: deep-map-get($denali-default-theme, "fields", "error", "border-bottom", "color");
+    box-shadow: var(--fields-error-border);
   }
 
   // Inverse
@@ -111,12 +104,12 @@
 
   // Sizes
   &.is-medium > select {
-    height: deep-map-get($denali-default-theme, "fields", "sizes", "medium", "height");
+    height: var(--fields-sizes-medium-height);
     margin-top: 6px;
   }
 
   &.is-small > select {
-    height: deep-map-get($denali-default-theme, "fields", "sizes", "small", "height");
+    height: var(--fields-sizes-medium-height);
     margin-top: 5px;
   }
 }
@@ -134,6 +127,7 @@
       border-radius: deep-map-get($theme-config, "fields", "corner-radius");
       color: deep-map-get($theme-config, "fields", "default", "text-color");
       height: deep-map-get($theme-config, "fields", "sizes", "default", "height");
+      box-shadow: deep-map-get($theme-config, "fields", "default", "border");
 
       &::placeholder {
         color: deep-map-get($theme-config, "fields", "placeholder", "text-color");
@@ -141,28 +135,24 @@
 
       &:active,
       &:focus {
-        border-bottom-width: deep-map-get($theme-config, "fields", "focus", "border-bottom", "size");
-        border-bottom-color: deep-map-get($theme-config, "fields", "focus", "border-bottom", "color");
+        box-shadow: deep-map-get($theme-config, "fields", "focus", "border");
       }
 
       &[disabled] {
         background: deep-map-get($theme-config, "fields", "disabled", "background");
         color: deep-map-get($theme-config, "fields", "disabled", "text-color");
-        border-bottom-width: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "size");
-        border-bottom-color: deep-map-get($theme-config, "fields", "disabled", "border-bottom", "color");
+        box-shadow: deep-map-get($theme-config, "fields", "disabled", "border");
       }
     }
 
     // Forced Active State
     &.is-active > select {
-      border-bottom-width: deep-map-get($theme-config, "fields", "focus", "border-bottom", "size");
-      border-bottom-color: deep-map-get($theme-config, "fields", "focus", "border-bottom", "color");
+      box-shadow: deep-map-get($theme-config, "fields", "focus", "border");
     }
 
     // Error state
     &.is-error > select {
-      border-bottom-width: deep-map-get($theme-config, "fields", "error", "border-bottom", "size");
-      border-bottom-color: deep-map-get($theme-config, "fields", "error", "border-bottom", "color");
+      box-shadow: deep-map-get($theme-config, "fields", "error", "border");
     }
 
     // Sizes

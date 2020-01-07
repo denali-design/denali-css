@@ -2,20 +2,18 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 .tabs {
   -webkit-overflow-scrolling: touch;
 
   // Primary
   &.is-primary {
     min-width: 100%;
-    background: deep-map-get($denali-default-theme, "tabs", "primary", "background-color");
+    background: var(--tabs-primary-bg-color);
     ul {
       list-style: none;
       display: flex;
       justify-content: flex-start;
-      padding: deep-map-get($denali-default-theme, "tabs", "primary", "padding");
+      padding: var(--tabs-primary-padding);
       overflow-x: auto;
       overflow-x: -moz-scrollbars-none;
       &::-webkit-scrollbar {
@@ -27,52 +25,53 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: deep-map-get($denali-default-theme, "tabs", "text-size");
-          height: deep-map-get($denali-default-theme, "tabs", "primary", "tab-item", "height");
-          padding: deep-map-get($denali-default-theme, "tabs", "primary", "tab-item", "padding");
-          border-top-left-radius: deep-map-get($denali-default-theme, "tabs", "primary", "tab-item", "corner-radius");
-          border-top-right-radius: deep-map-get($denali-default-theme, "tabs", "primary", "tab-item", "corner-radius");
+          color: var(--tabs-parimary-tab-item-text-color);
+          font-size: var(--tabs-font-size);
+          height: var(--tabs-parimary-tab-item-height);
+          padding: var(--tabs-parimary-tab-item-padding);
+          border-top-left-radius: var(--tabs-parimary-tab-item-corner-radius);
+          border-top-right-radius: var(--tabs-parimary-tab-item-corner-radius);
         }
         &.is-active a {
-          color: deep-map-get($denali-default-theme, "tabs", "primary", "tab-item", "active", "text-color");
-          background: deep-map-get($denali-default-theme, "tabs", "primary", "tab-item", "active", "background-color");
+          color: var(--tabs-parimary-tab-item-active-text-color);
+          background: var(--tabs-parimary-tab-item-active-bg-color);
         }
         &.is-disabled a {
-          color: deep-map-get($denali-default-theme, "tabs", "primary", "tab-item", "disabled", "text-color");
+          color: var(--tabs-parimary-tab-item-disabled-text-color);
           cursor: not-allowed;
         }
       }
     }
     // Vertical Primary
     &.is-vertical {
-      min-width: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "width");
-      width: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "width");
+      min-width: var(--tabs-primary-vertical-width);
+      width: var(--tabs-primary-vertical-width);
       height: inherit;
       overflow-y: auto;
       ul {
         flex-direction: column;
-        padding: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "padding");
+        padding: var(--tabs-primary-vertical-padding);
         width: 100%;
         li {
           a {
             box-sizing: border-box;
             width: inherit;
-            height: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "tab-item", "height");
+            height: var(--tabs-primary-vertical-tab-item-height);
             margin: 0px 16px;
-            padding: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "tab-item", "padding");
+            padding: var(--tabs-primary-vertical-tab-item-padding);
             justify-content: flex-start;
             border-radius: 0px;
             &.is-active {
               width: calc(100% - (16px * 2));
-              background: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "tab-item", "active-accordion", "background-color");
-              font-weight: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "tab-item", "active-accordion", "text-weight");
-              color: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "tab-item", "active-accordion", "text-color");
-              border-radius: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "tab-item", "active-accordion", "corner-radius");
+              background: var(--tabs-primary-vertical-active-accordion-bg-color);
+              font-weight: var(--tabs-primary-vertical-active-accordion-text-weight);
+              color: var(--tabs-primary-vertical-active-accordion-text-color);
+              border-radius: var(--tabs-primary-vertical-active-accordion-corner-radius);
             }
           }
           &.is-active {
-            background: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "tab-item", "active", "background-color");
-            box-shadow: deep-map-get($denali-default-theme, "tabs", "primary", "vertical", "tab-item", "active", "border-left");
+            background: var(--tabs-primary-vertical-tab-item-active-bg-color);
+            box-shadow: var(--tabs-primary-vertical-tab-item-active-border);
           }
         }
       }
@@ -87,7 +86,7 @@
       display: flex;
       justify-content: flex-start;
       padding: 0px;
-      box-shadow: deep-map-get($denali-default-theme, "tabs", "secondary", "border-bottom");
+      box-shadow: var(--tabs-secondary-border);
       overflow-x: auto;
       overflow-x: -moz-scrollbars-none;
       &::-webkit-scrollbar {
@@ -99,13 +98,14 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: deep-map-get($denali-default-theme, "tabs", "text-size");
-          height: deep-map-get($denali-default-theme, "tabs", "secondary", "tab-item", "height");
-          padding: deep-map-get($denali-default-theme, "tabs", "secondary", "tab-item", "padding");
+          color: var(--tabs-secondary-tab-item-text-color);
+          font-size: var(--tabs-font-size);
+          height: var(--tabs-secondary-tab-item-height);
+          padding: var(--tabs-secondary-tab-item-padding);
         }
         &.is-active a {
-          border-bottom: deep-map-get($denali-default-theme, "tabs", "secondary", "tab-item", "active", "border-bottom");
-          color: deep-map-get($denali-default-theme, "tabs", "secondary", "tab-item", "active", "text-color");
+          box-shadow: var(--tabs-secondary-tab-item-active-border);
+          color: var(--tabs-secondary-tab-item-active-text-color);
         }
       }
     }
@@ -116,14 +116,14 @@
     @include media-size-down(tablet) {
       position: absolute;
       left: -300px;
-      transition: 300ms;
+      transition: left 300ms;
     }
   }
   &.tablet-down-hide-right {
     @include media-size-down(tablet) {
       position: absolute;
       right: -300px;
-      transition: 300ms;
+      transition: right 300ms;
     }
   }
   &.tablet-down-toggle-tabs-left {
@@ -146,6 +146,7 @@
         padding: deep-map-get($theme-config, "tabs", "primary", "padding");
         li {
           a {
+            color: deep-map-get($theme-config, "tabs", "primary", "tab-item", "text-color");
             font-size: deep-map-get($theme-config, "tabs", "text-size");
             height: deep-map-get($theme-config, "tabs", "primary", "tab-item", "height");
             padding: deep-map-get($theme-config, "tabs", "primary", "tab-item", "padding");
@@ -181,7 +182,7 @@
             }
             &.is-active {
               background: deep-map-get($theme-config, "tabs", "primary", "vertical", "tab-item", "active", "background-color");
-              box-shadow: deep-map-get($theme-config, "tabs", "primary", "vertical", "tab-item", "active", "border-left");
+              box-shadow: deep-map-get($theme-config, "tabs", "primary", "vertical", "tab-item", "active", "border");
             }
           }
         }
@@ -191,15 +192,16 @@
     // Secondary
     &.is-secondary {
       ul {
-        box-shadow: deep-map-get($theme-config, "tabs", "secondary", "border-bottom");
+        box-shadow: deep-map-get($theme-config, "tabs", "secondary", "border");
         li {
           a {
+            color: deep-map-get($theme-config, "tabs", "secondary", "tab-item", "text-color");
             font-size: deep-map-get($theme-config, "tabs", "text-size");
             height: deep-map-get($theme-config, "tabs", "secondary", "tab-item", "height");
             padding: deep-map-get($theme-config, "tabs", "secondary", "tab-item", "padding");
           }
           &.is-active a {
-            border-bottom: deep-map-get($theme-config, "tabs", "secondary", "tab-item", "active", "border-bottom");
+            box-shadow: deep-map-get($theme-config, "tabs", "secondary", "tab-item", "active", "border");
             color: deep-map-get($theme-config, "tabs", "secondary", "tab-item", "active", "text-color");
           }
         }

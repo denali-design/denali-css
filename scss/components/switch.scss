@@ -2,8 +2,6 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 label.switch {
   box-sizing: border-box;
   display: inline-flex;
@@ -20,7 +18,7 @@ label.switch > input[type="checkbox"] {
 
 /* Horizontal line */
 label.switch > .slider {
-  background-color: deep-map-get($denali-default-theme, "switch", "slider", "standard-color");
+  background-color: var(--switch-slider-standard-color);
   border-radius: 34px;
   bottom: 0;
   box-sizing: border-box;
@@ -47,10 +45,10 @@ label.switch > .slider:before {
 
 /* Toggle circle */
 label.switch > .slider:after {
-  background-color: deep-map-get($denali-default-theme, "switch", "circle", "background-color", "standard");
+  background-color: var(--switch-circle-bg-color-standard);
   bottom: -8px;
   border: 2px solid;
-  border-color: deep-map-get($denali-default-theme, "switch", "circle", "border-color", "standard");
+  border-color: var(--switch-circle-border-color-standard);
   border-radius: 50%;
   box-sizing: border-box;
   content: "";
@@ -62,40 +60,40 @@ label.switch > .slider:after {
 }
 
 label.switch > input[type="checkbox"]:hover ~ .slider:after {
-  border-color: deep-map-get($denali-default-theme, "switch", "circle", "border-color", "hover");
+  border-color: var(--switch-circle-border-color-hover);
 }
 
 label.switch > input[type="checkbox"]:checked ~ .slider {
-  background-color: deep-map-get($denali-default-theme, "switch", "slider", "active-color");
+  background-color: var(--switch-slider-active-color);
 }
 
 label.switch > input[type="checkbox"]:checked ~ .slider:after {
-  background: deep-map-get($denali-default-theme, "switch", "circle", "background-color", "active");
-  border-color: deep-map-get($denali-default-theme, "switch", "circle", "border-color", "active");
+  background: var(--switch-circle-bg-color-active);
+  border-color: var(--switch-circle-border-color-active);
   transform: translateX(16px);
 }
 
 label.switch.disabled > input[type="checkbox"] ~ .slider,
 label.switch > input[type="checkbox"]:disabled ~ .slider,
 label.switch > input[type="checkbox"]:checked:disabled ~ .slider {
-  background-color: deep-map-get($denali-default-theme, "switch", "slider", "disabled-color");
+  background-color: var(--switch-slider-disabled-color);
   cursor: not-allowed;
 }
 
 label.switch.disabled > input[type="checkbox"] ~ .slider:after,
 label.switch > input[type="checkbox"]:disabled ~ .slider:after,
 label.switch > input[type="checkbox"]:checked:disabled ~ .slider:after {
-  border-color: deep-map-get($denali-default-theme, "switch", "circle", "border-color", "disabled");
+  border-color: var(--switch-circle-border-color-disabled);
   cursor: not-allowed;
 }
 
 label.switch.disabled > input[type="checkbox"]:checked ~ .slider:after,
 label.switch > input[type="checkbox"]:checked:disabled ~ .slider:after {
-  background: deep-map-get($denali-default-theme, "switch", "circle", "background-color", "disabled");
+  background: var(--switch-circle-bg-color-disabled);
 }
 
 label.switch > .label {
-  color: deep-map-get($denali-default-theme, "switch", "label", "text-color");
+  color: var(--switch-label-text-color);
   font-size: 14px;
   font-family: helvetica, sans-serif;
   font-weight: normal;
@@ -107,7 +105,7 @@ label.switch > .label {
 label.switch.disabled > .label,
 label.switch > input[type="checkbox"]:disabled ~ .label,
 label.switch > input[type="checkbox"]:checked:disabled ~ .label {
-  color: deep-map-get($denali-default-theme, "switch", "label", "disabled-text-color");
+  color: var(--switch-label-disabled-text-color);
 }
 
 label.switch > input[type="checkbox"]:checked ~ .off {

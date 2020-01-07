@@ -2,11 +2,9 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../themes/denali-default-theme.scss';
-
 nav.nav {
-  background: deep-map-get($denali-default-theme, "navbar", "background-color");
-  height: deep-map-get($denali-default-theme, "navbar", "height");
+  background: var(--navbar-bg-color);
+  height: var(--navbar-height);
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -20,12 +18,12 @@ nav.nav {
   }
 
   .nav-icon {
-    height: deep-map-get($denali-default-theme, "navbar", "height");
+    height: var(--navbar-height);
     width: 48px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: deep-map-get($denali-default-theme, "navbar", "text-color") !important;
+    color: var(--navbar-text-color) !important;
     &:hover {
       opacity: 0.4;
     }
@@ -35,17 +33,18 @@ nav.nav {
   }
 
   .nav-item {
-    height: deep-map-get($denali-default-theme, "navbar", "height");
+    height: var(--navbar-height);
     display: inline-flex;
     align-items: center;
     font-size: 1.6rem;
     padding: 0px 12px;
-    color: deep-map-get($denali-default-theme, "navbar", "text-color") !important;
+    color: var(--navbar-item-text-color) !important;
     &:hover {
-      opacity: 0.4;
+      color: var(--navbar-item-hover-text-color) !important;
     }
     &.is-active {
-      box-shadow: inset 0 -4px 0 deep-map-get($denali-default-theme, "navbar", "nav-items", "active-border-color");
+      box-shadow: inset 0 -4px 0 var(--navbar-item-active-border-color);
+      color: var(--navbar-item-active-text-color) !important;
     }
   }
 
@@ -58,7 +57,7 @@ nav.nav {
   // Nav Positioning
   .nav-left,
   .nav-right {
-    height: deep-map-get($denali-default-theme, "navbar", "height");
+    height: var(--navbar-height);
     display: flex;
     align-items: center;
   }
@@ -84,7 +83,7 @@ nav.nav {
     &:focus ~ .nav-right.responsive {
       opacity: 1;
       visibility: visible;
-      transition: 300ms;
+      transition: opacity 300ms;
     }
     @include media-size-up(small-desktop) {
       display: none;
@@ -99,14 +98,13 @@ nav.nav {
       @include media-size-down(tablet) {
         opacity: 0;
         visibility: hidden;
-        transition: 300ms;
         justify-content: flex-end;
         flex: auto;
         display: flex;
         align-items: center;
         position: absolute;
         margin-top: 60px;
-        background: deep-map-get($denali-default-theme, "navbar", "background-color");
+        background: var(--navbar-bg-color);
         padding: 0px 10px;
         margin-left: -10px;
         width: 100%;
@@ -117,6 +115,7 @@ nav.nav {
         &:focus-within {
           opacity: 1;
           visibility: visible;
+          transition: opacity 300ms;
         }
         @include media-size-up(tablet) {
           padding: 0px 20px;
@@ -132,7 +131,7 @@ nav.nav {
 
   // Nav-group
   .nav-group {
-    height: deep-map-get($denali-default-theme, "navbar", "height");
+    height: var(--navbar-height);
     display: flex;
     align-items: center;
     &:last-child {
@@ -162,9 +161,13 @@ nav.nav {
 
     .nav-item {
       height: deep-map-get($theme-config, "navbar", "height");
-      color: deep-map-get($theme-config, "navbar", "text-color") !important;
+      color: deep-map-get($theme-config, "navbar", "nav-items", "text-color") !important;
+      &:hover {
+        color: deep-map-get($theme-config, "navbar", "nav-items", "hover-text-color") !important;
+      }
       &.is-active {
         box-shadow: inset 0 -4px 0 deep-map-get($theme-config, "navbar", "nav-items", "active-border-color");
+        color: deep-map-get($theme-config, "navbar", "nav-items", "active-text-color") !important;
       }
     }
 
