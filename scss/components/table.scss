@@ -2,62 +2,65 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  text-align: left;
-}
+@mixin table-default {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+  }
 
-table > tbody > tr > th {
-  color: var(--table-header-text-color);
-  font-size: var(--table-header-text-size);
-  font-weight: var(--table-header-text-weight);
-  text-transform: var(--table-header-text-transform);
-  padding: var(--table-header-padding);
-  border-bottom: var(--table-header-border-bottom);
-  background: var(--table-header-bg-color);
-}
-
-table > tbody > tr > td {
-  padding: var(--table-row-padding);
-  border-bottom: var(--table-row-border-bottom);
-}
-
-table.is-striped > tbody > tr > td {
-  border: none;
-}
-
-table.is-striped > tbody > tr:nth-child(even) {
-  background: var(--table-striped-row-bg-color);
-}
-
-table > tbody > tr > td.is-center,
-table > tbody > tr > th.is-center {
-  text-align: center;
-}
-
-table > tbody > tr > td.is-right,
-table > tbody > tr > th.is-right {
-  text-align: right;
-}
-
-@mixin tables-base-theme($theme-config) {
   table > tbody > tr > th {
-    color: deep-map-get($theme-config, "tables", "header", "text", "color");
-    font-size: deep-map-get($theme-config, "tables", "header", "text", "size");
-    font-weight: deep-map-get($theme-config, "tables", "header", "text", "weight");
-    text-transform: deep-map-get($theme-config, "tables", "header", "text", "transform");
-    padding: deep-map-get($theme-config, "tables", "header", "padding");
-    border-bottom: deep-map-get($theme-config, "tables", "header", "border-bottom");
-    background: deep-map-get($theme-config, "tables", "header", "background-color");
+    color: $table-header-text-color;
+    font-size: $table-header-text-size;
+    font-weight: $table-header-text-weight;
+    text-transform: $table-header-text-transform;
+    padding: $table-header-padding;
+    border-bottom: $table-header-border-bottom;
+    background: $table-header-bg-color;
   }
 
   table > tbody > tr > td {
-    padding: deep-map-get($theme-config, "tables", "row", "padding");
-    border-bottom: deep-map-get($theme-config, "tables", "row", "border-bottom");
+    padding: $table-row-padding;
+    border-bottom: $table-row-border-bottom;
+  }
+
+  table.is-striped > tbody > tr > td {
+    border: none;
   }
 
   table.is-striped > tbody > tr:nth-child(even) {
-    background: deep-map-get($theme-config, "tables", "striped-row", "background-color");
+    background: $table-striped-row-bg-color;
+  }
+
+  table > tbody > tr > td.is-center,
+  table > tbody > tr > th.is-center {
+    text-align: center;
+  }
+
+  table > tbody > tr > td.is-right,
+  table > tbody > tr > th.is-right {
+    text-align: right;
+  }
+}
+
+
+@mixin table-theme {
+  table>tbody>tr>th {
+    color: $table-header-text-color;
+    font-size: $table-header-text-size;
+    font-weight: $table-header-text-weight;
+    text-transform: $table-header-text-transform;
+    padding: $table-header-padding;
+    border-bottom: $table-header-border-bottom;
+    background: $table-header-bg-color;
+  }
+
+  table>tbody>tr>td {
+    padding: $table-row-padding;
+    border-bottom: $table-row-border-bottom;
+  }
+
+  table.is-striped>tbody>tr:nth-child(even) {
+    background: $table-striped-row-bg-color;
   }
 }

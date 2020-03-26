@@ -2,222 +2,66 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-// Reset
-.input {
-  position: relative;
-  z-index: 0;
+@mixin inputs-default {
+  .input {
+    position: relative;
+    z-index: 0;
 
-  input,
-  textarea {
-    margin: 0;
-    appearance: none;
-    border: none;
-    box-shadow: none;
-    flex: 1 0 auto;
-    font: inherit;
-    outline: none;
-    text-align: left;
-    padding: var(--fields-padding);
-    width: inherit;
+    input,
+    textarea {
+      margin: 0;
+      appearance: none;
+      border: none;
+      box-shadow: none;
+      flex: 1 0 auto;
+      font: inherit;
+      outline: none;
+      text-align: left;
+      padding: $fields-padding;
+      width: inherit;
 
-    &:active,
-    &:focus {
-      transition: 300ms;
-    }
-  }
-}
-
-.input {
-  min-width: var(--fields-sizes-default-width);
-  width: var(--fields-sizes-default-width);
-
-  input {
-    height: var(--fields-sizes-default-height);
-  }
-
-  textarea {
-    padding-top: 6px;
-    max-width: 100%;
-    min-height: 90px;
-  }
-
-  input,
-  textarea {
-    background: var(--fields-default-bg);
-    border-radius: var(--fields-corner-radius);
-    color: var(--fields-default-text-color);
-    box-shadow: var(--fields-default-border);
-
-    &:active,
-    &:focus {
-      box-shadow: var(--fields-focus-border);
-    }
-
-    &::placeholder {
-      color: var(--fields-placeholder-text-color);
-    }
-
-    &[disabled] {
-      background: var(--fields-disabled-bg);
-      color: var(--fields-disabled-text-color);
-      box-shadow: var(--fields-disabled-border);
-      &::placeholder {
-        color: var(--fields-placeholder-text-color);
+      &:active,
+      &:focus {
+        transition: 300ms;
       }
     }
   }
 
-  // States
-  &.is-active > input,
-  &.is-active > textarea {
-    box-shadow: var(--fields-focus-border);
-  }
-
-  &.is-disabled > input,
-  &.is-disabled > textarea {
-    background: var(--fields-disabled-bg);
-    color: var(--fields-disabled-text-color);
-    box-shadow: var(--fields-disabled-border);
-  }
-
-  &.is-error > input,
-  input:invalid,
-  &.is-error > textarea,
-  textarea:invalid {
-    box-shadow: var(--fields-error-border);
-  }
-
-  // Sizes
-  &.is-medium > input{
-    height: var(--fields-sizes-medium-height);
-  }
-  &.is-small > input{
-    height: var(--fields-sizes-small-height);
-  }
-
-  // Dark State
-  &.is-inverse {
-    input {
-      background: rgba(138, 197, 237, 0.10);
-      color: $grey-100;
-    }
-    input:active {
-      border-bottom: 2px solid rgba($brand-700, 1);
-      color: $grey-100;
-    }
-    input::placeholder {
-      color: rgba($grey-100, 0.5);
-    }
-    label {
-      color: $grey-100;
-    }
-  }
-
-  // Message under input
-  .message {
-    width: inherit;
-    font-size: 11px !important;
-    font-weight: normal;
-    line-height: 1.6rem;
-    position: absolute;
-  }
-  &.is-error > .message {
-    color: $status-danger;
-  }
-}
-
-// Input with icon
-.input.has-icon-back {
-  input {
-    padding-right: 34px;
-  }
-  .d-icon {
-    font-size: 18px;
-    position: relative;
-    margin-top: 0;
-    margin-left: 0;
-    pointer-events: none;
-    &::before {
-      position: absolute;
-      top: -1px;
-      right: 10px;
-    }
-  }
-}
-.input.has-icon-front {
-  input {
-    padding-left: 34px;
-  }
-  .d-icon {
-    font-size: 18px;
-    margin-top: 9px;
-    position: absolute;
-    margin-left: 10px;
-  }
-}
-
-// Input with button
-.input-group.has-button {
-  input {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-  button.button {
-    margin: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-  }
-}
-
-// Input with dropdown
-.input-group.has-dropdown {
   .input {
-    min-width: 0px;
-    width: auto;
-    input {
-      min-width: 250px;
-      border-radius: 0px;
-    }
-    select {
-      width: inherit;
-      padding-right: 34px;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-    }
-  }
-}
-
-@mixin fields-base-theme($theme-config) {
-  .input {
-    min-width: deep-map-get($theme-config, "fields", "sizes", "default", "width");
-    width: deep-map-get($theme-config, "fields", "sizes", "default", "width");
+    width: $fields-sizes-default-width;
 
     input {
-      height: deep-map-get($theme-config, "fields", "sizes", "default", "height");
+      height: $fields-sizes-default-height;
+    }
+
+    textarea {
+      padding-top: 6px;
+      max-width: 100%;
+      min-height: 90px;
     }
 
     input,
     textarea {
-      background: deep-map-get($theme-config, "fields", "default", "background");
-      border-radius: deep-map-get($theme-config, "fields", "corner-radius");
-      color: deep-map-get($theme-config, "fields", "default", "text-color");
-      box-shadow: deep-map-get($theme-config, "fields", "default", "border");
+      background: $fields-default-bg;
+      border-radius: $fields-corner-radius;
+      color: $fields-default-text-color;
+      box-shadow: $fields-default-border;
 
       &:active,
       &:focus {
-        box-shadow: deep-map-get($theme-config, "fields", "focus", "border");
+        box-shadow: $fields-focus-border;
       }
 
       &::placeholder {
-        color: deep-map-get($theme-config, "fields", "placeholder", "text-color");
+        color: $fields-placeholder-text-color;
       }
 
       &[disabled] {
-        background: deep-map-get($theme-config, "fields", "disabled", "background");
-        color: deep-map-get($theme-config, "fields", "disabled", "text-color");
-        box-shadow: deep-map-get($theme-config, "fields", "disabled", "border");
+        background: $fields-disabled-bg;
+        color: $fields-disabled-text-color;
+        box-shadow: $fields-disabled-border;
         &::placeholder {
-          color: deep-map-get($theme-config, "fields", "disabled", "text-color");
+          color: $fields-placeholder-text-color;
         }
       }
     }
@@ -225,27 +69,189 @@
     // States
     &.is-active > input,
     &.is-active > textarea {
-      box-shadow: deep-map-get($theme-config, "fields", "focus", "border");
+      box-shadow: $fields-focus-border;
     }
+
     &.is-disabled > input,
     &.is-disabled > textarea {
-      background: deep-map-get($theme-config, "fields", "disabled", "background");
-      color: deep-map-get($theme-config, "fields", "disabled", "text-color");
-      box-shadow: deep-map-get($theme-config, "fields", "disabled", "border");
+      background: $fields-disabled-bg;
+      color: $fields-disabled-text-color;
+      box-shadow: $fields-disabled-border;
     }
+
     &.is-error > input,
     input:invalid,
     &.is-error > textarea,
     textarea:invalid {
-      box-shadow: deep-map-get($theme-config, "fields", "error", "border");
+      box-shadow: $fields-error-border;
     }
 
     // Sizes
     &.is-medium > input{
-      height: deep-map-get($theme-config, "fields", "sizes", "medium", "height");
+      height: $fields-sizes-medium-height;
     }
     &.is-small > input{
-      height: deep-map-get($theme-config, "fields", "sizes", "small", "height");
+      height: $fields-sizes-small-height;
+    }
+
+    // Dark State
+    &.is-inverse {
+      input {
+        background: rgba(138, 197, 237, 0.10);
+        color: $color-grey-100;
+      }
+      input:active {
+        border-bottom: 2px solid rgba($color-brand-700, 1);
+        color: $color-grey-100;
+      }
+      input::placeholder {
+        color: rgba($color-grey-100, 0.5);
+      }
+      label {
+        color: $color-grey-100;
+      }
+    }
+
+    // Message under input
+    .message {
+      width: inherit;
+      font-size: 11px !important;
+      font-weight: normal;
+      line-height: 1.6rem;
+      position: absolute;
+      margin-top: 2px;
+    }
+    &.is-error > .message {
+      color: $color-status-danger;
+    }
+  }
+
+  // Input with icon
+  .input.has-icon-back {
+    input {
+      padding-right: 34px;
+    }
+    .d-icon {
+      font-size: 1.8rem !important;
+      position: relative;
+      margin-top: 0;
+      margin-left: 0;
+      pointer-events: none;
+      &::before {
+        position: absolute;
+        top: -1px;
+        right: 10px;
+      }
+    }
+  }
+
+  
+  .input.has-icon-front {
+    input {
+      padding-left: 34px;
+    }
+    .d-icon {
+      font-size: 1.8rem !important;
+      margin-top: 9px;
+      position: absolute;
+      margin-left: 10px;
+    }
+  }
+
+  // Input with button
+  .input-group.has-button {
+    input {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    button.button {
+      margin: 0px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+  }
+
+  // Input with dropdown
+  .input-group.has-dropdown {
+    .input {
+      min-width: 0px;
+      width: auto;
+      input {
+        min-width: 250px;
+        border-radius: 0px;
+      }
+      select {
+        width: inherit;
+        padding-right: 34px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+    }
+  }
+}
+
+@mixin inputs-theme {
+  .input {
+    width: $fields-sizes-default-width;
+
+    input {
+      height: $fields-sizes-default-height;
+    }
+
+    input,
+    textarea {
+      background: $fields-default-bg;
+      border-radius: $fields-corner-radius;
+      color: $fields-default-text-color;
+      box-shadow: $fields-default-border;
+
+      &:active,
+      &:focus {
+        box-shadow: $fields-focus-border;
+      }
+
+      &::placeholder {
+        color: $fields-placeholder-text-color;
+      }
+
+      &[disabled] {
+        background: $fields-disabled-bg;
+        color: $fields-disabled-text-color;
+        box-shadow: $fields-disabled-border;
+
+        &::placeholder {
+          color: $fields-placeholder-text-color;
+        }
+      }
+    }
+
+    // States
+    &.is-active>input,
+    &.is-active>textarea {
+      box-shadow: $fields-focus-border;
+    }
+
+    &.is-disabled>input,
+    &.is-disabled>textarea {
+      background: $fields-disabled-bg;
+      color: $fields-disabled-text-color;
+      box-shadow: $fields-disabled-border;
+    }
+
+    &.is-error>input,
+    input:invalid,
+    &.is-error>textarea,
+    textarea:invalid {
+      box-shadow: $fields-error-border;
+    }
+
+    // Sizes
+    &.is-medium>input {
+      height: $fields-sizes-medium-height;
+    }
+
+    &.is-small>input {
+      height: $fields-sizes-small-height;
     }
   }
 }

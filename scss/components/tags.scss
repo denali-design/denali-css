@@ -2,161 +2,167 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-// Tag List
-div.tags {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+@mixin tags-default {
+  // Tag List
+  div.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-  &.nowrap {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-x: -moz-scrollbars-none;
-    &::-webkit-scrollbar {
-      width: 0 !important
-    }
-  }
-}
-
-.tag {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--tags-padding);
-  height: var(--tags-height);
-  margin: var(--tags-margin);
-  background: var(--tags-bg-color);
-  color: var(--tags-text-color);
-  border-radius: var(--tags-corner-radius);
-  white-space: nowrap;
-  transition: 300ms;
-
-  &.is-active {
-    background: var(--tags-active-bg-color);
-  }
-
-  &[disabled],
-  &.is-disabled {
-    background: var(--tags-disabled-bg-color);
-    color: var(--tags-disabled-text-color);
-  }
-
-  .d-icon {
-    font-size: var(--tags-icon-size) !important;
-  }
-
-  &.is-small {
-    font-size: var(--tags-small-text-size);
-    height: var(--tags-small-height);
-    padding: var(--tags-small-padding);
-    .d-icon {
-      font-size: var(--tags-small-icon-size) !important;
-    }
-  }
-
-  a.d-icon {
-    opacity: .5;
-    color: var(--tags-icon-color);
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &.has-icon-back {
-    padding-right: 6px;
-    .d-icon {
-      margin-left: 6px;
-    }
-    &.is-small {
-      padding-right: 4px;
-      .d-icon {
-        margin-left: 4px;
+    &.nowrap {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-x: -moz-scrollbars-none;
+      &::-webkit-scrollbar {
+        width: 0 !important
       }
     }
   }
 
-  &.has-icon-front {
-    .d-icon {
-      margin-right: 4px;
-    }
-  }
-
-  &.outlined {
-    background: var(--tags-outlined-bg-color);
-    color: var(--tags-outlined-text-color);
-    border: var(--tags-outlined-border);
-
-    &:hover {
-      background: var(--tags-outlined-hover-bg-color);
-      transition: 300ms;
-    }
-    &.is-active {
-      background: var(--tags-outlined-active-bg-color);
-      color: var(--tags-outlined-active-text-color);
-    }
-    &[disabled],
-    &.is-disabled {
-      background: var(--tags-outlined-disabled-bg-color);
-      color: var(--tags-outlined-disabled-text-color);
-      border-color: var(--tags-outlined-disabled-border-color);
-    }
-  }
-}
-
-@mixin tags-base-theme($theme-config) {
-
   .tag {
-    padding: deep-map-get($theme-config, "tags", "padding");
-    height: deep-map-get($theme-config, "tags", "height");
-    margin: deep-map-get($theme-config, "tags", "margin");
-    background: deep-map-get($theme-config, "tags", "background-color");
-    color: deep-map-get($theme-config, "tags", "text-color");
-    border-radius: deep-map-get($theme-config, "tags", "corner-radius");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $tags-padding;
+    height: $tags-height;
+    margin: $tags-margin;
+    background: $tags-bg-color;
+    color: $tags-text-color;
+    border-radius: $tags-corner-radius;
+    white-space: nowrap;
+    transition: 300ms;
 
     &.is-active {
-      background: deep-map-get($theme-config, "tags", "active", "background-color");
+      background: $tags-active-bg-color;
     }
 
     &[disabled],
     &.is-disabled {
-      background: deep-map-get($theme-config, "tags", "disabled", "background-color");
-      color: deep-map-get($theme-config, "tags", "disabled", "text-color");
+      background: $tags-disabled-bg-color;
+      color: $tags-disabled-text-color;
     }
 
     .d-icon {
-      font-size: deep-map-get($theme-config, "tags", "icon-size") !important;
+      font-size: $tags-icon-size !important;
     }
 
     &.is-small {
-      font-size: deep-map-get($theme-config, "tags", "small", "text-size");
-      height: deep-map-get($theme-config, "tags", "small", "height");
-      padding: deep-map-get($theme-config, "tags", "small", "padding");
+      font-size: $tags-small-text-size;
+      height: $tags-small-height;
+      padding: $tags-small-padding;
       .d-icon {
-        font-size: deep-map-get($theme-config, "tags", "small", "icon-size") !important;
+        font-size: $tags-small-icon-size !important;
       }
     }
 
     a.d-icon {
-      color: deep-map-get($theme-config, "tags", "icon-color");
+      opacity: .5;
+      color: $tags-icon-color;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &.has-icon-back {
+      padding-right: 6px;
+      .d-icon {
+        margin-left: 6px;
+      }
+      &.is-small {
+        padding-right: 4px;
+        .d-icon {
+          margin-left: 4px;
+        }
+      }
+    }
+
+    &.has-icon-front {
+      .d-icon {
+        margin-right: 4px;
+      }
     }
 
     &.outlined {
-      background: deep-map-get($theme-config, "tags", "outlined", "background-color");
-      color: deep-map-get($theme-config, "tags", "outlined", "text-color");
-      border: deep-map-get($theme-config, "tags", "outlined", "border");
+      background: $tags-outlined-bg-color;
+      color: $tags-outlined-text-color !important;
+      border: $tags-outlined-border;
 
       &:hover {
-        background: deep-map-get($theme-config, "tags", "outlined", "hover-background-color");
+        background: $tags-outlined-hover-bg-color;
+        color: $tags-outlined-text-color !important;
+        transition: 300ms;
       }
       &.is-active {
-        background: deep-map-get($theme-config, "tags", "outlined", "active", "background-color");
-        color: deep-map-get($theme-config, "tags", "outlined", "active", "text-color");
+        background: $tags-outlined-active-bg-color;
+        color: $tags-outlined-active-text-color !important;
       }
       &[disabled],
       &.is-disabled {
-        background: deep-map-get($theme-config, "tags", "outlined", "disabled", "background-color");
-        color: deep-map-get($theme-config, "tags", "outlined", "disabled", "text-color");
-        border-color: deep-map-get($theme-config, "tags", "outlined", "disabled", "border-color"),
+        background: $tags-outlined-disabled-bg-color;
+        color: $tags-outlined-disabled-text-color;
+        border-color: $tags-outlined-disabled-border-color;
+      }
+    }
+  }
+}
+
+@mixin tags-theme {
+  .tag {
+    padding: $tags-padding;
+    height: $tags-height;
+    margin: $tags-margin;
+    background: $tags-bg-color;
+    color: $tags-text-color;
+    border-radius: $tags-corner-radius;
+
+    &.is-active {
+      background: $tags-active-bg-color;
+    }
+
+    &[disabled],
+    &.is-disabled {
+      background: $tags-disabled-bg-color;
+      color: $tags-disabled-text-color;
+    }
+
+    .d-icon {
+      font-size: $tags-icon-size !important;
+    }
+
+    &.is-small {
+      font-size: $tags-small-text-size;
+      height: $tags-small-height;
+      padding: $tags-small-padding;
+
+      .d-icon {
+        font-size: $tags-small-icon-size !important;
+      }
+    }
+
+    a.d-icon {
+      color: $tags-icon-color;
+    }
+
+    &.outlined {
+      background: $tags-outlined-bg-color;
+      color: $tags-outlined-text-color !important;
+      border: $tags-outlined-border;
+
+      &:hover {
+        background: $tags-outlined-hover-bg-color;
+        color: $tags-outlined-text-color !important;
+      }
+
+      &.is-active {
+        background: $tags-outlined-active-bg-color;
+        color: $tags-outlined-active-text-color !important;
+      }
+
+      &[disabled],
+      &.is-disabled {
+        background: $tags-outlined-disabled-bg-color;
+        color: $tags-outlined-disabled-text-color !important;
+        border-color: $tags-outlined-disabled-border-color;
       }
     }
   }

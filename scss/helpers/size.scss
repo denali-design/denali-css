@@ -5,8 +5,13 @@
 // Width
 @for $i from 0 through 30 {
   .w-#{$i} {
-    width: 10px * $i;
+    width: 10px * $i !important;
   }
+}
+
+.w-auto {
+  min-width: auto;
+  width: auto;
 }
 
 // Height

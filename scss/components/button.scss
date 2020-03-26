@@ -2,386 +2,180 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-.button {
-  border: none;
-  outline: 0;
-  cursor: pointer;
-  box-sizing: border-box;
-
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px;
-  padding: 0px 10px;
-  padding-bottom: 1px;
-  height: var(--button-sizes-default-height);
-  font-size: var(--button-sizes-default-font-size);
-  min-width: var(--button-sizes-default-min-width);
-  border-radius: var(--button-corner-radius);
-
-  transition: background 300ms;
-
-  &.is-solid {
-    background: var(--button-solid-default-bg-color);
-    color: var(--button-solid-default-text-color);
-    &.is-inverse {
-      background: var(--button-solid-default-inverse-bg-color);
-      color: var(--button-solid-default-inverse-text-color);
-    }
-  }
-
-  &.is-outline {
-    background: var(--button-outline-default-bg-color);
-    color: var(--button-outline-default-text-color);
-    border: var(--button-outline-default-border);
-    &.is-inverse {
-      background: var(--button-outline-default-inverse-bg-color);
-      color: var(--button-outline-default-inverse-text-color);
-      border: var(--button-outline-default-inverse-border);
-    }
-  }
-
-  &.is-ghost {
-    background: var(--button-ghost-default-bg-color);
-    color: var(--button-ghost-default-text-color);
-    &.is-inverse {
-      background: var(--button-ghost-default-inverse-bg-color);
-      color: var(--button-ghost-default-inverse-text-color);
-    }
-  }
-
-  &.is-text {
-    background: var(--button-text-default-bg-color);
-    color: var(--button-text-default-text-color);
-    &.is-inverse {
-      background: var(--button-text-default-inverse-bg-color);
-      color: var(--button-text-default-inverse-text-color);
-    }
-  }
-
-  &.is-danger {
-    background: var(--color-status-danger);
-    color: var(--color-grey-100);
-    &.is-inverse {
-      background: var(--color-status-danger);
-      color: var(--color-grey-100);
-    }
-  }
-
-
-  // Hover and Focus
-  &:hover,
-  &.is-active,
-  &.is-active:hover,
-  &:focus {
+@mixin button-default {
+  .button {
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px 10px;
+    padding-bottom: 1px;
+    height: $button-sizes-default-height;
+    font-size: $button-sizes-default-font-size;
+    min-width: $button-sizes-default-min-width;
+    border-radius: $button-corner-radius;
     transition: background 300ms;
 
     &.is-solid {
-      background: var(--button-solid-focus-bg-color);
-      color: var(--button-solid-focus-text-color);
+      background: $button-solid-default-bg-color;
+      color: $button-solid-default-text-color;
       &.is-inverse {
-        background: var(--button-solid-focus-inverse-bg-color);
-        color: var(--button-solid-focus-inverse-text-color);
+        background: $button-solid-default-inverse-bg-color;
+        color: $button-solid-default-inverse-text-color;
       }
     }
 
     &.is-outline {
-      background: var(--button-outline-focus-bg-color);
-      color: var(--button-outline-focus-text-color);
-      border: var(--button-outline-focus-border);
+      background: $button-outline-default-bg-color;
+      color: $button-outline-default-text-color;
+      border: $button-outline-default-border;
       &.is-inverse {
-        background: var(--button-outline-focus-inverse-bg-color);
-        color: var(--button-outline-focus-inverse-text-color);
-        border: var(--button-outline-focus-inverse-border);
+        background: $button-outline-default-inverse-bg-color;
+        color: $button-outline-default-inverse-text-color;
+        border: $button-outline-default-inverse-border;
       }
     }
 
     &.is-ghost {
-      background: var(--button-ghost-focus-bg-color);
-      color: var(--button-ghost-focus-text-color);
+      background: $button-ghost-default-bg-color;
+      color: $button-ghost-default-text-color;
       &.is-inverse {
-        background: var(--button-ghost-focus-inverse-bg-color);
-        color: var(--button-ghost-focus-inverse-text-color);
+        background: $button-ghost-default-inverse-bg-color;
+        color: $button-ghost-default-inverse-text-color;
       }
     }
 
     &.is-text {
-      background: var(--button-text-focus-bg-color);
-      color: var(--button-text-focus-text-color);
+      background: $button-text-default-bg-color;
+      color: $button-text-default-text-color;
       &.is-inverse {
-        background: var(--button-text-focus-inverse-bg-color);
-        color: var(--button-text-focus-inverse-text-color);
+        background: $button-text-default-inverse-bg-color;
+        color: $button-text-default-inverse-text-color;
       }
     }
 
     &.is-danger {
-      background: #BB0000;
-      color: var(--color-grey-100);
+      background: $color-status-danger;
+      color: $color-grey-100;
       &.is-inverse {
-        background: #BB0000;
-        color: var(--color-grey-100);
-      }
-    }
-  }
-
-  // disabled
-  &.is-disabled,
-  &[disabled],
-  &.is-disabled:hover,
-  &:hover[disabled] {
-    box-shadow: none;
-    cursor: not-allowed;
-
-    &.is-solid {
-      background: var(--button-solid-disabled-bg-color);
-      color: var(--button-solid-disabled-text-color);
-      &.is-inverse {
-        background: var(--button-solid-disabled-inverse-bg-color);
-        color: var(--button-solid-disabled-inverse-text-color);
+        background: $color-status-danger;
+        color: $color-grey-100;
       }
     }
 
-    &.is-outline {
-      background: var(--button-outline-disabled-bg-color);
-      color: var(--button-outline-disabled-text-color);
-      border: var(--button-outline-disabled-border);
 
-      &.is-inverse {
-        background: var(--button-outline-disabled-inverse-bg-color);
-        color: var(--button-outline-disabled-inverse-text-color);
-        border: var(--button-outline-disabled-inverse-border);
-      }
-    }
-
-    &.is-ghost {
-      background: var(--button-ghost-disabled-bg-color);
-      color: var(--button-ghost-disabled-text-color);
-      &.is-inverse {
-        background: var(--button-ghost-disabled-inverse-bg-color);
-        color: var(--button-ghost-disabled-inverse-text-color);
-      }
-    }
-
-    &.is-text {
-      background: var(--button-text-disabled-bg-color);
-      color: var(--button-text-disabled-text-color);
-      &.is-inverse {
-        background: var(--button-text-disabled-inverse-bg-color);
-        color: var(--button-text-disabled-inverse-text-color);
-      }
-    }
-
-    &.is-danger {
-      background: rgba(var(--color-grey-800-rgb), .12);
-      color: rgba(var(--color-grey-800-rgb), .5);
-      &.is-inverse {
-        background: rgba(var(--color-grey-100-rgb), .12);
-        color: rgba(var(--color-grey-100-rgb), .5);
-      }
-    }
-  }
-
-  // MODIFIERS
-  // SIZES
-  &.is-small {
-    height: var(--button-sizes-sm-height);
-    font-size: var(--button-sizes-sm-font-size);
-    min-width: var(--button-sizes-sm-min-width);
-  }
-  &.is-medium {
-    height: var(--button-sizes-md-height);
-    font-size: var(--button-sizes-md-font-size);
-    min-width: var(--button-sizes-md-min-width);
-  }
-  &.is-large {
-    height: var(--button-sizes-lg-height);
-    font-size: var(--button-sizes-lg-font-size);
-    min-width: var(--button-sizes-lg-min-width);
-  }
-  &.is-full {
-    width: 100%;
-  }
-
-  // ICONS
-  &.has-icon {
-    min-width: 0px !important;
-  }
-  .d-icon {
-    vertical-align: middle;
-    font-size: 18px;
-    margin: 0px 6px;
-  }
-}
-
-@mixin buttons-base-theme($theme-config) {
-  .button {
-    // STRUCTURE
-    height: deep-map-get($theme-config, "buttons", "sizes", "default", "height");
-    min-width: deep-map-get($theme-config, "buttons", "sizes", "default", "min-width");
-
-    // STYLE
-    font-size: deep-map-get($theme-config, "buttons", "sizes", "default", "font-size");
-    border-radius: deep-map-get($theme-config, "buttons", "border-radius");
-
-    &.is-solid {
-      background: deep-map-get($theme-config, "buttons", "solid", "default", "background-color");
-      color: deep-map-get($theme-config, "buttons", "solid", "default", "text-color");
-      &.is-inverse {
-        background: deep-map-get($theme-config, "buttons", "solid", "default", "inverse", "background-color");
-        color: deep-map-get($theme-config, "buttons", "solid", "default", "inverse", "text-color");
-      }
-    }
-
-    &.is-outline {
-      color: deep-map-get($theme-config, "buttons", "outline", "default", "text-color");
-      border-width: deep-map-get($theme-config, "buttons", "outline", "default", "border", "width");
-      border-color: deep-map-get($theme-config, "buttons", "outline", "default", "border", "color");
-      border-style: deep-map-get($theme-config, "buttons", "outline", "default", "border", "style");
-      &.is-inverse {
-        background: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "background-color");
-        color: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "text-color");
-        border-width: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "border", "width");
-        border-color: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "border", "color");
-        border-style: deep-map-get($theme-config, "buttons", "outline", "default", "inverse", "border", "style");
-      }
-    }
-
-    &.is-ghost {
-      background: deep-map-get($theme-config, "buttons", "ghost", "default", "background-color");
-      color: deep-map-get($theme-config, "buttons", "ghost", "default", "text-color");
-      &.is-inverse {
-        background: deep-map-get($theme-config, "buttons", "ghost", "default", "inverse", "background-color");
-        color: deep-map-get($theme-config, "buttons", "ghost", "default", "inverse", "text-color");
-      }
-    }
-
-    &.is-text {
-      background: deep-map-get($theme-config, "buttons", "text", "default", "background-color");
-      color: deep-map-get($theme-config, "buttons", "text", "default", "text-color");
-      &.is-inverse {
-        background: deep-map-get($theme-config, "buttons", "text", "default", "inverse", "background-color");
-        color: deep-map-get($theme-config, "buttons", "text", "default", "inverse", "text-color");
-      }
-    }
-
-    &.is-danger {
-      background: deep-map-get($theme-config, "buttons", "danger", "default", "background-color");
-      color: deep-map-get($theme-config, "buttons", "danger", "default", "text-color");
-      &.is-inverse {
-        background: deep-map-get($theme-config, "buttons", "danger", "default", "inverse", "background-color");
-        color: deep-map-get($theme-config, "buttons", "danger", "default", "inverse", "text-color");
-      }
-    }
-
+    // Hover and Focus
     &:hover,
     &.is-active,
     &.is-active:hover,
     &:focus {
+      transition: background 300ms;
+
       &.is-solid {
-        background: deep-map-get($theme-config, "buttons", "solid", "focus", "background-color");
-        color: deep-map-get($theme-config, "buttons", "solid", "focus", "text-color");
+        background: $button-solid-focus-bg-color;
+        color: $button-solid-focus-text-color !important;
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "solid", "focus", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "solid", "focus", "inverse", "text-color");
+          background: $button-solid-focus-inverse-bg-color;
+          color: $button-solid-focus-inverse-text-color !important;
         }
       }
 
       &.is-outline {
-        background: deep-map-get($theme-config, "buttons", "outline", "focus", "background-color");
-        color: deep-map-get($theme-config, "buttons", "outline", "focus", "text-color");
-        border-width: deep-map-get($theme-config, "buttons", "outline", "focus", "border", "width");
-        border-color: deep-map-get($theme-config, "buttons", "outline", "focus", "border", "color");
-        border-style: deep-map-get($theme-config, "buttons", "outline", "focus", "border", "style");
+        background: $button-outline-focus-bg-color;
+        color: $button-outline-focus-text-color !important;
+        border: $button-outline-focus-border;
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "text-color");
-          border-width: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "border", "width");
-          border-color: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "border", "color");
-          border-style: deep-map-get($theme-config, "buttons", "outline", "focus", "inverse", "border", "style");
+          background: $button-outline-focus-inverse-bg-color;
+          color: $button-outline-focus-inverse-text-color !important;
+          border: $button-outline-focus-inverse-border;
         }
       }
 
       &.is-ghost {
-        background: deep-map-get($theme-config, "buttons", "ghost", "focus", "background-color");
-        color: deep-map-get($theme-config, "buttons", "ghost", "focus", "text-color");
+        background: $button-ghost-focus-bg-color;
+        color: $button-ghost-focus-text-color !important;
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "ghost", "focus", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "ghost", "focus", "inverse", "text-color");
+          background: $button-ghost-focus-inverse-bg-color;
+          color: $button-ghost-focus-inverse-text-color !important;
         }
       }
 
       &.is-text {
-        background: deep-map-get($theme-config, "buttons", "text", "focus", "background-color");
-        color: deep-map-get($theme-config, "buttons", "text", "focus", "text-color");
+        background: $button-text-focus-bg-color;
+        color: $button-text-focus-text-color !important;
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "text", "focus", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "text", "focus", "inverse", "text-color");
+          background: $button-text-focus-inverse-bg-color;
+          color: $button-text-focus-inverse-text-color !important;
         }
       }
 
       &.is-danger {
-        background: deep-map-get($theme-config, "buttons", "danger", "focus", "background-color");
-        color: deep-map-get($theme-config, "buttons", "danger", "focus", "text-color");
+        background: #BB0000;
+        color: $color-grey-100 !important;
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "danger", "focus", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "danger", "focus", "inverse", "text-color");
+          background: #BB0000;
+          color: $color-grey-100 !important;
         }
       }
     }
 
+    // disabled
     &.is-disabled,
     &[disabled],
     &.is-disabled:hover,
     &:hover[disabled] {
+      box-shadow: none;
+      cursor: not-allowed;
+
       &.is-solid {
-        background: deep-map-get($theme-config, "buttons", "solid", "disabled", "background-color");
-        color: deep-map-get($theme-config, "buttons", "solid", "disabled", "text-color");
+        background: $button-solid-disabled-bg-color;
+        color: $button-solid-disabled-text-color;
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "solid", "disabled", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "solid", "disabled", "inverse", "text-color");
+          background: $button-solid-disabled-inverse-bg-color;
+          color: $button-solid-disabled-inverse-text-color;
         }
       }
 
       &.is-outline {
-        background: deep-map-get($theme-config, "buttons", "outline", "disabled", "background-color");
-        color: deep-map-get($theme-config, "buttons", "outline", "disabled", "text-color");
-        border-width: deep-map-get($theme-config, "buttons", "outline", "disabled", "border", "width");
-        border-color: deep-map-get($theme-config, "buttons", "outline", "disabled", "border", "color");
-        border-style: deep-map-get($theme-config, "buttons", "outline", "disabled", "border", "style");
+        background: $button-outline-disabled-bg-color;
+        color: $button-outline-disabled-text-color;
+        border: $button-outline-disabled-border;
 
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "text-color");
-          border-width: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "border", "width");
-          border-color: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "border", "color");
-          border-style: deep-map-get($theme-config, "buttons", "outline", "disabled", "inverse", "border", "style");
+          background: $button-outline-disabled-inverse-bg-color;
+          color: $button-outline-disabled-inverse-text-color;
+          border: $button-outline-disabled-inverse-border;
         }
       }
 
       &.is-ghost {
-        background: deep-map-get($theme-config, "buttons", "ghost", "disabled", "background-color");
-        color: deep-map-get($theme-config, "buttons", "ghost", "disabled", "text-color");
+        background: $button-ghost-disabled-bg-color;
+        color: $button-ghost-disabled-text-color;
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "ghost", "disabled", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "ghost", "disabled", "inverse", "text-color");
+          background: $button-ghost-disabled-inverse-bg-color;
+          color: $button-ghost-disabled-inverse-text-color;
         }
       }
 
       &.is-text {
-        background: deep-map-get($theme-config, "buttons", "text", "disabled", "background-color");
-        color: deep-map-get($theme-config, "buttons", "text", "disabled", "text-color");
+        background: $button-text-disabled-bg-color;
+        color: $button-text-disabled-text-color;
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "text", "disabled", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "text", "disabled", "inverse", "text-color");
+          background: $button-text-disabled-inverse-bg-color;
+          color: $button-text-disabled-inverse-text-color;
         }
       }
 
       &.is-danger {
-        background: deep-map-get($theme-config, "buttons", "danger", "disabled", "background-color");
-        color: deep-map-get($theme-config, "buttons", "danger", "disabled", "text-color");
+        background: rgba($color-grey-800, 0.12);
+        color: rgba($color-grey-800 , 0.5);
         &.is-inverse {
-          background: deep-map-get($theme-config, "buttons", "danger", "disabled", "inverse", "background-color");
-          color: deep-map-get($theme-config, "buttons", "danger", "disabled", "inverse", "text-color");
+          background: rgba($color-grey-100 , 0.12);
+          color: rgba($color-grey-100 , 0.5);
         }
       }
     }
@@ -389,19 +183,222 @@
     // MODIFIERS
     // SIZES
     &.is-small {
-      height: deep-map-get($theme-config, "buttons", "sizes", "small", "height");
-      font-size: deep-map-get($theme-config, "buttons", "sizes", "small", "font-size");
-      min-width: deep-map-get($theme-config, "buttons", "sizes", "small", "min-width");
+      height: $button-sizes-sm-height;
+      font-size: $button-sizes-sm-font-size;
+      min-width: $button-sizes-sm-min-width;
     }
     &.is-medium {
-      height: deep-map-get($theme-config, "buttons", "sizes", "medium", "height");
-      font-size: deep-map-get($theme-config, "buttons", "sizes", "medium", "font-size");
-      min-width: deep-map-get($theme-config, "buttons", "sizes", "medium", "min-width");
+      height: $button-sizes-md-height;
+      font-size: $button-sizes-md-font-size;
+      min-width: $button-sizes-md-min-width;
     }
     &.is-large {
-      height: deep-map-get($theme-config, "buttons", "sizes", "large", "height");
-      font-size: deep-map-get($theme-config, "buttons", "sizes", "large", "font-size");
-      min-width: deep-map-get($theme-config, "buttons", "sizes", "large", "min-width");
+      height: $button-sizes-lg-height;
+      font-size: $button-sizes-lg-font-size;
+      min-width: $button-sizes-lg-min-width;
+      padding: 0px 30px;
+    }
+    &.is-full {
+      width: 100%;
+    }
+
+    // ICONS
+    &.has-icon {
+      min-width: 0px !important;
+    }
+    .d-icon {
+      vertical-align: middle;
+      font-size: 18px;
+      margin: 0px 6px;
+    }
+  }
+}
+
+@mixin button-theme {
+  .button {
+    height: $button-sizes-default-height;
+    font-size: $button-sizes-default-font-size;
+    min-width: $button-sizes-default-min-width;
+    border-radius: $button-corner-radius;
+
+    &.is-solid {
+      background: $button-solid-default-bg-color;
+      color: $button-solid-default-text-color;
+
+      &.is-inverse {
+        background: $button-solid-default-inverse-bg-color;
+        color: $button-solid-default-inverse-text-color;
+      }
+    }
+
+    &.is-outline {
+      background: $button-outline-default-bg-color;
+      color: $button-outline-default-text-color;
+      border: $button-outline-default-border;
+
+      &.is-inverse {
+        background: $button-outline-default-inverse-bg-color;
+        color: $button-outline-default-inverse-text-color;
+        border: $button-outline-default-inverse-border;
+      }
+    }
+
+    &.is-ghost {
+      background: $button-ghost-default-bg-color;
+      color: $button-ghost-default-text-color;
+
+      &.is-inverse {
+        background: $button-ghost-default-inverse-bg-color;
+        color: $button-ghost-default-inverse-text-color;
+      }
+    }
+
+    &.is-text {
+      background: $button-text-default-bg-color;
+      color: $button-text-default-text-color;
+
+      &.is-inverse {
+        background: $button-text-default-inverse-bg-color;
+        color: $button-text-default-inverse-text-color;
+      }
+    }
+
+    &.is-danger {
+      background: $color-status-danger;
+      color: $color-grey-100;
+
+      &.is-inverse {
+        background: $color-status-danger;
+        color: $color-grey-100;
+      }
+    }
+
+
+    // Hover and Focus
+    &:hover,
+    &.is-active,
+    &.is-active:hover,
+    &:focus {
+
+      &.is-solid {
+        background: $button-solid-focus-bg-color;
+        color: $button-solid-focus-text-color !important;
+
+        &.is-inverse {
+          background: $button-solid-focus-inverse-bg-color;
+          color: $button-solid-focus-inverse-text-color !important;
+        }
+      }
+
+      &.is-outline {
+        background: $button-outline-focus-bg-color;
+        color: $button-outline-focus-text-color !important;
+        border: $button-outline-focus-border;
+
+        &.is-inverse {
+          background: $button-outline-focus-inverse-bg-color;
+          color: $button-outline-focus-inverse-text-color !important;
+          border: $button-outline-focus-inverse-border;
+        }
+      }
+
+      &.is-ghost {
+        background: $button-ghost-focus-bg-color;
+        color: $button-ghost-focus-text-color !important;
+
+        &.is-inverse {
+          background: $button-ghost-focus-inverse-bg-color;
+          color: $button-ghost-focus-inverse-text-color !important;
+        }
+      }
+
+      &.is-text {
+        background: $button-text-focus-bg-color;
+        color: $button-text-focus-text-color !important;
+
+        &.is-inverse {
+          background: $button-text-focus-inverse-bg-color;
+          color: $button-text-focus-inverse-text-color !important;
+        }
+      }
+    }
+
+    // disabled
+    &.is-disabled,
+    &[disabled],
+    &.is-disabled:hover,
+    &:hover[disabled] {
+      &.is-solid {
+        background: $button-solid-disabled-bg-color;
+        color: $button-solid-disabled-text-color;
+
+        &.is-inverse {
+          background: $button-solid-disabled-inverse-bg-color;
+          color: $button-solid-disabled-inverse-text-color;
+        }
+      }
+
+      &.is-outline {
+        background: $button-outline-disabled-bg-color;
+        color: $button-outline-disabled-text-color;
+        border: $button-outline-disabled-border;
+
+        &.is-inverse {
+          background: $button-outline-disabled-inverse-bg-color;
+          color: $button-outline-disabled-inverse-text-color;
+          border: $button-outline-disabled-inverse-border;
+        }
+      }
+
+      &.is-ghost {
+        background: $button-ghost-disabled-bg-color;
+        color: $button-ghost-disabled-text-color;
+
+        &.is-inverse {
+          background: $button-ghost-disabled-inverse-bg-color;
+          color: $button-ghost-disabled-inverse-text-color;
+        }
+      }
+
+      &.is-text {
+        background: $button-text-disabled-bg-color;
+        color: $button-text-disabled-text-color;
+
+        &.is-inverse {
+          background: $button-text-disabled-inverse-bg-color;
+          color: $button-text-disabled-inverse-text-color;
+        }
+      }
+
+      &.is-danger {
+        background: rgba($color-grey-800, 0.12);
+        color: rgba($color-grey-800, 0.5);
+
+        &.is-inverse {
+          background: rgba($color-grey-100, 0.12);
+          color: rgba($color-grey-100, 0.5);
+        }
+      }
+    }
+
+    // MODIFIERS
+    // SIZES
+    &.is-small {
+      height: $button-sizes-sm-height;
+      font-size: $button-sizes-sm-font-size;
+      min-width: $button-sizes-sm-min-width;
+    }
+
+    &.is-medium {
+      height: $button-sizes-md-height;
+      font-size: $button-sizes-md-font-size;
+      min-width: $button-sizes-md-min-width;
+    }
+
+    &.is-large {
+      height: $button-sizes-lg-height;
+      font-size: $button-sizes-lg-font-size;
+      min-width: $button-sizes-lg-min-width;
     }
   }
 }
