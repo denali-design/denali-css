@@ -2,32 +2,36 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-.title {
-  display: flex;
-  align-items: center;
-  height: var(--titles-height);
-  span.bar {
-    height: inherit;
-    width: var(--titles-bar-width);
-    background-color: var(--titles-bar-bg-color);
-    border-radius: var(--titles-bar-corner-radius);
-    margin-right: 8px;
-    &.is-wide {
-      width: var(--titles-bar-wider-width);
-      margin-right: 6px;
+@mixin titles-default {
+  .title {
+    display: flex;
+    align-items: center;
+    height: $titles-height;
+    span.bar {
+      height: inherit;
+      width: $titles-bar-width;
+      background-color: $titles-bar-bg-color;
+      border-radius: $titles-bar-corner-radius;
+      margin-right: 8px;
+      &.is-wide {
+        width: $titles-bar-wider-width;
+        margin-right: 6px;
+      }
     }
   }
 }
 
-@mixin titles-base-theme($theme-config) {
+@mixin titles-theme {
   .title {
-    height: deep-map-get($theme-config, "titles", "height");
+    height: $titles-height;
+
     span.bar {
-      width: deep-map-get($theme-config, "titles", "bar", "width");
-      background-color: deep-map-get($theme-config, "titles", "bar", "background-color");
-      border-radius: deep-map-get($theme-config, "titles", "bar", "border-radius");
+      width: $titles-bar-width;
+      background-color: $titles-bar-bg-color;
+      border-radius: $titles-bar-corner-radius;
+
       &.is-wide {
-        width: deep-map-get($theme-config, "titles", "bar", "wider", "width");
+        width: $titles-bar-wider-width;
       }
     }
   }

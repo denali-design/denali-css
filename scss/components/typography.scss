@@ -2,122 +2,124 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--headline-font-family);
-}
-
-h1 {
-  font-size: var(--h1-font-size);
-  line-height: var(--line-height-compact);
-  font-weight: var(--h1-font-weight);
-  color: var(--headline-color);
-}
-
-h2 {
-  font-size: var(--h2-font-size);
-  line-height: var(--line-height-compact);
-  font-weight: var(--h2-font-weight);
-  color: var(--headline-color);
-}
-
-h3 {
-  font-size: var(--h3-font-size);
-  line-height: var(--line-height-normal);
-  font-weight: var(--h3-font-weight);
-  color: var(--headline-color);
-}
-
-h4 {
-  font-size: var(--h4-font-size);
-  line-height: var(--line-height-normal);
-  font-weight: var(--h4-font-weight);
-  color: var(--headline-color);
-}
-
-h5 {
-  font-size: var(--h5-font-size);
-  line-height: var(--line-height-normal);
-  font-weight: var(--h5-font-weight);
-  color: var(--headline-color);
-}
-
-h6 {
-  font-size: var(--h6-font-size);
-  line-height: var(--line-height-normal);
-  font-weight: var(--h6-font-weight);
-  color: var(--headline-color);
-}
-
-p {
-  font-family: var(--paragraph-font-family);
-  font-size: var(--p-font-size);
-  line-height: var(--line-height-expanded);
-  font-weight: var(--p-font-weight);
-  color: var(--paragraph-color);
-}
-
-@mixin type-base-theme($theme-config) {
+@mixin typography-default {
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: deep-map-get($theme-config, "type", "global", "font-family");
+    font-family: $headline-font-family;
   }
 
   h1 {
-    font-size: deep-map-get($theme-config, "type", "headline-1", "font", "size");
-    font-weight: deep-map-get($theme-config, "type", "headline-1", "font", "weight");
-    line-height: deep-map-get($theme-config, "type", "headline-1", "line-height");
-    color: deep-map-get($theme-config, "type", "global", "text-color");
+    font-size: $h1-font-size;
+    line-height: $line-height-compact;
+    font-weight: $h1-font-weight;
+    color: $headline-color;
   }
 
   h2 {
-    font-size: deep-map-get($theme-config, "type", "headline-2", "font", "size");
-    font-weight: deep-map-get($theme-config, "type", "headline-2", "font", "weight");
-    line-height: deep-map-get($theme-config, "type", "headline-2", "line-height");
-    color: deep-map-get($theme-config, "type", "global", "text-color");
+    font-size: $h2-font-size;
+    line-height: $line-height-compact;
+    font-weight: $h2-font-weight;
+    color: $headline-color;
   }
 
   h3 {
-    font-size: deep-map-get($theme-config, "type", "headline-3", "font", "size");
-    font-weight: deep-map-get($theme-config, "type", "headline-3", "font", "weight");
-    line-height: deep-map-get($theme-config, "type", "headline-3", "line-height");
-    color: deep-map-get($theme-config, "type", "global", "text-color");
+    font-size: $h3-font-size;
+    line-height: $line-height-normal;
+    font-weight: $h3-font-weight;
+    color: $headline-color;
   }
 
   h4 {
-    font-size: deep-map-get($theme-config, "type", "headline-4", "font", "size");
-    font-weight: deep-map-get($theme-config, "type", "headline-4", "font", "weight");
-    line-height: deep-map-get($theme-config, "type", "headline-4", "line-height");
-    color: deep-map-get($theme-config, "type", "global", "text-color");
+    font-size: $h4-font-size;
+    line-height: $line-height-normal;
+    font-weight: $h4-font-weight;
+    color: $headline-color;
   }
 
   h5 {
-    font-size: deep-map-get($theme-config, "type", "headline-5", "font", "size");
-    font-weight: deep-map-get($theme-config, "type", "headline-5", "font", "weight");
-    line-height: deep-map-get($theme-config, "type", "headline-5", "line-height");
-    color: deep-map-get($theme-config, "type", "global", "text-color");
+    font-size: $h5-font-size;
+    line-height: $line-height-normal;
+    font-weight: $h5-font-weight;
+    color: $headline-color;
   }
 
   h6 {
-    font-size: deep-map-get($theme-config, "type", "headline-6", "font", "size");
-    font-weight: deep-map-get($theme-config, "type", "headline-6", "font", "weight");
-    line-height: deep-map-get($theme-config, "type", "headline-6", "line-height");
-    color: deep-map-get($theme-config, "type", "global", "text-color");
+    font-size: $h6-font-size;
+    line-height: $line-height-normal;
+    font-weight: $h6-font-weight;
+    color: $headline-color;
   }
 
   p {
-    font-family: deep-map-get($theme-config, "type", "global", "font-family");
-    font-size: deep-map-get($theme-config, "type", "paragraph", "font", "size");
-    font-weight: deep-map-get($theme-config, "type", "paragraph", "font", "weight");
-    line-height: deep-map-get($theme-config, "type", "paragraph", "line-height");
-    color: deep-map-get($theme-config, "type", "global", "text-color");
+    font-family: $paragraph-font-family;
+    font-size: $p-font-size;
+    line-height: $line-height-expanded;
+    font-weight: $p-font-weight;
+    color: $paragraph-color;
+  }
+}
+
+@mixin typography-theme {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $headline-font-family;
+  }
+
+  h1 {
+    font-size: $h1-font-size;
+    line-height: $line-height-compact;
+    font-weight: $h1-font-weight;
+    color: $headline-color;
+  }
+
+  h2 {
+    font-size: $h2-font-size;
+    line-height: $line-height-compact;
+    font-weight: $h2-font-weight;
+    color: $headline-color;
+  }
+
+  h3 {
+    font-size: $h3-font-size;
+    line-height: $line-height-normal;
+    font-weight: $h3-font-weight;
+    color: $headline-color;
+  }
+
+  h4 {
+    font-size: $h4-font-size;
+    line-height: $line-height-normal;
+    font-weight: $h4-font-weight;
+    color: $headline-color;
+  }
+
+  h5 {
+    font-size: $h5-font-size;
+    line-height: $line-height-normal;
+    font-weight: $h5-font-weight;
+    color: $headline-color;
+  }
+
+  h6 {
+    font-size: $h6-font-size;
+    line-height: $line-height-normal;
+    font-weight: $h6-font-weight;
+    color: $headline-color;
+  }
+
+  p {
+    font-family: $paragraph-font-family;
+    font-size: $p-font-size;
+    line-height: $line-height-expanded;
+    font-weight: $p-font-weight;
+    color: $paragraph-color;
   }
 }

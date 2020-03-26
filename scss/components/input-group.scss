@@ -12,6 +12,11 @@
     align-self: center;
     margin-right: 10px;
   }
+  &.auto {
+    label {
+      min-width: auto;
+    }
+  }
   &.is-stacked {
     flex-direction: column;
     align-items: flex-start;

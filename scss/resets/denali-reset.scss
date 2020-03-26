@@ -3,8 +3,7 @@
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
 html {
-  font-size: var(--base-font-size);
-  font-family: var(--font-family-sans-serif);
+  font-size: $base-font-size; 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -13,8 +12,9 @@ body {
   font-weight: 400;
   line-height: 1.5;
   font-size: 1.4rem;
-  background: var(--body-bg-color);
-  color: var(--body-text-color);
+  background: $body-bg-color;
+  color: $body-text-color;
+  font-family: $font-family-sans-serif;
 }
 
 [disabled] {
@@ -24,7 +24,7 @@ body {
 
 // Fixes
 hr {
-  background-color: var(--color-grey-500);
+  background-color: $color-grey-500;
   display: block;
   border: 0;
   height: 1px;
@@ -33,7 +33,7 @@ hr {
 
 .denali-dark-theme {
   hr {
-    background-color: var(--color-grey-100);
+    background-color: $color-grey-100;
     opacity: .2;
   }
 }

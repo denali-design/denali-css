@@ -2,166 +2,158 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-.input {
-
-  &.has-arrow:before {
-    content: url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path style="fill:var(--fields-dropdown-arrow-color)" d="M24,27.17,13.4,16.59a2,2,0,0,0-3.05.25,2.07,2.07,0,0,0,.3,2.65L22.59,31.41a2,2,0,0,0,2.83,0L37.35,19.49a2.07,2.07,0,0,0,.3-2.65,2,2,0,0,0-3-.25Z"/></svg>');
-    pointer-events: none;
-    opacity: .4;
-    position: absolute;
-    margin-top: 9px;
-    margin-left: calc(100% - 26px);
-    height: 18px;
-    width: 18px;
-  }
-
-  // Select dropdown
-  select {
-    background: var(--fields-default-bg);
-    border-radius: var(--fields-corner-radius);
-    color: var(--fields-default-text-color);
-    height: var(--fields-sizes-default-height);
-    box-shadow: var(--fields-default-border);
-    appearance: none;
-    -webkit-appearance: none;
-    flex: 1 0 auto;
-    font: inherit;
-    outline: none;
-    border: none;
-    text-align: left;
-    width: inherit;
-    margin: 0;
-    position: relative;
-    padding: var(--fields-padding);
-    border-bottom: solid 2px transparent;
-
-    &:active,
-    &:focus,
-    &[disabled] {
-      border-bottom-style: solid;
-      transition: 300ms;
-    }
-
-    &:invalid {
-      box-shadow: inset 0 -2px 0 $status-danger;
-    }
-
-    &::placeholder {
-      color: var(--fields-placeholder-text-color);
-    }
-
-    &:active,
-    &:focus {
-      box-shadow: var(--fields-focus-border);
-    }
-
-    &[disabled] {
-      background: var(--fields-disabled-bg);
-      box-shadow: var(--fields-disabled-border);
-    }
-  }
-
-  &.is-active > select,
-  &.is-error > select {
-    border-bottom-style: solid;
-  }
-
-  // Forced Active State
-  &.is-active > select {
-    box-shadow: var(--fields-focus-border);
-  }
-
-  // Error state
-  &.is-error > select {
-    box-shadow: var(--fields-error-border);
-  }
-
-  // Inverse
-  &.is-dark > select {
-    background: rgba(242, 242, 242, 0.1);
-    color: $grey-100;
-
-    &::placeholder {
-      color: rgba($grey-100, 0.6);
-    }
-
-    &:active,
-    &:focus {
-      background: rgba(242, 242, 242, 0.1);
-      box-shadow: inset 0 -2px 0 $brand-700;
-    }
-
-    &[disabled] {
-      background: rgba($grey-100, 0.1);
-      box-shadow: inset 0 -2px 0 rgba($grey-100, 0.05);
-      color: rgba($grey-100, 0.1);
-
-      &::placeholder {
-        color: rgba($grey-100, 0.2);
-      }
-    }
-  }
-
-  // Sizes
-  &.is-medium > select {
-    height: var(--fields-sizes-medium-height);
-    margin-top: 6px;
-  }
-
-  &.is-small > select {
-    height: var(--fields-sizes-medium-height);
-    margin-top: 5px;
-  }
-}
-
-@mixin selects-base-theme($theme-config) {
+@mixin selects-default {
   .input {
-
     &.has-arrow:before {
-      content: url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path style="fill:#{deep-map-get($theme-config, "fields", "dropdown-arrow-color")}" d="M24,27.17,13.4,16.59a2,2,0,0,0-3.05.25,2.07,2.07,0,0,0,.3,2.65L22.59,31.41a2,2,0,0,0,2.83,0L37.35,19.49a2.07,2.07,0,0,0,.3-2.65,2,2,0,0,0-3-.25Z"/></svg>');
+      content: url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path style="fill:#{$fields-dropdown-arrow-color}" d="M24,27.17,13.4,16.59a2,2,0,0,0-3.05.25,2.07,2.07,0,0,0,.3,2.65L22.59,31.41a2,2,0,0,0,2.83,0L37.35,19.49a2.07,2.07,0,0,0,.3-2.65,2,2,0,0,0-3-.25Z"/></svg>');
+      pointer-events: none;
+      opacity: .4;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+      height: 18px;
+      width: 18px;
     }
 
     // Select dropdown
     select {
-      background: deep-map-get($theme-config, "fields", "default", "background");
-      border-radius: deep-map-get($theme-config, "fields", "corner-radius");
-      color: deep-map-get($theme-config, "fields", "default", "text-color");
-      height: deep-map-get($theme-config, "fields", "sizes", "default", "height");
-      box-shadow: deep-map-get($theme-config, "fields", "default", "border");
+      background: $fields-default-bg;
+      border-radius: $fields-corner-radius;
+      color: $fields-default-text-color;
+      height: $fields-sizes-default-height;
+      box-shadow: $fields-default-border;
+      appearance: none;
+      -webkit-appearance: none;
+      flex: 1 0 auto;
+      font: inherit;
+      outline: none;
+      border: none;
+      text-align: left;
+      width: inherit;
+      margin: 0;
+      position: relative;
+      padding: $fields-padding;
+
+      option {
+        color: black;
+      }
+
+      &:active,
+      &:focus,
+      &[disabled] {
+        transition: 300ms;
+      }
+
+      &:invalid {
+        box-shadow: inset 0 -2px 0 $color-status-danger;
+      }
 
       &::placeholder {
-        color: deep-map-get($theme-config, "fields", "placeholder", "text-color");
+        color: $fields-placeholder-text-color;
       }
 
       &:active,
       &:focus {
-        box-shadow: deep-map-get($theme-config, "fields", "focus", "border");
+        box-shadow: $fields-focus-border;
       }
 
       &[disabled] {
-        background: deep-map-get($theme-config, "fields", "disabled", "background");
-        color: deep-map-get($theme-config, "fields", "disabled", "text-color");
-        box-shadow: deep-map-get($theme-config, "fields", "disabled", "border");
+        background: $fields-disabled-bg;
+        box-shadow: $fields-disabled-border;
       }
     }
 
     // Forced Active State
     &.is-active > select {
-      box-shadow: deep-map-get($theme-config, "fields", "focus", "border");
+      box-shadow: $fields-focus-border;
     }
 
     // Error state
     &.is-error > select {
-      box-shadow: deep-map-get($theme-config, "fields", "error", "border");
+      box-shadow: $fields-error-border;
+    }
+
+    // Inverse
+    &.is-dark > select {
+      background: rgba(242, 242, 242, 0.1);
+      color: $color-grey-100;
+
+      &::placeholder {
+        color: rgba($color-grey-100, 0.6);
+      }
+
+      &:active,
+      &:focus {
+        background: rgba(242, 242, 242, 0.1);
+        box-shadow: inset 0 -2px 0 $color-brand-700;
+      }
+
+      &[disabled] {
+        background: rgba($color-grey-100, 0.1);
+        box-shadow: inset 0 -2px 0 rgba($color-grey-100, 0.05);
+        color: rgba($color-grey-100, 0.1);
+
+        &::placeholder {
+          color: rgba($color-grey-100, 0.2);
+        }
+      }
     }
 
     // Sizes
     &.is-medium > select {
-      height: deep-map-get($theme-config, "fields", "sizes", "medium", "height");
+      height: $fields-sizes-medium-height;
+      // margin-top: 6px;
     }
 
     &.is-small > select {
-      height: deep-map-get($theme-config, "fields", "sizes", "small", "height");
+      height: $fields-sizes-small-height;
+      // margin-top: 5px;
     }
   }
+}
+
+@mixin selects-theme {
+    .input {
+
+      &.has-arrow:before {
+        content: url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path style="fill:#{$fields-dropdown-arrow-color}" d="M24,27.17,13.4,16.59a2,2,0,0,0-3.05.25,2.07,2.07,0,0,0,.3,2.65L22.59,31.41a2,2,0,0,0,2.83,0L37.35,19.49a2.07,2.07,0,0,0,.3-2.65,2,2,0,0,0-3-.25Z"/></svg>');
+      }
+
+      // Select dropdown
+      select {
+        background: $fields-default-bg;
+        border-radius: $fields-corner-radius;
+        color: $fields-default-text-color;
+        height: $fields-sizes-default-height;
+        box-shadow: $fields-default-border;
+
+        &::placeholder {
+          color: $fields-placeholder-text-color;
+        }
+
+        &:active,
+        &:focus {
+          box-shadow: $fields-focus-border;
+        }
+
+        &[disabled] {
+          background: $fields-disabled-bg;
+          color: $fields-disabled-text-color;
+          box-shadow: $fields-disabled-border;
+        }
+      }
+      &.is-active>select {
+        box-shadow: $fields-focus-border;
+      }
+      &.is-error>select {
+        box-shadow: $fields-error-border;
+      }
+      &.is-medium>select {
+        height: $fields-sizes-medium-height;
+      }
+      &.is-small>select {
+        height: $fields-sizes-small-height;
+      }
+    }
 }

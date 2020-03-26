@@ -2,36 +2,89 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-.d-icon {
-  font-size: var(--icon-size-default);
+@mixin icons-default {
+  .d-icon {
+    font-size: $icon-size-default;
 
-  &.is-extrasmall {
-    font-size: var(--icon-size-xs) !important;
+    &.is-extrasmall {
+      font-size: $icon-size-xs !important;
+    }
+    &.is-small {
+      font-size: $icon-size-sm !important;
+    }
+    &.is-medium {
+      font-size: $icon-size-md !important;
+    }
+    &.is-large {
+      font-size: $icon-size-lg !important;
+    }
   }
-  &.is-small {
-    font-size: var(--icon-size-sm) !important;
-  }
-  &.is-medium {
-    font-size: var(--icon-size-md) !important;
-  }
-  &.is-large {
-    font-size: var(--icon-size-lg) !important;
+
+  svg.d-icon {
+    width: $icon-size-default;
+    height: $icon-size-default;
+
+    &.is-extrasmall {
+      width: $icon-size-xs !important;
+      height: $icon-size-xs !important;
+    }
+
+    &.is-small {
+      width: $icon-size-sm !important;
+      height: $icon-size-sm !important;
+    }
+
+    &.is-medium {
+      width: $icon-size-md !important;
+      height: $icon-size-md !important;
+    }
+
+    &.is-large {
+      width: $icon-size-lg !important;
+      height: $icon-size-lg !important;
+    }
   }
 }
 
-@mixin icons-base-theme($theme-config) {
+@mixin icons-theme {
   .d-icon {
+    font-size: $icon-size-default;
     &.is-extrasmall {
-      font-size: deep-map-get($theme-config, "icons", "sizes", "extra-small") !important;
+      font-size: $icon-size-xs !important;
     }
     &.is-small {
-      font-size: deep-map-get($theme-config, "icons", "sizes", "small") !important;
+      font-size: $icon-size-sm !important;
     }
     &.is-medium {
-      font-size: deep-map-get($theme-config, "icons", "sizes", "medium") !important;
+      font-size: $icon-size-md !important;
     }
     &.is-large {
-      font-size: deep-map-get($theme-config, "icons", "sizes", "large") !important;
+      font-size: $icon-size-lg !important;
+    }
+  }
+
+  svg.d-icon {
+    width: $icon-size-default;
+    height: $icon-size-default;
+
+    &.is-extrasmall {
+      width: $icon-size-xs !important;
+      height: $icon-size-xs !important;
+    }
+
+    &.is-small {
+      width: $icon-size-sm !important;
+      height: $icon-size-sm !important;
+    }
+
+    &.is-medium {
+      width: $icon-size-md !important;
+      height: $icon-size-md !important;
+    }
+
+    &.is-large {
+      width: $icon-size-lg !important;
+      height: $icon-size-lg !important;
     }
   }
 }
