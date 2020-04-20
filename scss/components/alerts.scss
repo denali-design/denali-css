@@ -71,6 +71,39 @@
       }
     }
 
+    // Block Level Alerts
+    &.is-block {      
+      border-top: none;
+      position: relative;
+      box-shadow: none;
+      width: 100%;
+      background: rgba($alert-border-color, 0.1);
+      border-left-width: $alert-border-width;
+      border-left-style: $alert-border-style;
+      border-left-color: $alert-border-color;
+
+      &.is-info {
+        background: rgba($color-status-information, 0.06);
+      }
+
+      &.is-warning {
+        background: rgba($color-status-warning, 0.06);
+      }
+
+      &.is-success {
+        background: rgba($color-status-success, 0.06);
+      }
+
+      &.is-danger {
+        background: rgba($color-status-danger, 0.06);
+      }
+
+      p {
+        font-size: 1.4rem !important;
+      }
+    }
+
+
     // STATUS MODIFIERS
     &.is-info {
       border-color: $color-status-information;
@@ -169,6 +202,30 @@
         p {
           text-align: $alert-inline-alignment-text;
         }
+      }
+    }
+
+    &.is-block {
+      border-top: none;
+      background: rgba($alert-border-color, 0.1);
+      border-left-width: $alert-border-width;
+      border-left-style: $alert-border-style;
+      border-left-color: $alert-border-color;
+
+      &.is-info {
+        background: rgba($color-status-information, 0.06);
+      }
+
+      &.is-warning {
+        background: rgba($color-status-warning, 0.06);
+      }
+
+      &.is-success {
+        background: rgba($color-status-success, 0.06);
+      }
+
+      &.is-danger {
+        background: rgba($color-status-danger, 0.06);
       }
     }
 

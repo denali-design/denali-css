@@ -75,27 +75,33 @@
     }
 
     // Inverse
-    &.is-dark > select {
-      background: rgba(242, 242, 242, 0.1);
-      color: $color-grey-100;
-
-      &::placeholder {
-        color: rgba($color-grey-100, 0.6);
+    &.is-inverse { 
+      &.has-arrow:before {
+        content: url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path style="fill:white;" d="M24,27.17,13.4,16.59a2,2,0,0,0-3.05.25,2.07,2.07,0,0,0,.3,2.65L22.59,31.41a2,2,0,0,0,2.83,0L37.35,19.49a2.07,2.07,0,0,0,.3-2.65,2,2,0,0,0-3-.25Z"/></svg>');
       }
 
-      &:active,
-      &:focus {
+      select {
         background: rgba(242, 242, 242, 0.1);
-        box-shadow: inset 0 -2px 0 $color-brand-700;
-      }
-
-      &[disabled] {
-        background: rgba($color-grey-100, 0.1);
-        box-shadow: inset 0 -2px 0 rgba($color-grey-100, 0.05);
-        color: rgba($color-grey-100, 0.1);
+        color: $color-grey-100;
 
         &::placeholder {
-          color: rgba($color-grey-100, 0.2);
+          color: rgba($color-grey-100, 0.6);
+        }
+
+        &:active,
+        &:focus {
+          background: rgba(242, 242, 242, 0.1);
+          box-shadow: inset 0 -2px 0 $color-brand-400;
+        }
+
+        &[disabled] {
+          background: rgba($color-grey-100, 0.1);
+          box-shadow: inset 0 -2px 0 rgba($color-grey-100, 0.05);
+          color: rgba($color-grey-100, 0.1);
+
+          &::placeholder {
+            color: rgba($color-grey-100, 0.2);
+          }
         }
       }
     }
@@ -109,6 +115,11 @@
     &.is-small > select {
       height: $fields-sizes-small-height;
       // margin-top: 5px;
+    }
+
+    // Full Width
+    &.is-full {
+      width: 100%;
     }
   }
 }

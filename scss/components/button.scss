@@ -133,49 +133,49 @@
 
       &.is-solid {
         background: $button-solid-disabled-bg-color;
-        color: $button-solid-disabled-text-color;
+        color: $button-solid-disabled-text-color !important;
         &.is-inverse {
           background: $button-solid-disabled-inverse-bg-color;
-          color: $button-solid-disabled-inverse-text-color;
+          color: $button-solid-disabled-inverse-text-color !important;
         }
       }
 
       &.is-outline {
         background: $button-outline-disabled-bg-color;
-        color: $button-outline-disabled-text-color;
+        color: $button-outline-disabled-text-color !important;
         border: $button-outline-disabled-border;
 
         &.is-inverse {
           background: $button-outline-disabled-inverse-bg-color;
-          color: $button-outline-disabled-inverse-text-color;
+          color: $button-outline-disabled-inverse-text-color !important;
           border: $button-outline-disabled-inverse-border;
         }
       }
 
       &.is-ghost {
         background: $button-ghost-disabled-bg-color;
-        color: $button-ghost-disabled-text-color;
+        color: $button-ghost-disabled-text-color !important;
         &.is-inverse {
           background: $button-ghost-disabled-inverse-bg-color;
-          color: $button-ghost-disabled-inverse-text-color;
+          color: $button-ghost-disabled-inverse-text-color !important;
         }
       }
 
       &.is-text {
         background: $button-text-disabled-bg-color;
-        color: $button-text-disabled-text-color;
+        color: $button-text-disabled-text-color !important;
         &.is-inverse {
           background: $button-text-disabled-inverse-bg-color;
-          color: $button-text-disabled-inverse-text-color;
+          color: $button-text-disabled-inverse-text-color !important;
         }
       }
 
       &.is-danger {
         background: rgba($color-grey-800, 0.12);
-        color: rgba($color-grey-800 , 0.5);
+        color: rgba($color-grey-800 , 0.5) !important;
         &.is-inverse {
           background: rgba($color-grey-100 , 0.12);
-          color: rgba($color-grey-100 , 0.5);
+          color: rgba($color-grey-100, 0.5) !important;
         }
       }
     }
@@ -330,53 +330,53 @@
     &:hover[disabled] {
       &.is-solid {
         background: $button-solid-disabled-bg-color;
-        color: $button-solid-disabled-text-color;
+        color: $button-solid-disabled-text-color !important;
 
         &.is-inverse {
           background: $button-solid-disabled-inverse-bg-color;
-          color: $button-solid-disabled-inverse-text-color;
+          color: $button-solid-disabled-inverse-text-color !important;
         }
       }
 
       &.is-outline {
         background: $button-outline-disabled-bg-color;
-        color: $button-outline-disabled-text-color;
+        color: $button-outline-disabled-text-color !important;
         border: $button-outline-disabled-border;
 
         &.is-inverse {
           background: $button-outline-disabled-inverse-bg-color;
-          color: $button-outline-disabled-inverse-text-color;
+          color: $button-outline-disabled-inverse-text-color !important;
           border: $button-outline-disabled-inverse-border;
         }
       }
 
       &.is-ghost {
         background: $button-ghost-disabled-bg-color;
-        color: $button-ghost-disabled-text-color;
+        color: $button-ghost-disabled-text-color !important;
 
         &.is-inverse {
           background: $button-ghost-disabled-inverse-bg-color;
-          color: $button-ghost-disabled-inverse-text-color;
+          color: $button-ghost-disabled-inverse-text-color !important;
         }
       }
 
       &.is-text {
         background: $button-text-disabled-bg-color;
-        color: $button-text-disabled-text-color;
+        color: $button-text-disabled-text-color !important;
 
         &.is-inverse {
           background: $button-text-disabled-inverse-bg-color;
-          color: $button-text-disabled-inverse-text-color;
+          color: $button-text-disabled-inverse-text-color !important;
         }
       }
 
       &.is-danger {
         background: rgba($color-grey-800, 0.12);
-        color: rgba($color-grey-800, 0.5);
+        color: rgba($color-grey-800, 0.5) !important;
 
         &.is-inverse {
           background: rgba($color-grey-100, 0.12);
-          color: rgba($color-grey-100, 0.5);
+          color: rgba($color-grey-100, 0.5) !important;
         }
       }
     }

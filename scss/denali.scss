@@ -14,6 +14,7 @@
 // Default Style and Structure Only
 @include alerts-default;
 @include box-default;
+@include breadcrumb-default;
 @include button-default;
 @include checkbox-default;
 @include chips-default;
@@ -33,6 +34,7 @@
 @include tags-default;
 @include titles-default;
 @include toggle-default;
+@include tooltip-default;
 @include typography-default;
 
 // HELPERS

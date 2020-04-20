@@ -10,7 +10,7 @@
     bottom: 0;
     left: 0;
     z-index: $zindex-modal-background;
-    opacity:0;
+    opacity: 0;
     -webkit-transition: opacity 300ms ease-in;
     -moz-transition: opacity 300ms ease-in;
     transition: opacity 300ms ease-in;
@@ -20,6 +20,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.is-chas {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
     div.modal-container {
       width: 450px;
@@ -91,8 +96,9 @@
       }
     }
   }
-
-  .modal:target {
+  
+  .modal:target,
+  .modal.is-active {
     opacity:1;
     pointer-events: auto;
   }

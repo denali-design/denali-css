@@ -1,158 +1,81 @@
-@charset "utf-8";
-// Copyright 2019, Oath Inc.
-// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+// @charset "utf-8";
+// // Copyright 2019, Oath Inc.
+// // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+@mixin tooltip-default {
 
-/* `border-box`... ALL THE THINGS! */
-// html {
-//     box-sizing: border-box;
-// }
+    *[class*="tooltip"] {
+        position: relative;
 
-// *,
-// *:before,
-// *:after {
-//     box-sizing: inherit;
-// }
+        &::after {
+            content: attr(data-tooltip);
+            z-index: 1000;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: 300ms;
+            white-space: nowrap;
 
-// body {
-//     margin: 64px auto;
-//     text-align: center;
-//     font-size: 100%;
-//     max-width: 640px;
-//     width: 94%;
-// }
+            padding: $tooltip-padding;
+            font-size: $tooltip-text-size;
+            border-radius: $tooltip-corner-radius;
+            font-family: $font-family-sans-serif;
+            background-color: $tooltip-bg-color;
+            color: $tooltip-text-color;
 
-// header,
-// .demo,
-// .demo p {
-//     margin: 4em 0;
-//     text-align: center;
-// }
+            // Position Bottom & Default
+            left: 50%;
+            top: calc(100% + 4px);
+            transform: translateX(-50%);
+        }
 
+        &[class*="-small"]::after {
+            // Small size
+            font-size: $tooltip-small-text-size;
+            padding: $tooltip-small-padding;
+        }
 
-/* Base styles for the element that has a tooltip */
-[data-tooltip],
-.tooltip {
-    position: relative;
-    cursor: pointer;
+        &[class*="tooltip-top"]::after {
+            // Position Top
+            top: 0%;
+            transform: translate(-50%, calc(-100% - 4px));
+        }
+
+        &[class*="tooltip-left"]::after {
+            // Position Left
+            left: 0%;
+            top: 50%;
+            transform: translate(calc(-100% - 4px), -50%);
+        }
+
+        &[class*="tooltip-right"]::after {
+            // Position Right
+            left: calc(100% + 4px);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:hover::after,
+        &:focus::after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
 }
 
-/* Base styles for the entire tooltip */
-[data-tooltip]:after,
-.tooltip:after {
-    position: absolute;
-    visibility: hidden;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-    opacity: 0;
-    transition:
-        opacity 0.2s ease-in-out,
-        visibility 0.2s ease-in-out,
-        -webkit-transform 0.2s ease;
-    transition:
-        opacity 0.2s ease-in-out,
-        visibility 0.2s ease-in-out,
-        transform 0.2s ease;
-    transition:
-        opacity 0.2s ease-in-out,
-        visibility 0.2s ease-in-out,
-        transform 0.2s ease,
-        -webkit-transform 0.2s ease;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    pointer-events: none;
-}
-
-/* Show the entire tooltip on hover and focus */
-[data-tooltip]:hover:after,
-[data-tooltip]:focus:after,
-.tooltip:hover:after,
-.tooltip:focus:after {
-    visibility: visible;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    opacity: 1;
-}
-
-/* Base styles for the tooltip's content area */
-.tooltip:after,
-[data-tooltip]:after {
-    z-index: 1000;
-    padding: 8px;
-    width: 160px;
-    background-color: #000;
-    background-color: hsla(0, 0%, 20%, 0.9);
-    color: #fff;
-    content: attr(data-tooltip);
-    font-size: 14px;
-    line-height: 1.2;
-}
-
-/* Top (default) */
-[data-tooltip]:after,
-.tooltip:after,
-.tooltip-top:after {
-    bottom: 100%;
-    left: 50%;
-}
-
-[data-tooltip]:hover:after,
-[data-tooltip]:focus:after,
-.tooltip:hover:after,
-.tooltip:focus:after,
-.tooltip-top:hover:after,
-.tooltip-top:focus:after {
-    -webkit-transform: translateY(-12px);
-    transform: translateY(-12px);
-}
-
-/* Left */
-.tooltip-left:after {
-    right: 100%;
-    bottom: 50%;
-    left: auto;
-}
-
-.tooltip-left:hover:after,
-.tooltip-left:focus:after {
-    -webkit-transform: translateX(-12px);
-    transform: translateX(-12px);
-}
-
-/* Bottom */
-.tooltip-bottom:after {
-    top: 100%;
-    bottom: auto;
-    left: 50%;
-}
-
-.tooltip-bottom:hover:after,
-.tooltip-bottom:focus:after {
-    -webkit-transform: translateY(12px);
-    transform: translateY(12px);
-}
-
-/* Right */
-.tooltip-right:after {
-    bottom: 50%;
-    left: 100%;
-}
-
-.tooltip-right:hover:after,
-.tooltip-right:focus:after {
-    -webkit-transform: translateX(12px);
-    transform: translateX(12px);
-}
-
-/* Horizontally align top/bottom tooltips */
-[data-tooltip]:after,
-.tooltip:after,
-.tooltip-top:after {
-    margin-left: -80px;
-}
-
-/* Vertically center tooltip content for left/right tooltips */
-.tooltip-left:after,
-.tooltip-right:after {
-    margin-left: 0;
-    margin-bottom: -16px;
+@mixin tooltip-theme {
+    *[class*="tooltip"] {
+        &::after {
+            padding: $tooltip-padding;
+            font-size: $tooltip-text-size;
+            border-radius: $tooltip-corner-radius;
+            font-family: $font-family-sans-serif;
+            background-color: $tooltip-bg-color;
+            color: $tooltip-text-color;
+        }
+        &[class*="-small"]::after {
+            font-size: $tooltip-small-text-size;
+            padding: $tooltip-small-padding;
+        }
+    }
 }
