@@ -132,6 +132,7 @@
     .nav-brand {
       width: auto;
       padding: 13px 12px;
+      height: $navbar-height;
     }
 
     // Item (Text)
@@ -147,7 +148,8 @@
         }
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $navbar-item-hover-text-color;
       }
     }
@@ -165,7 +167,8 @@
         }
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $navbar-item-hover-text-color;
       }
     }
@@ -243,7 +246,8 @@
         }
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $navbar-item-active-text-color;
       }
     }
@@ -311,7 +315,8 @@
         }
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $navbar-item-hover-text-color;
       }
     }
@@ -320,7 +325,8 @@
     .nav-icon {
       color: $navbar-item-text-color;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $navbar-item-hover-text-color;
       }
     }
@@ -339,7 +345,8 @@
         }
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $navbar-item-active-text-color;
       }
     }

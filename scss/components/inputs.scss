@@ -30,6 +30,10 @@
   .input {
     width: $fields-sizes-default-width;
 
+    &.is-full {
+      width: 100%;
+    }
+
     input {
       height: $fields-sizes-default-height;
     }
@@ -101,7 +105,7 @@
         color: $color-grey-100;
       }
       input:active {
-        border-bottom: 2px solid rgba($color-brand-700, 1);
+        border-bottom: 2px solid rgba($color-brand-400, 1);
         color: $color-grey-100;
       }
       input::placeholder {
