@@ -1,3 +1,4 @@
+// Includes
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/
@@ -29,3 +30,9 @@ function includeHTML() {
     }
   }
 };
+
+// Dark Theme
+function darkMode() {
+  var element = document.getElementsByTagName("BODY")[0];
+  element.classList.toggle("denali-dark-theme");
+}
