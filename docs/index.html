@@ -19,7 +19,7 @@
     <!-- Theme Override -->
     <link rel="stylesheet" href="../css/denali-dark-theme.css">
     <!-- Scripts -->
-    <script src="js/include.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
     <!-- Style Relavate to this page -->
     <style media="screen">
       * {
@@ -34,44 +34,34 @@
         <a onclick="toggleTabsLeft()" tabindex="0" id="toggleTab" class="nav-icon hide-small-desktop-up">
           <i class="d-icon d-menu-hamburger"></i>
         </a>
-        <img style="height: 60px;" class="nav-brand" src="images/denali-logo.svg" alt=""></img>
+        <a href="http://denali.design">
+          <img class="nav-brand" src="images/denali-logo.svg" alt=""></img>
+        </a>
         <div class="float-right hide-small-desktop-up">
           <a class="nav-icon" id="navToggle"><i class="d-icon d-more-vertical"></i></a>
         </div>
       </div>
       <div class="nav-responsive" id="navMenuContent">
         <div class="nav-center">
-          <div class="nav-control">
-            <div class="toggle is-small is-inverse">
-              <ul>
-                <li id="defaultTheme" class="is-active" tabindex="0"><a>Denali</a></li>
-                <li id="darkTheme" tabindex="0"><a>Denali Dark</a></li>
-              </ul>
-            </div>
-          </div>
+          <a class="nav-item" href="https://denali.design/docs/2/guides/get-started">Docs</a>
+          <a class="nav-item" href="https://denali.design/principles/introduction">Principles</a>
+          <a class="nav-item" href="https://denali.design/resources">Resources</a>
+          <a class="nav-item is-active" href="https://denali-design.github.io/denali-css/docs/">CSS</a>
+          <a class="nav-item" href="https://denali-design.github.io/denali-icon-font/docs/">Icons</a>
         </div>
         <div class="nav-right">
-          <a class="nav-item" href="https://denali-design.github.io/denali-icon-font/docs/" target="_blank">Icons</a>
-          <div class="nav-menu">
-            <div class="nav-icon menu-trigger" tabindex="0">
-              <i class="d-icon d-menu-dialpad"></i>
-              <span class="icon-name">Denali Site</span>
-            </div>
-            <div class="menu-content">
-              <a href="https://denali.design/docs/2/guides/get-started" target="_blank">Documentation</a>
-              <a href="https://denali.design/principles/introduction" target="_blank">Principles</a>
-              <a href="https://denali.design/resources" target="_blank">Resources</a>
-            </div>
-          </div>
+          <a class="nav-icon" onclick="darkMode()">
+            <i class="d-icon d-dark-mode"></i>
+            <span class="icon-name">Dark Theme</span>
+          </a>
           <a href="https://github.com/denali-design" target="_blank" class="nav-icon">
             <i class="d-icon d-github"></i>
             <span class="icon-name">Github</span>
           </a>
           <div class="nav-menu">
-            <div class="nav-icon menu-trigger" tabindex="0">
+            <div class="nav-icon menu-trigger">
               <i class="d-icon d-help-circle"></i>
-              <span class="icon-name">Help</span>
-            </div>
+              <span class="icon-name">Help</span></div>
             <div class="menu-content is-right">
               <a href="https://github.com/denali-design/issues/new?labels=feature-request" target="_blank">
                 Feature Requests
@@ -288,40 +278,6 @@
         }
       };
       content.addEventListener("scroll", activeScroll);
-
-      // Theme Switcher
-      document.getElementById("darkTheme").addEventListener("click", function(){
-        var x = document.getElementsByTagName("BODY")[0];
-        x.classList.add("denali-dark-theme");
-        x.classList.remove("denali-default-theme");
-        this.classList.add("is-active");
-        document.getElementById("defaultTheme").classList.remove("is-active");
-      });
-      document.getElementById("darkTheme").addEventListener("keyup", function(event){
-        if (event.keyCode === 13) {
-          var x = document.getElementsByTagName("BODY")[0];
-          x.classList.add("denali-dark-theme");
-          x.classList.remove("denali-default-theme");
-          this.classList.add("is-active");
-          document.getElementById("defaultTheme").classList.remove("is-active");
-        }
-      });
-
-      document.getElementById("defaultTheme").addEventListener("click", function(){
-        var x = document.getElementsByTagName("BODY")[0];
-        x.classList.remove("denali-dark-theme");
-        this.classList.add("is-active");
-        document.getElementById("darkTheme").classList.remove("is-active");
-      });
-      document.getElementById("defaultTheme").addEventListener("keyup", function(event){
-        if (event.keyCode === 13) {
-          var x = document.getElementsByTagName("BODY")[0];
-          x.classList.remove("denali-dark-theme");
-          this.classList.add("is-active");
-          document.getElementById("darkTheme").classList.remove("is-active");
-        }
-      });
-
     </script>
   </body>
 
