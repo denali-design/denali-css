@@ -1,141 +1,271 @@
 @charset "utf-8";
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
-
-.alert {
-  // STRUCTURE
-  width: 400px;
-  display: flex;
-  box-sizing: border-box;
-  // STYLE
-  background: var(--alert-bg-color);
-  color: var(--alert-text-color);
-  border-radius: var(--alert-corner-radius);
-  box-shadow: var(--alert-shadow);
-  border-top-width: var(--alert-border-width);
-  border-top-style: var(--alert-border-style);
-  border-top-color: var(--alert-border-color);
-
-  @include media-size-down(mobile) {
-    width: 100%;
-  }
-
-  div {
-    margin: 17px 0px 18px 0px;
-    flex: auto;
-    max-height: 88px;
-    overflow: hidden;
-    p {
-      font-size: 12px !important;
-      margin-top: 8px;
-      margin-bottom: 0px;
-      line-height: 15px;
-    }
-  }
-
-  // CLOSE ICON
-  a.close {
-    display: block;
-    padding: 16px 0px;
-    .d-icon {
-      font-size: 24px !important;
-      color: var(--alert-close-icon-color) !important;
-    }
-  }
-
-  // Close Icon
-  .d-icon {
-    margin: 14px;
-    font-size: 28px !important;
-    color: var(--alert-border-color);
-  }
-
-  &.is-inline {
-    justify-content: var(--alert-inline-alignment-justify-content);
-    padding-top: var(--alert-inline-padding-top);
-    padding-bottom: var(--alert-inline-padding-bottom);
-    padding-left: var(--alert-inline-padding-left);
-    padding-right: var(--alert-inline-padding-right);
-    // STYLE
-    background: var(--alert-inline-bg-color);
-    color: var(--alert-inline-text-color);
-    font-size: var(--alert-inline-font-size);
-    // RESETS
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0px !important;
+@mixin alerts-default {
+  .alert {
     // STRUCTURE
-    width: 100%;
-    display: flex !important;
+    width: 400px;
+    display: flex;
+    box-sizing: border-box;
+    // STYLE
+    background: $alert-bg-color;
+    color: $alert-text-color;
+    border-radius: $alert-corner-radius;
+    box-shadow: $alert-shadow;
+    border-top-width: $alert-border-width;
+    border-top-style: $alert-border-style;
+    border-top-color: $alert-border-color;
 
-    p {
-      text-align: var(--alert-inline-alignment-text);
+    @include media-size-down(mobile) {
+      width: 100%;
+    }
+
+    div {
+      margin: 17px 0px 18px 0px;
+      flex: auto;
+      max-height: 88px;
       overflow: hidden;
+      p {
+        font-size: 12px !important;
+        margin-top: 8px;
+        margin-bottom: 0px;
+        line-height: 15px;
+      }
     }
-  }
 
-  // STATUS MODIFIERS
-  &.is-info {
-    border-color: var(--color-status-information) !important;
+    // STATUS COLOR
     .d-icon {
-      color: var(--color-status-information) !important;
+      margin: 14px;
+      font-size: 28px !important;
+      color: $alert-border-color;
     }
-  }
-  &.is-warning {
-    border-color: var(--color-status-warning) !important;
-    .d-icon {
-      color: var(--color-status-warning) !important;
+
+    // CLOSE ICON
+    .close {
+      display: block;
+      padding: 16px 0px;
+      .d-icon {
+        font-size: 24px !important;
+        color: $alert-close-icon-color !important;
+      }
     }
-  }
-  &.is-success {
-    border-color: var(--color-status-success) !important;
-    .d-icon {
-      color: var(--color-status-success) !important;
+
+    &.is-inline {
+      justify-content: $alert-inline-alignment-justify-content;
+      padding: $alert-inline-padding;
+      // STYLE
+      background: $alert-inline-bg-color;
+      color: $alert-inline-text-color;
+      font-size: $alert-inline-font-size;
+      // RESETS
+      box-shadow: none !important;
+      border: none !important;
+      border-radius: 0px !important;
+      // STRUCTURE
+      width: 100%;
+      display: flex !important;
+
+      p {
+        text-align: $alert-inline-alignment-text;
+        overflow: hidden;
+      }
     }
-  }
-  &.is-danger {
-    border-color: var(--color-status-danger) !important;
-    .d-icon {
-      color: var(--color-status-danger) !important;
+
+    // Block Level Alerts
+    &.is-block {      
+      border-top: none;
+      position: relative;
+      box-shadow: none;
+      width: 100%;
+      background: rgba($alert-border-color, 0.1);
+      border-left-width: $alert-border-width;
+      border-left-style: $alert-border-style;
+      border-left-color: $alert-border-color;
+
+      &.is-info {
+        background: rgba($color-status-information, 0.06);
+      }
+
+      &.is-warning {
+        background: rgba($color-status-warning, 0.06);
+      }
+
+      &.is-success {
+        background: rgba($color-status-success, 0.06);
+      }
+
+      &.is-danger {
+        background: rgba($color-status-danger, 0.06);
+      }
+
+      p {
+        font-size: 1.4rem !important;
+      }
+    }
+
+
+    // STATUS MODIFIERS
+    &.is-info {
+      border-color: $color-status-information;
+      .d-icon {
+        color: $color-status-information;
+      }
+    }
+    &.is-warning {
+      border-color: $color-status-warning;
+      .d-icon {
+        color: $color-status-warning;
+      }
+    }
+    &.is-success {
+      border-color: $color-status-success;
+      .d-icon {
+        color: $color-status-success;
+      }
+    }
+    &.is-danger {
+      border-color: $color-status-danger;
+      .d-icon {
+        color: $color-status-danger;
+      }
     }
   }
 }
 
-@mixin alerts-base-theme($theme-config) {
+@mixin alerts-theme {
   .alert {
-    background: deep-map-get($theme-config, "alert", "background");
-    color: deep-map-get($theme-config, "alert", "color");
-    border-radius: deep-map-get($theme-config, "alert", "border-radius");
-    box-shadow: deep-map-get($theme-config, "alert", "box-shadow");
-    border-top-width: deep-map-get($theme-config, "alert", "border-top", "width");
-    border-top-style: deep-map-get($theme-config, "alert", "border-top", "style");
-    border-top-color: deep-map-get($theme-config, "alert", "border-top", "color");
+    @if variable-exists(alert-bg-color) {
+      background: $alert-bg-color;
+    }
 
-    // CLOSE ICON
-    a.close {
+    @if variable-exists(alert-text-color) {
+      color: $alert-text-color;
+    }
+
+    @if variable-exists(alert-corner-radius) {
+      border-radius: $alert-corner-radius;
+    }
+
+    @if variable-exists(alert-shadow) {
+      box-shadow: $alert-shadow;
+    }
+
+    @if variable-exists(alert-border-width) {
+      border-top-width: $alert-border-width;
+    }
+
+    @if variable-exists(alert-border-style) {
+      border-top-style: $alert-border-style;
+    }
+
+    @if variable-exists(alert-border-color) {
+      border-top-color: $alert-border-color;
+    }
+
+    @if variable-exists(alert-border-color) {
       .d-icon {
-        color: deep-map-get($theme-config, "alert", "close-icon-color") !important;
+        color: $alert-border-color;
       }
     }
 
-    // Close Icon
-    .d-icon {
-      color: deep-map-get($theme-config, "alert", "border-top", "color");
+    @if variable-exists(alert-close-icon-color) {
+      .close {
+        .d-icon {
+          color: $alert-close-icon-color !important;
+        }
+      }
     }
 
     &.is-inline {
-      justify-content: deep-map-get($theme-config, "alert-inline", "alignment", "justify-content");
-      padding-top: deep-map-get($theme-config, "alert-inline", "padding", "top");
-      padding-bottom: deep-map-get($theme-config, "alert-inline", "padding", "bottom");
-      padding-left: deep-map-get($theme-config, "alert-inline", "padding", "left");
-      padding-right: deep-map-get($theme-config, "alert-inline", "padding", "right");
-      // STYLE
-      background: deep-map-get($theme-config, "alert-inline", "background");
-      color: deep-map-get($theme-config, "alert-inline", "color");
-      font-size: deep-map-get($theme-config, "alert-inline", "font-size");
+      @if variable-exists(alert-inline-alignment-justify-content) {
+        justify-content: $alert-inline-alignment-justify-content;
+      }
 
-      p {
-        text-align: deep-map-get($theme-config, "alert-inline", "alignment", "text");
+      @if variable-exists(alert-inline-padding) {
+        padding: $alert-inline-padding;
+      }
+
+      @if variable-exists(alert-inline-bg-color) {
+        background: $alert-inline-bg-color;
+      }
+
+      @if variable-exists(alert-inline-text-color) {
+        color: $alert-inline-text-color;
+      }
+
+      @if variable-exists(alert-inline-font-size) {
+        font-size: $alert-inline-font-size;
+      }
+
+
+      @if variable-exists(alert-inline-alignment-text) {
+        p {
+          text-align: $alert-inline-alignment-text;
+        }
+      }
+    }
+
+    &.is-block {
+      border-top: none;
+      background: rgba($alert-border-color, 0.1);
+      border-left-width: $alert-border-width;
+      border-left-style: $alert-border-style;
+      border-left-color: $alert-border-color;
+
+      &.is-info {
+        background: rgba($color-status-information, 0.06);
+      }
+
+      &.is-warning {
+        background: rgba($color-status-warning, 0.06);
+      }
+
+      &.is-success {
+        background: rgba($color-status-success, 0.06);
+      }
+
+      &.is-danger {
+        background: rgba($color-status-danger, 0.06);
+      }
+    }
+
+    @if variable-exists(color-status-information) {
+      &.is-info {
+        border-color: $color-status-information;
+
+        .d-icon {
+          color: $color-status-information;
+        }
+      }
+    }
+
+    @if variable-exists(color-status-warning) {
+      &.is-warning {
+        border-color: $color-status-warning;
+
+        .d-icon {
+          color: $color-status-warning;
+        }
+      }
+    }
+
+    @if variable-exists(color-status-success) {
+      &.is-success {
+        border-color: $color-status-success;
+
+        .d-icon {
+          color: $color-status-success;
+        }
+      }
+    }
+
+    @if variable-exists(color-status-danger) {
+      &.is-danger {
+        border-color: $color-status-danger;
+
+        .d-icon {
+          color: $color-status-danger;
+        }
       }
     }
   }

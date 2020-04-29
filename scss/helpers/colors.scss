@@ -14,6 +14,10 @@
     .is-brand-#{$name} {
         color: $hex !important;
     }
+
+    .fill-brand-#{$name} {
+        fill: $hex !important;
+    }
 }
 
 @each $name, $hex in $denali-status-colors {
@@ -24,6 +28,10 @@
 
     .is-status-#{$name} {
         color: $hex !important;
+    }
+
+    .fill-status-#{$name} {
+        fill: $hex !important;
     }
 }
 
@@ -36,6 +44,10 @@
     .is-grey-#{$name} {
         color: $hex !important;
     }
+
+    .fill-grey-#{$name} {
+        fill: $hex !important;
+    }
 }
 
 @each $name, $hex in $denali-graph-colors {
@@ -46,6 +58,10 @@
 
     .is-graph-#{$name} {
         color: $hex !important;
+    }
+
+    .fill-graph-#{$name} {
+        fill: $hex !important;
     }
 }
 
@@ -58,6 +74,10 @@
 
         .is-#{$name}-#{$color-variant} {
             color: $hex !important;
+        }
+
+        .fill-#{$name}-#{$color-variant} {
+            fill: $hex !important;
         }
     }
 }

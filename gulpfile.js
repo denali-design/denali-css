@@ -4,17 +4,19 @@ const gulp = require("gulp");
 const connect = require("gulp-connect-php");
 const browserSync = require("browser-sync").create();
 const sass = require("gulp-sass");
-const plumber = require("gulp-plumber");
-const rename = require("gulp-rename");
+// const rename = require("gulp-rename");
 
 const siteSass = () => {
   return gulp
-    .src("scss/denali.scss")
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(rename("denali.css"))
+    .src("scss/*.scss")
+    .pipe(sass.sync({
+      outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    // .pipe(rename({
+    //   suffix: '.min'
+    // }))
     .pipe(gulp.dest("css"))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream())
 };
 
 const disconnect = () => {
@@ -37,9 +39,7 @@ gulp.task(
       }
     );
 
-    // gulp.watch('assets/images/**/*', images).on('change', browserSync.reload);
     gulp.watch("scss/**/*.scss", siteSass).on("change", browserSync.reload);
-    // gulp.watch('assets/js/*.js').on('change', browserSync.reload);
     gulp.watch("docs/**/*.html").on("change", browserSync.reload);
   })
 );

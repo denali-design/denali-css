@@ -17,9 +17,8 @@
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-connect-php": "^1.0.3",
-    "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "gulp-rename": "^1.4.0"
   },
   "release": {
     "debug": false,

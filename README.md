@@ -22,7 +22,7 @@
 
 The Denali System Language was created by the Platforms and Technology Design team at Verizon Media as a scalable method for designing and developing visually consistent and functional internal products. Denali’s CSS framework allows developers to implement the Denali System Language in their projects. The framework is lightweight and flexible. It supports theming through custom variables which means the visual appearance of Denali’s components can be easily adapted to fit the visual style of any brand. Additionally, components are framework independent allowing you to take what you need and leave the rest.
 
-You can view the Denali’s entire component library complete with corresponding code snippets and documentation on the [getting started page](https://denali.design/docs/1.0.3/guides/get-started).
+You can view the Denali’s entire component library complete with corresponding code snippets and documentation on the [getting started page](https://denali.design/docs/2/guides/get-started).
 
 ## Install
 
@@ -57,7 +57,7 @@ import 'denali-css/css/denali.css'
 ###### CDN
 
 ```
-https://cdn.jsdelivr.net/gh/denali-design/denali-css/css/denali.css
+https://cdn.jsdelivr.net/npm/denali-css/css/denali.css
 ```
 
 #### Generating SASS
