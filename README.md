@@ -7,7 +7,7 @@
 [![GitHub](https://img.shields.io/github/license/denali-design/denali-css)](https://github.com/denali-design/denali-css/blob/master/LICENSE.md)
 
 ## Table of contents
-
+ 
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
