@@ -89,7 +89,7 @@ gulp serve
 ```
 
 ## Browser Support
-
+Learn more about the browsers and devices we support [here](https://denali.design/browsers).
 - **Chrome** on Android, Windows, macOS, and Linux
 - **Firefox** on Windows, macOS, and Linux
 - **Safari** on iOS and macOS
