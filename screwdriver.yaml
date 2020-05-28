@@ -1,5 +1,8 @@
+cache:
+    pipeline: [~/.npm]
+
 shared:
-    image: node:8
+    image: node:12
 
 jobs:
     main:
