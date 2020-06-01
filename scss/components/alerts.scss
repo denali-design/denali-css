@@ -23,7 +23,6 @@
     div {
       margin: 17px 0px 18px 0px;
       flex: auto;
-      max-height: 88px;
       overflow: hidden;
       p {
         font-size: 12px !important;
@@ -75,7 +74,7 @@
     &.is-block {      
       border-top: none;
       position: relative;
-      box-shadow: none;
+      box-shadow: none !important;
       width: 100%;
       background: rgba($alert-border-color, 0.1);
       border-left-width: $alert-border-width;
