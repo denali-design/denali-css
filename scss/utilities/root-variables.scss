@@ -109,6 +109,8 @@ $checkbox-box-partial-color: rgba($color-brand-300, 0.5);
 $checkbox-box-bg-color-active: $color-brand-300;
 $checkbox-box-label-text-color: $color-grey-800;
 $checkbox-box-label-disabled-text-color: $color-grey-500;
+$checkbox-checkmark-color: $color-grey-100;
+$checkbox-corner-radius: 1px;
 
 // Chips
 $chips-bg-color: $color-brand-100;
@@ -173,6 +175,8 @@ $menu-line-break-size: 2px;
 $menu-line-break-color: $color-grey-400;
 
 // Buttons
+$button-font-weight: inherit;
+$button-font-size: inherit;
 $button-corner-radius: $border-radius-sm;
 $button-sizes-sm-height: 24px;
 $button-sizes-sm-font-size: 12px;
@@ -261,7 +265,6 @@ $navbar-item-text-color: $color-grey-100;
 $navbar-item-hover-text-color: rgba($color-grey-100, 0.4);
 $navbar-item-active-text-color: $color-grey-100;
 $navbar-item-active-border-color: $color-brand-300;
-$navbar-menu-bg-color: $color-grey-100;
 $navbar-responsive-bg-color: #19375F;
 $navbar-responsive-menu-bg-color: #334D71;
 

@@ -20,7 +20,7 @@
 
       .nav-item,
       .nav-icon,
-      .nav-menu,
+      .menu--nav,
       .nav-control {
         display: block;
       }
@@ -31,7 +31,7 @@
 
         .nav-item,
         .nav-icon,
-        .nav-menu,
+        .menu--nav,
         .nav-control {
           display: inline-block;
         }
@@ -50,7 +50,7 @@
 
       .nav-item,
       .nav-icon,
-      .nav-menu,
+      .menu--nav,
       .nav-control {
         height: $navbar-height;
         padding: 18px 8px;
@@ -114,7 +114,7 @@
     // All Items
     .nav-item,
     .nav-icon,
-    .nav-menu,
+    .menu--nav,
     .nav-control {
       display: inline-block;
       vertical-align: top;
@@ -135,10 +135,19 @@
       height: $navbar-height;
     }
 
-    // Item (Text)
-    .nav-item {
+    // Item & Icon (Text)
+    .nav-item,
+    .nav-icon {
       color: $navbar-item-text-color;
       font-size: 1.6rem;
+
+      .icon-name {
+        margin-left: 10px;
+
+        @media (min-width: 899px) {
+          display: none;
+        }
+      }
 
       &.is-active {
         box-shadow: inset 4px 0 0 $navbar-item-active-border-color;
@@ -154,101 +163,54 @@
       }
     }
 
-    // Icons
-    .nav-icon {
-      color: $navbar-item-text-color;
-
-      .icon-name {
-        margin-left: 10px;
-        font-size: 1.6rem;
-
-        @media (min-width: 899px) {
-          display: none;
-        }
-      }
-
-      &:hover,
-      &:focus {
-        color: $navbar-item-hover-text-color;
-      }
-    }
-
     // Menus
-    .nav-menu {
+    .menu.menu--nav {
       color: $navbar-item-text-color;
       padding: 0px !important;
-      white-space: nowrap;
       height: auto;
 
       .menu-content {
-        height: 0px;
-        overflow: hidden;
+        margin-top: -8px;
+      }
 
-        > * {
-          display: block;
-          height: 40px;
-          background: $navbar-responsive-menu-bg-color;
-          padding: 10px 20px;
-        }
+      @media (max-width: 898px) {
+        position: unset;
 
-        &:before,
-        &:after {
-          display: none;
-        }
-
-        @media (min-width: 899px) {
-          height: auto;
-          opacity: 0;
-          background: $navbar-menu-bg-color;
-          font-size: 14px;
-          position: absolute;
-          padding: 15px 20px;
-          border-radius: 8px;
-          margin-top: -8px;
-          visibility: hidden;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
-          z-index: 100;
-          left: 50%;
-          transform: translateX(-50%);
-
-          &.is-right {
-            left: 100%;
-            transform: translateX(-100%);
-          }
-
-          &.is-left {
-            left: 0%;
-            transform: translateX(0%);
-          }
+        .menu-content {
+          height: 0px;
+          overflow: hidden;
+          padding: 0px;
+          border-radius: 0px;
+          border: none;
+          box-shadow: none;
+          width: 100%;
+          margin-top: 0px;
+          background-color: transparent;
 
           > * {
             display: block;
-            white-space: nowrap;
-            padding: 5px 0px;
-            height: unset;
-            background: transparent !important;
+            height: 40px;
+            background: $navbar-responsive-menu-bg-color;
+            padding: 10px 20px;
+            color: $navbar-item-text-color;
+
+            &:hover,
+            &:focus {
+              color: $navbar-item-active-text-color;
+            }
+          }
+
+          &:before,
+          &:after {
+            display: none;
           }
         }
-      }
 
-      .menu-trigger:hover+.menu-content,
-      .menu-trigger:focus+.menu-content,
-      .menu-content:hover {
-        height: auto;
-      }
-
-      @media (min-width: 899px) {
         .menu-trigger:hover+.menu-content,
         .menu-trigger:focus+.menu-content,
         .menu-content:hover {
-          opacity: 1;
-          visibility: visible;
+          height: auto;
         }
-      }
-
-      &:hover,
-      &:focus {
-        color: $navbar-item-active-text-color;
       }
     }
 
@@ -271,85 +233,66 @@
   .nav {
     height: $navbar-height;
     background: $navbar-bg-color;
-
     // Left
     .nav-left {
       height: $navbar-height;
-
       .nav-item,
       .nav-icon,
-      .nav-menu,
+      .menu--nav,
       .nav-control {
         height: $navbar-height;
       }
     }
-
     .nav-responsive {
       background: $navbar-responsive-bg-color;
-
       @media (min-width: 899px) {
         height: $navbar-height;
       }
     }
-
     // All Items
     .nav-item,
     .nav-icon,
-    .nav-menu,
+    .menu--nav,
     .nav-control {
-
       @media (min-width: 899px) {
         height: $navbar-height;
       }
     }
-
-    // Item (Text)
-    .nav-item {
+    // Brand
+    .nav-brand {
+      height: $navbar-height;
+    }
+    // Item & Icon (Text)
+    .nav-item,
+    .nav-icon {
       color: $navbar-item-text-color;
-
       &.is-active {
         box-shadow: inset 4px 0 0 $navbar-item-active-border-color;
-
         @media (min-width: 899px) {
           box-shadow: inset 0 -4px 0 $navbar-item-active-border-color;
         }
       }
-
       &:hover,
       &:focus {
         color: $navbar-item-hover-text-color;
       }
     }
-
-    // Icons
-    .nav-icon {
-      color: $navbar-item-text-color;
-
-      &:hover,
-      &:focus {
-        color: $navbar-item-hover-text-color;
-      }
-    }
-
     // Menus
-    .nav-menu {
+    .menu.menu--nav {
       color: $navbar-item-text-color;
+      @media (max-width: 898px) {
+        .menu-content {
+          >* {
+            background: $navbar-responsive-menu-bg-color;
+            color: $navbar-item-text-color;
 
-      .menu-content {
-        >* {
-          background: $navbar-responsive-menu-bg-color;
+            &:hover,
+            &:focus {
+              color: $navbar-item-active-text-color;
+            }
+          }
         }
-
-        @media (min-width: 899px) {
-          background: $navbar-menu-bg-color;
-        }
-      }
-
-      &:hover,
-      &:focus {
-        color: $navbar-item-active-text-color;
       }
     }
-
   }
 }

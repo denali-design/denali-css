@@ -94,6 +94,8 @@ $breadcrumb-divider-color: rgba($color-grey-100, 0.5);
 $breadcrumb-divider-right-margin: -11px;
 
 // Buttons
+$button-font-weight: inherit;
+$button-font-size: inherit;
 $button-corner-radius: $border-radius-sm;
 $button-sizes-sm-height: 24px;
 $button-sizes-sm-font-size: 12px;
@@ -176,6 +178,8 @@ $checkbox-box-label-disabled-text-color: rgba($color-grey-100, 0.4);
 $checkbox-box-border-color-hover: 0 0 0 2px $color-brand-300;
 $checkbox-box-border-color-active: 0 0 0 2px $color-brand-300;
 $checkbox-box-bg-color-active: $color-brand-300;
+$checkbox-checkmark-color: $color-grey-100;
+$checkbox-corner-radius: 1px;
 
 // Chips
 $chips-bg-color: rgba($color-brand-200, 0.4);
@@ -256,7 +260,6 @@ $modal-modal-container-border-style: solid;
 // Navbar
 $navbar-bg-color: #2A3035;
 $navbar-responsive-bg-color: #1E242A;
-$navbar-menu-bg-color: #313741;
 $navbar-responsive-menu-bg-color: #2A3035;
 // Unused
 $navbar-height: 60px;
@@ -457,6 +460,7 @@ $line-height-expanded: 1.75;
     & {
         background: $body-bg-color;
         color: $body-text-color;
+        font-family: $font-family-sans-serif;
     }
     // COMPONENTS
     @include alerts-theme;

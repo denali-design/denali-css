@@ -31,7 +31,7 @@
     width: $fields-sizes-default-width;
 
     &.is-full {
-      width: 100%;
+      width: 100% !important;
     }
 
     input {
@@ -208,6 +208,7 @@
       border-radius: $fields-corner-radius;
       color: $fields-default-text-color;
       box-shadow: $fields-default-border;
+      padding: $fields-padding;
 
       &:active,
       &:focus {

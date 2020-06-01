@@ -19,6 +19,8 @@
     min-width: $button-sizes-default-min-width;
     border-radius: $button-corner-radius;
     transition: background 300ms;
+    font-weight: $button-font-weight;
+    font-size: $button-font-size;
 
     &.is-solid {
       background: $button-solid-default-bg-color;
@@ -220,6 +222,8 @@
     font-size: $button-sizes-default-font-size;
     min-width: $button-sizes-default-min-width;
     border-radius: $button-corner-radius;
+    font-weight: $button-font-weight;
+    font-size: $button-font-size;
 
     &.is-solid {
       background: $button-solid-default-bg-color;

@@ -4,127 +4,86 @@
 
 @mixin menus-default {
   .menu {
-    display: inline-flex !important;
-    justify-content: center;
+    white-space: nowrap;
     position: relative;
 
-    &.is-left {
-      justify-content: flex-start;
-      align-items: flex-start;
-    }
     &.is-right {
-      justify-content: flex-end;
-    }
-    a.menu-trigger:hover + div.menu-content,
-    a.menu-trigger:focus + div.menu-content {
-      opacity: 1;
-      visibility: visible;
+      .menu-content {
+        left: 100%;
+        transform: translateX(-100%);
+      }
     }
 
-    div.menu-content {
-      min-width: max-content;
-      width: auto;
-      float: left;
+    &.is-left {
+      .menu-content {
+        left: 0%;
+        transform: translateX(0%);
+      }
+    }
+
+    .menu-content {
+      height: auto;
       opacity: 0;
-      visibility: hidden;
       background: $menu-bg-color;
+      font-size: 14px;
+      position: absolute;
+      padding: 15px 20px;
+      border-radius: 8px;
+      visibility: hidden;
+      box-shadow: $menu-shadow;
+      z-index: 100;
+      left: 50%;
+      transform: translateX(-50%);
+
+      // Added
       border-color: $menu-border-color;
       border-width: $menu-border-width;
       border-style: $menu-border-style;
       border-radius: $menu-corner-radius;
-      box-shadow: $menu-shadow;
-      padding: 16px 18px;
-      position: absolute;
-      margin-top: 40px;
-      height: auto;
-      white-space: nowrap;
-      z-index: $zindex-menu;
-
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
       -webkit-transition: all 0.3s 0.1s;
       -moz-transition: all 0.3s 0.1s;
       -o-transition: all 0.3s 0.1s;
       transition: all 0.3s 0.1s;
 
+      >* {
+        display: block;
+        white-space: nowrap;
+        padding: 5px 0px;
+        height: unset;
+      }
+
       hr {
         background-color: $menu-line-break-color;
         height: $menu-line-break-size;
-        width: calc(100% + 36px);
-        margin: 14px 0px;
-        margin-left: -18px;
-      }
-
-      &:hover,
-      &:focus,
-      &:focus-within {
-        opacity: 1;
-        visibility: visible;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        padding: 0px;
       }
     }
-  }
 
-  /*Pointer*/
-
-  div.menu-content:after,
-  div.menu-content:before {
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-  }
-  div.menu-content:after {
-    border-color: transparent;
-    border-bottom-color: $menu-bg-color;
-    border-width: 10px;
-    margin-left: -10px;
-  }
-  div.menu-content:before {
-    border-bottom-color: $menu-border-color;
-    border-width: 13px;
-    margin-left: -13px;
-  }
-
-  /* Pointer Positioning */
-
-  .menu.is-left > .menu-content:after,
-  .menu.is-left > .menu-content:before {
-    left: 20px;
-  }
-  .menu.is-right > .menu-content:after,
-  .menu.is-right > .menu-content:before {
-    left: calc(100% - 20px);
+    .menu-trigger:hover+.menu-content,
+    .menu-trigger:focus+.menu-content,
+    .menu-content:hover {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 
 @mixin menus-theme {
   .menu {
-    div.menu-content {
+    .menu-content {
       background: $menu-bg-color;
+      box-shadow: $menu-shadow;
       border-color: $menu-border-color;
       border-width: $menu-border-width;
       border-style: $menu-border-style;
       border-radius: $menu-corner-radius;
-      box-shadow: $menu-shadow;
 
       hr {
         background-color: $menu-line-break-color;
         height: $menu-line-break-size;
       }
     }
-  }
-
-  div.menu-content:after {
-    border-bottom-color: $menu-bg-color;
-  }
-
-  div.menu-content:before {
-    border-bottom-color: $menu-border-color;
   }
 }
