@@ -229,12 +229,8 @@ $links-inverse-hover-text-color: rgba($color-grey-100, .4);
 $links-small-text-size: 1.2rem;
 
 // Loader
-// Unused
-$loader-size-xs: 1.2rem;
-$loader-size-sm: 1.8rem;
-$loader-size-default: 2.4rem;
-$loader-size-md: 3.6rem;
-$loader-size-lg: 4.8rem;
+$loader-color: $color-brand-200;
+$loader-color-inverse: $color-grey-100;
 
 // Menus
 $menu-bg-color: #2A3035;
