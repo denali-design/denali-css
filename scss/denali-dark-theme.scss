@@ -264,6 +264,9 @@ $navbar-item-hover-text-color: rgba($color-grey-100, 0.4);
 $navbar-item-active-text-color: $color-grey-100;
 $navbar-item-active-border-color: $color-brand-200;
 
+// Progress
+$progress-bg-color: $color-grey-700;
+
 // Radio
 $radio-circle-border-standard: 0 0 0 2px $color-brand-200;
 $radio-circle-border-disabled: 0 0 0 2px rgba($color-grey-100, 0.4);
@@ -438,6 +441,7 @@ $line-height-expanded: 1.75;
 @import "components/menus";
 @import "components/modals";
 @import "components/navbar";
+@import "components/progress";
 @import "components/radio";
 @import "components/selects";
 @import "components/switch";
@@ -472,6 +476,7 @@ $line-height-expanded: 1.75;
     @include menus-theme;
     @include modals-theme;
     @include navbar-theme;
+    @include progress-theme;
     @include radio-theme;
     @include selects-theme;
     @include switch-theme;

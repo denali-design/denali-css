@@ -7,6 +7,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "start": "gulp serve",
     "test": "mocha",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },

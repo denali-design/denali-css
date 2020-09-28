@@ -265,6 +265,16 @@ $navbar-item-active-border-color: $color-brand-300;
 $navbar-responsive-bg-color: #19375F;
 $navbar-responsive-menu-bg-color: #334D71;
 
+// Progress
+$progress-bg-color: $color-grey-400;
+$progress-corner-radius: $border-radius-sm;
+$progress-sizes-sm-height: 10px;
+$progress-sizes-default-height: 16px;
+$progress-sizes-md-height: 20px;
+$progress-sizes-lg-height: 24px;
+$progress-bar-spacer: 2px;
+$progress-bar-bg-color: $color-brand-300;
+
 // Radio
 $radio-circle-border-standard: 0 0 0 2px rgba($color-brand-300, 0.5);
 $radio-circle-border-hover: 0 0 0 2px $color-brand-300;
