@@ -87,7 +87,7 @@
     <div class="flex h-minus-nav">
       <div id="toggleTabsLeft" class="tabs is-primary is-vertical tablet-down-hide-left">
         <ul id="navLinks">
-          <li><a href="#alerts" class="is-active">Alerts</a></li>
+          <li class="is-active"><a href="#alerts">Alerts</a></li>
           <li><a href="#box">Box</a></li>
           <li><a href="#breadcrumbs">Breadcrumbs</a></li>
           <li><a href="#buttons">Buttons</a></li>
@@ -279,7 +279,7 @@
 
       function activeScroll() {
         var nav = document.getElementById('navLinks');
-        var navGrandChild = nav.querySelectorAll("li > a");
+        var navGrandChild = nav.querySelectorAll("li");
 
         for (var i = 0; i < navGrandChild.length; i++) {
           var activeArea = navGrandChild[i].textContent.toLowerCase()
