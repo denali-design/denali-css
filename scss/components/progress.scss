@@ -3,7 +3,7 @@
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
 @mixin progress-default {
-    .progress {
+    .d-progress {
         height: $progress-sizes-default-height;
         width: 100%;
         background: $progress-bg-color;
@@ -11,7 +11,7 @@
         display: flex;
         overflow: hidden;
 
-        .progress--bar {
+        .d-progress--bar {
             height: inherit;
             background: $progress-bar-bg-color;
             margin-left: $progress-bar-spacer;
@@ -59,7 +59,7 @@
 }
 
 @mixin progress-theme {
-    .progress {
+    .d-progress {
         @if variable-exists("progress-sizes-default-height") {
             height: $progress-sizes-default-height;
         }
@@ -70,7 +70,7 @@
             border-radius: $progress-corner-radius;
         }
         
-        .progress--bar {
+        .d-progress--bar {
             @if variable-exists("progress-bar-bg-color") {
                 background: $progress-bar-bg-color;
             }
