@@ -42,7 +42,8 @@
       animation-delay: 0.1s;
     }
 
-    &--inverse {
+    &--inverse,
+    &.is-inverse {
       animation-name: loaderInverse;
 
       &:before,
@@ -114,7 +115,8 @@
       animation-name: loaderThemeDefault;
     }
 
-    &--inverse {
+    &--inverse,
+    &.is-inverse {
       animation-name: loaderThemeInverse;
 
       &:before,

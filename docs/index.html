@@ -87,7 +87,7 @@
     <div class="flex h-minus-nav">
       <div id="toggleTabsLeft" class="tabs is-primary is-vertical tablet-down-hide-left">
         <ul id="navLinks">
-          <li><a href="#alerts" class="is-active">Alerts</a></li>
+          <li class="is-active"><a href="#alerts">Alerts</a></li>
           <li><a href="#box">Box</a></li>
           <li><a href="#breadcrumbs">Breadcrumbs</a></li>
           <li><a href="#buttons">Buttons</a></li>
@@ -100,13 +100,14 @@
           <li><a href="#menu">Menu</a></li>
           <li><a href="#modal">Modal</a></li>
           <li><a href="#navbar">Navbar</a></li>
+          <li><a href="#progress">Progress</a></li>
           <li><a href="#selects">Selects</a></li>
           <li><a href="#shadows">Shadows</a></li>
           <li><a href="#tables">Tables</a></li>
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#tags">Tags</a></li>
           <li><a href="#toggles">Toggles</a></li>
-          <li><a href="#tooltip">Tooltips</a></li>
+          <li><a href="#tooltip">Tooltip</a></li>
           <li><a href="#titles">Titles</a></li>
           <li><a href="#typography">Typography</a></li>
         </ul>
@@ -193,6 +194,12 @@
             <hr class="m-b-30">
             <div include-html="includes/navbar.html"></div>
           </div>
+          <!-- Progress -->
+          <div id="progress" class="p-t-30 m-b-30">
+            <h2>Progress</h2>
+            <hr class="m-b-30">
+            <div include-html="includes/progress.html"></div>
+          </div>
           <!-- Selects -->
           <div id="selects" class="p-t-30 m-b-30">
             <h2>Selects</h2>
@@ -272,7 +279,7 @@
 
       function activeScroll() {
         var nav = document.getElementById('navLinks');
-        var navGrandChild = nav.querySelectorAll("li > a");
+        var navGrandChild = nav.querySelectorAll("li");
 
         for (var i = 0; i < navGrandChild.length; i++) {
           var activeArea = navGrandChild[i].textContent.toLowerCase()

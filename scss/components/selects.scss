@@ -107,13 +107,18 @@
     }
 
     // Sizes
+    &.is-large > select {
+      height: $fields-sizes-lg-height;
+      // margin-top: 6px;
+    }
+    
     &.is-medium > select {
-      height: $fields-sizes-medium-height;
+      height: $fields-sizes-md-height;
       // margin-top: 6px;
     }
 
     &.is-small > select {
-      height: $fields-sizes-small-height;
+      height: $fields-sizes-sm-height;
       // margin-top: 5px;
     }
 

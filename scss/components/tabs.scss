@@ -23,27 +23,30 @@
         li {
           white-space: nowrap;
           cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $tabs-primary-tab-item-text-color;
+          font-size: $tabs-font-size;
+          height: $tabs-primary-tab-item-height;
+          border-top-left-radius: $tabs-primary-tab-item-corner-radius;
+          border-top-right-radius: $tabs-primary-tab-item-corner-radius;
           > * {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: $tabs-parimary-tab-item-text-color;
-            font-size: $tabs-font-size;
-            height: $tabs-parimary-tab-item-height;
-            padding: $tabs-parimary-tab-item-padding;
-            border-top-left-radius: $tabs-parimary-tab-item-corner-radius;
-            border-top-right-radius: $tabs-parimary-tab-item-corner-radius;
+            padding: $tabs-primary-tab-item-padding;
           }
-          &.is-active > * {
-            color: $tabs-parimary-tab-item-active-text-color;
-            background: $tabs-parimary-tab-item-active-bg-color;
+          &.is-active {
+            background: $tabs-primary-tab-item-active-bg-color;
+            > * {
+              color: $tabs-primary-tab-item-active-text-color;
+            }
           }
           &.is-disabled > * {
-            color: $tabs-parimary-tab-item-disabled-text-color;
+            color: $tabs-primary-tab-item-disabled-text-color;
             cursor: not-allowed;
           }
         }
       }
+
       // Vertical Primary
       &.is-vertical {
         min-width: $tabs-primary-vertical-width;
@@ -53,28 +56,49 @@
         ul {
           flex-direction: column;
           padding: $tabs-primary-vertical-padding;
-          width: 100%;
           li {
             cursor: pointer;
-             >* {
-              box-sizing: border-box;
-              width: inherit;
-              height: $tabs-primary-vertical-tab-item-height;
-              margin: 0px 16px;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            height: $tabs-primary-vertical-tab-item-height;
+            margin: $tabs-primary-vertical-tab-item-margin;
+            border-radius: $tabs-primary-vertical-tab-item-corner-radius;
+            background: $tabs-primary-vertical-tab-item-bg-color;
+            box-shadow: $tabs-primary-vertical-tab-item-border;
+            > * {
+              color: $tabs-primary-vertical-tab-item-text-color;
               padding: $tabs-primary-vertical-tab-item-padding;
-              justify-content: flex-start;
-              border-radius: 0px;
-              &.is-active {
-                width: calc(100% - (16px * 2));
-                background: $tabs-primary-vertical-active-accordion-bg-color;
-                font-weight: $tabs-primary-vertical-active-accordion-text-weight;
-                color: $tabs-primary-vertical-active-accordion-text-color;
-                border-radius: $tabs-primary-vertical-active-accordion-corner-radius;
+              height: inherit;
+              flex: auto;
+              display: flex;
+              align-items: center;
+            }
+            &:hover {
+              box-shadow: $tabs-primary-vertical-tab-item-hover-border;
+              background: $tabs-primary-vertical-tab-item-hover-bg-color;
+              font-weight: $tabs-primary-vertical-tab-item-hover-text-weight;
+              > * {
+                color: $tabs-primary-vertical-tab-item-hover-text-color;
               }
             }
             &.is-active {
-              background: $tabs-primary-vertical-tab-item-active-bg-color;
               box-shadow: $tabs-primary-vertical-tab-item-active-border;
+              background: $tabs-primary-vertical-tab-item-active-bg-color;
+              font-weight: $tabs-primary-vertical-tab-item-active-text-weight;
+              > * {
+                color: $tabs-primary-vertical-tab-item-active-text-color;
+              }
+            }
+            // Section Header
+            &.tabs__section-header {
+              font-size: $tabs-section-header-text-size;
+              text-transform: $tabs-section-header-text-transform;
+              color: $tabs-section-header-text-color;
+              padding: $tabs-primary-vertical-tab-item-padding;
+        
+              &:hover {
+                box-shadow: none;
+              }
             }
           }
         }
@@ -149,20 +173,22 @@
       ul {
         padding: $tabs-primary-padding;
         li {
-           >* {
-            color: $tabs-parimary-tab-item-text-color;
-            font-size: $tabs-font-size;
-            height: $tabs-parimary-tab-item-height;
-            padding: $tabs-parimary-tab-item-padding;
-            border-top-left-radius: $tabs-parimary-tab-item-corner-radius;
-            border-top-right-radius: $tabs-parimary-tab-item-corner-radius;
+          color: $tabs-primary-tab-item-text-color;
+          font-size: $tabs-font-size;
+          height: $tabs-primary-tab-item-height;
+          border-top-left-radius: $tabs-primary-tab-item-corner-radius;
+          border-top-right-radius: $tabs-primary-tab-item-corner-radius;
+          > * {
+            padding: $tabs-primary-tab-item-padding;
           }
-          &.is-active>* {
-            color: $tabs-parimary-tab-item-active-text-color;
-            background: $tabs-parimary-tab-item-active-bg-color;
+          &.is-active {
+            background: $tabs-primary-tab-item-active-bg-color;
+            > * {
+              color: $tabs-primary-tab-item-active-text-color;
+            }
           }
-          &.is-disabled>* {
-            color: $tabs-parimary-tab-item-disabled-text-color;
+          &.is-disabled > * {
+            color: $tabs-primary-tab-item-disabled-text-color;
           }
         }
       }
@@ -174,19 +200,40 @@
         ul {
           padding: $tabs-primary-vertical-padding;
           li {
-             >* {
-              height: $tabs-primary-vertical-tab-item-height;
+            height: $tabs-primary-vertical-tab-item-height;
+            margin: $tabs-primary-vertical-tab-item-margin;
+            border-radius: $tabs-primary-vertical-tab-item-corner-radius;
+            background: $tabs-primary-vertical-tab-item-bg-color;
+            box-shadow: $tabs-primary-vertical-tab-item-border;
+            > * {
+              color: $tabs-primary-vertical-tab-item-text-color;
               padding: $tabs-primary-vertical-tab-item-padding;
-              &.is-active {
-                background: $tabs-primary-vertical-active-accordion-bg-color;
-                font-weight: $tabs-primary-vertical-active-accordion-text-weight;
-                color: $tabs-primary-vertical-active-accordion-text-color;
-                border-radius: $tabs-primary-vertical-active-accordion-corner-radius;
+            }
+            &:hover {
+              box-shadow: $tabs-primary-vertical-tab-item-hover-border;
+              background: $tabs-primary-vertical-tab-item-hover-bg-color;
+              font-weight: $tabs-primary-vertical-tab-item-hover-text-weight;
+              > * {
+                color: $tabs-primary-vertical-tab-item-hover-text-color;
               }
             }
             &.is-active {
-              background: $tabs-primary-vertical-tab-item-active-bg-color;
               box-shadow: $tabs-primary-vertical-tab-item-active-border;
+              background: $tabs-primary-vertical-tab-item-active-bg-color;
+              font-weight: $tabs-primary-vertical-tab-item-active-text-weight;
+              > * {
+                color: $tabs-primary-vertical-tab-item-active-text-color;
+              }
+            }
+            &.tabs__section-header {
+              font-size: $tabs-section-header-text-size;
+              text-transform: $tabs-section-header-text-transform;
+              color: $tabs-section-header-text-color;
+              padding: $tabs-primary-vertical-tab-item-padding;
+        
+              &:hover {
+                box-shadow: none !important;
+              }
             }
           }
         }

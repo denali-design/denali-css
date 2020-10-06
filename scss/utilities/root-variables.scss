@@ -6,7 +6,7 @@
 // Brand
 $color-brand-100: #CCE2FF;
 $color-brand-200: #80B6FF;
-$color-brand-300: #016EFF;
+$color-brand-300: #006DFB;
 $color-brand-400: #004CB3;
 $color-brand-500: #002B66;
 
@@ -136,9 +136,10 @@ $fields-disabled-border: inset 0 -2px rgba($color-grey-800, 0.05);
 $fields-error-border: inset 0 -2px $color-status-danger;
 
 $fields-sizes-default-width: 250px;
+$fields-sizes-sm-height: 24px;
+$fields-sizes-md-height: 32px;
 $fields-sizes-default-height: 36px;
-$fields-sizes-medium-height: 32px;
-$fields-sizes-small-height: 24px;
+$fields-sizes-lg-height: 44px;
 
 // Icons
 $icon-size-xs: 1.2rem;
@@ -265,6 +266,16 @@ $navbar-item-active-border-color: $color-brand-300;
 $navbar-responsive-bg-color: #19375F;
 $navbar-responsive-menu-bg-color: #334D71;
 
+// Progress
+$progress-bg-color: $color-grey-400;
+$progress-corner-radius: $border-radius-sm;
+$progress-sizes-sm-height: 10px;
+$progress-sizes-default-height: 16px;
+$progress-sizes-md-height: 20px;
+$progress-sizes-lg-height: 24px;
+$progress-bar-spacer: 2px;
+$progress-bar-bg-color: $color-brand-300;
+
 // Radio
 $radio-circle-border-standard: 0 0 0 2px rgba($color-brand-300, 0.5);
 $radio-circle-border-hover: 0 0 0 2px $color-brand-300;
@@ -290,41 +301,55 @@ $switch-label-text-color: $color-grey-800;
 $switch-label-disabled-text-color: $color-grey-500;
 
 // Table
-$table-header-text-color: rgba($color-grey-800, 0.4);
+$table-border-radius: $border-radius-md;
+$table-row-default-height: 48px;
+$table-row-condensed-height: 40px;
+$table-row-expanded-height: 56px;
+$table-row-border-bottom: solid 1px $color-grey-400;
+$table-row-padding: 0px 10px;
+$table-header-text-color: $color-grey-800;
 $table-header-text-size: 1.2rem;
 $table-header-text-transform: uppercase;
 $table-header-text-weight: normal;
 $table-header-padding: 10px;
-$table-header-border-bottom: 1px solid rgba($color-grey-800, 0.4);
-$table-header-bg-color: transparent;
-$table-row-padding: 14px 10px;
-$table-row-border-bottom: 1px solid rgba($color-grey-800, 0.2);
-$table-striped-row-bg-color: rgba($color-brand-400, 0.05);
+$table-header-border-bottom: solid 2px $color-grey-400;
+$table-header-sort-text-weight: bold;
+$table-footer-bg-color: $color-grey-400;
+$table-striped-row-bg-color: $color-grey-200;
+$table-cards-spacing: 0px 10px;
+$table-cards-border: solid 1px $color-grey-400;
+
 
 // Tabs
 $tabs-font-size: 1.6rem;
 
 $tabs-primary-bg-color: #F3F8FF;
 $tabs-primary-padding: 20px 0px 0px 30px;
-$tabs-parimary-tab-item-height: 40px;
-$tabs-parimary-tab-item-padding: 0px 20px;
-$tabs-parimary-tab-item-corner-radius: $border-radius-md;
-$tabs-parimary-tab-item-text-color: $color-brand-300;
-$tabs-parimary-tab-item-active-bg-color: $color-grey-100;
-$tabs-parimary-tab-item-active-text-color: $color-grey-800;
-$tabs-parimary-tab-item-disabled-text-color: rgba($color-grey-800, 0.2);
+$tabs-primary-tab-item-height: 40px;
+$tabs-primary-tab-item-padding: 0px 20px;
+$tabs-primary-tab-item-corner-radius: $border-radius-md;
+$tabs-primary-tab-item-text-color: $color-brand-300;
+$tabs-primary-tab-item-active-bg-color: $color-grey-100;
+$tabs-primary-tab-item-active-text-color: $color-grey-800;
+$tabs-primary-tab-item-disabled-text-color: rgba($color-grey-800, 0.2);
 
 $tabs-primary-vertical-width: 300px;
 $tabs-primary-vertical-padding: 12px 0px 40px 0px;
-$tabs-primary-vertical-tab-item-height: 46px;
+$tabs-primary-vertical-tab-item-height: 40px;
+$tabs-primary-vertical-tab-item-margin: 2px 16px;
 $tabs-primary-vertical-tab-item-padding: 0px 14px;
-$tabs-primary-vertical-tab-item-active-bg-color: $color-grey-100;
-$tabs-primary-vertical-tab-item-active-border: inset 4px 0px $color-brand-300;
-
-$tabs-primary-vertical-active-accordion-bg-color: rgba($color-brand-300, 0.1);
-$tabs-primary-vertical-active-accordion-text-color: $color-brand-300;
-$tabs-primary-vertical-active-accordion-text-weight: bold;
-$tabs-primary-vertical-active-accordion-corner-radius: $border-radius-lg;
+$tabs-primary-vertical-tab-item-corner-radius: $border-radius-lg;
+$tabs-primary-vertical-tab-item-bg-color: null;
+$tabs-primary-vertical-tab-item-text-color: inherit;
+$tabs-primary-vertical-tab-item-border: null;
+$tabs-primary-vertical-tab-item-active-border: inset 0px 0px 0px 1px rgba($color-brand-300, .1);
+$tabs-primary-vertical-tab-item-active-bg-color: rgba($color-brand-300, 0.1);
+$tabs-primary-vertical-tab-item-active-text-color: $color-grey-800;
+$tabs-primary-vertical-tab-item-active-text-weight: bold;
+$tabs-primary-vertical-tab-item-hover-border: inset 0px 0px 0px 1px rgba($color-brand-400, .1);
+$tabs-primary-vertical-tab-item-hover-bg-color: null;
+$tabs-primary-vertical-tab-item-hover-text-color: $color-brand-400;
+$tabs-primary-vertical-tab-item-hover-text-weight: null;
 
 $tabs-secondary-border: inset 0px -2px rgba($color-grey-700, .05);
 $tabs-secondary-tab-item-height: 40px;
@@ -332,6 +357,10 @@ $tabs-secondary-tab-item-padding: 0px 20px;
 $tabs-secondary-tab-item-text-color: $color-brand-300;
 $tabs-secondary-tab-item-active-text-color: $color-grey-800;
 $tabs-secondary-tab-item-active-border: inset 0px -2px $color-brand-300;
+
+$tabs-section-header-text-color: #9a9a9a;
+$tabs-section-header-text-size: 1.2rem;
+$tabs-section-header-text-transform: uppercase;
 
 // Tags
 $tags-corner-radius: $border-radius-pill;

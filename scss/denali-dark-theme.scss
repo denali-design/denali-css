@@ -264,6 +264,9 @@ $navbar-item-hover-text-color: rgba($color-grey-100, 0.4);
 $navbar-item-active-text-color: $color-grey-100;
 $navbar-item-active-border-color: $color-brand-200;
 
+// Progress
+$progress-bg-color: $color-grey-700;
+
 // Radio
 $radio-circle-border-standard: 0 0 0 2px $color-brand-200;
 $radio-circle-border-disabled: 0 0 0 2px rgba($color-grey-100, 0.4);
@@ -290,47 +293,63 @@ $switch-circle-bg-color-active-disabled: $color-grey-500;
 $switch-slider-standard-color: $color-grey-500;
 $switch-slider-active-color: rgba($color-status-success, 0.45);
 
-// Tables
-$table-header-text-color: rgba($color-grey-100, 0.4);
-$table-header-border-bottom: 1px solid rgba($color-grey-100, 0.4);
-$table-row-border-bottom: 1px solid rgba($color-grey-100, 0.2);
-$table-striped-row-bg-color: rgba($color-brand-100, 0.05);
-// Unused
+// Table
+$table-border-radius: $border-radius-md;
+$table-row-default-height: 48px;
+$table-row-condensed-height: 40px;
+$table-row-expanded-height: 56px;
+$table-row-border-bottom: solid 1px $color-grey-800;
+$table-row-padding: 0px 10px;
+$table-header-text-color: $color-grey-100;
 $table-header-text-size: 1.2rem;
 $table-header-text-transform: uppercase;
 $table-header-text-weight: normal;
 $table-header-padding: 10px;
-$table-header-bg-color: transparent;
-$table-row-padding: 14px 10px;
+$table-header-border-bottom: solid 2px $color-grey-800;
+$table-header-sort-text-weight: bold;
+$table-footer-bg-color: $color-grey-800;
+$table-striped-row-bg-color: $color-grey-800;
+$table-cards-spacing: 0px 10px;
+$table-cards-border: solid 1px $color-grey-800;
 
 // Tabs
 $tabs-primary-bg-color: #1E242A;
-$tabs-parimary-tab-item-text-color: $color-brand-200;
-$tabs-parimary-tab-item-active-text-color: $color-grey-100;
-$tabs-parimary-tab-item-active-bg-color: #12191F;
-$tabs-parimary-tab-item-disabled-text-color: rgba($color-grey-100, 0.2);
+$tabs-primary-tab-item-text-color: $color-brand-200;
+$tabs-primary-tab-item-active-text-color: $color-grey-100;
+$tabs-primary-tab-item-active-bg-color: #12191F;
+$tabs-primary-tab-item-disabled-text-color: rgba($color-grey-100, 0.2);
 $tabs-primary-vertical-tab-item-active-bg-color: #12191F;
-$tabs-primary-vertical-active-accordion-bg-color: rgba($color-brand-100, 0.1);
-$tabs-primary-vertical-active-accordion-text-color: $color-brand-200;
 $tabs-secondary-border: inset 0px -2px rgba($color-grey-500, .05);
 $tabs-secondary-tab-item-text-color: $color-brand-200;
 $tabs-secondary-tab-item-active-text-color: $color-grey-100;
+$tabs-primary-vertical-tab-item-active-border: inset 0px 0px 0px 1px rgba($color-brand-100, .1);
+$tabs-primary-vertical-tab-item-active-text-color: $color-grey-100;
+$tabs-primary-vertical-tab-item-hover-border: inset 0px 0px 0px 1px rgba($color-brand-100, .1);
+$tabs-primary-vertical-tab-item-hover-text-color: $color-brand-100;
 // Unused
 $tabs-font-size: 1.6rem;
 $tabs-primary-padding: 20px 0px 0px 30px;
-$tabs-parimary-tab-item-height: 40px;
-$tabs-parimary-tab-item-padding: 0px 20px;
-$tabs-parimary-tab-item-corner-radius: $border-radius-md;
+$tabs-primary-tab-item-height: 40px;
+$tabs-primary-tab-item-padding: 0px 20px;
+$tabs-primary-tab-item-corner-radius: $border-radius-md;
 $tabs-primary-vertical-width: 300px;
 $tabs-primary-vertical-padding: 12px 0px 40px 0px;
-$tabs-primary-vertical-tab-item-height: 46px;
+$tabs-primary-vertical-tab-item-height: 40px;
+$tabs-primary-vertical-tab-item-margin: 2px 16px;
 $tabs-primary-vertical-tab-item-padding: 0px 14px;
-$tabs-primary-vertical-tab-item-active-border: inset 4px 0px $color-brand-200;
-$tabs-primary-vertical-active-accordion-text-weight: bold;
-$tabs-primary-vertical-active-accordion-corner-radius: $border-radius-lg;
+$tabs-primary-vertical-tab-item-bg-color: null;
+$tabs-primary-vertical-tab-item-text-color: inherit;
+$tabs-primary-vertical-tab-item-border: null;
+$tabs-primary-vertical-tab-item-active-text-weight: bold;
+$tabs-primary-vertical-tab-item-hover-bg-color: null;
+$tabs-primary-vertical-tab-item-hover-text-weight: null;
+$tabs-primary-vertical-tab-item-corner-radius: $border-radius-lg;
 $tabs-secondary-tab-item-height: 40px;
 $tabs-secondary-tab-item-padding: 0px 20px;
 $tabs-secondary-tab-item-active-border: inset 0px -2px $color-brand-200;
+$tabs-section-header-text-color: #9a9a9a;
+$tabs-section-header-text-size: 1.2rem;
+$tabs-section-header-text-transform: uppercase;
 
 // Tags
 $tags-icon-color: $color-grey-100;
@@ -438,6 +457,7 @@ $line-height-expanded: 1.75;
 @import "components/menus";
 @import "components/modals";
 @import "components/navbar";
+@import "components/progress";
 @import "components/radio";
 @import "components/selects";
 @import "components/switch";
@@ -472,6 +492,7 @@ $line-height-expanded: 1.75;
     @include menus-theme;
     @include modals-theme;
     @include navbar-theme;
+    @include progress-theme;
     @include radio-theme;
     @include selects-theme;
     @include switch-theme;
