@@ -101,6 +101,9 @@
 .align-items-center {
   align-items: center !important;
 }
+.align-items-flex-end {
+  align-items: flex-end !important;
+}
 
 .align-self-center {
   align-self: center !important;
@@ -112,7 +115,10 @@
 .align-content-center {
   align-content: center !important;
 }
-
 .justify-content-center {
   justify-content: center !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
 }
