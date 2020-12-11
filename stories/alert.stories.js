@@ -37,12 +37,30 @@ Block.argTypes = {
   },
 };
 
-export const inline = () => {
+export const Inline = ({ title, description, status }) => {
   return (
-    `<div class="alert is-inline">
-      <p><span class="is-bold">Title</span> Do not use for Production or CI/CD (Screwdriver)</p>
+    `<div class="alert is-inline has-bg-status-${status}">
+      <p><span class="is-bold">${title}</span>${description}</p>
     </div>`
   );
+};
+
+Inline.argTypes = {
+  title: { 
+    defaultValue: 'This is a title',
+    control: 'text',
+  },
+  description: { 
+    defaultValue: ' This is a description for the alert context.',
+    control: 'text',
+  },
+  status: {
+    defaultValue: 'default',
+    control: { 
+      type: 'select',
+      options: ['default', 'info', 'success', 'warning', 'danger'],
+    },
+  },
 };
 
 export const Notification = ({ title, description, icon, status }) => {
