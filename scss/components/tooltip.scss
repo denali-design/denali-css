@@ -3,7 +3,7 @@
 // // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 @mixin tooltip-default {
 
-    *[class*="tooltip"] {
+    *[class*="d-tooltip"] {
         position: relative;
 
         &::after {
@@ -64,7 +64,7 @@
 }
 
 @mixin tooltip-theme {
-    *[class*="tooltip"] {
+    *[class*="d-tooltip"] {
         &::after {
             padding: $tooltip-padding;
             font-size: $tooltip-text-size;
