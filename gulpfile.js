@@ -45,3 +45,7 @@ gulp.task(
 );
 
 gulp.task("default", gulp.series("serve", disconnect));
+
+gulp.task('build', () => gulp.src('./scss/*.scss')
+  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(gulp.dest('./css')));
