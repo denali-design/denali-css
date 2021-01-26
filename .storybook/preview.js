@@ -4,6 +4,13 @@ import '../docs/fonts/denali-icon-font.css';
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   docs: { page: null },
+  html: {
+    prettier: {
+      tabWidth: 4,
+      useTabs: false,
+      htmlWhitespaceSensitivity: 'strict',
+    },
+  },
 };
 
 export const globalTypes = {
