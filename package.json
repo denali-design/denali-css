@@ -24,6 +24,7 @@
     "@storybook/addon-essentials": "^6.1.10",
     "@storybook/addon-links": "^6.1.10",
     "@storybook/html": "^6.1.10",
+    "@whitespace/storybook-addon-html": "^4.2.0",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.13",
     "gulp": "^4.0.2",
