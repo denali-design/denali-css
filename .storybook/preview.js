@@ -1,5 +1,6 @@
 import '../css/denali.css';
 import '../docs/fonts/denali-icon-font.css';
+import '../storybook-assets/style.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
