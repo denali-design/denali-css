@@ -17,7 +17,7 @@ export const Center = () => {
   <div class="nav-left">
     <img class="nav-brand" src=${denaliLogo} alt="" />
   </div>
-  <div class="nav-responsive is-active">
+  <div class="nav-responsive">
     <div class="nav-center">
       <span class="nav-item is-active">Center</span>
     </div>
@@ -31,7 +31,7 @@ export const Right = () => {
   <div class="nav-left">
     <img class="nav-brand" src=${denaliLogo} alt="" />
   </div>
-  <div class="nav-responsive is-active">
+  <div class="nav-responsive">
     <div class="nav-right">
       <span class="nav-item"><i class="d-icon d-user-profile-circle"></i></span>
     </div>

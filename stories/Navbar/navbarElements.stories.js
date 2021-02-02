@@ -18,7 +18,7 @@ export const Items = () => {
   <div class="nav-left">
     <img class="nav-brand" src=${denaliLogo} alt="" />
   </div>
-  <div class="nav-responsive is-active">
+  <div class="nav-responsive ">
     <div class="nav-right">
       <a class="nav-item is-active">Home</a>
       <a class="nav-item">About</a>
@@ -35,7 +35,7 @@ export const Icons = () => {
   <div class="nav-left">
     <img class="nav-brand" src= ${denaliLogo} alt="" />
   </div>
-  <div class="nav-responsive is-active">
+  <div class="nav-responsive">
     <div class="nav-right">
       <span class="nav-item"><i class="d-icon d-dashboard"></i></span>
       <span class="nav-item"><i class="d-icon d-menu-dialpad"></i></span>
@@ -52,7 +52,7 @@ export const Control = () => {
   <div class="nav-left">
     <img class="nav-brand" src=${denaliLogo} alt="" />
   </div>
-  <div class="nav-responsive is-active">
+  <div class="nav-responsive">
     <div class="nav-right">
       <div class="nav-control">
         <div class="input has-icon-back is-inverse">
@@ -71,7 +71,7 @@ export const Menu = () => {
   <div class="nav-left">
     <img class="nav-brand" src=${denaliLogo} alt="" />
   </div>
-  <div class="nav-responsive is-active">
+  <div class="nav-responsive">
     <div class="nav-right">
       <div class="menu menu--nav is-right">
         <div class="nav-item menu-trigger">Menu<i class="d-icon d-arrowhead-down is-small"></i></div>
