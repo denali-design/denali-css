@@ -1,6 +1,6 @@
 {
   "name": "denali-css",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "author": "Chas Turansky",
   "description": "Denali CSS Framework",
   "private": false,
@@ -10,7 +10,7 @@
     "build": "gulp build",
     "start": "gulp serve",
     "test": "mocha",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o ./docs-storybook"
   },
@@ -32,13 +32,14 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "mocha": "^7.2.0",
-    "react-is": "^16.13.1"
+    "react-is": "^16.13.1",
+    "semantic-release": "^17.3.1"
   },
+  "dependencies": {},
   "release": {
-    "debug": false,
-    "verifyConditions": {
-      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
-    }
+    "repositoryUrl": "git@github.com:denali-design/denali-css.git"
   },
-  "dependencies": {}
+  "publishConfig": {
+    "access": "public"
+  }
 }

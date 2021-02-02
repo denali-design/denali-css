@@ -13,9 +13,12 @@ jobs:
 
     publish:
         requires: main
-        template: screwdriver-cd/semantic-release
+        steps:
+            - setup-ci: git clone https://github.com/screwdriver-cd/toolbox.git /tmp/ci
+            - publish: |
+                . /tmp/ci/git-ssh.sh
+                npx semantic-release
         secrets:
-            # Publishing to NPM
             - NPM_TOKEN
-            # Github token to push tags to Git
             - GH_TOKEN
+            - GIT_KEY_BASE64
