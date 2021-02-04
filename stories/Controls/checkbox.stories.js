@@ -32,7 +32,7 @@ export default {
     },
   };
   
-  export const RadioGroup = ({ size, footerHtml }) => {
+  export const CheckboxGroup = ({ size, footerHtml }) => {
     return `<div class="input-group">
     <label>Checkbox Grouping</label>
     <div class="checkbox">
