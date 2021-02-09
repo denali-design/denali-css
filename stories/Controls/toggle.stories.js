@@ -2,15 +2,15 @@ export default {
   title: "Components/Controls/Toggle",
 };
 
-export const Default = ({ checked, disabled }) => {
+export const Default = ({ checked, disabled, toggleOnLabel, toggleOffLabel }) => {
   return `
     <label class="switch">
     <input type="checkbox"
         ${checked ? 'checked = ""' : ""}
         ${disabled ? 'disabled = ""' : ""} />
     <span class="slider"></span>
-    <span class="off label">Toggle off</span>
-    <span class="on label">Toggle on</span>
+    <span class="off label">${toggleOnLabel}</span>
+    <span class="on label">${toggleOffLabel}</span>
     </label>`;
 };
 
@@ -22,6 +22,14 @@ Default.argTypes = {
   checked: {
     defaultValue: false,
     control: "boolean",
+  },
+  toggleOnLabel: {
+    defaultValue: 'On',
+    control: "text",
+  },
+  toggleOffLabel: {
+    defaultValue: 'Off',
+    control: "text",
   },
 };
 
