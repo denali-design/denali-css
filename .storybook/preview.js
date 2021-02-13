@@ -12,6 +12,11 @@ export const parameters = {
       htmlWhitespaceSensitivity: 'strict',
     },
   },
+  options: {
+    storySort: {
+      order: ['Get Started', ['Installation', 'Theme'], 'Aesthics', 'Components', 'Helpers'],
+    },
+  },
 };
 
 export const globalTypes = {
