@@ -1,6 +1,6 @@
 import '../css/denali.css';
-import '../docs/fonts/denali-icon-font.css';
-import '../storybook-assets/style.css';
+import '../.storybook/fonts/denali-icon-font.css';
+import '../.storybook/style.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -14,7 +14,8 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Get Started', ['Installation', 'Theme'], 'Aesthics', 'Components', 'Helpers'],
+      method: 'alphabetical',
+      order: ['Get Started', ['Installation', 'Theme'], 'Aesthics', 'Layouts', ['Breakpoints', 'Containers', 'Rows', 'Columns'], 'Components', 'Helpers'],
     },
   },
 };
