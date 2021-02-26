@@ -1,0 +1,121 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Layouts/Breakpoints" />
+
+# Breakpoints
+Denali was created to be mobile first. Build responsive layouts using media queries to create breakpoints.
+
+---
+
+## Media queries
+We use the following media query ranges or breakpoints in our SCSS files for our layout, grid system, and components.
+
+```css
+/* Mobile */
+@media (min-width: 0px)     { ... }
+/* Tablet */
+@media (min-width: 600px)   { ... }
+/* Small-desktop */
+@media (min-width: 900px)   { ... }
+/* Desktop */
+@media (min-width: 1200px)  { ... }
+/* HD */
+@media (min-width: 1440px)  { ... }
+```
+
+Since we write our source CSS as SCSS files, all media queries are available as Sass mixins.
+
+```sass
+/* Mobile */
+@include media-size-up(mobile)        { ... }
+/* Tablet */
+@include media-size-up(tablet)        { ... }
+/* Small-desktop */
+@include media-size-up(small-desktop) { ... }
+/* Desktop */
+@include media-size-up(desktop)       { ... }
+/* HD */
+@include media-size-up(hd)            { ... }
+```
+
+---
+
+## Changing direction
+We also provide these media queries in the opposite direction.
+
+```css
+/* Mobile */
+@media (max-width: 599px)   { ... }
+/* Tablet */
+@media (max-width: 899px)   { ... }
+/* Small-desktop */
+@media (max-width: 1199px)  { ... }
+/* Desktop */
+@media (max-width: 1439px)  { ... }
+/* HD */
+/* No media query since the extra-large breakpoint has no upper bound on its width */
+```
+
+These media queries are also available as Sass mixins:
+
+```scss
+/* Mobile */
+@include media-size-down(mobile)        { ... }
+/* Tablet */
+@include media-size-down(tablet)        { ... }
+/* Small-desktop */
+@include media-size-down(small-desktop) { ... }
+/* Desktop */
+@include media-size-down(desktop)       { ... }
+```
+
+---
+
+## Single segment
+If you only want to target a single segment, we give you the option to do that as well.
+
+```css
+/* Mobile */
+@media (min-width: 0px) and (max-width: 599px)      { ... }
+/* Tablet */
+@media (min-width: 600px) and (max-width: 899px)    { ... }
+/* Small-desktop */
+@media (min-width: 900px) and (max-width: 1199px)   { ... }
+/* Desktop */
+@media (min-width: 1200px) and (max-width: 1439px)  { ... }
+/* HD */
+@media (min-width: 1440px)                          { ... }
+```
+
+These media queries are also available as Sass mixins:
+
+```sass
+/* Mobile */
+@include media-size-only(mobile)        { ... }
+/* Tablet */
+@include media-size-only(tablet)        { ... }
+/* Small-desktop */
+@include media-size-only(small-desktop) { ... }
+/* Desktop */
+@include media-size-only(desktop)       { ... }
+/* HD */
+@include media-size-only(hd)            { ... }
+```
+
+---
+
+## Multiple segments
+Occasionally you will need to use media queries across multiple breakpoints.
+
+```css
+/* Example */
+/* Apply the start for example tablet and the end for example desktop-end */
+@media (min-width: 600px) and (max-width: 1439px)   { ... }
+```
+
+These media queries are also available as Sass mixins:
+
+```sass
+/* Example */
+@include media-size-between(tablet, desktop)    { ... }
+```
