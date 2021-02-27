@@ -80,12 +80,12 @@ Use NPM to install packages.
 npm install
 ```
 
-#### Usage
+#### Storybook
 
-To spin up local server to view demo files use the command below. This will also watch the SCSS files for any changes and will output a CSS file in the css folder. After you should be prompted with a success message with the localhost url available to view.
+To view storybook docs use the command below.
 
 ```
-gulp serve
+npm run storybook
 ```
 
 ## Browser Support
