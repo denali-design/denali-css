@@ -1,4 +1,4 @@
-import denaliLogo from "./../../docs/images/denali-logo.svg";
+const denaliLogo = "denali-logo.svg";
 
 export default {
   title: "Components/Navbar/Sections",

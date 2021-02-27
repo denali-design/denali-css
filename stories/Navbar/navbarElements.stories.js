@@ -1,5 +1,5 @@
-import denaliLogo from './../../docs/images/denali-logo.svg';
-import paasLogo from './../../docs/images/paas-logo.png';
+const denaliLogo = "denali-logo.svg";
+const paasLogo = "/paas-logo.png";
 
 export default {
   title: "Components/Navbar/Elements",
