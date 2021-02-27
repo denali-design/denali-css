@@ -1,5 +1,5 @@
 const denaliLogo = "denali-logo.svg";
-const paasLogo = "/paas-logo.png";
+const paasLogo = "paas-logo.png";
 
 export default {
   title: "Components/Navbar/Elements",

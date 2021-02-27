@@ -33,5 +33,5 @@ export default create({
 
   brandTitle: 'Link to the Denali CSS GitHub repo',
   brandUrl: 'https://github.com/denali-design/denali-css',
-  brandImage: '/denali-storybook-css-logo.png',
+  brandImage: 'denali-storybook-css-logo.png',
 });
