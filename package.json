@@ -12,7 +12,8 @@
     "test": "mocha",
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o ./docs-storybook"
+    "build-storybook": "build-storybook -o ./docs",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "repository": {
     "type": "git",
@@ -21,19 +22,20 @@
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@storybook/addon-actions": "^6.1.10",
-    "@storybook/addon-essentials": "^6.1.10",
+    "@storybook/addon-essentials": "^6.1.20",
     "@storybook/addon-links": "^6.1.10",
-    "@storybook/html": "^6.1.10",
+    "@storybook/html": "^6.1.20",
+    "@storybook/storybook-deployer": "^2.8.7",
     "@whitespace/storybook-addon-html": "^4.2.0",
     "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
     "gulp-connect-php": "^1.0.3",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "mocha": "^7.2.0",
     "react-is": "^16.13.1",
-    "semantic-release": "^17.3.1"
+    "semantic-release": "^17.4.0"
   },
   "dependencies": {},
   "release": {
@@ -41,5 +43,10 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "storybook-deployer": {
+    "gitUsername": "denali-bot",
+    "gitEmail": "denali@verizonmedia.com",
+    "commitMessage": "Deploy Storybook to GitHub Pages"
   }
 }
