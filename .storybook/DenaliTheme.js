@@ -1,5 +1,4 @@
 import { create } from '@storybook/theming';
-import logo from 'denali-storybook-css-logo.png';
 
 export default create({
   base: 'light',
@@ -34,5 +33,5 @@ export default create({
 
   brandTitle: 'Link to the Denali CSS GitHub repo',
   brandUrl: 'https://github.com/denali-design/denali-css',
-  brandImage: logo,
+  brandImage: '/denali-storybook-css-logo.png',
 });
