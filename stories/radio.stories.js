@@ -1,5 +1,5 @@
 export default {
-  title: "Components/Controls/Radio",
+  title: "Components/Radio",
 };
 
 export const Default = ({ checked, disabled, text }) => {

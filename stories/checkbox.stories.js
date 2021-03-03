@@ -1,5 +1,5 @@
 export default {
-    title: "Components/Controls/Checkbox",
+    title: "Components/Checkbox",
   };
   
   export const Default = ({ checked, disabled, partial, text }) => {
