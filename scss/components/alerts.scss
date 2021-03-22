@@ -24,9 +24,12 @@
       margin: 17px 0px 18px 0px;
       flex: auto;
       overflow: hidden;
+      h5 {
+        margin-bottom: 8px;
+      }
       p {
+        margin-top: 4px;
         font-size: 12px !important;
-        margin-top: 8px;
         margin-bottom: 0px;
         line-height: 15px;
       }
