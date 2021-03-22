@@ -350,6 +350,8 @@ $tabs-primary-vertical-tab-item-hover-border: inset 0px 0px 0px 1px rgba($color-
 $tabs-primary-vertical-tab-item-hover-bg-color: null;
 $tabs-primary-vertical-tab-item-hover-text-color: $color-brand-400;
 $tabs-primary-vertical-tab-item-hover-text-weight: null;
+$tabs-primary-vertical-tab-item-disabled-border: none;
+$tabs-primary-vertical-tab-item-disabled-text-color: rgba($color-grey-800, 0.2);
 
 $tabs-secondary-border: inset 0px -2px rgba($color-grey-700, .05);
 $tabs-secondary-tab-item-height: 40px;

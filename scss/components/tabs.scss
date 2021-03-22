@@ -89,6 +89,12 @@
                 color: $tabs-primary-vertical-tab-item-active-text-color;
               }
             }
+            &.is-disabled {
+              box-shadow: $tabs-primary-vertical-tab-item-disabled-border;
+              > * {
+                color: $tabs-primary-vertical-tab-item-disabled-text-color;
+              }
+            }
             // Section Header
             &.tabs__section-header {
               font-size: $tabs-section-header-text-size;
