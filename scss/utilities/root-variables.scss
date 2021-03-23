@@ -99,6 +99,8 @@ $breadcrumb-right-margin: 22px;
 $breadcrumb-divider: "/";
 $breadcrumb-divider-color: rgba($color-grey-800, 0.5);
 $breadcrumb-divider-right-margin: -11px;
+$breadcrumb-active-item-text-color: $color-grey-800;
+$breadcrumb-active-item-font-weight: bold;
 
 // Checkbox
 $checkbox-box-border-color-standard: 0 0 0 2px rgba($color-brand-300, 0.5);
