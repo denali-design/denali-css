@@ -35,6 +35,13 @@
         }
       }
     }
+
+    &.is-active {
+      > * {
+        color: $breadcrumb-active-item-text-color;
+        font-weight: $breadcrumb-active-item-font-weight;
+      }
+    }
   }
 }
 
