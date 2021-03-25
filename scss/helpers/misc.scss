@@ -31,6 +31,16 @@
   background-origin: content-box !important;
 }
 
+.bg-clip-padding-box {
+  background-clip: padding-box !important;
+}
+.bg-clip-border-box {
+  background-clip: border-box !important;
+}
+.bg-clip-content-box {
+  background-clip: content-box !important;
+}
+
 .bg-size-auto {
   background-size: auto !important;
 }
