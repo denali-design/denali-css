@@ -24,9 +24,44 @@
 .bg-size-cover {
   background-size: cover !important;
 }
+
+.bg-position-left {
+  background-position: left !important;
+}
+.bg-position-left-top {
+  background-position: left-top !important;
+}
+.bg-position-left-center {
+  background-position: left-center !important;
+}
+.bg-position-left-bottom {
+  background-position: left-bottom !important;
+}
+.bg-position-right {
+  background-position: right !important;
+}
+.bg-position-right-top {
+  background-position: right-top !important;
+}
+.bg-position-right-center {
+  background-position: right-center !important;
+}
+.bg-position-right-bottom {
+  background-position: right-bottom !important;
+}
 .bg-position-center {
   background-position: center !important;
 }
+.bg-position-center-top {
+  background-position: center-top !important;
+}
+.bg-position-center-center {
+  background-position: center-center !important;
+}
+.bg-position-center-bottom {
+  background-position: center-bottom !important;
+}
+
 .bg-no-repeat {
   background-repeat: no-repeat !important;
 }
