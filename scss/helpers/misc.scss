@@ -41,6 +41,16 @@
   background-clip: content-box !important;
 }
 
+.bg-attachment-scroll {
+  background-attachment: scroll !important;
+}
+.bg-attachment-fixed {
+  background-attachment: fixed !important;
+}
+.bg-attachment-local {
+  background-attachment: local !important;
+}
+
 .bg-size-auto {
   background-size: auto !important;
 }
