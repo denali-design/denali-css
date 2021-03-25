@@ -21,6 +21,16 @@
 
 
 // Background Image
+.bg-origin-padding-box {
+  background-origin: padding-box !important;
+}
+.bg-origin-border-box {
+  background-origin: border-box !important;
+}
+.bg-origin-content-box {
+  background-origin: content-box !important;
+}
+
 .bg-size-auto {
   background-size: auto !important;
 }
