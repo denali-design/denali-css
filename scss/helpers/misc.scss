@@ -21,8 +21,14 @@
 
 
 // Background Image
+.bg-size-auto {
+  background-size: auto !important;
+}
 .bg-size-cover {
   background-size: cover !important;
+}
+.bg-size-contain {
+  background-size: contain !important;
 }
 
 .bg-position-left {
