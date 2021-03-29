@@ -21,6 +21,17 @@
       }
     }
 
+    &.is-active {
+      .menu-trigger {
+        pointer-events: none;
+      }
+      .menu-content,
+      .menu-content:hover {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
     .menu-content {
       height: auto;
       opacity: 0;
