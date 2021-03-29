@@ -135,6 +135,9 @@
 
   // Input with icon
   .input.has-icon-back {
+    > * {
+      float: left;
+    }
     input {
       padding-right: 34px;
     }
@@ -146,14 +149,30 @@
       pointer-events: none;
       &::before {
         position: absolute;
-        top: -1px;
+        top: 7px;
         right: 10px;
+      }
+    }
+
+    &.has-icon-front{
+      .d-icon {
+        margin-top: 7px;
+      }
+      .d-icon:first-child {
+        margin-left: 38px;
+        margin-top: 2px;
+      }
+      .d-icon:last-child {
+        margin-left: 0px;
+        margin-top: 0px;
       }
     }
   }
 
-  
   .input.has-icon-front {
+    > * {
+      float: left;
+    }
     input {
       padding-left: 34px;
     }
