@@ -25,6 +25,16 @@
       }
     }
 
+    &:disabled + label {
+        color: $toggle-disabled-text-color;
+        cursor:not-allowed;
+    }
+
+    &.is-disabled + label {
+        color: $toggle-disabled-text-color;
+        cursor:not-allowed;
+    }
+
     > ul {
       display: flex;
     }
