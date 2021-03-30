@@ -29,11 +29,6 @@
     "@storybook/storybook-deployer": "^2.8.7",
     "@whitespace/storybook-addon-html": "^4.2.0",
     "babel-loader": "^8.2.2",
-    "browser-sync": "^2.26.14",
-    "gulp": "^4.0.2",
-    "gulp-connect-php": "^1.0.3",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.1.0",
     "mocha": "^7.2.0",
     "react-is": "^16.13.1",
     "semantic-release": "^17.4.1"
