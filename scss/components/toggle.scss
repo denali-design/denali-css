@@ -23,17 +23,19 @@
         border-radius: $toggle-active-corner-radius;
         box-shadow: 0 0 0 $toggle-active-border-width $toggle-active-border-color;
       }
-    }
 
-    &:disabled + label {
+      &:disabled + label {
         color: $toggle-disabled-text-color;
         cursor:not-allowed;
+      }
+
+      &.is-disabled + label {
+          color: $toggle-disabled-text-color;
+          cursor:not-allowed;
+      }
     }
 
-    &.is-disabled + label {
-        color: $toggle-disabled-text-color;
-        cursor:not-allowed;
-    }
+
 
     > ul {
       display: flex;
@@ -68,14 +70,14 @@
         }
       }
 
-      &.is-disabled {
-        cursor: not-allowed;
-        color: $toggle-disabled-text-color;
+      &:hover {
+        color: $toggle-text-hover-color;
       }
 
-      &:hover {
-        cursor: pointer;
-        color: $toggle-text-hover-color;
+      &.is-disabled,
+      &:disabled {
+        cursor: not-allowed;
+        color: $toggle-disabled-text-color;
       }
 
       &:first-of-type {
@@ -136,6 +138,14 @@
         color: $toggle-active-text-color;
         border-radius: $toggle-active-corner-radius;
         box-shadow: 0 0 0 $toggle-active-border-width $toggle-active-border-color;
+      }
+
+      &:disabled + label {
+        color: $toggle-disabled-text-color;
+      }
+
+      &.is-disabled + label {
+          color: $toggle-disabled-text-color;
       }
     }
 
