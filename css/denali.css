@@ -3174,9 +3174,12 @@ hr {
   flex: auto;
   overflow: hidden;
 }
+.alert div h5 {
+  margin-bottom: 8px;
+}
 .alert div p {
+  margin-top: 4px;
   font-size: 12px !important;
-  margin-top: 8px;
   margin-bottom: 0px;
   line-height: 15px;
 }
@@ -3287,6 +3290,10 @@ hr {
 }
 .breadcrumb li > * {
   display: block;
+}
+.breadcrumb li.is-active > * {
+  color: #303030;
+  font-weight: bold;
 }
 .breadcrumb li::after {
   content: "/";
@@ -3742,6 +3749,9 @@ svg.d-icon.is-large {
   color: #ea0000;
 }
 
+.input.has-icon-back > * {
+  float: left;
+}
 .input.has-icon-back input {
   padding-right: 34px;
 }
@@ -3754,10 +3764,24 @@ svg.d-icon.is-large {
 }
 .input.has-icon-back .d-icon::before {
   position: absolute;
-  top: -1px;
+  top: 7px;
   right: 10px;
 }
+.input.has-icon-back.has-icon-front .d-icon {
+  margin-top: 7px;
+}
+.input.has-icon-back.has-icon-front .d-icon:first-child {
+  margin-left: 38px;
+  margin-top: 2px;
+}
+.input.has-icon-back.has-icon-front .d-icon:last-child {
+  margin-left: 0px;
+  margin-top: 0px;
+}
 
+.input.has-icon-front > * {
+  float: left;
+}
 .input.has-icon-front input {
   padding-left: 34px;
 }
@@ -3975,6 +3999,14 @@ ul.list li {
 .menu.is-left .menu-content {
   left: 0%;
   transform: translateX(0%);
+}
+.menu.is-active .menu-trigger {
+  pointer-events: none;
+}
+.menu.is-active .menu-content,
+.menu.is-active .menu-content:hover {
+  opacity: 1;
+  visibility: visible;
 }
 .menu .menu-content {
   height: auto;
@@ -4849,6 +4881,12 @@ table.table__expanded tr {
 .tabs.is-primary.is-vertical ul li.is-active > * {
   color: #303030;
 }
+.tabs.is-primary.is-vertical ul li.is-disabled {
+  box-shadow: none;
+}
+.tabs.is-primary.is-vertical ul li.is-disabled > * {
+  color: rgba(48, 48, 48, 0.2);
+}
 .tabs.is-primary.is-vertical ul li.tabs__section-header {
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -5038,6 +5076,14 @@ div.tags.nowrap::-webkit-scrollbar {
   border-radius: 4px;
   box-shadow: 0 0 0 2px #006DFB;
 }
+.toggle input:disabled + label {
+  color: rgba(48, 48, 48, 0.2);
+  cursor: not-allowed;
+}
+.toggle input.is-disabled + label {
+  color: rgba(48, 48, 48, 0.2);
+  cursor: not-allowed;
+}
 .toggle > ul {
   display: flex;
 }
@@ -5070,15 +5116,15 @@ div.tags.nowrap::-webkit-scrollbar {
 .toggle li.is-active a {
   color: inherit;
 }
-.toggle label.is-disabled,
-.toggle li.is-disabled {
-  cursor: not-allowed;
-  color: rgba(48, 48, 48, 0.2);
-}
 .toggle label:hover,
 .toggle li:hover {
-  cursor: pointer;
   color: #002B66;
+}
+.toggle label.is-disabled, .toggle label:disabled,
+.toggle li.is-disabled,
+.toggle li:disabled {
+  cursor: not-allowed;
+  color: rgba(48, 48, 48, 0.2);
 }
 .toggle label:first-of-type,
 .toggle li:first-of-type {
@@ -5215,6 +5261,126 @@ p {
   line-height: 1.75;
   font-weight: 400;
   color: #303030;
+}
+
+.bg-origin-padding-box {
+  background-origin: padding-box !important;
+}
+
+.bg-origin-border-box {
+  background-origin: border-box !important;
+}
+
+.bg-origin-content-box {
+  background-origin: content-box !important;
+}
+
+.bg-clip-padding-box {
+  background-clip: padding-box !important;
+}
+
+.bg-clip-border-box {
+  background-clip: border-box !important;
+}
+
+.bg-clip-content-box {
+  background-clip: content-box !important;
+}
+
+.bg-attachment-scroll {
+  background-attachment: scroll !important;
+}
+
+.bg-attachment-fixed {
+  background-attachment: fixed !important;
+}
+
+.bg-attachment-local {
+  background-attachment: local !important;
+}
+
+.bg-size-auto {
+  background-size: auto !important;
+}
+
+.bg-size-cover {
+  background-size: cover !important;
+}
+
+.bg-size-contain {
+  background-size: contain !important;
+}
+
+.bg-position-left {
+  background-position: left !important;
+}
+
+.bg-position-left-top {
+  background-position: left-top !important;
+}
+
+.bg-position-left-center {
+  background-position: left-center !important;
+}
+
+.bg-position-left-bottom {
+  background-position: left-bottom !important;
+}
+
+.bg-position-right {
+  background-position: right !important;
+}
+
+.bg-position-right-top {
+  background-position: right-top !important;
+}
+
+.bg-position-right-center {
+  background-position: right-center !important;
+}
+
+.bg-position-right-bottom {
+  background-position: right-bottom !important;
+}
+
+.bg-position-center {
+  background-position: center !important;
+}
+
+.bg-position-center-top {
+  background-position: center-top !important;
+}
+
+.bg-position-center-center {
+  background-position: center-center !important;
+}
+
+.bg-position-center-bottom {
+  background-position: center-bottom !important;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat !important;
+}
+
+.bg-repeat {
+  background-repeat: repeat !important;
+}
+
+.bg-repeat-x {
+  background-repeat: repeat-x !important;
+}
+
+.bg-repeat-y {
+  background-repeat: repeat-y !important;
+}
+
+.bg-repeat-space {
+  background-repeat: space !important;
+}
+
+.bg-repeat-round {
+  background-repeat: round !important;
 }
 
 .has-bg-brand-100 {
@@ -14138,12 +14304,124 @@ p {
   top: 0 !important;
 }
 
+.bg-origin-padding-box {
+  background-origin: padding-box !important;
+}
+
+.bg-origin-border-box {
+  background-origin: border-box !important;
+}
+
+.bg-origin-content-box {
+  background-origin: content-box !important;
+}
+
+.bg-clip-padding-box {
+  background-clip: padding-box !important;
+}
+
+.bg-clip-border-box {
+  background-clip: border-box !important;
+}
+
+.bg-clip-content-box {
+  background-clip: content-box !important;
+}
+
+.bg-attachment-scroll {
+  background-attachment: scroll !important;
+}
+
+.bg-attachment-fixed {
+  background-attachment: fixed !important;
+}
+
+.bg-attachment-local {
+  background-attachment: local !important;
+}
+
+.bg-size-auto {
+  background-size: auto !important;
+}
+
 .bg-size-cover {
   background-size: cover !important;
 }
 
+.bg-size-contain {
+  background-size: contain !important;
+}
+
+.bg-position-left {
+  background-position: left !important;
+}
+
+.bg-position-left-top {
+  background-position: left-top !important;
+}
+
+.bg-position-left-center {
+  background-position: left-center !important;
+}
+
+.bg-position-left-bottom {
+  background-position: left-bottom !important;
+}
+
+.bg-position-right {
+  background-position: right !important;
+}
+
+.bg-position-right-top {
+  background-position: right-top !important;
+}
+
+.bg-position-right-center {
+  background-position: right-center !important;
+}
+
+.bg-position-right-bottom {
+  background-position: right-bottom !important;
+}
+
 .bg-position-center {
   background-position: center !important;
+}
+
+.bg-position-center-top {
+  background-position: center-top !important;
+}
+
+.bg-position-center-center {
+  background-position: center-center !important;
+}
+
+.bg-position-center-bottom {
+  background-position: center-bottom !important;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat !important;
+}
+
+.bg-repeat {
+  background-repeat: repeat !important;
+}
+
+.bg-repeat-x {
+  background-repeat: repeat-x !important;
+}
+
+.bg-repeat-y {
+  background-repeat: repeat-y !important;
+}
+
+.bg-repeat-space {
+  background-repeat: space !important;
+}
+
+.bg-repeat-round {
+  background-repeat: round !important;
 }
 
 .is-italic {

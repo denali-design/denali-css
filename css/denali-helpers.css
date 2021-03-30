@@ -1,3 +1,123 @@
+.bg-origin-padding-box {
+  background-origin: padding-box !important;
+}
+
+.bg-origin-border-box {
+  background-origin: border-box !important;
+}
+
+.bg-origin-content-box {
+  background-origin: content-box !important;
+}
+
+.bg-clip-padding-box {
+  background-clip: padding-box !important;
+}
+
+.bg-clip-border-box {
+  background-clip: border-box !important;
+}
+
+.bg-clip-content-box {
+  background-clip: content-box !important;
+}
+
+.bg-attachment-scroll {
+  background-attachment: scroll !important;
+}
+
+.bg-attachment-fixed {
+  background-attachment: fixed !important;
+}
+
+.bg-attachment-local {
+  background-attachment: local !important;
+}
+
+.bg-size-auto {
+  background-size: auto !important;
+}
+
+.bg-size-cover {
+  background-size: cover !important;
+}
+
+.bg-size-contain {
+  background-size: contain !important;
+}
+
+.bg-position-left {
+  background-position: left !important;
+}
+
+.bg-position-left-top {
+  background-position: left-top !important;
+}
+
+.bg-position-left-center {
+  background-position: left-center !important;
+}
+
+.bg-position-left-bottom {
+  background-position: left-bottom !important;
+}
+
+.bg-position-right {
+  background-position: right !important;
+}
+
+.bg-position-right-top {
+  background-position: right-top !important;
+}
+
+.bg-position-right-center {
+  background-position: right-center !important;
+}
+
+.bg-position-right-bottom {
+  background-position: right-bottom !important;
+}
+
+.bg-position-center {
+  background-position: center !important;
+}
+
+.bg-position-center-top {
+  background-position: center-top !important;
+}
+
+.bg-position-center-center {
+  background-position: center-center !important;
+}
+
+.bg-position-center-bottom {
+  background-position: center-bottom !important;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat !important;
+}
+
+.bg-repeat {
+  background-repeat: repeat !important;
+}
+
+.bg-repeat-x {
+  background-repeat: repeat-x !important;
+}
+
+.bg-repeat-y {
+  background-repeat: repeat-y !important;
+}
+
+.bg-repeat-space {
+  background-repeat: space !important;
+}
+
+.bg-repeat-round {
+  background-repeat: round !important;
+}
+
 .has-bg-brand-100 {
   background-color: #CCE2FF !important;
   color: rgba(0, 0, 0, 0.7) !important;
@@ -8919,12 +9039,124 @@
   top: 0 !important;
 }
 
+.bg-origin-padding-box {
+  background-origin: padding-box !important;
+}
+
+.bg-origin-border-box {
+  background-origin: border-box !important;
+}
+
+.bg-origin-content-box {
+  background-origin: content-box !important;
+}
+
+.bg-clip-padding-box {
+  background-clip: padding-box !important;
+}
+
+.bg-clip-border-box {
+  background-clip: border-box !important;
+}
+
+.bg-clip-content-box {
+  background-clip: content-box !important;
+}
+
+.bg-attachment-scroll {
+  background-attachment: scroll !important;
+}
+
+.bg-attachment-fixed {
+  background-attachment: fixed !important;
+}
+
+.bg-attachment-local {
+  background-attachment: local !important;
+}
+
+.bg-size-auto {
+  background-size: auto !important;
+}
+
 .bg-size-cover {
   background-size: cover !important;
 }
 
+.bg-size-contain {
+  background-size: contain !important;
+}
+
+.bg-position-left {
+  background-position: left !important;
+}
+
+.bg-position-left-top {
+  background-position: left-top !important;
+}
+
+.bg-position-left-center {
+  background-position: left-center !important;
+}
+
+.bg-position-left-bottom {
+  background-position: left-bottom !important;
+}
+
+.bg-position-right {
+  background-position: right !important;
+}
+
+.bg-position-right-top {
+  background-position: right-top !important;
+}
+
+.bg-position-right-center {
+  background-position: right-center !important;
+}
+
+.bg-position-right-bottom {
+  background-position: right-bottom !important;
+}
+
 .bg-position-center {
   background-position: center !important;
+}
+
+.bg-position-center-top {
+  background-position: center-top !important;
+}
+
+.bg-position-center-center {
+  background-position: center-center !important;
+}
+
+.bg-position-center-bottom {
+  background-position: center-bottom !important;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat !important;
+}
+
+.bg-repeat {
+  background-repeat: repeat !important;
+}
+
+.bg-repeat-x {
+  background-repeat: repeat-x !important;
+}
+
+.bg-repeat-y {
+  background-repeat: repeat-y !important;
+}
+
+.bg-repeat-space {
+  background-repeat: space !important;
+}
+
+.bg-repeat-round {
+  background-repeat: round !important;
 }
 
 .is-italic {
