@@ -2,6 +2,29 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$fields-corner-radius: $border-radius-sm !default;
+$fields-dropdown-arrow-color: "black" !default;
+$fields-padding: 0px 10px !default;
+
+$fields-placeholder-text-color: rgba(map-get($denali-grey-colors,"800"), 0.6) !default;
+$fields-default-bg: rgba(map-get($denali-brand-colors,"300"), 0.08) !default;
+$fields-default-text-color: map-get($denali-grey-colors,"800") !default;
+$fields-default-border: none !default;
+$fields-focus-border: inset 0 -2px rgba(map-get($denali-brand-colors,"300"), 1) !default;
+$fields-disabled-bg: rgba(map-get($denali-grey-colors,"800"), 0.05) !default;
+$fields-disabled-text-color: rgba(map-get($denali-grey-colors,"800"), 0.25) !default;
+$fields-disabled-border: inset 0 -2px rgba(map-get($denali-grey-colors,"800"), 0.05) !default;
+$fields-error-border: inset 0 -2px map-get($denali-status-colors,"danger") !default;
+
+$fields-sizes-default-width: 250px !default;
+$fields-sizes-sm-height: 24px !default;
+$fields-sizes-md-height: 32px !default; 
+$fields-sizes-default-height: 36px !default;
+$fields-sizes-lg-height: 44px !default;
+
 @mixin inputs-default {
   .input {
     position: relative;
@@ -105,17 +128,17 @@
     &.is-inverse {
       input {
         background: rgba(138, 197, 237, 0.10);
-        color: $color-grey-100;
+        color: map-get($denali-grey-colors,"100");
       }
       input:active {
-        border-bottom: 2px solid rgba($color-brand-400, 1);
-        color: $color-grey-100;
+        border-bottom: 2px solid rgba(map-get($denali-brand-colors,"400"), 1);
+        color: map-get($denali-grey-colors,"100");
       }
       input::placeholder {
-        color: rgba($color-grey-100, 0.5);
+        color: rgba(map-get($denali-grey-colors,"100"), 0.5);
       }
       label {
-        color: $color-grey-100;
+        color: map-get($denali-grey-colors,"100");
       }
     }
 
@@ -129,7 +152,7 @@
       margin-top: 2px;
     }
     &.is-error > .message {
-      color: $color-status-danger;
+      color: map-get($denali-status-colors,"danger");
     }
   }
 
@@ -274,11 +297,11 @@
 
     // Sizes
     &.is-medium>input {
-      height: $fields-sizes-medium-height;
+      height: $fields-sizes-md-height;
     }
 
     &.is-small>input {
-      height: $fields-sizes-small-height;
+      height: $fields-sizes-sm-height;
     }
   }
 }

@@ -2,6 +2,15 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$titles-height: 52px !default;
+$titles-bar-corner-radius: $border-radius-sm !default;
+$titles-bar-bg-color: map-get($denali-grey-colors,"500") !default;
+$titles-bar-width: 2px !default;
+$titles-bar-wider-width: 4px !default;
+
 @mixin titles-default {
   .title {
     display: flex;

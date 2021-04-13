@@ -2,6 +2,8 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../mixins/breakpoints.scss';
+
 .input-group {
   display: flex;
   align-items: center;
