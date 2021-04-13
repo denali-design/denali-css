@@ -2,6 +2,18 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$progress-bg-color: map-get($denali-grey-colors,"400") !default;
+$progress-corner-radius: $border-radius-sm !default;
+$progress-sizes-sm-height: 10px !default;
+$progress-sizes-default-height: 16px !default;
+$progress-sizes-md-height: 20px !default;
+$progress-sizes-lg-height: 24px !default;
+$progress-bar-spacer: 2px !default;
+$progress-bar-bg-color: map-get($denali-brand-colors,"300") !default;
+
 @mixin progress-default {
     .d-progress {
         height: $progress-sizes-default-height;

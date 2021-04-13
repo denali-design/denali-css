@@ -2,6 +2,20 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$checkbox-box-border-color-standard: 0 0 0 2px rgba(map-get($denali-brand-colors,"300"), 0.5) !default;
+$checkbox-box-border-color-hover: 0 0 0 2px map-get($denali-brand-colors,"300") !default;
+$checkbox-box-border-color-active: 0 0 0 2px map-get($denali-brand-colors,"300") !default;
+$checkbox-box-border-color-disabled: 0 0 0 2px map-get($denali-grey-colors,"500") !default;
+$checkbox-box-partial-color: rgba(map-get($denali-brand-colors,"300"), 0.5) !default;
+$checkbox-box-bg-color-active: map-get($denali-brand-colors,"300") !default;
+$checkbox-box-label-text-color: map-get($denali-grey-colors,"800") !default;
+$checkbox-box-label-disabled-text-color: map-get($denali-grey-colors,"500") !default;
+$checkbox-checkmark-color: map-get($denali-grey-colors,"100") !default;
+$checkbox-corner-radius: 1px !default;
+
 @mixin checkbox-default {
   .checkbox {
     backface-visibility: hidden;

@@ -17,3 +17,11 @@ export const UnorderedList = () => {
     <li>Item 3</li>
   </ol>`;
 };
+
+export const NoMarker = () => {
+  return `<ul class="list no-marker">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>`;
+};

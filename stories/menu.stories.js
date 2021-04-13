@@ -74,3 +74,22 @@ export const ManualTrigger = () => {
     </div>
 </div>`;
 };
+
+export const Navbar = () => {
+  return `<nav class="nav">
+  <div class="nav-left"></div>
+  <div class="nav-right">
+    <div class="menu menu--nav" style="display:inline-block;">
+      <div class="nav-item menu-trigger">Menu<i class="d-icon d-arrowhead-down is-small"></i></div>
+      <div class="menu-content">
+          <span class="link">Home</span>
+          <span class="link">About</span>
+          <span class="link">Contact</span>
+          <span class="link">Help</span>
+          <hr>
+          <span class="link">Support</span>
+      </div>
+    </div>
+  </div>
+</nav>`;
+};

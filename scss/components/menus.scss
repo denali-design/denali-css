@@ -2,6 +2,18 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$menu-bg-color: map-get($denali-grey-colors,"100") !default;
+$menu-corner-radius: $border-radius-sm !default;
+$menu-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16) !default;
+$menu-border-color: map-get($denali-grey-colors,"400") !default;
+$menu-border-width: 2px !default;
+$menu-border-style: solid !default;
+$menu-line-break-size: 2px !default;
+$menu-line-break-color: map-get($denali-grey-colors,"400") !default;
+
 @mixin menus-default {
   .menu {
     white-space: nowrap;

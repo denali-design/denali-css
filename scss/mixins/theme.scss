@@ -2,6 +2,8 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+// RESET IMPORTS
+@import "../resets/denali-reset.scss";
 
 // COMPONENT IMPORTS
 @import "../components/alerts";
@@ -30,14 +32,11 @@
 @import "../components/typography";
 
 @mixin generate-theme($themeName) {
-
     .#{$themeName} {
-        // BODY OR PARENT CONTAINER
-        & {
-            background: $body-bg-color;
-            color: $body-text-color;
-            font-family: $font-family-sans-serif;
-        }
+
+        // RESETS
+        @include reset-theme;
+
         // COMPONENTS
         @include alerts-theme;
         @include box-theme;
@@ -63,5 +62,6 @@
         @include toggle-theme;
         @include tooltip-theme;
         @include typography-theme;
+        
     }
 }

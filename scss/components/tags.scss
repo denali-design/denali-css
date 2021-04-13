@@ -2,6 +2,34 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$tags-corner-radius: $border-radius-pill !default;
+$tags-padding: 0px 10px !default;
+$tags-margin: 3px !default;
+$tags-height: 28px !default;
+$tags-icon-size: 2rem !default;
+$tags-icon-color: map-get($denali-grey-colors,"800") !default;
+$tags-bg-color: map-get($denali-brand-colors,"100") !default;
+$tags-text-color: map-get($denali-grey-colors,"800") !default;
+$tags-active-bg-color: map-get($denali-brand-colors,"200") !default;
+$tags-disabled-bg-color: rgba(map-get($denali-grey-colors,"800"), .1) !default;
+$tags-disabled-text-color: rgba(map-get($denali-grey-colors,"800"), .4) !default;
+$tags-small-text-size: 1.2rem !default;
+$tags-small-padding: 0px 8px !default;
+$tags-small-height: 22px !default;
+$tags-small-icon-size: 1.6rem !default;
+$tags-outlined-text-color: map-get($denali-grey-colors,"800") !default;
+$tags-outlined-border: 1px solid map-get($denali-brand-colors,"300") !default;
+$tags-outlined-bg-color: transparent !default;
+$tags-outlined-hover-bg-color: rgba(map-get($denali-brand-colors,"300"), 0.20) !default;
+$tags-outlined-active-text-color: map-get($denali-grey-colors,"100") !default;
+$tags-outlined-active-bg-color: rgba(map-get($denali-brand-colors,"300"), 1) !default;
+$tags-outlined-disabled-text-color: rgba(map-get($denali-grey-colors,"800"), .4) !default;
+$tags-outlined-disabled-bg-color: rgba(map-get($denali-grey-colors,"800"), .1) !default;
+$tags-outlined-disabled-border-color: rgba(map-get($denali-grey-colors,"800"), .4) !default;
+
 @mixin tags-default {
   // Tag List
   div.tags {

@@ -1,5 +1,5 @@
 export default {
-  title: 'Aesthics/Icons',
+  title: 'Components/Icons',
 };
 
 export const Playground = ({ icon, size, inverse }) => {

@@ -3,17 +3,19 @@
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
 @mixin lists-default {
-    ul.list {
-        list-style-position: inside;
-        list-style-type: square;
-    }
-    ol.list {
-        list-style-position: inside;
-    }
     ol.list,
     ul.list {
+        list-style-position: inside;
+
+        &.no-marker {
+            list-style: none;
+        }
+
         li {
             margin: 4px 0px;
         }
+    }
+    ul.list {
+        list-style-type: square;
     }
 }

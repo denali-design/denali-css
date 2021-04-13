@@ -1,6 +1,18 @@
 @charset "utf-8";
-// // Copyright 2019, Oath Inc.
-// // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$tooltip-text-color: map-get($denali-grey-colors,"100") !default;
+$tooltip-bg-color: rgba(#303030, 0.9) !default;
+$tooltip-corner-radius: $border-radius-sm !default;
+$tooltip-text-size: 1.2rem !default;
+$tooltip-padding: 6px 8px !default;
+$tooltip-small-text-size: 1rem !default;
+$tooltip-small-padding: 4px 6px !default;
+
 @mixin tooltip-default {
 
     *[class*="d-tooltip"] {
@@ -18,7 +30,7 @@
             padding: $tooltip-padding;
             font-size: $tooltip-text-size;
             border-radius: $tooltip-corner-radius;
-            font-family: $font-family-sans-serif;
+            font-family: inherit;
             background-color: $tooltip-bg-color;
             color: $tooltip-text-color;
 
@@ -69,7 +81,7 @@
             padding: $tooltip-padding;
             font-size: $tooltip-text-size;
             border-radius: $tooltip-corner-radius;
-            font-family: $font-family-sans-serif;
+            font-family: inherit;
             background-color: $tooltip-bg-color;
             color: $tooltip-text-color;
         }

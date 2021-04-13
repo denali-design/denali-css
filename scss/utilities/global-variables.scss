@@ -1,0 +1,28 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+// Font Family
+$font-family-sans-serif: Helvetica,"Arial",sans-serif !default;
+$font-family-monospace: "SFMono-Regular",monospace !default;
+
+// Border Radius
+$border-radius-sm: 4px !default;
+$border-radius-md: 6px !default;
+$border-radius-lg: 8px !default;
+$border-radius-circle: 100% !default;
+$border-radius-pill: 9999px !default;
+
+// Shadows
+$shadow-1: 0 50px 20px -50px rgba(0, 0, 0, 0.10), 0 8px 20px 0 rgba(0, 0, 0, 0.10) !default;
+$shadow-2: 0 50px 30px -50px rgba(0, 0, 0, 0.10), 0 10px 30px 0 rgba(0, 0, 0, 0.10) !default;
+$shadow-3: 0 50px 40px -50px rgba(0, 0, 0, 0.10), 0 15px 40px 0 rgba(0, 0, 0, 0.10) !default;
+$shadow-4: 0 50px 50px -50px rgba(0, 0, 0, 0.10), 0 20px 50px 0 rgba(0, 0, 0, 0.10) !default;
+$shadow-5: 0 50px 60px -50px rgba(0, 0, 0, 0.10), 0 25px 60px 0 rgba(0, 0, 0, 0.10) !default;
+
+// Elevation
+$elevation-fixed:              100 !default;
+$elevation-sticky:             200 !default;
+$elevation-menu:               300 !default; 
+$elevation-modal-background:   400 !default;
+$elevation-modal:              500 !default; 

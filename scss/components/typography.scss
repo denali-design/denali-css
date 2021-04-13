@@ -2,6 +2,34 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$headline-color: map-get($denali-grey-colors,"800") !default;
+$headline-font-family: inherit !default;
+$paragraph-color: map-get($denali-grey-colors,"800") !default;
+$paragraph-font-family: inherit !default;
+
+$h1-font-size: 2.8rem !default;
+$h2-font-size: 2.6rem !default;
+$h3-font-size: 2.0rem !default;
+$h4-font-size: 1.6rem !default;
+$h5-font-size: 1.4rem !default;
+$h6-font-size: 1.2rem !default;
+$p-font-size: 1.4rem !default;
+
+$h1-font-weight: 600 !default;
+$h2-font-weight: 600 !default;
+$h3-font-weight: 600 !default;
+$h4-font-weight: 600 !default;
+$h5-font-weight: 600 !default;
+$h6-font-weight: 400 !default;
+$p-font-weight: 400 !default;
+
+$line-height-compact: 1.25 !default;
+$line-height-normal: 1.5 !default;
+$line-height-expanded: 1.75 !default;
+
 @mixin typography-default {
   h1,
   h2,
