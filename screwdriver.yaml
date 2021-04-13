@@ -13,6 +13,8 @@ jobs:
 
     publish:
         requires: main
+        environment:
+            GIT_SHALLOW_CLONE: false
         steps:
             - setup-ci: git clone https://github.com/screwdriver-cd/toolbox.git /tmp/ci
             - install: npm ci
