@@ -8,8 +8,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run sass-watch & npm run storybook",
-    "sass-build": "sass --style=compressed --no-source-map scss/denali.scss:css/denali.css scss/denali-helpers.scss:css/denali-helpers.css scss/denali-layouts.scss:css/denali-layouts.css scss/denali-dark-theme.scss:css/denali-dark-theme.css",
-    "sass-watch": "sass --watch --no-source-map scss/denali.scss:css/denali.css scss/denali-helpers.scss:css/denali-helpers.css scss/denali-layouts.scss:css/denali-layouts.css scss/denali-dark-theme.scss:css/denali-dark-theme.css",
+    "sass-build": "sass --style=compressed --no-source-map scss/denali.scss:css/denali.css scss/denali-components.scss:css/denali-components.css scss/denali-helpers.scss:css/denali-helpers.css scss/denali-layouts.scss:css/denali-layouts.css scss/denali-dark-theme.scss:css/denali-dark-theme.css",
+    "sass-watch": "sass --watch --no-source-map scss/denali.scss:css/denali.css scss/denali-components.scss:css/denali-components.css scss/denali-helpers.scss:css/denali-helpers.css scss/denali-layouts.scss:css/denali-layouts.css scss/denali-dark-theme.scss:css/denali-dark-theme.css",
     "test": "mocha",
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 6006 -s .storybook/static",
