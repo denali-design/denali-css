@@ -24,9 +24,10 @@ export const LoaderButton = ({ style, inverse }) => {
 
 LoaderButton.argTypes = {
   style: {
+    defaultValue: "solid",
     control: {
       type: "select",
-      options: ["default", "solid", "outline", "ghost", "text", "danger"],
+      options: ["solid", "outline", "ghost", "text", "danger"],
     },
   },
   inverse: {

@@ -19,9 +19,10 @@ export const Default = ({ style, active, disabled, inverse, full, size, buttonTe
 
 Default.argTypes = {
     style: {
+        defaultValue: 'solid',
         control: {
             type: 'select',
-            options: ['default', 'solid', 'outline', 'ghost', 'text', 'danger'],
+            options: ['solid', 'outline', 'ghost', 'text', 'danger'],
         }
     },
     size: {
@@ -55,15 +56,15 @@ Default.argTypes = {
 //Button type: Icons & Icons with text
 export const Icon = ({ iconName, iconSize, style, active, disabled, full, iconOnly, buttonText, buttonSize, inverse }) => {
     return (
-        `<button class="button 
+        `<button class="button
             ${style ? `is-${style}` : ''}
             ${buttonSize ? `is-${buttonSize}` : ''}
             ${active ? 'is-active' : ''}
-            ${inverse ? 'is-inverse' : ''} "
+            ${inverse ? 'is-inverse' : ''}
             ${full ? 'is-full' : ''} 
             ${iconOnly ? 'has-icon' : ''}" 
             ${disabled ? 'disabled = ""' : ''}>
-        <i class="d-icon d-${iconName} is-${iconSize} "></i>
+            <i class="d-icon d-${iconName} is-${iconSize} "></i>
             ${iconOnly ? '' : buttonText}
         </button>`
     );
@@ -71,12 +72,14 @@ export const Icon = ({ iconName, iconSize, style, active, disabled, full, iconOn
 
 Icon.argTypes = {
     style: {
+        defaultValue: 'solid',
         control: {
             type: 'select',
-            options: ['default', 'solid', 'outline', 'ghost', 'text', 'danger'],
+            options: ['solid', 'outline', 'ghost', 'text', 'danger'],
         }
     },
     buttonSize: {
+        defaultValue: 'default',
         control: {
             type: 'select',
             options: ['default', 'large', 'medium', 'small'],
@@ -103,6 +106,7 @@ Icon.argTypes = {
         control: 'text'
     },
     iconSize: {
+        defaultValue: 'small',
         control: {
             type: 'select',
             options: ['default', 'extrasmall', 'small', 'medium', 'large']

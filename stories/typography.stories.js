@@ -1,5 +1,5 @@
 export default {
-  title: 'Aesthics/Typography',
+  title: 'Components/Typography',
 };
 
 export const Headline = ({ headline }) => {
