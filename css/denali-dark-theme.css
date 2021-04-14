@@ -4,7 +4,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-.denali-dark-theme body {
+.denali-dark-theme {
   font-size: 1.4rem;
   background: #12191F;
   color: #ffffff;
