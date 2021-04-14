@@ -94,6 +94,7 @@ $toggle-inverse-active-bg-color: transparent !default;
       }
 
       &:hover {
+        cursor: pointer;
         color: $toggle-text-hover-color;
       }
 

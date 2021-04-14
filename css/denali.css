@@ -14355,6 +14355,7 @@ div.tags.nowrap::-webkit-scrollbar {
 }
 .toggle label:hover,
 .toggle li:hover {
+  cursor: pointer;
   color: #002B66;
 }
 .toggle label.is-disabled, .toggle label:disabled,
