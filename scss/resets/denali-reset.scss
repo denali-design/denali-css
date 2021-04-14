@@ -40,12 +40,10 @@ html {
 }
 
 @mixin reset-theme {
-  body {
-    font-size: $body-font-size;
-    background: $body-bg-color;
-    color: $body-text-color;
-    font-family: $font-family-sans-serif;
-  }
+  font-size: $body-font-size;
+  background: $body-bg-color;
+  color: $body-text-color;
+  font-family: $font-family-sans-serif;
 
   hr {
     background-color: $hr-bg-color;
