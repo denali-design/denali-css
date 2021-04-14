@@ -102,6 +102,10 @@ $toggle-inverse-active-bg-color: transparent !default;
       &:disabled {
         cursor: not-allowed;
         color: $toggle-disabled-text-color;
+
+        > * {
+          cursor: not-allowed;
+        }
       }
 
       &:first-of-type {
