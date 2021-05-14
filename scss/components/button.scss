@@ -7,6 +7,12 @@
 
 $button-font-weight: inherit !default;
 $button-corner-radius: $border-radius-sm !default;
+
+$button-sizes-sm-padding: 0px 10px !default;
+$button-sizes-md-padding: 0px 10px !default;
+$button-sizes-default-padding: 0px 10px !default;
+$button-sizes-lg-padding: 0px 30px !default;
+
 $button-sizes-sm-height: 24px !default;
 $button-sizes-sm-font-size: 12px !default;
 $button-sizes-sm-min-width: 70px !default;
@@ -88,7 +94,7 @@ $button-text-disabled-inverse-text-color: rgba(map-get($denali-grey-colors,"100"
     justify-content: center;
     align-items: center;
     margin: 0px;
-    padding: 0px 10px;
+    padding: $button-sizes-default-padding;
     padding-bottom: 1px;
     height: $button-sizes-default-height;
     font-size: $button-sizes-default-font-size;
@@ -263,17 +269,19 @@ $button-text-disabled-inverse-text-color: rgba(map-get($denali-grey-colors,"100"
       height: $button-sizes-sm-height;
       font-size: $button-sizes-sm-font-size;
       min-width: $button-sizes-sm-min-width;
+      padding: $button-sizes-sm-padding;
     }
     &.is-medium {
       height: $button-sizes-md-height;
       font-size: $button-sizes-md-font-size;
       min-width: $button-sizes-md-min-width;
+      padding: $button-sizes-md-padding;
     }
     &.is-large {
       height: $button-sizes-lg-height;
       font-size: $button-sizes-lg-font-size;
       min-width: $button-sizes-lg-min-width;
-      padding: 0px 30px;
+      padding: $button-sizes-lg-padding;
     }
     &.is-full {
       width: 100%;
@@ -298,6 +306,7 @@ $button-text-disabled-inverse-text-color: rgba(map-get($denali-grey-colors,"100"
     min-width: $button-sizes-default-min-width;
     border-radius: $button-corner-radius;
     font-weight: $button-font-weight;
+    padding: $button-sizes-default-padding;
 
     &.is-solid {
       background: $button-solid-default-bg-color;
@@ -465,18 +474,19 @@ $button-text-disabled-inverse-text-color: rgba(map-get($denali-grey-colors,"100"
       height: $button-sizes-sm-height;
       font-size: $button-sizes-sm-font-size;
       min-width: $button-sizes-sm-min-width;
+      padding: $button-sizes-sm-padding;
     }
-
     &.is-medium {
       height: $button-sizes-md-height;
       font-size: $button-sizes-md-font-size;
       min-width: $button-sizes-md-min-width;
+      padding: $button-sizes-md-padding;
     }
-
     &.is-large {
       height: $button-sizes-lg-height;
       font-size: $button-sizes-lg-font-size;
       min-width: $button-sizes-lg-min-width;
+      padding: $button-sizes-lg-padding;
     }
   }
 }
