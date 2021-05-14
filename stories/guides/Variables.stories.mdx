@@ -28,7 +28,10 @@ Listed below are all the SCSS variables for each component.
 |$elevation-sticky|             200 !default|
 |$elevation-menu|               300 !default| 
 |$elevation-modal-background|   400 !default|
-|$elevation-modal|              500 !default| 
+|$elevation-modal|              500 !default|
+|$line-height-compact| 1.25 !default|
+|$line-height-normal| 1.5 !default|
+|$line-height-expanded| 1.75 !default|
 
 ---
 
@@ -61,6 +64,7 @@ Listed below are all the SCSS variables for each component.
 |$alert-inline-alignment-text| center !default|
 |$alert-inline-alignment-justify-content| center !default|
 |$alert-inline-padding| 4px 10px !default|
+|$alert-content-line-height|$line-height-compact !default|
 
 ## Box
 
@@ -95,15 +99,19 @@ Listed below are all the SCSS variables for each component.
 |$button-sizes-sm-height| 24px !default|
 |$button-sizes-sm-font-size| 12px !default|
 |$button-sizes-sm-min-width| 70px !default|
+|$button-sizes-sm-padding| 0px 10px !default|
 |$button-sizes-md-height| 32px !default|
 |$button-sizes-md-font-size| inherit !default|
 |$button-sizes-md-min-width| 90px !default|
+|$button-sizes-md-padding| 0px 10px !default|
 |$button-sizes-default-height| 36px !default|
 |$button-sizes-default-font-size| inherit !default|
 |$button-sizes-default-min-width| 120px !default|
+|$button-sizes-default-padding| 0px 10px !default|
 |$button-sizes-lg-height| 44px !default|
 |$button-sizes-lg-font-size| 16px !default|
 |$button-sizes-lg-min-width| null !default|
+|$button-sizes-lg-padding| 0px 30px !default|
 |$button-solid-default-bg-color| map-get($denali-brand-colors,"300") !default|
 |$button-solid-default-text-color| map-get($denali-grey-colors,"100") !default|
 |$button-solid-default-inverse-bg-color| map-get($denali-brand-colors,"300") !default|
@@ -410,7 +418,6 @@ Listed below are all the SCSS variables for each component.
 
 |Variable|Value|
 |---|-----|
-
 |$tags-corner-radius| $border-radius-pill !default|
 |$tags-padding| 0px 10px !default|
 |$tags-margin| 3px !default|
@@ -504,6 +511,10 @@ Listed below are all the SCSS variables for each component.
 |$h5-font-weight| 600 !default|
 |$h6-font-weight| 400 !default|
 |$p-font-weight| 400 !default|
-|$line-height-compact| 1.25 !default|
-|$line-height-normal| 1.5 !default|
-|$line-height-expanded| 1.75 !default|
+|$h1-line-height| $line-height-compact !default|
+|$h2-line-height| $line-height-compact !default|
+|$h3-line-height| $line-height-normal !default|
+|$h4-line-height| $line-height-normal !default|
+|$h5-line-height| $line-height-normal !default|
+|$h6-line-height| $line-height-normal !default|
+|$p-line-height| $line-height-expanded !default|
