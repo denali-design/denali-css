@@ -4,7 +4,7 @@
 
 @import '../maps/color-maps.scss';
 @import '../utilities/global-variables.scss';
-
+ 
 $alert-bg-color: map-get($denali-grey-colors,"100") !default;
 $alert-text-color: null !default;
 $alert-corner-radius: $border-radius-sm !default;
