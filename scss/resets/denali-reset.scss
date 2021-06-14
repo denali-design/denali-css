@@ -2,43 +2,50 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import "../utilities/global-variables.scss";
+
+$body-bg-color: map-get($denali-grey-colors,"100") !default;
+$body-text-color: map-get($denali-grey-colors,"800") !default;
+$body-font-size: 1.4rem !default;
+$hr-bg-color: map-get($denali-grey-colors,"500") !default;
+
 html {
-  font-size: $base-font-size;
+  font-size: 10px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
 
-body {
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 1.4rem;
-  background: $body-bg-color;
-  color: $body-text-color;
-  font-family: $font-family-sans-serif;
-}
+@mixin reset-default {
+  body {
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: $body-font-size; 
+    background: $body-bg-color;
+    color: $body-text-color;
+    font-family: $font-family-sans-serif;
+  }
 
-[disabled] {
-  cursor: not-allowed;
-}
+  [disabled] {
+    cursor: not-allowed;
+  }
 
-
-// Fixes
-hr {
-  background-color: $color-grey-500;
-  display: block;
-  border: 0;
-  height: 1px;
-  margin: 15px 0;
-}
-
-.denali-dark-theme {
   hr {
-    background-color: $color-grey-100;
-    opacity: .2;
+    background-color: $hr-bg-color;
+    display: block;
+    border: 0;
+    height: 1px;
+    margin: 15px 0;
   }
 }
 
-@mixin resets-base-theme($theme-config) {
-  background: deep-map-get($theme-config, "global", "body-background-color");
-  color: deep-map-get($theme-config, "global", "text-color");
+@mixin reset-theme {
+  font-size: $body-font-size;
+  background: $body-bg-color;
+  color: $body-text-color;
+  font-family: $font-family-sans-serif;
+
+  hr {
+    background-color: $hr-bg-color;
+  }
 }

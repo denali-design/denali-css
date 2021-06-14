@@ -2,5 +2,101 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 <Meta title="Get Started/Theming" />
 
-# Theming
+# Theming Guide
 
+Create your own theme with Denali CSS for any web project.
+
+Denali CSS has theming capibilities built directly into each component page. You can customize almost anything in a components thanks to the Sass variables being passed into the component pages. To follow a step by step guide check out this [blog post](https://medium.com/denali-design/how-to-theme-your-app-using-denali-dcefcb92e9fd).
+
+---
+
+## What makes Denali themable?
+
+There are 2 levels of Sass variables, global and components. These are used to customize the style of your componets when building your own theme.
+
+- **Global Variables:** Include color, body elements, shadows, etc. These are repeatable styles used accross multiple components.
+- **Component Variables:** Are specific for each component or element. These will reference global variables, so always try to use gloabls first.  
+
+---
+
+## Setting up your theme
+
+To create your own theme you will need to:
+
+- Install (or download) [Denali CSS](https://github.com/denali-design/denali-css)
+- Install [Sass](https://sass-lang.com/)
+- Create your own `.scss` file.
+
+### Follow the steps below to get setup
+
+1. Install the dev dependencies. If you are just using components install Denali CSS via NPM.
+
+```
+npm install denali-css --save-dev
+```
+
+2. Now we have to create a file to import Denali and create theme. You can call this `style.scss`
+
+```
+@charset "utf-8";
+@import "../node_modules/denali-css/scss/denali.scss";
+```
+
+> Make sure the import path to `denali.scss` is correct.
+
+3. At this point you can decide to include all components or only what you'll need. In this case, we are going to include everything so go ahead and copy the variables from this [file](https://github.com/denali-design/denali-css/blob/master/scss/utilities/root-variables.scss).
+
+4. Now that you have included the variables we need to generate the overriding theme. We have provided a mixin to make this easier.
+
+```
+@import "../node_modules/denali-css/scss/mixins/theme.scss";
+@include generate-theme(your-theme-name);
+```
+
+> Make sure the import path to `theme.scss` is correct.
+
+> It's important to change the parameter in the generate-theme mixin. This will become your overriding class.
+
+5. Add your overriding class from the generate-theme mixin to the body.
+
+```
+<body class="your-theme-name">
+```
+
+7. If you have Sass installed globally you can run the command in your terminal below.
+
+```
+sass --watch style.scss:style.css
+```
+
+> Make sure the input and output paths are correct.
+
+8. Link your stylesheet to your HTML docuemnt
+
+```
+<link rel="stylesheet" href="style.css">
+```
+
+Your files should be setup and if all your paths are correct you shouldn't get any errors. Follow the next section to create a theme.
+
+---
+
+## Use SASS variables to create your theme
+
+Now that your files are setup correct lets make a simple change.
+
+Since Sass is watching for changes, go ahead and update the `$color-brand-300` variable to `red`.
+
+```
+$color-brand-300: red;
+```
+
+This will change multiple componenent values and will reflect when you reload the HTML page.
+
+---
+
+## Just the surface
+
+Now that you have an understanding of how theming works you can keep working through each variable to customize all your components.
+
+This guide only scratches the surface of what is possible. Using the basics you’ve learned here you can create multiple themes in one file, create dynamic themes that adjust to light/dark OS preferences, choose to pull in only the components you need, and much more.

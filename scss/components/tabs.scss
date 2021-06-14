@@ -2,6 +2,52 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$tabs-font-size: 1.6rem !default;
+
+$tabs-primary-bg-color: #F3F8FF !default;
+$tabs-primary-padding: 20px 0px 0px 30px !default;
+$tabs-primary-tab-item-height: 40px !default;
+$tabs-primary-tab-item-padding: 0px 20px !default;
+$tabs-primary-tab-item-corner-radius: $border-radius-md !default;
+$tabs-primary-tab-item-text-color: map-get($denali-brand-colors,"300") !default;
+$tabs-primary-tab-item-active-bg-color: map-get($denali-grey-colors,"100") !default;
+$tabs-primary-tab-item-active-text-color: map-get($denali-grey-colors,"800") !default;
+$tabs-primary-tab-item-disabled-text-color: rgba(map-get($denali-grey-colors,"800"), 0.2) !default;
+
+$tabs-primary-vertical-width: 300px !default;
+$tabs-primary-vertical-padding: 12px 0px 40px 0px !default;
+$tabs-primary-vertical-tab-item-height: 40px !default;
+$tabs-primary-vertical-tab-item-margin: 2px 16px !default;
+$tabs-primary-vertical-tab-item-padding: 0px 14px !default;
+$tabs-primary-vertical-tab-item-corner-radius: $border-radius-lg !default;
+$tabs-primary-vertical-tab-item-bg-color: null !default;
+$tabs-primary-vertical-tab-item-text-color: inherit !default;
+$tabs-primary-vertical-tab-item-border: null !default;
+$tabs-primary-vertical-tab-item-active-border: inset 0px 0px 0px 1px rgba(map-get($denali-brand-colors,"300"), .1) !default;
+$tabs-primary-vertical-tab-item-active-bg-color: rgba(map-get($denali-brand-colors,"300"), 0.1) !default;
+$tabs-primary-vertical-tab-item-active-text-color: map-get($denali-grey-colors,"800") !default;
+$tabs-primary-vertical-tab-item-active-text-weight: bold !default;
+$tabs-primary-vertical-tab-item-hover-border: inset 0px 0px 0px 1px rgba(map-get($denali-brand-colors,"400"), .1) !default;
+$tabs-primary-vertical-tab-item-hover-bg-color: null !default;
+$tabs-primary-vertical-tab-item-hover-text-color: map-get($denali-brand-colors,"400") !default;
+$tabs-primary-vertical-tab-item-hover-text-weight: null !default;
+$tabs-primary-vertical-tab-item-disabled-border: none !default;
+$tabs-primary-vertical-tab-item-disabled-text-color: rgba(map-get($denali-grey-colors,"800"), 0.2) !default;
+
+$tabs-secondary-border: inset 0px -2px rgba(map-get($denali-grey-colors,"700"), .05) !default;
+$tabs-secondary-tab-item-height: 40px !default;
+$tabs-secondary-tab-item-padding: 0px 20px !default;
+$tabs-secondary-tab-item-text-color: map-get($denali-brand-colors,"300") !default;
+$tabs-secondary-tab-item-active-text-color: map-get($denali-grey-colors,"800") !default;
+$tabs-secondary-tab-item-active-border: inset 0px -2px map-get($denali-brand-colors,"300") !default;
+
+$tabs-section-header-text-color: #9a9a9a !default;
+$tabs-section-header-text-size: 1.2rem !default;
+$tabs-section-header-text-transform: uppercase !default;
+
 @mixin tabs-default {
   .tabs {
     -webkit-overflow-scrolling: touch;
@@ -87,6 +133,12 @@
               font-weight: $tabs-primary-vertical-tab-item-active-text-weight;
               > * {
                 color: $tabs-primary-vertical-tab-item-active-text-color;
+              }
+            }
+            &.is-disabled {
+              box-shadow: $tabs-primary-vertical-tab-item-disabled-border;
+              > * {
+                color: $tabs-primary-vertical-tab-item-disabled-text-color;
               }
             }
             // Section Header
@@ -223,6 +275,12 @@
               font-weight: $tabs-primary-vertical-tab-item-active-text-weight;
               > * {
                 color: $tabs-primary-vertical-tab-item-active-text-color;
+              }
+            }
+            &.is-disabled {
+              box-shadow: $tabs-primary-vertical-tab-item-disabled-border;
+              > * {
+                color: $tabs-primary-vertical-tab-item-disabled-text-color;
               }
             }
             &.tabs__section-header {

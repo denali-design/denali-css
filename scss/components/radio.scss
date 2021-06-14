@@ -2,6 +2,17 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$radio-circle-border-standard: 0 0 0 2px rgba(map-get($denali-brand-colors,"300"), 0.5) !default;
+$radio-circle-border-hover: 0 0 0 2px map-get($denali-brand-colors,"300") !default;
+$radio-circle-border-active: 0 0 0 2px map-get($denali-brand-colors,"300") !default;
+$radio-circle-border-disabled: 0 0 0 2px map-get($denali-grey-colors,"500") !default;
+$radio-circle-bg-color-active: map-get($denali-brand-colors,"300") !default;
+$radio-label-text-color: map-get($denali-grey-colors,"800") !default;
+$radio-label-disabled-text-color: map-get($denali-grey-colors,"500") !default;
+
 @mixin radio-default {
   .radio {
     backface-visibility: hidden;

@@ -2,9 +2,33 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
 
-// DENALI SCSS :: COLOR CLASSES
+// Black
+.has-bg-black {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+.is-black {
+    color: #000 !important;
+}
+.fill-black {
+    fill: #000 !important;
+}
 
+// White
+.has-bg-white {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+.is-white {
+    color: #fff !important;
+}
+.fill-white {
+    fill: #fff !important;
+}
+
+// Brand
 @each $name, $hex in $denali-brand-colors {
     .has-bg-brand-#{$name} {
         background-color: $hex !important;

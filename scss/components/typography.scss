@@ -2,6 +2,38 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$headline-color: map-get($denali-grey-colors,"800") !default;
+$headline-font-family: inherit !default;
+$paragraph-color: map-get($denali-grey-colors,"800") !default;
+$paragraph-font-family: inherit !default;
+
+$h1-font-size: 2.8rem !default;
+$h2-font-size: 2.6rem !default;
+$h3-font-size: 2.0rem !default;
+$h4-font-size: 1.6rem !default;
+$h5-font-size: 1.4rem !default;
+$h6-font-size: 1.2rem !default;
+$p-font-size: 1.4rem !default;
+
+$h1-font-weight: 600 !default;
+$h2-font-weight: 600 !default;
+$h3-font-weight: 600 !default;
+$h4-font-weight: 600 !default;
+$h5-font-weight: 600 !default;
+$h6-font-weight: 400 !default;
+$p-font-weight: 400 !default;
+
+$h1-line-height: $line-height-compact !default;
+$h2-line-height: $line-height-compact !default;
+$h3-line-height: $line-height-normal !default;
+$h4-line-height: $line-height-normal !default;
+$h5-line-height: $line-height-normal !default;
+$h6-line-height: $line-height-normal !default;
+$p-line-height: $line-height-expanded !default;
+
 @mixin typography-default {
   h1,
   h2,
@@ -14,42 +46,42 @@
 
   h1 {
     font-size: $h1-font-size;
-    line-height: $line-height-compact;
+    line-height: $h1-line-height;
     font-weight: $h1-font-weight;
     color: $headline-color;
   }
 
   h2 {
     font-size: $h2-font-size;
-    line-height: $line-height-compact;
+    line-height: $h2-line-height;
     font-weight: $h2-font-weight;
     color: $headline-color;
   }
 
   h3 {
     font-size: $h3-font-size;
-    line-height: $line-height-normal;
+    line-height: $h3-line-height;
     font-weight: $h3-font-weight;
     color: $headline-color;
   }
 
   h4 {
     font-size: $h4-font-size;
-    line-height: $line-height-normal;
+    line-height: $h4-line-height;
     font-weight: $h4-font-weight;
     color: $headline-color;
   }
 
   h5 {
     font-size: $h5-font-size;
-    line-height: $line-height-normal;
+    line-height: $h5-line-height;
     font-weight: $h5-font-weight;
     color: $headline-color;
   }
 
   h6 {
     font-size: $h6-font-size;
-    line-height: $line-height-normal;
+    line-height: $h6-line-height;
     font-weight: $h6-font-weight;
     color: $headline-color;
   }
@@ -57,7 +89,7 @@
   p {
     font-family: $paragraph-font-family;
     font-size: $p-font-size;
-    line-height: $line-height-expanded;
+    line-height: $p-line-height;
     font-weight: $p-font-weight;
     color: $paragraph-color;
   }
@@ -75,42 +107,42 @@
 
   h1 {
     font-size: $h1-font-size;
-    line-height: $line-height-compact;
+    line-height: $h1-line-height;
     font-weight: $h1-font-weight;
     color: $headline-color;
   }
 
   h2 {
     font-size: $h2-font-size;
-    line-height: $line-height-compact;
+    line-height: $h2-line-height;
     font-weight: $h2-font-weight;
     color: $headline-color;
   }
 
   h3 {
     font-size: $h3-font-size;
-    line-height: $line-height-normal;
+    line-height: $h3-line-height;
     font-weight: $h3-font-weight;
     color: $headline-color;
   }
 
   h4 {
     font-size: $h4-font-size;
-    line-height: $line-height-normal;
+    line-height: $h4-line-height;
     font-weight: $h4-font-weight;
     color: $headline-color;
   }
 
   h5 {
     font-size: $h5-font-size;
-    line-height: $line-height-normal;
+    line-height: $h5-line-height;
     font-weight: $h5-font-weight;
     color: $headline-color;
   }
 
   h6 {
     font-size: $h6-font-size;
-    line-height: $line-height-normal;
+    line-height: $h6-line-height;
     font-weight: $h6-font-weight;
     color: $headline-color;
   }
@@ -118,7 +150,7 @@
   p {
     font-family: $paragraph-font-family;
     font-size: $p-font-size;
-    line-height: $line-height-expanded;
+    line-height: $p-line-height;
     font-weight: $p-font-weight;
     color: $paragraph-color;
   }

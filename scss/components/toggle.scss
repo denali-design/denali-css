@@ -2,6 +2,29 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$toggle-corner-radius: $border-radius-sm !default;
+$toggle-bg-color: rgba(map-get($denali-brand-colors,"300"), .08) !default;
+$toggle-text-color: map-get($denali-brand-colors,"300") !default;
+$toggle-text-hover-color: map-get($denali-brand-colors,"500") !default;
+$toggle-text-size: 1.4rem !default;
+$toggle-padding: 0px 14px !default;
+$toggle-height: 36px !default;
+$toggle-active-text-color: map-get($denali-grey-colors,"800") !default;
+$toggle-active-bg-color: map-get($denali-grey-colors,"100") !default;
+$toggle-active-corner-radius: $border-radius-sm !default;
+$toggle-active-border-width: 2px !default;
+$toggle-active-border-color: map-get($denali-brand-colors,"300") !default;
+$toggle-disabled-text-color: rgba(map-get($denali-grey-colors,"800"), 0.2) !default;
+$toggle-small-padding: 0px 10px !default;
+$toggle-small-height: 28px !default;
+$toggle-inverse-text-color: map-get($denali-brand-colors,"200") !default;
+$toggle-inverse-bg-color: rgba(map-get($denali-grey-colors,"100"), 0.1) !default;
+$toggle-inverse-active-text-color: map-get($denali-grey-colors,"100") !default;
+$toggle-inverse-active-bg-color: transparent !default;
+
 @mixin toggle-default {
   .toggle {
     display: flex;
@@ -23,7 +46,19 @@
         border-radius: $toggle-active-corner-radius;
         box-shadow: 0 0 0 $toggle-active-border-width $toggle-active-border-color;
       }
+
+      &:disabled + label {
+        color: $toggle-disabled-text-color;
+        cursor:not-allowed;
+      }
+
+      &.is-disabled + label {
+          color: $toggle-disabled-text-color;
+          cursor:not-allowed;
+      }
     }
+
+
 
     > ul {
       display: flex;
@@ -58,14 +93,19 @@
         }
       }
 
-      &.is-disabled {
-        cursor: not-allowed;
-        color: $toggle-disabled-text-color;
-      }
-
       &:hover {
         cursor: pointer;
         color: $toggle-text-hover-color;
+      }
+
+      &.is-disabled,
+      &:disabled {
+        cursor: not-allowed;
+        color: $toggle-disabled-text-color;
+
+        > * {
+          cursor: not-allowed;
+        }
       }
 
       &:first-of-type {
@@ -126,6 +166,14 @@
         color: $toggle-active-text-color;
         border-radius: $toggle-active-corner-radius;
         box-shadow: 0 0 0 $toggle-active-border-width $toggle-active-border-color;
+      }
+
+      &:disabled + label {
+        color: $toggle-disabled-text-color;
+      }
+
+      &.is-disabled + label {
+          color: $toggle-disabled-text-color;
       }
     }
 

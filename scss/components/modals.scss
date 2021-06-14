@@ -2,6 +2,17 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$modal-overlay-color: rgba(map-get($denali-grey-colors,"400"), 0.9) !default;
+$modal-corner-radius: $border-radius-sm !default;
+$modal-modal-container-bg-color: map-get($denali-grey-colors,"100") !default;
+$modal-modal-container-border-color: map-get($denali-grey-colors,"400") !default;
+$modal-modal-container-border-width: 2px !default;
+$modal-modal-container-border-style: solid !default;
+$modal-modal-container-close-icon-color: map-get($denali-grey-colors,"800") !default;
+
 @mixin modals-default {
   .modal {
     position: fixed;
@@ -9,7 +20,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: $zindex-modal-background;
+    z-index: $elevation-modal-background;
     opacity: 0;
     -webkit-transition: opacity 300ms ease-in;
     -moz-transition: opacity 300ms ease-in;
@@ -20,11 +31,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &.is-chas {
-      opacity: 1;
-      pointer-events: auto;
-    }
 
     div.modal-container {
       width: 450px;
@@ -44,7 +50,7 @@
         opacity: .4;
         line-height: 14px;
         position: absolute;
-        z-index: $zindex-modal;
+        z-index: $elevation-modal;
         right: 14px;
         top: 14px;
       }

@@ -23,7 +23,7 @@ export const Alignment = ({ position }) => {
   <div class="menu m-l-100 
     ${position ? `is-${position}` : ""}" 
     style="display:inline-block;">
-          <a class="menu-trigger">Hover for ${position? position : ''} menu</a>
+          <a class="menu-trigger">Hover for ${position ? position : ''} menu</a>
           <div class="menu-content">
               <ul>
                   <li><a>User guide</a></li>
@@ -45,8 +45,8 @@ Alignment.argTypes = {
   },
 };
 
-export const LinksSimulation = ({ position }) => {
-    return `<!-- Inline block is added due to the component inheriting the display block. -->
+export const LinksSimulation = () => {
+  return `<!-- Inline block is added due to the component inheriting the display block. -->
 <div class="menu" style="display:inline-block;">
     <a class="menu-trigger">Hover for default menu</a>
     <div class="menu-content">
@@ -58,4 +58,38 @@ export const LinksSimulation = ({ position }) => {
         <span class="link">Support</span>
     </div>
 </div>`;
-  };
+};
+
+export const ManualTrigger = () => {
+  return `<!-- Inline block is added due to the component inheriting the display block. -->
+<div class="menu is-active" style="display:inline-block;">
+    <a class="menu-trigger">Hover for default menu</a>
+    <div class="menu-content">
+        <span class="link">Home</span>
+        <span class="link">About</span>
+        <span class="link">Contact</span>
+        <span class="link">Help</span>
+        <hr>
+        <span class="link">Support</span>
+    </div>
+</div>`;
+};
+
+export const Navbar = () => {
+  return `<nav class="nav">
+  <div class="nav-left"></div>
+  <div class="nav-right">
+    <div class="menu menu--nav" style="display:inline-block;">
+      <div class="nav-item menu-trigger">Menu<i class="d-icon d-arrowhead-down is-small"></i></div>
+      <div class="menu-content">
+          <span class="link">Home</span>
+          <span class="link">About</span>
+          <span class="link">Contact</span>
+          <span class="link">Help</span>
+          <hr>
+          <span class="link">Support</span>
+      </div>
+    </div>
+  </div>
+</nav>`;
+};

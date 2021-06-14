@@ -2,6 +2,23 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$switch-circle-border-color-standard: rgba(map-get($denali-brand-colors,"300"), 0.5) !default;
+$switch-circle-border-color-hover: map-get($denali-brand-colors,"300") !default;
+$switch-circle-border-color-active: map-get($denali-status-colors,"success") !default;
+$switch-circle-border-color-disabled: map-get($denali-grey-colors,"500") !default;
+$switch-circle-bg-color-standard: map-get($denali-grey-colors,"100") !default;
+$switch-circle-bg-color-active: map-get($denali-status-colors,"success") !default;
+$switch-circle-bg-color-disabled: map-get($denali-grey-colors,"100") !default;
+$switch-circle-bg-color-active-disabled: map-get($denali-grey-colors,"500") !default;
+$switch-slider-standard-color: map-get($denali-grey-colors,"500") !default;
+$switch-slider-active-color: rgba(map-get($denali-status-colors,"success"), 0.45) !default;
+$switch-slider-disabled-color: map-get($denali-grey-colors,"400") !default;
+$switch-label-text-color: inherit !default;
+$switch-label-disabled-text-color: map-get($denali-grey-colors,"500") !default;
+
 @mixin switch-default {
   label.switch {
     box-sizing: border-box;

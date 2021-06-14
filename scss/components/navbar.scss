@@ -2,6 +2,18 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$navbar-bg-color: map-get($denali-brand-colors,"500") !default;
+$navbar-height: 60px !default;
+$navbar-item-text-color: map-get($denali-grey-colors,"100") !default;
+$navbar-item-hover-text-color: rgba(map-get($denali-grey-colors,"100"), 0.4) !default;
+$navbar-item-active-text-color: map-get($denali-grey-colors,"100") !default;
+$navbar-item-active-border-color: map-get($denali-brand-colors,"300") !default;
+$navbar-responsive-bg-color: #19375F !default;
+$navbar-responsive-menu-bg-color: #334D71 !default;
+
 @mixin navbar-default {
   .nav {
     box-sizing: border-box;
@@ -217,6 +229,7 @@
     // Nav Control
     .nav-control {
       padding: 9px 12px;
+      color: $navbar-item-text-color;
 
       > * {
         width: 100%;
@@ -293,6 +306,10 @@
           }
         }
       }
+    }
+    // Control
+    .nav-control {
+      color: $navbar-item-text-color;
     }
   }
 }

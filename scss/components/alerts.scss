@@ -1,6 +1,26 @@
 @charset "utf-8";
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+ 
+$alert-bg-color: map-get($denali-grey-colors,"100") !default;
+$alert-text-color: null !default;
+$alert-corner-radius: $border-radius-sm !default;
+$alert-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16) !default;
+$alert-border-color: map-get($denali-grey-colors,"500") !default;
+$alert-border-width: 4px !default;
+$alert-border-style: solid !default;
+$alert-close-icon-color: map-get($denali-grey-colors,"800") !default;
+$alert-inline-text-color: map-get($denali-grey-colors,"800") !default;
+$alert-inline-bg-color: map-get($denali-grey-colors,"300") !default;
+$alert-inline-font-size: inherit !default;
+$alert-inline-alignment-text: center !default;
+$alert-inline-alignment-justify-content: center !default;
+$alert-inline-padding: 4px 10px !default;
+$alert-content-line-height: $line-height-compact !default;
+
 @mixin alerts-default {
   .alert {
     // STRUCTURE
@@ -24,11 +44,14 @@
       margin: 17px 0px 18px 0px;
       flex: auto;
       overflow: hidden;
+      h5 {
+        margin-bottom: 8px;
+      }
       p {
+        margin-top: 4px;
         font-size: 12px !important;
-        margin-top: 8px;
         margin-bottom: 0px;
-        line-height: 15px;
+        line-height: $alert-content-line-height;
       }
     }
 
@@ -82,19 +105,19 @@
       border-left-color: $alert-border-color;
 
       &.is-info {
-        background: rgba($color-status-information, 0.06);
+        background: rgba(map-get($denali-status-colors,"info"), 0.06);
       }
 
       &.is-warning {
-        background: rgba($color-status-warning, 0.06);
+        background: rgba(map-get($denali-status-colors,"warning"), 0.06);
       }
 
       &.is-success {
-        background: rgba($color-status-success, 0.06);
+        background: rgba(map-get($denali-status-colors,"success"), 0.06);
       }
 
       &.is-danger {
-        background: rgba($color-status-danger, 0.06);
+        background: rgba(map-get($denali-status-colors,"danger"), 0.06);
       }
 
       p {
@@ -105,27 +128,27 @@
 
     // STATUS MODIFIERS
     &.is-info {
-      border-color: $color-status-information;
+      border-color: map-get($denali-status-colors,"info");
       .d-icon {
-        color: $color-status-information;
+        color: map-get($denali-status-colors,"info");
       }
     }
     &.is-warning {
-      border-color: $color-status-warning;
+      border-color: map-get($denali-status-colors,"warning");
       .d-icon {
-        color: $color-status-warning;
+        color: map-get($denali-status-colors,"warning");
       }
     }
     &.is-success {
-      border-color: $color-status-success;
+      border-color: map-get($denali-status-colors,"success");
       .d-icon {
-        color: $color-status-success;
+        color: map-get($denali-status-colors,"success");
       }
     }
     &.is-danger {
-      border-color: $color-status-danger;
+      border-color: map-get($denali-status-colors,"danger");
       .d-icon {
-        color: $color-status-danger;
+        color: map-get($denali-status-colors,"danger");
       }
     }
   }
@@ -159,6 +182,12 @@
 
     @if variable-exists(alert-border-color) {
       border-top-color: $alert-border-color;
+    }
+
+    div {
+      p {
+        line-height: $alert-content-line-height;
+      }
     }
 
     @if variable-exists(alert-border-color) {
@@ -212,58 +241,58 @@
       border-left-color: $alert-border-color;
 
       &.is-info {
-        background: rgba($color-status-information, 0.06);
+        background: rgba(map-get($denali-status-colors,"info"), 0.06);
       }
 
       &.is-warning {
-        background: rgba($color-status-warning, 0.06);
+        background: rgba(map-get($denali-status-colors,"warning"), 0.06);
       }
 
       &.is-success {
-        background: rgba($color-status-success, 0.06);
+        background: rgba(map-get($denali-status-colors,"success"), 0.06);
       }
 
       &.is-danger {
-        background: rgba($color-status-danger, 0.06);
+        background: rgba(map-get($denali-status-colors,"danger"), 0.06);
       }
     }
 
     @if variable-exists(color-status-information) {
       &.is-info {
-        border-color: $color-status-information;
+        border-color: map-get($denali-status-colors,"info");
 
         .d-icon {
-          color: $color-status-information;
+          color: map-get($denali-status-colors,"info");
         }
       }
     }
 
     @if variable-exists(color-status-warning) {
       &.is-warning {
-        border-color: $color-status-warning;
+        border-color: map-get($denali-status-colors,"warning");
 
         .d-icon {
-          color: $color-status-warning;
+          color: map-get($denali-status-colors,"warning");
         }
       }
     }
 
     @if variable-exists(color-status-success) {
       &.is-success {
-        border-color: $color-status-success;
+        border-color: map-get($denali-status-colors,"success");
 
         .d-icon {
-          color: $color-status-success;
+          color: map-get($denali-status-colors,"success");
         }
       }
     }
 
     @if variable-exists(color-status-danger) {
       &.is-danger {
-        border-color: $color-status-danger;
+        border-color: map-get($denali-status-colors,"danger");
 
         .d-icon {
-          color: $color-status-danger;
+          color: map-get($denali-status-colors,"danger");
         }
       }
     }

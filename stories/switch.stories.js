@@ -1,5 +1,5 @@
 export default {
-  title: "Components/Controls/Toggle",
+  title: "Components/Switch",
 };
 
 export const Default = ({ checked, disabled, toggleOnLabel, toggleOffLabel }) => {

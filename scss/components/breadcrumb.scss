@@ -2,6 +2,15 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+
+$breadcrumb-right-margin: 22px !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-color: rgba(map-get($denali-grey-colors,"800"), 0.5) !default;
+$breadcrumb-divider-right-margin: -11px !default;
+$breadcrumb-active-item-text-color: map-get($denali-grey-colors,"800") !default;
+$breadcrumb-active-item-font-weight: bold !default;
+
 @mixin breadcrumb-default {
   .breadcrumb {
     list-style-type: none;
@@ -15,6 +24,13 @@
 
       > * {
         display: block;
+      }
+
+      &.is-active {
+        > * {
+          color: $breadcrumb-active-item-text-color;
+          font-weight: $breadcrumb-active-item-font-weight;
+        }
       }
 
       &::after {
@@ -35,6 +51,8 @@
         }
       }
     }
+
+    
   }
 }
 
@@ -43,6 +61,13 @@
 
     li {
       margin-right: $breadcrumb-right-margin;
+
+      &.is-active {
+        > * {
+          color: $breadcrumb-active-item-text-color;
+          font-weight: $breadcrumb-active-item-font-weight;
+        }
+      }
 
       &::after {
         content: $breadcrumb-divider;

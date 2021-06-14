@@ -7,33 +7,31 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "build": "gulp build",
-    "start": "gulp serve",
+    "start": "npm run sass-watch & npm run storybook",
+    "sass-build": "sass --style=compressed --no-source-map scss/denali.scss:css/denali.css scss/denali-components.scss:css/denali-components.css scss/denali-helpers.scss:css/denali-helpers.css scss/denali-layouts.scss:css/denali-layouts.css scss/denali-dark-theme.scss:css/denali-dark-theme.css",
+    "sass-watch": "sass --watch --no-source-map scss/denali.scss:css/denali.css scss/denali-components.scss:css/denali-components.css scss/denali-helpers.scss:css/denali-helpers.css scss/denali-layouts.scss:css/denali-layouts.css scss/denali-dark-theme.scss:css/denali-dark-theme.css",
     "test": "mocha",
     "semantic-release": "semantic-release",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o ./docs-storybook"
+    "storybook": "start-storybook -p 6006 -s .storybook/static",
+    "build-storybook": "build-storybook -s .storybook/static",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:denali-design/denali-css.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@storybook/addon-actions": "^6.1.10",
-    "@storybook/addon-essentials": "^6.1.10",
-    "@storybook/addon-links": "^6.1.10",
-    "@storybook/html": "^6.1.10",
+    "@babel/core": "^7.13.8",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/html": "^6.1.21",
+    "@storybook/storybook-deployer": "^2.8.7",
     "@whitespace/storybook-addon-html": "^4.2.0",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.13",
-    "gulp": "^4.0.2",
-    "gulp-connect-php": "^1.0.3",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
+    "babel-loader": "^8.2.2",
     "mocha": "^7.2.0",
     "react-is": "^16.13.1",
-    "semantic-release": "^17.3.1"
+    "semantic-release": "^17.4.1"
   },
   "dependencies": {},
   "release": {
@@ -41,5 +39,10 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "storybook-deployer": {
+    "gitUsername": "denali-bot",
+    "gitEmail": "denali@verizonmedia.com",
+    "commitMessage": "Deploy Storybook to GitHub Pages"
   }
 }

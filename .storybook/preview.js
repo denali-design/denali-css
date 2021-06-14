@@ -1,10 +1,10 @@
 import '../css/denali.css';
-import '../docs/fonts/denali-icon-font.css';
-import '../storybook-assets/style.css';
+import '../css/denali-dark-theme.css';
+import '../.storybook/fonts/denali-icon-font.css';
+import '../.storybook/style.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
-  docs: { page: null },
   html: {
     prettier: {
       tabWidth: 4,
@@ -14,7 +14,8 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Get Started', ['Installation', 'Theme'], 'Aesthics', 'Components', 'Helpers'],
+      method: 'alphabetical',
+      order: ['Get Started', ['Installation', 'Theming', 'Variables'], 'Layouts', ['Breakpoints', 'Containers', 'Rows', 'Columns'], 'Components', 'Helpers'],
     },
   },
 };

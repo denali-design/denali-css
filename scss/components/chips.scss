@@ -2,6 +2,16 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
+@import '../maps/color-maps.scss';
+@import '../utilities/global-variables.scss';
+
+$chips-bg-color: map-get($denali-brand-colors,"100") !default;
+$chips-corner-radius: $border-radius-sm !default;
+$chips-text-color: map-get($denali-grey-colors,"800") !default;
+$chips-padding: 4px 6px !default;
+$chips-small-font-size: 1.2rem !default;
+$chips-small-padding: 2px 4px !default;
+
 @mixin chips-default {
   .chips {
     font-size: inherit;

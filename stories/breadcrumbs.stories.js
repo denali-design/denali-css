@@ -8,7 +8,7 @@ export const Default = () => {
       <li><span class="link">Item</span></li>
       <li><span class="link">Item</span></li>
       <li><span class="link">Item</span></li>
-      <li><span class="link">Item</span></li>
+      <li class="is-active"><span class="link">Item</span></li>
     </ul>`
   );
 };
