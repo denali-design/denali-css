@@ -2,81 +2,79 @@
 // Copyright 2019, Oath Inc.
 // Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
 
-@import '../maps/color-maps.scss';
-@import '../utilities/global-variables.scss';
+@import "../maps/color-maps.scss";
+@import "../utilities/global-variables.scss";
 
 $accordion-border-radius: $border-radius-sm !default;
-$accordion-width: 800px !default;
-$accordion-summary-background: map-get($denali-grey-colors,"200") !default;
-$accordion-summary-color: map-get($denali-grey-colors,"800") !default;
-$accordion-content-background: map-get($denali-grey-colors,"100") !default;
-
+$accordion-summary-background: map-get($denali-grey-colors, "200") !default;
+$accordion-summary-color: map-get($denali-grey-colors, "800") !default;
+$accordion-content-background: map-get($denali-grey-colors, "100") !default;
+$accordion-border: 1px solid map-get($denali-grey-colors, "400") !default;
+$accordion-background-image-close: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+YXJyb3doZWFkLWRvd248L3RpdGxlPgogIDxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPgogICAgPGcgaWQ9ImludmlzaWJsZV9ib3giIGRhdGEtbmFtZT0iaW52aXNpYmxlIGJveCI+CiAgICAgIDxyZWN0IHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSIvPgogICAgPC9nPgogICAgPGcgaWQ9Imljb25zX1EyIiBkYXRhLW5hbWU9Imljb25zIFEyIj4KICAgICAgPHBhdGggZD0iTTI0LDI3LjIsMTMuNCwxNi42YTEuOSwxLjksMCwwLDAtMywuMiwyLjEsMi4xLDAsMCwwLC4yLDIuN2wxMiwxMS45YTEuOSwxLjksMCwwLDAsMi44LDBsMTItMTEuOWEyLjEsMi4xLDAsMCwwLC4yLTIuNywxLjksMS45LDAsMCwwLTMtLjJaIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K") !default;
+$accordion-background-image-open: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+YXJyb3doZWFkLXVwPC90aXRsZT4KICA8ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj4KICAgIDxnIGlkPSJpbnZpc2libGVfYm94IiBkYXRhLW5hbWU9ImludmlzaWJsZSBib3giPgogICAgICA8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJpY29uc19RMiIgZGF0YS1uYW1lPSJpY29ucyBRMiI+CiAgICAgIDxwYXRoIGQ9Ik0yNCwyMC44LDEzLjQsMzEuNGExLjksMS45LDAsMCwxLTMtLjIsMi4xLDIuMSwwLDAsMSwuMi0yLjdsMTItMTEuOWExLjksMS45LDAsMCwxLDIuOCwwbDEyLDExLjlhMi4xLDIuMSwwLDAsMSwuMiwyLjcsMS45LDEuOSwwLDAsMS0zLC4yWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==") !default;
 
 @mixin accordion-default {
   .accordion {
     // STRUCTURE
-    width: $accordion-width;
-    border: 1px solid #e8e8e8;
+    width: 100%;
+    border: $accordion-border;
     border-radius: $accordion-border-radius;
-    
 
-  details > summary {
-    list-style-type: none;
-    border: 1px solid #e8e8e8;
-}
+    details > summary {
+      list-style-type: none;
+      border: $accordion-border;
+    }
 
-  details > summary::-webkit-details-marker {
-    display: none;
-  }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
 
-  &.has-icon > details > summary::before {
-  content: "";
-  height: 20px;
-  width: 20px;
-  right: 10px;
-  position: absolute;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+YXJyb3doZWFkLWRvd248L3RpdGxlPgogIDxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPgogICAgPGcgaWQ9ImludmlzaWJsZV9ib3giIGRhdGEtbmFtZT0iaW52aXNpYmxlIGJveCI+CiAgICAgIDxyZWN0IHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSIvPgogICAgPC9nPgogICAgPGcgaWQ9Imljb25zX1EyIiBkYXRhLW5hbWU9Imljb25zIFEyIj4KICAgICAgPHBhdGggZD0iTTI0LDI3LjIsMTMuNCwxNi42YTEuOSwxLjksMCwwLDAtMywuMiwyLjEsMi4xLDAsMCwwLC4yLDIuN2wxMiwxMS45YTEuOSwxLjksMCwwLDAsMi44LDBsMTItMTEuOWEyLjEsMi4xLDAsMCwwLC4yLTIuNywxLjksMS45LDAsMCwwLTMtLjJaIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K");
-  background-repeat: no-repeat;
-  background-size: 20px;
-  }
+    &.has-icon > details > summary::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      right: 10px;
+      position: absolute;
+      background-image: $accordion-background-image-close;
+      background-repeat: no-repeat;
+      background-size: 20px;
+    }
 
+    &.has-icon > details[open] > summary::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      right: 10px;
+      position: absolute;
+      background-image: $accordion-background-image-open;
+      background-repeat: no-repeat;
+      background-size: 20px;
+    }
 
-  &.has-icon > details[open] > summary::before {
-  content: "";
-  height: 20px;
-  width: 20px;
-  right: 10px;
-  position: absolute;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+YXJyb3doZWFkLXVwPC90aXRsZT4KICA8ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj4KICAgIDxnIGlkPSJpbnZpc2libGVfYm94IiBkYXRhLW5hbWU9ImludmlzaWJsZSBib3giPgogICAgICA8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJpY29uc19RMiIgZGF0YS1uYW1lPSJpY29ucyBRMiI+CiAgICAgIDxwYXRoIGQ9Ik0yNCwyMC44LDEzLjQsMzEuNGExLjksMS45LDAsMCwxLTMtLjIsMi4xLDIuMSwwLDAsMSwuMi0yLjdsMTItMTEuOWExLjksMS45LDAsMCwxLDIuOCwwbDEyLDExLjlhMi4xLDIuMSwwLDAsMSwuMiwyLjcsMS45LDEuOSwwLDAsMS0zLC4yWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==");
-  background-repeat: no-repeat;
-  background-size: 20px; 
-  }
+    details[open] > summary {
+      border-bottom: 1px solid #e8e8e8;
+    }
 
-  details[open] > summary {
-    border-bottom: 1px solid #e8e8e8;
-}
+    summary {
+      background: $accordion-summary-background;
+      position: relative;
+      font-family: Helvetica-Bold;
+      font-size: 14px;
+      color: $accordion-summary-color;
+      line-height: 18px;
+      height: auto;
+      padding: 15px 15px;
+      cursor: pointer;
+      transition: 0.3s;
 
-  summary {
-    background: $accordion-summary-background;
-    position: relative;
-    font-family: Helvetica-Bold;
-    font-size: 14px;
-    color: $accordion-summary-color;
-    line-height: 18px;
-    height: auto;
-    padding: 15px 15px;
-    cursor: pointer;
+      &:hover {
+        background: #ffffff;
+      }
+    }
 
-    &:hover {
-      background: #ffffff;
+    .content {
+      padding: 15px 15px;
+      background: $accordion-content-background;
     }
   }
-
-  .content {
-    padding: 15px 15px;
-    background:$accordion-content-background ;
-  }
 }
-}
-
-

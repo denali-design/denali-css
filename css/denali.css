@@ -12388,13 +12388,13 @@ hr {
 }
 
 .accordion {
-  width: 800px;
-  border: 1px solid #e8e8e8;
+  width: 100%;
+  border: 1px solid #E8E8E8;
   border-radius: 4px;
 }
 .accordion details > summary {
   list-style-type: none;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #E8E8E8;
 }
 .accordion details > summary::-webkit-details-marker {
   display: none;
@@ -12432,6 +12432,7 @@ hr {
   height: auto;
   padding: 15px 15px;
   cursor: pointer;
+  transition: 0.3s;
 }
 .accordion summary:hover {
   background: #ffffff;
