@@ -6,6 +6,7 @@
 @import "../resets/denali-reset.scss";
 
 // COMPONENT IMPORTS
+@import "../components/accordion.scss";
 @import "../components/alerts";
 @import "../components/box";
 @import "../components/breadcrumb";
@@ -62,6 +63,7 @@
         @include toggle-theme;
         @include tooltip-theme;
         @include typography-theme;
+        @include accordion-theme;
         
     }
 }

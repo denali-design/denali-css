@@ -23,10 +23,10 @@ export default {
   
 
 
-  export const Playground = ({isOpen, hasIcon}) => {
+  export const Playground = ({isOpen, hasIcon, isInverse}) => {
     
     return (
-      `<div class="accordion ${hasIcon ? 'has-icon' : ''}">
+      `<div class="accordion ${hasIcon ? 'has-icon' : ''} ${isInverse ? 'is-inverse' : ''}">
       <details ${isOpen ? 'open' : ''}  >
        <summary>
         Title</summary>
@@ -59,6 +59,10 @@ export default {
     },
     hasIcon: {
       defaultValue : true,
+      control: 'boolean',
+    },
+    isInverse: {
+      defaultValue: false,
       control: 'boolean',
     }
   };

@@ -5,6 +5,7 @@
 @import "components/all";
 
 // Include Default Style
+@include accordion-default;
 @include alerts-default;
 @include box-default;
 @include breadcrumb-default;
