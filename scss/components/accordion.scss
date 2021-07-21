@@ -1,0 +1,153 @@
+@charset "utf-8";
+// Copyright 2019, Oath Inc.
+// Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
+
+@import "../maps/color-maps.scss";
+@import "../utilities/global-variables.scss";
+
+$accordion-border-radius: $border-radius-sm !default;
+$accordion-summary-background: map-get($denali-grey-colors, "200") !default;
+$accordion-summary-color: map-get($denali-grey-colors, "800") !default;
+$accordion-content-background: map-get($denali-grey-colors, "100") !default;
+$accordion-border: 1px solid map-get($denali-grey-colors, "400") !default;
+$accordion-background-image-close: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+YXJyb3doZWFkLWRvd248L3RpdGxlPgogIDxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPgogICAgPGcgaWQ9ImludmlzaWJsZV9ib3giIGRhdGEtbmFtZT0iaW52aXNpYmxlIGJveCI+CiAgICAgIDxyZWN0IHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSIvPgogICAgPC9nPgogICAgPGcgaWQ9Imljb25zX1EyIiBkYXRhLW5hbWU9Imljb25zIFEyIj4KICAgICAgPHBhdGggZD0iTTI0LDI3LjIsMTMuNCwxNi42YTEuOSwxLjksMCwwLDAtMywuMiwyLjEsMi4xLDAsMCwwLC4yLDIuN2wxMiwxMS45YTEuOSwxLjksMCwwLDAsMi44LDBsMTItMTEuOWEyLjEsMi4xLDAsMCwwLC4yLTIuNywxLjksMS45LDAsMCwwLTMtLjJaIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K") !default;
+$accordion-background-image-open: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+YXJyb3doZWFkLXVwPC90aXRsZT4KICA8ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj4KICAgIDxnIGlkPSJpbnZpc2libGVfYm94IiBkYXRhLW5hbWU9ImludmlzaWJsZSBib3giPgogICAgICA8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJpY29uc19RMiIgZGF0YS1uYW1lPSJpY29ucyBRMiI+CiAgICAgIDxwYXRoIGQ9Ik0yNCwyMC44LDEzLjQsMzEuNGExLjksMS45LDAsMCwxLTMtLjIsMi4xLDIuMSwwLDAsMSwuMi0yLjdsMTItMTEuOWExLjksMS45LDAsMCwxLDIuOCwwbDEyLDExLjlhMi4xLDIuMSwwLDAsMSwuMiwyLjcsMS45LDEuOSwwLDAsMS0zLC4yWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==") !default;
+$accordion-background-hover: map-get($denali-grey-colors, "100") !default;
+$accordion-width: 100% !default;
+$accordion-font-family: Helvetica-Bold !default;
+$accordion-font-size: 14px !default;
+$accordion-line-height: 18px !default;
+$accordion-summary-padding: 15px 15px !default;
+$accordion-content-padding: 15px 15px !default;
+$accordion-hover-color: map-get($denali-grey-colors, "100") !default;
+
+//inverse
+$accordion-summary-background-inverse: #454545 !default;
+$accordion-summary-color-inverse: map-get($denali-grey-colors, "100") !default;
+$accordion-border-inverse: 1px solid map-get($denali-grey-colors, "200") !default;
+$accordion-background-hover-inverse: #d8d8d8 !default;
+$accordion-background-image-close-inverse: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+YXJyb3doZWFkLWRvd248L3RpdGxlPgogIDxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPgogICAgPGcgaWQ9ImludmlzaWJsZV9ib3giIGRhdGEtbmFtZT0iaW52aXNpYmxlIGJveCI+CiAgICAgIDxyZWN0IHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSIvPgogICAgPC9nPgogICAgPGcgaWQ9Imljb25zX1EyIiBkYXRhLW5hbWU9Imljb25zIFEyIj4KICAgICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI0LDI3LjIsMTMuNCwxNi42YTEuOSwxLjksMCwwLDAtMywuMiwyLjEsMi4xLDAsMCwwLC4yLDIuN2wxMiwxMS45YTEuOSwxLjksMCwwLDAsMi44LDBsMTItMTEuOWEyLjEsMi4xLDAsMCwwLC4yLTIuNywxLjksMS45LDAsMCwwLTMtLjJaIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K") !default;
+$accordion-background-image-open-inverse: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+YXJyb3doZWFkLXVwPC90aXRsZT4KICA8ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj4KICAgIDxnIGlkPSJpbnZpc2libGVfYm94IiBkYXRhLW5hbWU9ImludmlzaWJsZSBib3giPgogICAgICA8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJpY29uc19RMiIgZGF0YS1uYW1lPSJpY29ucyBRMiIgPgogICAgICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjQsMjAuOCwxMy40LDMxLjRhMS45LDEuOSwwLDAsMS0zLS4yLDIuMSwyLjEsMCwwLDEsLjItMi43bDEyLTExLjlhMS45LDEuOSwwLDAsMSwyLjgsMGwxMiwxMS45YTIuMSwyLjEsMCwwLDEsLjIsMi43LDEuOSwxLjksMCwwLDEtMywuMloiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=") !default;
+$accordion-content-color-inverse: map-get($denali-grey-colors, "100") !default;
+$accordion-content-background-inverse: map-get($denali-grey-colors, "800") !default;
+
+
+@mixin accordion-default {
+  .accordion {
+    // STRUCTURE
+    width: $accordion-width;
+
+    details > summary {
+      list-style-type: none;
+    }
+
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    &.has-icon > details > summary::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      right: 10px;
+      position: absolute;
+      background-image: $accordion-background-image-close;
+      background-repeat: no-repeat;
+      background-size: 20px;
+    }
+
+    &.has-icon > details[open] > summary::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      right: 10px;
+      position: absolute;
+      background-image: $accordion-background-image-open;
+      background-repeat: no-repeat;
+      background-size: 20px;
+    }
+
+    summary {
+      background: $accordion-summary-background;
+      position: relative;
+      font-family: $accordion-font-family;
+      font-size: $accordion-font-size;
+      color: $accordion-summary-color;
+      line-height: $accordion-line-height;
+      height: auto;
+      padding: $accordion-summary-padding;
+      cursor: pointer;
+      transition: 0.3s;
+      border: $accordion-border;
+
+      &:hover {
+        background: $accordion-hover-color;
+      }
+    }
+
+    .content {
+      padding: $accordion-content-padding;
+      background: $accordion-content-background;
+      border: $accordion-border;
+      border-top: none;
+    }
+
+    &.is-inverse {
+      summary:hover {
+        background: #727272;
+        color: #d8d8d8;
+      }
+
+      summary {
+        background: $accordion-summary-background-inverse;
+        color: $accordion-summary-color-inverse;
+        border: $accordion-border-inverse;
+      }
+
+      .content {
+        background: $accordion-content-background-inverse;
+        color: $accordion-content-color-inverse;
+        border: $accordion-border-inverse;
+      }
+
+      &.has-icon > details > summary::before {
+        background-image: $accordion-background-image-close-inverse;
+      }
+
+      &.has-icon > details[open] > summary::before {
+        background-image: $accordion-background-image-open-inverse;
+      }
+    }
+  }
+}
+
+@mixin accordion-theme {
+  .accordion {
+    // STRUCTURE
+    width: $accordion-width;
+
+    summary {
+      background: $accordion-summary-background;
+      font-family: $accordion-font-family;
+      font-size: $accordion-font-size;
+      color: $accordion-summary-color;
+      line-height: $accordion-line-height;
+      height: auto;
+      padding: $accordion-summary-padding;
+      cursor: pointer;
+      transition: 0.3s;
+      border: $accordion-border;
+
+      &:hover {
+        background: $accordion-hover-color;
+      }
+    }
+
+    .content {
+      padding: $accordion-content-padding;
+      background: $accordion-content-background;
+      border: $accordion-border;
+      border-top: none;
+    }
+  }
+}
