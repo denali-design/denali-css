@@ -24,18 +24,21 @@ $drawer-inverse-color: map-get($denali-grey-colors, "100") !default;
     border: $drawer-border;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
     border-radius: $drawer-border-radius;
+    overflow: scroll;
     position: absolute;
 
     &.is-left {
       width: $drawer-left-width;
-      height: 100vh;
+      top: 0;
+      bottom: 0;
       box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.35);
     }
 
     &.is-right {
       width: $drawer-right-width;
-      height: 100vh;
       right: 0;
+      top:0;
+      bottom:0;
       box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.35);
     }
 

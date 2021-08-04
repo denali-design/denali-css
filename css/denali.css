@@ -12913,17 +12913,20 @@ hr {
   border: 2px solid #E8E8E8;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
   border-radius: 4px;
+  overflow: scroll;
   position: absolute;
 }
 .drawer.is-left {
   width: 300px;
-  height: 100vh;
+  top: 0;
+  bottom: 0;
   box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.35);
 }
 .drawer.is-right {
   width: 300px;
-  height: 100vh;
   right: 0;
+  top: 0;
+  bottom: 0;
   box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.35);
 }
 .drawer.is-top {
