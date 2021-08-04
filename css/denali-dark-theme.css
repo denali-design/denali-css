@@ -279,6 +279,23 @@ html {
   border-top-right-radius: 4px !important;
   border-bottom-right-radius: 4px !important;
 }
+.denali-dark-theme .drawer {
+  background: #FFFFFF;
+  border: 2px solid #E8E8E8;
+  border-radius: 4px;
+}
+.denali-dark-theme .drawer.is-left {
+  width: 300px;
+}
+.denali-dark-theme .drawer.is-right {
+  width: 300px;
+}
+.denali-dark-theme .drawer.is-top {
+  height: 300px;
+}
+.denali-dark-theme .drawer.is-bottom {
+  height: 300px;
+}
 .denali-dark-theme .d-icon {
   font-size: 2.4rem;
 }

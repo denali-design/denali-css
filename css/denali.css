@@ -12909,12 +12909,33 @@ hr {
 }
 
 .drawer {
-  background: #ffffff;
-  border: 2px solid #e8e8e8;
+  background: #FFFFFF;
+  border: 2px solid #E8E8E8;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
   border-radius: 4px;
+  position: absolute;
+}
+.drawer.is-left {
+  width: 300px;
   height: 100vh;
-  position: relative;
+  box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.35);
+}
+.drawer.is-right {
+  width: 300px;
+  height: 100vh;
+  right: 0;
+  box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.35);
+}
+.drawer.is-top {
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.35);
+}
+.drawer.is-bottom {
+  width: 100%;
+  height: 300px;
+  bottom: 0;
+  box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.35);
 }
 .drawer .close {
   color: #303030;
@@ -12938,16 +12959,6 @@ hr {
   font-family: Helvetica-Bold;
   font-size: 14px;
 }
-.drawer .drawer-header.has-icon {
-  content: "";
-  height: 20px;
-  width: 20px;
-  right: 10px;
-  position: absolute;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+Y2xvc2U8L3RpdGxlPgogIDxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPgogICAgPGcgaWQ9ImludmlzaWJsZV9ib3giIGRhdGEtbmFtZT0iaW52aXNpYmxlIGJveCI+CiAgICAgIDxyZWN0IHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSIvPgogICAgPC9nPgogICAgPGcgaWQ9Imljb25zX1EyIiBkYXRhLW5hbWU9Imljb25zIFEyIj4KICAgICAgPHBhdGggZD0iTTI2LjgsMjQsMzcuNCwxMy41YTIuMSwyLjEsMCwwLDAsLjItMi43LDEuOSwxLjksMCwwLDAtMy0uMkwyNCwyMS4yLDEzLjQsMTAuNmExLjksMS45LDAsMCwwLTMsLjIsMi4xLDIuMSwwLDAsMCwuMiwyLjdMMjEuMiwyNCwxMC42LDM0LjVhMi4xLDIuMSwwLDAsMC0uMiwyLjcsMS45LDEuOSwwLDAsMCwzLC4yTDI0LDI2LjgsMzQuNiwzNy40YTEuOSwxLjksMCwwLDAsMy0uMiwyLjEsMi4xLDAsMCwwLS4yLTIuN1oiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=");
-  background-repeat: no-repeat;
-  background-size: 20px;
-}
 .drawer .drawer-footer {
   position: absolute;
   bottom: 0%;
@@ -12962,6 +12973,31 @@ hr {
   width: inherit;
   padding: 20px;
   font-size: 14px;
+}
+.drawer.is-inverse {
+  background: #303030;
+  color: #FFFFFF;
+  border: none;
+}
+.drawer.is-inverse .close {
+  color: #ffffff;
+  opacity: 0.6;
+}
+.drawer.is-inverse .close:hover {
+  color: #ffffff;
+  opacity: 0.8;
+}
+.drawer.is-inverse.is-left {
+  box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.1);
+}
+.drawer.is-inverse.is-right {
+  box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.1);
+}
+.drawer.is-inverse.is-top {
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+}
+.drawer.is-inverse.is-bottom {
+  box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.1);
 }
 
 .d-icon {

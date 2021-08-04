@@ -13,6 +13,7 @@
 @import "../components/button";
 @import "../components/checkbox";
 @import "../components/chips";
+@import "../components/drawer";
 @import "../components/icons";
 @import "../components/inputs";
 @import "../components/links";
@@ -33,37 +34,36 @@
 @import "../components/typography";
 
 @mixin generate-theme($themeName) {
-    .#{$themeName} {
+  .#{$themeName} {
+    // RESETS
+    @include reset-theme;
 
-        // RESETS
-        @include reset-theme;
-
-        // COMPONENTS
-        @include alerts-theme;
-        @include box-theme;
-        @include breadcrumb-theme;
-        @include button-theme;
-        @include checkbox-theme;
-        @include chips-theme;
-        @include icons-theme;
-        @include inputs-theme;
-        @include links-theme;
-        @include loader-theme;
-        @include menus-theme;
-        @include modals-theme;
-        @include navbar-theme;
-        @include progress-theme;
-        @include radio-theme;
-        @include selects-theme;
-        @include switch-theme;
-        @include table-theme;
-        @include tabs-theme;
-        @include tags-theme;
-        @include titles-theme;
-        @include toggle-theme;
-        @include tooltip-theme;
-        @include typography-theme;
-        @include accordion-theme;
-        
-    }
+    // COMPONENTS
+    @include alerts-theme;
+    @include box-theme;
+    @include breadcrumb-theme;
+    @include button-theme;
+    @include checkbox-theme;
+    @include chips-theme;
+    @include drawer-theme;
+    @include icons-theme;
+    @include inputs-theme;
+    @include links-theme;
+    @include loader-theme;
+    @include menus-theme;
+    @include modals-theme;
+    @include navbar-theme;
+    @include progress-theme;
+    @include radio-theme;
+    @include selects-theme;
+    @include switch-theme;
+    @include table-theme;
+    @include tabs-theme;
+    @include tags-theme;
+    @include titles-theme;
+    @include toggle-theme;
+    @include tooltip-theme;
+    @include typography-theme;
+    @include accordion-theme;
+  }
 }

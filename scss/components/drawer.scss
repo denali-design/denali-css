@@ -5,20 +5,55 @@
 @import "../maps/color-maps.scss";
 @import "../utilities/global-variables.scss";
 
+$drawer-background: map-get($denali-grey-colors, "100") !default;
+$drawer-border: 2px solid map-get($denali-grey-colors, "400") !default;
+$drawer-border-radius: 4px !default;
+$drawer-left-width: 300px !default;
+$drawer-top-height: 300px !default;
+$drawer-right-width: 300px !default;
+$drawer-bottom-height: 300px !default;
+$drawer-close-icon-color: map-get($denali-grey-colors, "800") !default;
+
+//inverse
+$drawer-inverse-background: map-get($denali-grey-colors, "800") !default;
+$drawer-inverse-color: map-get($denali-grey-colors, "100") !default;
+
 @mixin drawer-default {
   .drawer {
-    background: #ffffff;
-    border: 2px solid #e8e8e8;
+    background: $drawer-background;
+    border: $drawer-border;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
-    border-radius: 4px;
-    height: 100vh;
-    position: relative; 
-    // width
+    border-radius: $drawer-border-radius;
+    position: absolute;
 
-    // padding: 20px;
+    &.is-left {
+      width: $drawer-left-width;
+      height: 100vh;
+      box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.35);
+    }
+
+    &.is-right {
+      width: $drawer-right-width;
+      height: 100vh;
+      right: 0;
+      box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.35);
+    }
+
+    &.is-top {
+      width: 100%;
+      height: $drawer-top-height;
+      box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.35);
+    }
+
+    &.is-bottom {
+      width: 100%;
+      height: $drawer-bottom-height;
+      bottom: 0;
+      box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.35);
+    }
 
     .close {
-      color: $modal-modal-container-close-icon-color;
+      color: $drawer-close-icon-color;
       opacity: 0.4;
       line-height: 14px;
       position: absolute;
@@ -28,7 +63,7 @@
     }
 
     .close:hover {
-      color: $modal-modal-container-close-icon-color;
+      color: $drawer-close-icon-color;
       opacity: 0.6;
     }
 
@@ -40,16 +75,6 @@
       width: inherit;
       font-family: Helvetica-Bold;
       font-size: 14px;
-      &.has-icon {
-        content: "";
-        height: 20px;
-        width: 20px;
-        right: 10px;
-        position: absolute;
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KICA8dGl0bGU+Y2xvc2U8L3RpdGxlPgogIDxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPgogICAgPGcgaWQ9ImludmlzaWJsZV9ib3giIGRhdGEtbmFtZT0iaW52aXNpYmxlIGJveCI+CiAgICAgIDxyZWN0IHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSIvPgogICAgPC9nPgogICAgPGcgaWQ9Imljb25zX1EyIiBkYXRhLW5hbWU9Imljb25zIFEyIj4KICAgICAgPHBhdGggZD0iTTI2LjgsMjQsMzcuNCwxMy41YTIuMSwyLjEsMCwwLDAsLjItMi43LDEuOSwxLjksMCwwLDAtMy0uMkwyNCwyMS4yLDEzLjQsMTAuNmExLjksMS45LDAsMCwwLTMsLjIsMi4xLDIuMSwwLDAsMCwuMiwyLjdMMjEuMiwyNCwxMC42LDM0LjVhMi4xLDIuMSwwLDAsMC0uMiwyLjcsMS45LDEuOSwwLDAsMCwzLC4yTDI0LDI2LjgsMzQuNiwzNy40YTEuOSwxLjksMCwwLDAsMy0uMiwyLjEsMi4xLDAsMCwwLS4yLTIuN1oiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=");
-        background-repeat: no-repeat;
-        background-size: 20px;
-      }
     }
 
     .drawer-footer {
@@ -67,6 +92,56 @@
       width: inherit;
       padding: 20px;
       font-size: 14px;
+    }
+
+    &.is-inverse {
+      background: $drawer-inverse-background;
+      color: $drawer-inverse-color;
+      border: none;
+      .close {
+        color: #ffffff;
+        opacity: 0.6;
+      }
+      .close:hover {
+        color: #ffffff;
+        opacity: 0.8;
+      }
+      &.is-left {
+        box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.1);
+      }
+      &.is-right {
+        box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.1);
+      }
+      &.is-top {
+        box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+      }
+      &.is-bottom {
+        box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+@mixin drawer-theme {
+  .drawer {
+    background: $drawer-background;
+    border: $drawer-border;
+    border-radius: $drawer-border-radius;
+
+    &.is-left {
+      width: $drawer-left-width;
+    }
+
+    &.is-right {
+      width: $drawer-right-width;
+    }
+
+    &.is-top {
+      height: $drawer-top-height;
+    }
+
+    &.is-bottom {
+      height: $drawer-bottom-height;
     }
   }
 }
