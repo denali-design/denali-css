@@ -12911,8 +12911,6 @@ hr {
 .drawer {
   background: #FFFFFF;
   border: 2px solid #E8E8E8;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
-  border-radius: 4px;
   overflow: scroll;
   position: absolute;
 }
@@ -12920,25 +12918,33 @@ hr {
   width: 300px;
   top: 0;
   bottom: 0;
-  box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.35);
+  left: 0;
+  border-radius: 0 4px 4px 0;
+  border-left: none;
 }
 .drawer.is-right {
   width: 300px;
   right: 0;
   top: 0;
   bottom: 0;
-  box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.35);
+  border-radius: 4px 0 0 4px;
+  border-right: none;
 }
 .drawer.is-top {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 300px;
-  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.35);
+  border-radius: 0 0 4px 4px;
+  border-top: none;
 }
 .drawer.is-bottom {
   width: 100%;
   height: 300px;
   bottom: 0;
-  box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.35);
+  left: 0;
+  border-radius: 4px 4px 0 0;
+  border-bottom: none;
 }
 .drawer .close {
   color: #303030;
@@ -12955,7 +12961,7 @@ hr {
 }
 .drawer .drawer-header {
   top: 0%;
-  border-bottom: 2px solid #e8e8e8;
+  border-bottom: 2px solid #E8E8E8;
   height: 60px;
   padding: 20px;
   width: inherit;
@@ -12968,7 +12974,7 @@ hr {
   width: inherit;
   height: 60px;
   padding: 20px;
-  border-top: 2px solid #e8e8e8;
+  border-top: 2px solid #E8E8E8;
   font-family: Helvetica-Bold;
   font-size: 14px;
 }
@@ -12983,24 +12989,18 @@ hr {
   border: none;
 }
 .drawer.is-inverse .close {
-  color: #ffffff;
+  color: #FFFFFF;
   opacity: 0.6;
 }
 .drawer.is-inverse .close:hover {
-  color: #ffffff;
+  color: #FFFFFF;
   opacity: 0.8;
 }
-.drawer.is-inverse.is-left {
-  box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.1);
+.drawer.is-inverse .drawer-header {
+  border-bottom: 2px solid #606060;
 }
-.drawer.is-inverse.is-right {
-  box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.1);
-}
-.drawer.is-inverse.is-top {
-  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
-}
-.drawer.is-inverse.is-bottom {
-  box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.1);
+.drawer.is-inverse .drawer-footer {
+  border-top: 2px solid #606060;
 }
 
 .d-icon {

@@ -7,7 +7,6 @@
 
 $drawer-background: map-get($denali-grey-colors, "100") !default;
 $drawer-border: 2px solid map-get($denali-grey-colors, "400") !default;
-$drawer-border-radius: 4px !default;
 $drawer-left-width: 300px !default;
 $drawer-top-height: 300px !default;
 $drawer-right-width: 300px !default;
@@ -22,8 +21,6 @@ $drawer-inverse-color: map-get($denali-grey-colors, "100") !default;
   .drawer {
     background: $drawer-background;
     border: $drawer-border;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
-    border-radius: $drawer-border-radius;
     overflow: scroll;
     position: absolute;
 
@@ -31,28 +28,36 @@ $drawer-inverse-color: map-get($denali-grey-colors, "100") !default;
       width: $drawer-left-width;
       top: 0;
       bottom: 0;
-      box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.35);
+      left: 0;
+      border-radius: 0 4px 4px 0;
+      border-left: none;
     }
 
     &.is-right {
       width: $drawer-right-width;
       right: 0;
-      top:0;
-      bottom:0;
-      box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.35);
+      top: 0;
+      bottom: 0;
+      border-radius: 4px 0 0 4px;
+      border-right: none;
     }
 
     &.is-top {
+      top: 0;
+      left: 0;
       width: 100%;
       height: $drawer-top-height;
-      box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.35);
+      border-radius: 0 0 4px 4px;
+      border-top: none;
     }
 
     &.is-bottom {
       width: 100%;
       height: $drawer-bottom-height;
       bottom: 0;
-      box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.35);
+      left: 0;
+      border-radius: 4px 4px 0 0;
+      border-bottom: none;
     }
 
     .close {
@@ -72,7 +77,7 @@ $drawer-inverse-color: map-get($denali-grey-colors, "100") !default;
 
     .drawer-header {
       top: 0%;
-      border-bottom: 2px solid #e8e8e8;
+      border-bottom: 2px solid map-get($denali-grey-colors, "400");
       height: 60px;
       padding: 20px;
       width: inherit;
@@ -86,7 +91,7 @@ $drawer-inverse-color: map-get($denali-grey-colors, "100") !default;
       width: inherit;
       height: 60px;
       padding: 20px;
-      border-top: 2px solid #e8e8e8;
+      border-top: 2px solid map-get($denali-grey-colors, "400");
       font-family: Helvetica-Bold;
       font-size: 14px;
     }
@@ -102,24 +107,18 @@ $drawer-inverse-color: map-get($denali-grey-colors, "100") !default;
       color: $drawer-inverse-color;
       border: none;
       .close {
-        color: #ffffff;
+        color: map-get($denali-grey-colors, "100");
         opacity: 0.6;
       }
       .close:hover {
-        color: #ffffff;
+        color: map-get($denali-grey-colors, "100");
         opacity: 0.8;
       }
-      &.is-left {
-        box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.1);
+      .drawer-header {
+        border-bottom: 2px solid map-get($denali-grey-colors, "700");
       }
-      &.is-right {
-        box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.1);
-      }
-      &.is-top {
-        box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
-      }
-      &.is-bottom {
-        box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.1);
+      .drawer-footer {
+        border-top: 2px solid map-get($denali-grey-colors, "700");
       }
     }
   }
@@ -129,7 +128,6 @@ $drawer-inverse-color: map-get($denali-grey-colors, "100") !default;
   .drawer {
     background: $drawer-background;
     border: $drawer-border;
-    border-radius: $drawer-border-radius;
 
     &.is-left {
       width: $drawer-left-width;

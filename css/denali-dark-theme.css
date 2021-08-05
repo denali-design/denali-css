@@ -282,7 +282,6 @@ html {
 .denali-dark-theme .drawer {
   background: #FFFFFF;
   border: 2px solid #E8E8E8;
-  border-radius: 4px;
 }
 .denali-dark-theme .drawer.is-left {
   width: 300px;
