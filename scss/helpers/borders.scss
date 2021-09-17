@@ -4,7 +4,7 @@
 
 
 // Border Radius
-@for $i from 1 through 10 {
+@for $i from 1 through 15 {
   .br-#{$i} {
     border-radius: 0px + $i !important;
   }
