@@ -63,7 +63,7 @@ $button-outline-focus-text-color: map-get($denali-brand-colors,"400") !default;
 $button-outline-focus-border: solid 1px map-get($denali-brand-colors,"400") !default;
 $button-outline-focus-inverse-bg-color: rgba(map-get($denali-brand-colors,"400"), .26) !default;
 $button-outline-focus-inverse-text-color: map-get($denali-grey-colors,"100") !default;
-$button-outline-focus-inverse-border: solid 1px map-get($denali-brand-colors,"400") !default;
+$button-outline-focus-inverse-border: solid 1px map-get($denali-brand-colors,"200") !default;
 $button-outline-disabled-bg-color: rgba(map-get($denali-grey-colors,"800"), .12) !default;
 $button-outline-disabled-text-color: rgba(map-get($denali-grey-colors,"800"), .5) !default;
 $button-outline-disabled-border: solid 1px rgba(map-get($denali-grey-colors,"800"), .5) !default;

@@ -10,7 +10,39 @@
 }
 
 .m-auto {
-  margin: auto;
+  margin: auto !important;
+}
+
+// Margin Left Auto
+.m-l-auto {
+  margin-left: auto !important;
+}
+
+// Margin Right Auto
+.m-r-auto{
+  margin-right: auto !important;
+}
+
+// Margin Top Auto
+.m-t-auto{
+  margin-top: auto !important;
+}
+
+// Margin Bottom Auto
+.m-b-auto{
+  margin-bottom: auto !important;
+}
+
+// Margin Horizontal Auto
+.m-x-auto{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+// Margin Vertical Auto
+.m-y-auto{
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
 
 // Margin Top
