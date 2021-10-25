@@ -218,6 +218,7 @@ $navbar-responsive-menu-bg-color: #334D71 !default;
           }
         }
 
+        &.is-active > .menu-content,
         .menu-trigger:hover+.menu-content,
         .menu-trigger:focus+.menu-content,
         .menu-content:hover {
