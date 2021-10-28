@@ -19,6 +19,41 @@
   top: 0 !important;
 }
 
+.position-relative {
+  position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-fixed {
+  position: fixed !important;
+}
+
+@for $i from 0 through 50 {
+  .top-#{$i} {
+    top: 5px * $i !important;
+  }
+}
+
+@for $i from 0 through 50 {
+  .bottom-#{$i} {
+    bottom: 5px * $i !important;
+  }
+}
+
+@for $i from 0 through 50 {
+  .right-#{$i} {
+    right: 5px * $i !important;
+  }
+}
+
+@for $i from 0 through 50 {
+  .left-#{$i} {
+    left: 5px * $i !important;
+  }
+}
 
 // Background Image
 .bg-origin-padding-box {

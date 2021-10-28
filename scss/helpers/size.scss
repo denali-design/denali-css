@@ -10,6 +10,18 @@
   }
 }
 
+@for $i from 0 through 50 {
+  .min-w-#{$i} {
+    min-width: 5px * $i !important;
+  }
+}
+
+@for $i from 0 through 50 {
+  .max-w-#{$i} {
+    max-width: 5px * $i !important;
+  }
+}
+
 .w-auto {
   min-width: auto !important;
   width: auto !important;
@@ -19,11 +31,27 @@
   width: 100% !important;
 }
 
+.w-fitcontent {
+  width: fit-content !important;
+}
+
 
 // Height
 @for $i from 0 through 50 {
   .h-#{$i} {
     height: 5px * $i !important;
+  }
+}
+
+@for $i from 0 through 50 {
+  .min-h-#{$i} {
+    min-height: 5px * $i !important;
+  }
+}
+
+@for $i from 0 through 50 {
+  .max-w-#{$i} {
+    max-width: 5px * $i !important;
   }
 }
 
