@@ -52,6 +52,7 @@ $fields-sizes-lg-height: 44px !default;
 
   .input {
     display: flex;
+    flex-wrap: wrap;
     width: $fields-sizes-default-width;
 
     &.is-full {
@@ -149,7 +150,6 @@ $fields-sizes-lg-height: 44px !default;
       font-size: 11px !important;
       font-weight: normal;
       line-height: 1.6rem;
-      position: absolute;
       margin-top: 2px;
     }
     &.is-error > .message {
