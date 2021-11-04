@@ -31,9 +31,9 @@
     "babel-loader": "^8.2.2",
     "mocha": "^7.2.0",
     "react-is": "^16.13.1",
+    "sass": "^1.42.1",
     "semantic-release": "^17.4.1"
   },
-  "dependencies": {},
   "release": {
     "repositoryUrl": "git@github.com:denali-design/denali-css.git"
   },
