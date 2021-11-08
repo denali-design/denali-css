@@ -12,13 +12,41 @@
   overflow: hidden !important;
 }
 
-
 // Position
 .sticky-top {
   position: sticky !important;
   top: 0 !important;
 }
 
+.position-relative {
+  position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-fixed {
+  position: fixed !important;
+}
+
+@for $i from 0 through 50 {
+  .top-#{$i} {
+    top: 5px * $i !important;
+  }
+
+  .bottom-#{$i} {
+    bottom: 5px * $i !important;
+  }
+
+  .right-#{$i} {
+    right: 5px * $i !important;
+  }
+  
+  .left-#{$i} {
+    left: 5px * $i !important;
+  } 
+}
 
 // Background Image
 .bg-origin-padding-box {
