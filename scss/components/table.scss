@@ -87,7 +87,7 @@ $table-bg-color: map-get($denali-grey-colors,"100") !default;
             width: 14px;
             height: 14px;
             margin-left: 4px;
-            display: inline-flex;
+            display: inline-block;
             position: relative;
             top: 2px;
           }
