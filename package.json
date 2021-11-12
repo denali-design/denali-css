@@ -14,7 +14,8 @@
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 6006 -s .storybook/static",
     "build-storybook": "build-storybook -s .storybook/static",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "prepublishOnly": "npm run sass-build"
   },
   "repository": {
     "type": "git",

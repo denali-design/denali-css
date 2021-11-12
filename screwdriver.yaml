@@ -18,7 +18,6 @@ jobs:
         steps:
             - setup-ci: git clone https://github.com/screwdriver-cd/toolbox.git /tmp/ci
             - install: npm ci
-            - build: npm run sass-build
             - docs: |
                 . /tmp/ci/git-ssh.sh
                 git remote set-url origin `git remote get-url --push origin`
