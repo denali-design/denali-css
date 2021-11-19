@@ -21,6 +21,7 @@ jobs:
             - docs: |
                 . /tmp/ci/git-ssh.sh
                 git remote set-url origin `git remote get-url --push origin`
+                npm run sass-build
                 npm run deploy-storybook
             - publish: |
                 . /tmp/ci/git-ssh.sh

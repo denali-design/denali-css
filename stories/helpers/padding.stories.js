@@ -15,6 +15,7 @@ AllSides.argTypes = {
       type: 'range',
       min: 1, 
       max: 100,
+      step:1,
     },
   },
 };
@@ -39,6 +40,7 @@ SingleSide.argTypes = {
       type: 'range',
       min: 1, 
       max: 100,
+      step:1,
     },
   },
 };
@@ -56,6 +58,7 @@ Horizontal.argTypes = {
       type: 'range',
       min: 1, 
       max: 100,
+      step:1,
     },
   },
 };
@@ -73,6 +76,7 @@ Vertical.argTypes = {
       type: 'range',
       min: 1, 
       max: 100,
+      step:1,
     },
   },
 };
