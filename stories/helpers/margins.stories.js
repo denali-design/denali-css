@@ -10,13 +10,8 @@ export const AllSides = ({ margin }) => {
 
 AllSides.argTypes = {
   margin: {
-    defaultValue: '50',
-    control: { 
-      type: 'range',
-      min: 1, 
-      max: 100,
-      step:1,
-    },
+    defaultValue: 50,
+    control: 'number',
   },
 };
 
@@ -35,13 +30,8 @@ SingleSide.argTypes = {
     }
   },
   margin: {
-    defaultValue: '50',
-    control: { 
-      type: 'range',
-      min: 1, 
-      max: 100,
-      step:1,
-    },
+    defaultValue: 50,
+    control: 'number',
   },
 };
 
@@ -53,13 +43,8 @@ export const Horizontal = ({ margin }) => {
 
 Horizontal.argTypes = {
   margin: {
-    defaultValue: '50',
-    control: { 
-      type: 'range',
-      min: 1, 
-      max: 100,
-      step:1,
-    },
+    defaultValue: 50,
+    control: 'number',
   },
 };
 
@@ -71,12 +56,7 @@ export const Vertical = ({ margin }) => {
 
 Vertical.argTypes = {
   margin: {
-    defaultValue: '50',
-    control: { 
-      type: 'range',
-      min: 1, 
-      max: 100,
-      step:1,
-    },
+    defaultValue: 50,
+    control: 'number',
   },
 };

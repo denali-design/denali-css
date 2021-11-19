@@ -10,13 +10,8 @@ export const AllSides = ({ padding }) => {
 
 AllSides.argTypes = {
   padding: {
-    defaultValue: '50',
-    control: { 
-      type: 'range',
-      min: 1, 
-      max: 100,
-      step:1,
-    },
+    defaultValue: 50,
+    control: 'number',
   },
 };
 
@@ -34,14 +29,9 @@ SingleSide.argTypes = {
       options: ['t','b','l','r']
     }
   },
-  padding: {
-    defaultValue: '50',
-    control: { 
-      type: 'range',
-      min: 1, 
-      max: 100,
-      step:1,
-    },
+  padding:{
+    defaultValue: 50,
+    control: 'number',
   },
 };
 
@@ -53,13 +43,8 @@ export const Horizontal = ({ padding }) => {
 
 Horizontal.argTypes = {
   padding: {
-    defaultValue: '50',
-    control: { 
-      type: 'range',
-      min: 1, 
-      max: 100,
-      step:1,
-    },
+    defaultValue: 50,
+    control: 'number',
   },
 };
 
@@ -71,12 +56,7 @@ export const Vertical = ({ padding }) => {
 
 Vertical.argTypes = {
   padding: {
-    defaultValue: '50',
-    control: { 
-      type: 'range',
-      min: 1, 
-      max: 100,
-      step:1,
-    },
+    defaultValue: 50,
+    control: 'number',
   },
 };
