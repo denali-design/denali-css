@@ -20,7 +20,7 @@
 
 ## Background
 
-The Denali System Language was created by the Platforms and Technology Design team at Verizon Media as a scalable method for designing and developing visually consistent and functional internal products. Denali’s CSS framework allows developers to implement the Denali System Language in their projects. The framework is lightweight and flexible. It supports theming through custom variables which means the visual appearance of Denali’s components can be easily adapted to fit the visual style of any brand. Additionally, components are framework independent allowing you to take what you need and leave the rest.
+The Denali System Language was created by the Platforms and Technology Design team at Yahoo as a scalable method for designing and developing visually consistent and functional internal products. Denali’s CSS framework allows developers to implement the Denali System Language in their projects. The framework is lightweight and flexible. It supports theming through custom variables which means the visual appearance of Denali’s components can be easily adapted to fit the visual style of any brand. Additionally, components are framework independent allowing you to take what you need and leave the rest.
 
 You can view the Denali’s entire component library on [www.denali.design](https://denali.design/).
 
@@ -105,9 +105,11 @@ To start contributing to Denali, have a look at our guidelines, as well as point
 
 ## Maintainers
 
-- **Chas Turansky** cturansky@verizonmedia.com
-- **Jon Kilroy** kilroy@verizonmedia.com
-- **Anusha Ganti** annapoorna.ganti@verizonmedia.com
+- **Chas Turansky** cturansky@yahooinc.com
+- **Jon Kilroy** kilroy@yahooinc.com
+- **Anusha Ganti** annapoorna.ganti@yahooinc.com
+- **Trevor Greenleaf** trevor.greenleaf@yahooinc.com
+
 
 
 ## License
