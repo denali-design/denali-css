@@ -30,7 +30,7 @@
     "@storybook/storybook-deployer": "^2.8.7",
     "@whitespace/storybook-addon-html": "^4.2.0",
     "babel-loader": "^8.2.2",
-    "mocha": "^7.2.0",
+    "mocha": "^10.2.0",
     "react-is": "^16.13.1",
     "sass": "^1.42.1",
     "semantic-release": "^19.0.3"
