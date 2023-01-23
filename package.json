@@ -7,21 +7,29 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "npm run sass-watch & npm run storybook",
-    "sass-build": "sass --style=compressed --no-source-map scss/denali.scss:css/denali.css scss/denali-components.scss:css/denali-components.css scss/denali-helpers.scss:css/denali-helpers.css scss/denali-layouts.scss:css/denali-layouts.css scss/denali-dark-theme.scss:css/denali-dark-theme.css",
-    "sass-watch": "sass --watch --no-source-map scss/denali.scss:css/denali.css scss/denali-components.scss:css/denali-components.css scss/denali-helpers.scss:css/denali-helpers.css scss/denali-layouts.scss:css/denali-layouts.css scss/denali-dark-theme.scss:css/denali-dark-theme.css",
+    "serve": "concurrently \"postcss css/app.css -o src/dist/app.min.css --watch\"  \"live-server ./src\"",
+    "development": "postcss css/app.css -o src/dist/app.min.css",
+    "production": "postcss css/app.css -o src/dist/app.min.css",    
+    "start": "npm run serve & npm run storybook",
     "test": "mocha",
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 6006 -s .storybook/static",
     "build-storybook": "build-storybook -s .storybook/static",
     "deploy-storybook": "storybook-to-ghpages",
-    "prepublishOnly": "npm run sass-build"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:denali-design/denali-css.git"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.8",
+    "autoprefixer": "^10.4.13",
+    "concurrently": "^7.5.0",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^15.0.0",
+    "tailwindcss": "^3.2.1",
     "@babel/core": "^7.13.8",
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
@@ -32,7 +40,6 @@
     "babel-loader": "^8.2.2",
     "mocha": "^7.2.0",
     "react-is": "^16.13.1",
-    "sass": "^1.42.1",
     "semantic-release": "^19.0.3"
   },
   "release": {
@@ -43,7 +50,7 @@
   },
   "storybook-deployer": {
     "gitUsername": "denali-bot",
-    "gitEmail": "denali@verizonmedia.com",
+    "gitEmail": "denali@yahooinc.com",
     "commitMessage": "Deploy Storybook to GitHub Pages"
   }
 }
