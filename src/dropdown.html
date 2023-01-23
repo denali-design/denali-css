@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dropdown</title>
+        <link rel="stylesheet" href="dist/app.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/denali-icon-font/dist/denali-icon-font.css">
+
+    </head>
+    <body class="p-8 space-y-3 bg-gray-300">
+        <a href="/">Home</a>
+        <h1 class="dn-h1 text-center pb-[50px]">Dropdown</h1>
+
+        <section class="w-max space-x-10 ml-auto mr-auto">
+            <div class="dn-dropdown">
+                <a href="#" class="dn-dropdown--trigger" onclick="toggleDropdown(event)" data-dropdown="dropdown">
+                    <span> Click to open dropdown </span>
+                    <i class="d-icon d-arrowhead-down"></i>
+                </a>
+                <div class="dn-dropdown--content" id="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)" class="dn-dropdown--item">Dropdown item</a>
+                    <a href="#" onclick="toggleDropdown(event)" class="dn-dropdown--item dn-dropdown--item-active">Dropdown item</a>
+                    <a href="#" onclick="toggleDropdown(event)" class="dn-dropdown--item">Dropdown item</a>
+                    <a href="#" onclick="toggleDropdown(event)" class="dn-dropdown--item">Dropdown item</a>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            const toggleDropdown =(e)=> {
+                document.getElementById('dropdown').classList.toggle('open');
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts</title>
+    <link rel="stylesheet" href="dist/app.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/denali-icon-font/dist/denali-icon-font.css">
+</head>
+<body class="p-8 space-y-3">
+<a href="/">Home</a>
+<h1 class="dn-h1 text-center">Alerts</h1>
+
+<section>
+    <div class="columns-1 lg:columns-2">
+        <!-- Notification -->
+        <div class="pt-9 pl-9 space-y-6">
+            <!-- Default alert-->
+            <div class="dn-alerts">
+                <div class="flex items-center">
+                    <i class="d-icon d-information-circle-solid mr-3.5 text-primary-500"></i>
+                    <span class="dn-alerts--title">This is an alert.</span>
+                    <i class="d-icon d-close cursor-pointer text-gray-700 ml-auto"></i>
+                </div>
+            </div>
+            <!-- Error alert-->
+            <div class="dn-alerts dn-alerts--danger">
+                <div class="flex items-center">
+                    <i class="d-icon d-stop-warning-solid mr-3.5 text-alerts-danger"></i>
+                    <span class="dn-alerts--title">This is an alert.</span>
+                    <i class="d-icon d-close cursor-pointer text-gray-700 ml-auto"></i>
+                </div>
+            </div>
+            <!-- Success alert-->
+            <div class="dn-alerts dn-alerts--success">
+                <div class="flex items-center">
+                    <i class="d-icon d-check-circle-solid mr-3.5 text-alerts-success"></i>
+                    <span class="dn-alerts--title">This is an alert.</span>
+                    <i class="d-icon d-close cursor-pointer text-gray-700 ml-auto"></i>
+                </div>
+            </div>
+            <!-- Warning alert-->
+            <div class="dn-alerts dn-alerts--warning">
+                <div class="flex items-center">
+                    <i class="d-icon d-warning-solid mr-3.5 text-alerts-warning"></i>
+                    <span class="dn-alerts--title">This is an alert.</span>
+                    <i class="d-icon d-close cursor-pointer text-gray-700 ml-auto"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-9 pl-9 space-y-6">
+            <!-- Default alert-->
+            <div class="dn-alerts">
+                <div class="flex items-center">
+                    <i class="d-icon d-information-circle-solid mr-3.5 text-primary-500"></i>
+                    <span class="dn-alerts--title">This is an alert.</span>
+                    <i class="d-icon d-close cursor-pointer text-gray-700 ml-auto"></i>
+                </div>
+                <p class="dn-alerts--description pl-10">This domain can’t be deleted because there is another product using this domain.</p>
+            </div>
+            <!-- Error alert-->
+            <div class="dn-alerts dn-alerts--danger">
+                <div class="flex items-center">
+                    <i class="d-icon d-stop-warning-solid mr-3.5 text-alerts-danger"></i>
+                    <span class="dn-alerts--title">This is an alert.</span>
+                    <i class="d-icon d-close cursor-pointer text-gray-700 ml-auto"></i>
+                </div>
+                <p class="dn-alerts--description pl-10">This domain can’t be deleted because there is another product using this domain.</p>
+            </div>
+            <!-- Success alert-->
+            <div class="dn-alerts dn-alerts--success">
+                <div class="flex items-center">
+                    <i class="d-icon d-check-circle-solid mr-3.5 text-alerts-success"></i>
+                    <span class="dn-alerts--title">This is an alert.</span>
+                    <i class="d-icon d-close cursor-pointer text-gray-700 ml-auto"></i>
+                </div>
+                <p class="dn-alerts--description pl-10">This domain can’t be deleted because there is another product using this domain.</p>
+            </div>
+            <!-- Warning alert-->
+            <div class="dn-alerts dn-alerts--warning">
+                <div class="flex items-center">
+                    <i class="d-icon d-warning-solid mr-3.5 text-alerts-warning"></i>
+                    <span class="dn-alerts--title">This is an alert.</span>
+                    <i class="d-icon d-close cursor-pointer text-gray-700 ml-auto"></i>
+                </div>
+                <p class="dn-alerts--description pl-10">This domain can’t be deleted because there is another product using this domain.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Inline alerts -->
+    <div class="mt-10 space-y-6">
+        <div class="dn-alerts--inline">
+            <span class="dn-alerts--title mr-2.5">The Title</span>
+            <p>This provided the context to the alert.</p>
+        </div>
+        <div class="dn-alerts--inline dn-alerts--inline-danger">
+            <span class="dn-alerts--title mr-2.5">The Title</span>
+            <p>This provided the context to the alert.</p>
+        </div>
+        <div class="dn-alerts--inline dn-alerts--inline-success">
+            <span class="dn-alerts--title mr-2.5">The Title</span>
+            <p>This provided the context to the alert.</p>
+        </div>
+        <div class="dn-alerts--inline dn-alerts--inline-warning">
+            <span class="dn-alerts--title mr-2.5">The Title</span>
+            <p>This provided the context to the alert.</p>
+        </div>
+    </div>
+    <!-- Block alerts -->
+    <div class="columns-1 lg:columns-2">
+        <!-- Notification -->
+        <div class="pt-9 pl-9 space-y-6">
+            <!-- Default alert-->
+            <div class="dn-alerts dn-alerts--block">
+                <div class="flex items-center">
+                    <i class="d-icon d-information-circle-solid mr-3.5 text-primary-500"></i>
+                    <span class="dn-alerts--title">This is a block level alert</span>
+                </div>
+            </div>
+            <!-- Error alert-->
+            <div class="dn-alerts dn-alerts--block dn-alerts--danger">
+                <div class="flex items-center">
+                    <i class="d-icon d-stop-warning-solid mr-3.5 text-alerts-danger"></i>
+                    <span class="dn-alerts--title">This is a block level alert</span>
+                </div>
+            </div>
+            <!-- Success alert-->
+            <div class="dn-alerts dn-alerts--block dn-alerts--success">
+                <div class="flex items-center">
+                    <i class="d-icon d-check-circle-solid mr-3.5 text-alerts-success"></i>
+                    <span class="dn-alerts--title">This is a block level alert</span>
+                </div>
+            </div>
+            <!-- Warning alert-->
+            <div class="dn-alerts dn-alerts--block dn-alerts--warning">
+                <div class="flex items-center">
+                    <i class="d-icon d-warning-solid mr-3.5 text-alerts-warning"></i>
+                    <span class="dn-alerts--title">This is a block level alert</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-9 pl-9 space-y-6">
+            <!-- Default alert-->
+            <div class="dn-alerts dn-alerts--block">
+                <div class="flex items-center">
+                    <i class="d-icon d-information-circle-solid mr-3.5 text-primary-500"></i>
+                    <span class="dn-alerts--title">This is a block level alert</span>
+                </div>
+                <p class="dn-alerts--description pl-10">This domain can’t be deleted because there is another product using this domain.</p>
+            </div>
+            <!-- Error alert-->
+            <div class="dn-alerts dn-alerts--block dn-alerts--danger">
+                <div class="flex items-center">
+                    <i class="d-icon d-stop-warning-solid mr-3.5 text-alerts-danger"></i>
+                    <span class="dn-alerts--title">This is a block level alert</span>
+                </div>
+                <p class="dn-alerts--description pl-10">This domain can’t be deleted because there is another product using this domain.</p>
+            </div>
+            <!-- Success alert-->
+            <div class="dn-alerts dn-alerts--block dn-alerts--success">
+                <div class="flex items-center">
+                    <i class="d-icon d-check-circle-solid mr-3.5 text-alerts-success"></i>
+                    <span class="dn-alerts--title">This is a block level alert</span>
+                </div>
+                <p class="dn-alerts--description pl-10">This domain can’t be deleted because there is another product using this domain.</p>
+            </div>
+            <!-- Warning alert-->
+            <div class="dn-alerts dn-alerts--block dn-alerts--warning">
+                <div class="flex items-center">
+                    <i class="d-icon d-warning-solid mr-3.5 text-alerts-warning"></i>
+                    <span class="dn-alerts--title">This is a block level alert</span>
+                </div>
+                <p class="dn-alerts--description pl-10">This domain can’t be deleted because there is another product using this domain.</p>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

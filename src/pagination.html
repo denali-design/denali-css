@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <link rel="stylesheet" href="dist/app.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/denali-icon-font/dist/denali-icon-font.css">
+</head>
+<body class="p-8 space-y-3">
+    <a href="/">Home</a>
+    <h1 class="dn-h1 text-center">Pagination</h1>
+
+    <section class="pt-10">
+        <div class="container">
+            <div class="bg-gray-300 p-3 mt-[50px]"></div> <!-- <<<<<<<<<<< just spacer, must be deleted -->
+
+            <div class="h3 font-bold mb-10 mt-[100px]">Clean, streamlined</div>
+            <!-- Clean, streamlined pagination -->
+            <div class="dn-pagination dn-pagination--streamlined">
+                <a href="#" class="dn-pagination--title">
+                    <span class="d-icon d-arrow-left is-small"></span>
+                    Previous
+                </a>
+                <nav class="dn-pagination--nav" aria-label="Pagination">
+                    <a href="#" class="dn-pagination--nav-item">1</a>
+                    <a href="#" class="dn-pagination--nav-item dn-pagination--nav-active">2</a>
+                    <a href="#" class="dn-pagination--nav-item">3</a>
+                    <span class="dn-pagination--nav-item">...</span>
+                    <a href="#" class="dn-pagination--nav-item">8</a>
+                    <a href="#" class="dn-pagination--nav-item">9</a>
+                    <a href="#" class="dn-pagination--nav-item">10</a>
+                </nav>
+                <a href="#" class="dn-pagination--title">
+                    Next
+                    <span class="d-icon d-arrow-right is-small"></span>
+                </a>
+            </div>
+
+            <div class="bg-gray-300 p-3 mt-[50px]"></div> <!-- <<<<<<<<<<< just spacer, must be deleted -->
+
+            <div class="h3 font-bold mb-10 mt-[100px]">Words plus prev and next</div>
+            <!-- Words plus prev and next pagination -->
+            <div class="dn-pagination">
+                <div class="dn-pagination--title">
+                    Showing <span>10</span> of <span>44</span> results
+                </div>
+                <div class="dn-pagination--buttons">
+                    <button class="dn-btn dn-btn--outlined">Previous</button>
+                    <button class="dn-btn dn-btn--outlined">Next</button>
+                </div>
+            </div>
+
+            <div class="bg-gray-300 p-3 mt-[50px]"></div> <!-- <<<<<<<<<<< just spacer, must be deleted -->
+
+            <div class="h3 font-bold mb-10 mt-[100px]">Words plus pager</div>
+            <!-- Words plus pager pagination -->
+            <div class="dn-pagination">
+                <div class="dn-pagination--title">
+                    Showing <span>10</span> of <span>44</span> results
+                </div>
+                <nav class="dn-pagination--nav" aria-label="Pagination">
+                    <a href="#" class="dn-pagination--nav-item">
+                        <i class="d-icon d-arrowhead-left is-small"></i>
+                    </a>
+                    <a href="#" class="dn-pagination--nav-item">1</a>
+                    <a href="#" class="dn-pagination--nav-item dn-pagination--nav-active">2</a>
+                    <a href="#" class="dn-pagination--nav-item">3</a>
+                    <a href="#" class="dn-pagination--nav-item">4</a>
+                    <a href="#" class="dn-pagination--nav-item">5</a>
+                    <a href="#" class="dn-pagination--nav-item">
+                        <i class="d-icon d-arrowhead-right is-small"></i>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="bg-gray-300 p-3 mt-[50px]"></div> <!-- <<<<<<<<<<< just spacer, must be deleted -->
+
+            <div class="h3 font-bold mb-10 mt-[100px]">Just pager</div>
+            <!-- Just pager pagination -->
+            <div class="dn-pagination">
+                <span></span>
+                <nav class="dn-pagination--nav" aria-label="Pagination">
+                    <a href="#" class="dn-pagination--nav-item">
+                        <i class="d-icon d-arrowhead-left is-small"></i>
+                    </a>
+                    <a href="#" class="dn-pagination--nav-item">1</a>
+                    <a href="#" class="dn-pagination--nav-item dn-pagination--nav-active">2</a>
+                    <a href="#" class="dn-pagination--nav-item">3</a>
+                    <a href="#" class="dn-pagination--nav-item">4</a>
+                    <a href="#" class="dn-pagination--nav-item">5</a>
+                    <a href="#" class="dn-pagination--nav-item">
+                        <i class="d-icon d-arrowhead-right is-small"></i>
+                    </a>
+                </nav>
+                <span></span>
+            </div>
+
+            <div class="bg-gray-300 p-3 mt-[50px]"></div> <!-- <<<<<<<<<<< just spacer, must be deleted -->
+
+            <div class="h3 font-bold mb-10 mt-[100px]">Pager plus ellipse</div>
+            <!-- Pager plus ellipse pagination -->
+            <div class="dn-pagination">
+                <span></span>
+                <nav class="dn-pagination--nav" aria-label="Pagination">
+                    <a href="#" class="dn-pagination--nav-item">
+                        <i class="d-icon d-arrowhead-left is-small"></i>
+                    </a>
+                    <a href="#" class="dn-pagination--nav-item">1</a>
+                    <a href="#" class="dn-pagination--nav-item dn-pagination--nav-active">2</a>
+                    <a href="#" class="dn-pagination--nav-item">3</a>
+                    <span class="dn-pagination--nav-item">...</span>
+                    <a href="#" class="dn-pagination--nav-item">5</a>
+                    <a href="#" class="dn-pagination--nav-item">6</a>
+                    <a href="#" class="dn-pagination--nav-item">7</a>
+                    <a href="#" class="dn-pagination--nav-item">
+                        <i class="d-icon d-arrowhead-right is-small"></i>
+                    </a>
+                </nav>
+                <span></span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

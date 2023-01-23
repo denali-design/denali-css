@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fields</title>
+        <link rel="stylesheet" href="dist/app.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/denali-icon-font/dist/denali-icon-font.css">
+    </head>
+    <body class="p-8 space-y-3">
+        <a href="/">Home</a>
+        <h1 class="dn-h1 text-center pb-[50px]">Fields</h1>
+        <section class="container space-y-3 ml-auto mr-auto">
+            <h2 class="dn-h4">Atoms</h2>
+            <div class="space-y-3 max-w-xs flex-col flex">
+                <!-- Label -->
+                <label class="dn-field--label">Label</label>
+                <!-- Disabled Label -->
+                <label class="dn-field--label dn-field--label-disabled">Label</label>
+                <!-- Message -->
+                <span class="dn-field--message">Message</span>
+                <!-- Disabled Message -->
+                <span class="dn-field--message dn-field--message-error">Message</span>
+                <!-- Input button -->
+                <div class="dn-field--icon"><i class="d-icon d-add is-small"></i></div>
+                <!-- Input button light -->
+                <div class="dn-field--icon dn-field--icon-light"><i class="d-icon d-add is-small"></i></div>
+                <!-- Input field -->
+                <div class="dn-field--input">
+                    <input type="text">
+                </div>
+                <!-- Disabled input field -->
+                <div class="dn-field--input dn-field--input-disabled">
+                    <input type="text" disabled>
+                </div>
+            </div>
+            <h2 class="dn-h4">Molecules</h2>
+            <div class="space-y-3 max-w-xs">
+                <!-- default input group -->
+                <div class="dn-field--group">
+                    <div class="dn-field--input">
+                        <i class="d-icon d-search is-small text-gray-700"></i>
+                        <input type="text">
+                        <i class="d-icon d-arrowhead-down is-small text-gray-700"></i>
+                    </div>
+                    <div class="dn-field--icon"><i class="d-icon d-add is-small"></i></div>
+                </div>
+                <!-- Input group with error -->
+                <div class="dn-field--group">
+                    <div class="dn-field--input has-error">
+                        <i class="d-icon d-search is-small text-gray-700"></i>
+                        <input type="text">
+                        <i class="d-icon d-arrowhead-down is-small text-gray-700"></i>
+                    </div>
+                    <div class="dn-field--icon"><i class="d-icon d-add is-small"></i></div>
+                </div>
+                <!-- Disabled input group -->
+                <div class="dn-field--group">
+                    <div class="dn-field--input dn-field--input-disabled ">
+                        <i class="d-icon d-search is-small text-gray-700"></i>
+                        <input type="text" disabled>
+                        <i class="d-icon d-arrowhead-down is-small text-gray-700"></i>
+                    </div>
+                    <div class="dn-field--icon"><i class="d-icon d-add is-small"></i></div>
+                </div>
+                <!-- Default Textarea -->
+                <div class="dn-field--textarea">
+                    <i class="d-icon d-search is-small text-gray-700"></i>
+                    <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</textarea>
+                </div>
+                <!-- Textarea has Error -->
+                <div class="dn-field--textarea has-error">
+                    <i class="d-icon d-search is-small text-gray-700"></i>
+                    <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</textarea>
+                </div>
+                <!-- Disabled Textarea -->
+                <div class="dn-field--textarea is-disabled">
+                    <i class="d-icon d-search is-small text-gray-700"></i>
+                    <textarea disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</textarea>
+                </div>
+                <!-- input with label and message -->
+                <div class="flex">
+                    <label class="dn-field--label w-[100px] mt-1.5" for="testfield">Label</label>
+                    <div class="w-full">
+                        <div class="dn-field--input w-full">
+                            <input type="text" id="testfield">
+                        </div>
+                        <span class="dn-field--message">Message</span>
+                    </div>
+                </div>
+                <!-- input with label and message -->
+                <div>
+                    <label class="dn-field--label w-[100px] mt-2" for="testfield12">Label</label>
+                    <div>
+                        <div class="dn-field--input w-full">
+                            <input type="text" id="testfield12">
+                        </div>
+                        <span class="dn-field--message">Message</span>
+                    </div>
+                </div>
+            </div>
+            <h2 class="dn-h4">Upload</h2>
+            <!-- Upload -->
+            <div class="max-w-[600px]">
+                <div class="dn-field--upload">
+                    <img src="dist/images/upload.svg" alt="Upload file">
+                    <div class="dn-field--upload-title">
+                        Drag and drop or <span>select a file</span> to upload
+                    </div>
+                    <input type="file">
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
