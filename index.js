@@ -1,5 +1,5 @@
 /**
- * Copyright 2020, Oath Inc.
+ * Copyright 2023, Yahoo Inc.
  * Licensed under the terms of the MIT license. See LICENSE file in project root for terms
  */
 
