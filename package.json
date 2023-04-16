@@ -1,56 +1,22 @@
 {
   "name": "denali-css",
-  "version": "0.0.0-development",
-  "author": "Chas Turansky",
+  "version": "3.0.0-alpha",
   "description": "Denali CSS Framework",
-  "private": false,
-  "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "serve": "concurrently \"postcss css/app.css -o src/dist/app.min.css --watch\"  \"live-server ./src\"",
-    "development": "postcss css/app.css -o src/dist/app.min.css",
-    "production": "postcss css/app.css -o src/dist/app.min.css",    
-    "start": "npm run serve & npm run storybook",
-    "test": "mocha",
-    "semantic-release": "semantic-release",
-    "storybook": "start-storybook -p 6006 -s .storybook/static",
-    "build-storybook": "build-storybook -s .storybook/static",
-    "deploy-storybook": "storybook-to-ghpages",
+    // "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:denali-design/denali-css.git"
   },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.8",
-    "autoprefixer": "^10.4.13",
-    "concurrently": "^7.5.0",
-    "live-server": "^1.2.2",
-    "postcss": "^8.4.18",
-    "postcss-cli": "^10.0.0",
-    "postcss-import": "^15.0.0",
-    "tailwindcss": "^3.2.1",
-    "@babel/core": "^7.13.8",
-    "@storybook/addon-actions": "^6.1.21",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/html": "^6.1.21",
-    "@storybook/storybook-deployer": "^2.8.7",
-    "@whitespace/storybook-addon-html": "^4.2.0",
-    "babel-loader": "^8.2.2",
-    "mocha": "^7.2.0",
-    "react-is": "^16.13.1",
-    "semantic-release": "^19.0.3"
+  "author": "Yahoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/denali-design/denali-css/issues"
   },
-  "release": {
-    "repositoryUrl": "git@github.com:denali-design/denali-css.git"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "storybook-deployer": {
-    "gitUsername": "denali-bot",
-    "gitEmail": "denali@yahooinc.com",
-    "commitMessage": "Deploy Storybook to GitHub Pages"
+  "homepage": "https://github.com/denali-design/denali-css#readme",
+  "dependencies": {
+    "daisyui": "^2.51.5"
   }
 }
