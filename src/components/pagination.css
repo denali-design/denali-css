@@ -1,0 +1,28 @@
+.dn-pagination {
+    @apply flex items-center w-full justify-between border-t border-gray-200 bg-white py-3;
+    &--title {
+        @apply text-base text-gray-700 flex items-center;
+        span { @apply font-bold mx-1}
+     }
+    &--buttons {
+        @apply flex space-x-3;
+        button { @apply min-w-[90px]}
+     }
+    &--nav {
+        @apply isolate inline-flex -space-x-px rounded-md shadow-sm;
+        &-item {
+            @apply relative inline-flex items-center border border-gray-500 bg-white px-2.5 py-2 text-base text-gray-700 hover:text-primary-500 hover:bg-[#E0EEFF];
+            &:first-child {@apply rounded-l-md}
+            &:last-child {@apply rounded-r-md}
+        }
+        &-active {
+            @apply text-primary-500 bg-[#E0EEFF];
+         }
+     }
+    &--streamlined {
+        @apply pt-0;
+        .dn-pagination--nav {@apply shadow-none mt-[-1px]}
+        .dn-pagination--nav-item {@apply border-0 bg-transparent;}
+        .dn-pagination--nav-active {@apply bg-transparent border-t border-primary-500}
+     }
+}

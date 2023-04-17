@@ -1,0 +1,111 @@
+/* switch styles */
+.dn-switch {
+    @apply flex items-center space-x-3 h-5 w-full ;
+    &--circle {
+        @apply w-[18px]
+        h-[18px]
+        border-2
+        border-primary-200
+        bg-white
+        rounded-full
+        transition-all ease-linear duration-200
+    }
+    &--input {
+        @apply hidden;
+        &:checked ~ .dn-switch--label {
+             @apply bg-opacity-green-500;
+             .dn-switch--circle {
+                 @apply ml-[14px] bg-alerts-success border-alerts-success
+             }
+        }
+        &:checked:disabled ~ .dn-switch--label {
+             @apply bg-[#F2F2F2] cursor-not-allowed;
+            .dn-switch--circle {@apply bg-gray-500}
+         }
+        &:disabled ~ .dn-switch--label {
+            @apply bg-[#F2F2F2] cursor-not-allowed;
+            .dn-switch--circle { @apply border-gray-500}
+         }
+    }
+    &--label {
+        @apply block w-8
+        h-1
+        bg-[#C4C4C4]
+        rounded-full
+        flex
+        items-center
+        cursor-pointer;
+        &-title {@apply text-sm cursor-pointer}
+        &:hover {
+            .dn-switch--circle { @apply border-primary-300}
+        }
+    }
+}
+/* checkbox styles */
+.dn-checkbox {
+    @apply flex items-center;
+    &--input {
+        @apply hidden;
+        &:checked ~ .dn-checkbox--label { @apply border-primary-300 bg-primary-300}
+        &:checked:disabled ~ .dn-checkbox--label { @apply border-gray-500 bg-gray-500 cursor-not-allowed}
+        &:disabled ~ .dn-checkbox--label { @apply border-gray-500 cursor-not-allowed}
+     }
+    &--label {
+        @apply block
+        bg-white
+        w-4
+        h-4
+        border-2
+        border-primary-200
+        rounded-sm
+        cursor-pointer
+        hover:border-primary-300
+        flex
+        items-center
+        justify-center transition-all ease-linear duration-200;
+        .dn-checkbox--icon {@apply scale-[0.65] mt-0.5 transition-all ease-linear duration-200 }
+    }
+    &--partial {
+         &-icon { @apply w-2 rounded-xl h-[2px] transition-all ease-linear duration-200}
+         .dn-checkbox--input {
+            &:checked ~ .dn-checkbox--label {
+                @apply border-primary-300 bg-white;
+                .dn-checkbox--partial-icon {@apply bg-primary-300}
+            }
+            &:checked:disabled ~ .dn-checkbox--label {
+                 @apply border-gray-500 bg-white cursor-not-allowed;
+                 .dn-checkbox--partial-icon {@apply bg-gray-500}
+            }
+            &:disabled ~ .dn-checkbox--label { @apply border-gray-500 bg-white cursor-not-allowed}
+         }
+     }
+}
+/* radio styles */
+.dn-radio {
+    &--input {
+        @apply hidden;
+        &:checked ~ .dn-radio--label { @apply border-primary-300; .dn-radio--active {@apply bg-primary-300} }
+        &:checked:disabled ~ .dn-radio--label {
+            @apply border-gray-500 cursor-not-allowed;
+            .dn-radio--active {@apply bg-gray-500}
+         }
+        &:disabled ~ .dn-radio--label { @apply border-gray-500 cursor-not-allowed}
+    }
+    &--label {
+        @apply block
+        bg-white
+        w-4
+        h-4
+        border-2
+        border-primary-200
+        rounded-full
+        cursor-pointer
+        hover:border-primary-300
+        flex
+        items-center
+        justify-center;
+    }
+    &--active {
+        @apply w-2 h-2 rounded-full transition-all ease-linear duration-200
+     }
+}

@@ -1,0 +1,39 @@
+.dn-box {
+    @apply rounded border border-gray-400 overflow-hidden;
+    &--divider { @apply h-[1px] bg-gray-400 }
+    &--icon {
+        @apply flex justify-center items-center rounded-full w-5 h-5 shrink-0;
+        &.blue {@apply bg-primary-100 text-primary-300 }
+        &.green {@apply bg-green-200 text-alerts-success }
+        &.red {@apply bg-red-100 text-alerts-danger }
+        &.yellow {@apply bg-yellow-200 text-alerts-warning }
+        & > i.d-icon { @apply text-[10px]}
+     }
+    &--metrics {
+        @apply border-r border-gray-500 px-[15px] py-3 min-w-[200px];
+        &:last-child { @apply border-none}
+    }
+    &--padding {@apply p-5}
+    &--blog {
+        @apply p-5;
+        &-image { @apply w-full inline-block }
+        &-profile {
+            @apply border-none;
+            .dn-profile--avatar {@apply w-8 h-8}
+            .dn-avatar--title {@apply text-[20px]}
+            .dn-profile--title {@apply font-normal}
+            .dn-profile--header {@apply items-center}
+        }
+    }
+    &--avatars {
+        @apply flex bg-gray-400 rounded-full items-center font-bold text-sm px-2;
+        .dn-avatar { @apply ml-[-18px]}
+        &-inverse { @apply p-0 w-max ml-auto mt-[10px]; .dn-avatar {@apply ml-[-22px]}}
+    }
+    &--sign {
+        &-title {@apply text-[40px] font-bold mt-[55px] mb-5}
+        &-desc {@apply text-xl mb-[48px] max-w-[420px]}
+     }
+    .dn-field--input input {@apply placeholder:text-opacity-black-300}
+    & .dn-field--input {@apply h-12 mb-[50px] mt-2}
+}

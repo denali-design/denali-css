@@ -1,0 +1,7 @@
+.dn-sidebar-nav {
+    @apply w-12 h-full border-r border-gray-400;
+}
+
+.dn-sidebar-nav li a {
+    @apply w-12 h-12 flex items-center justify-center;
+}

@@ -1,0 +1,6 @@
+.dn-avatar {
+    @apply rounded-full bg-[#24C9F5] border-2 border-white shrink-0 w-16 h-16 flex items-center justify-center overflow-hidden;
+    &--title { @apply font-bold text-[30px] }
+    &--sm { @apply w-8 h-8; .dn-avatar--title {@apply text-[20px]}}
+    &--image { @apply block w-full }
+}

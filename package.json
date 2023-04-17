@@ -1,6 +1,6 @@
 {
   "name": "denali-css-theme",
-  "version": "3.0.5-alpha",
+  "version": "3.0.7-alpha",
   "description": "Denali CSS Dasiy UI Theme",
   "main": "index.js",
   "dependencies": {

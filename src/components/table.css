@@ -1,0 +1,33 @@
+.dn-table {
+    @apply text-sm w-full bg-white rounded-b-md;
+    td, th { @apply px-3}
+    &--icon { font-size: 14px !important; }
+    &--foot {
+        .dn-table--row {
+            @apply bg-gray-500 border-transparent;
+            td { &:first-child {@apply rounded-bl-md } &:last-child {@apply rounded-br-md}}
+        }
+    }
+    &--head {
+        @apply text-gray-700 font-normal border-b border-[#9A9A9A];
+        th { @apply font-normal uppercase text-left }
+    }
+    &--row {
+        @apply border-b border-[#C4C4C4] h-[48px];
+    }
+    &--condensed { .dn-table--row { @apply h-10} }
+    &--relaxed { .dn-table--row { @apply h-[56px]} }
+    &--striped { .dn-table--row {@apply border-transparent} .dn-table--row:nth-child(even) { @apply bg-[#f5f5f5]} }
+    &--card {
+         @apply border-spacing-y-2.5 border-separate;
+        .dn-table--foot {@apply bg-gray-400}
+        .dn-table--row {
+            td {
+                @apply border-t border-b border-gray-500;
+                &:first-child { @apply border border-r-transparent rounded-l-md}
+                &:last-child { @apply border border-l-transparent rounded-r-md}
+            }
+        }
+
+    }
+}

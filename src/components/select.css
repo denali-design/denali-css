@@ -1,0 +1,7 @@
+.dn-select {
+    @apply bg-blue-100;
+}
+
+.dn-select-bordered {
+    @apply border-blue-200;
+}

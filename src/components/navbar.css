@@ -1,0 +1,23 @@
+.dn-navbar {
+    @apply bg-gray-800 flex items-center h-[60px] lg:px-[18px] px-3;
+    &--left { @apply lg:max-w-[300px] w-full flex items-center justify-between }
+    &--mobile-menu { @apply lg:hidden text-white}
+    &--responsive {@apply w-full hidden lg:block h-full }
+    &--right { @apply flex items-center justify-end w-full h-full }
+    &--center { @apply mr-auto flex h-full }
+    &--item {
+        @apply h-full flex items-center text-white text-base cursor-pointer hover:text-[rgba(255,255,255,.4)] px-3;
+        &-active {box-shadow: inset 0 -4px 0 #016eff}
+    }
+    &--field {
+
+        .dn-field--input {
+            @apply bg-[rgba(138,197,237,.1)]
+                text-white rounded; 
+            input{ 
+                @apply placeholder:text-[rgba(255,255,255,.4)]}
+        }
+
+        i { @apply text-primary }
+    }
+}

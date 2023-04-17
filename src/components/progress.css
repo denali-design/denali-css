@@ -1,0 +1,26 @@
+.dn-progress {
+    @apply h-4 rounded bg-gray-400 overflow-hidden flex;
+    &--bar {
+        @apply bg-primary-300 h-full ml-0.5;
+        &:first-child { @apply ml-0 }
+    }
+    &--sm {@apply h-2.5 }
+    &--md {@apply h-5 }
+    &--lg {@apply h-6 }
+    &--danger { @apply bg-alerts-danger }
+    &--warning { @apply bg-alerts-warning }
+    &--success { @apply bg-alerts-success }
+    &--loader {
+        animation: loadingShimmer 1s linear infinite;
+        animation-fill-mode: forwards;
+        background-image: linear-gradient(to right, #E8E8E8 0%, #f7f7f7 50%, #E8E8E8 100%);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+}
+
+@keyframes loadingShimmer {
+    from { background-position: -100% }
+    to { background-position: 200% }
+}

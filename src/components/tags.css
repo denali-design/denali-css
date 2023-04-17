@@ -1,0 +1,33 @@
+.dn-tag {
+    @apply text-gray-800
+    rounded-2xl
+    px-2.5
+    h-7
+    flex
+    items-center
+    space-x-1.5
+    disabled:bg-gray-400
+    disabled:text-gray-700;
+    span {@apply mb-1}
+    &:disabled {pointer-events: none}
+    &--primary {
+         @apply bg-primaryOpacity-800
+         hover:bg-primaryOpacity-900
+         active:bg-primaryOpacity-900
+         active:text-white}
+
+    &--secondary {
+         @apply bg-white
+         border
+         border-primary-500
+         hover:bg-primaryOpacity-800
+         active:bg-primary-500
+         active:text-white
+         disabled:border-gray-700}
+
+    &--sm {
+        @apply text-xs h-[22px];
+        span {@apply mb-0.5}
+        .d-icon.is-small { @apply text-[13px] w-3.5 h-3.5 }
+    }
+}

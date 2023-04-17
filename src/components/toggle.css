@@ -1,0 +1,16 @@
+.dn-toggle {
+    @apply bg-[rgba(53,112,244,0.08)] h-9 flex items-center w-max;
+    &--item {
+        @apply text-primary-300 text-sm px-[10px] flex items-center hover:text-primary-400;
+        &-active { @apply bg-white border-primary-300 border-2 h-10 text-black rounded }
+        &-disabled { @apply text-[rgba(48,48,48,0.5)] hover:text-[rgba(48,48,48,0.5)]; pointer-events: none }
+    }
+    &--small { @apply h-8; .dn-toggle--item-active { @apply h-9 }}
+    &--inverse {
+        @apply bg-transparent;
+        .dn-toggle--item {
+            &-active { @apply bg-transparent }
+            &-disabled { @apply text-[rgba(255,255,255,0.5)]}
+        }
+    }
+}

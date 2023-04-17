@@ -1,0 +1,54 @@
+.dn-btn {
+    @apply text-base
+    cursor-pointer
+    inline-flex
+    justify-center
+    items-center
+    transition
+    px-2.5
+    py-0.5
+    rounded-md
+    border
+    border-transparent
+    outline-4
+    min-w-[120px];
+
+    &.dn-btn-primary {
+        @apply bg-primary
+        text-white
+        hover:bg-primary
+        active:bg-primary
+        disabled:bg-gray-500
+        disabled:text-gray-700
+        h-9;
+    }
+
+    &.dn-btn-secondary {
+        @apply border-primary
+        text-blue-500
+        hover:border-primary
+        hover:text-primary
+        /* hover:bg-primaryOpacity-400 */
+        active:text-primary
+        active:border-primary
+        /* active:bg-primaryOpacity-700 */
+        disabled:border-gray-700
+        disabled:bg-gray-500
+        disabled:text-gray-700
+        no-underline
+        h-9;
+    }
+    &.dn-btn-link {
+        @apply no-underline hover:underline;
+    }
+
+    &--transparent {
+        @apply bg-transparent text-primary
+     }
+
+    /* Button size */
+    &.dn-btn--medium {@apply h-8}
+    &.dn-btn--small {@apply h-7}
+    &.dn-btn--large {@apply h-11}
+}
+

@@ -1,0 +1,7 @@
+.dn-dropdown {
+    @apply relative w-max;
+    &--trigger { @apply text-white space-x-2 text-sm bg-primary-300 hover:bg-primary-400 focus:outline-none font-medium rounded px-4 py-2.5 text-center inline-flex items-center;}
+    &--content { @apply w-full rounded-sm border-2 border-gray-400 absolute left-0 top-full shadow-xl bg-white invisible transition-all duration-200 opacity-0; &.open {@apply visible opacity-100} }
+    &--item { @apply flex items-center space-x-2 py-2 px-4 text-sm hover:bg-[rgba(53,112,244,.08)]; &-active {@apply font-bold} }
+    &--label { @apply text-sm ml-2.5 cursor-pointer }
+}

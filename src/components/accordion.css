@@ -1,0 +1,11 @@
+.dn-accordion {
+    &--title {
+        @apply border border-gray-400 rounded-t bg-white px-4 py-2.5 cursor-pointer list-none text-sm font-bold flex justify-between items-center;
+    }
+    &--content {
+        @apply border border-gray-400 bg-white px-4 py-2.5 text-sm
+    }
+    details[open] {
+        & .dn-accordion--title-icon { @apply rotate-180 transition-all}
+    }
+}

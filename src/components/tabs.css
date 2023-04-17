@@ -1,0 +1,43 @@
+.dn-tabs {
+    @apply pb-0 p-5;
+    &--list {@apply flex space-x-1}
+    &--item {
+        @apply px-5 py-2.5 text-base text-primary-300 hover:text-primary-700 bg-white rounded-t cursor-pointer flex items-center space-x-1;
+        &-disabled { @apply cursor-not-allowed text-gray-500 hover:text-gray-500 }
+        &-active { @apply cursor-default text-black hover:text-black }
+    }
+    &--underlined {
+        @apply border-b-[#CCE2FF] border-b-2;
+        .dn-tabs--list { @apply space-x-0}
+        .dn-tabs--item {
+            @apply rounded-none border-b-2 border-b-[#CCE2FF] mb-[-2px];
+            &-active { @apply border-b-primary-300 }
+            &-disabled { @apply border-b-gray-500 }
+        }
+    }
+}
+
+.dn-verticalTabs {
+    @apply space-y-2;
+    &--arrow {
+        @apply text-[rgba(48,48,48,0.5)] transition-all duration-200;
+        margin-left: auto !important;
+    }
+    &--item {
+        @apply px-[14px]
+        py-[11px]
+        text-primary-300
+        border
+        border-transparent
+        rounded-lg
+        cursor-pointer
+        space-x-1
+        hover:text-primary-700
+        hover:border-[rgba(1,110,255,0.1)]
+        flex
+        items-center;
+        &:hover .dn-verticalTabs--arrow { @apply rotate-[-90deg] }
+        &-active { @apply bg-[rgba(1,110,255,0.1)] border-[rgba(1,110,255,0.1)] font-bold text-black cursor-default }
+        &-disabled { @apply text-gray-500 hover:text-gray-500 hover:border-transparent cursor-not-allowed; &:hover .dn-verticalTabs--arrow { @apply rotate-0 } }
+    }
+}
