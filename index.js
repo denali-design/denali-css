@@ -4,7 +4,7 @@ import { install } from 'daisyui';
 const DenaliCustomTheme = {
   themes: [
     {
-      name: 'my-theme',
+      name: 'Denali',
       background: '#F0F4F8',
       foreground: '#1F2937',
       primary: '#2563EB',
@@ -17,13 +17,14 @@ const DenaliCustomTheme = {
   ],
 };
 
-const myDesignSystem = daisyui.extend(DenaliCustomTheme);
 
-// Automatically install the design system in the app
-export function installDesignSystem(app) {
-  if (!app) {
-    app = createApp({});
-  }
-  app.use(install(myDesignSystem));
-  return app;
-}
+install(DenaliCustomTheme);
+
+const css = `
+  @import 'tailwindcss/base';
+  @import 'tailwindcss/components';
+  @import 'tailwindcss/utilities';
+  @import 'daisyui/dist/full.css';
+`;
+
+export default css;
