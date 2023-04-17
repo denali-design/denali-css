@@ -1,13 +1,16 @@
 {
-  "name": "denali-css",
-  "version": "3.0.0-alpha",
-  "description": "Denali CSS Framework",
+  "name": "denali-css-theme",
+  "version": "3.0.5-alpha",
+  "description": "Denali CSS Dasiy UI Theme",
   "main": "index.js",
-  "scripts": {
-    "build": "postcss src/styles/main.css -o dist/denali.css",
-    "watch": "postcss src/styles/main.css -o dist/denali.css --watch",
-    "dev": "npm run watch"
+  "dependencies": {
+    "daisyui": "^2.51.5"
   },
+  "keywords": [
+    "tailwindcss",
+    "daisyui",
+    "theme"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:denali-design/denali-css.git"
@@ -17,14 +20,5 @@
   "bugs": {
     "url": "https://github.com/denali-design/denali-css/issues"
   },
-  "homepage": "https://github.com/denali-design/denali-css#readme",
-  "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "daisyui": "^2.51.5",
-    "postcss": "^8.4.22",
-    "postcss-cli": "^10.1.0",
-    "postcss-import": "^15.1.0",
-    "postcss-preset-env": "^8.3.1",
-    "tailwindcss": "^3.3.1"
-  }
+  "homepage": "https://github.com/denali-design/denali-css#readme"
 }

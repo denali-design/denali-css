@@ -20,10 +20,9 @@
 
 ## Background
 
-The Denali System Language was created by the Platforms and Technology Design team at Yahoo as a scalable method for designing and developing visually consistent and functional internal products. Denali’s CSS framework allows developers to implement the Denali System Language in their projects. The framework is lightweight and flexible. It supports theming through custom variables which means the visual appearance of Denali’s components can be easily adapted to fit the visual style of any brand. Additionally, components are framework independent allowing you to take what you need and leave the rest.
+Denali V3 is a theme on top of Dasiy UI. By leveraging Daisy Ui we provide all of the exsisiting components and all of the utilites of TailwindCSS giving developers tons of flexibility. Are primary objective is to proivide consistency between design and development for fast work flow and easier maintaince.
 
-You can view the Denali’s entire component library on [www.denali.design](https://denali.design/).
-
+You can view Daisy Ui Components: https://daisyui.com/components/ and all TailwindCSS Utilties: 
 
 ## Quick Start
 
@@ -34,12 +33,10 @@ Check out our [guide](https://denali-design.github.io/denali-css/?path=/story/ge
 
 #### Prerequisites
 
-You will need the following installed to run the site:
+You will need the following installed:
 
-1. [Node](https://nodejs.org/en/)
-2. [NPM](https://www.npmjs.com/)
-3. [Ruby](https://www.ruby-lang.org/)
-4. [Dart Sass](http://compass-style.org/)
+1. [TailwindCSS](https://tailwindcss.com/)
+2. [Daisy UI](https://daisyui.com/)
 
 > Note: This guide assumes you have the prerequisites installed locally and will not go over install instructions for them. Refer to their websites for guidance if necessary.
 
@@ -60,17 +57,6 @@ Use NPM to install packages.
 npm install
 ```
 
-###### Compile SCSS
-
-Watch for SCSS changes
-```
-npm run sass-watch
-```
-
-Build SCSS minified files
-```
-npm run sass-build
-```
 
 ###### Storybook Docs
 
@@ -79,11 +65,6 @@ To view storybook docs use the command below.
 npm run storybook
 ```
 
-###### SCSS & Storybook
-To watch SCSS files and build storybook docs at the same time
-```
-npm run start
-```
 
 
 ## Browser Support
@@ -105,16 +86,12 @@ To start contributing to Denali, have a look at our guidelines, as well as point
 
 ## Maintainers
 
-- **Chas Turansky** cturansky@yahooinc.com
 - **Jon Kilroy** kilroy@yahooinc.com
 - **Anusha Ganti** annapoorna.ganti@yahooinc.com
 - **Trevor Greenleaf** trevor.greenleaf@yahooinc.com
-
 
 
 ## License
 
 Code licensed under the MIT license. See [LICENSE file](https://github.com/denali-design/denali-css/blob/master/LICENSE.md) for terms.
 
-[status-image]: https://cd.screwdriver.cd/pipelines/3067/badge
-[status-url]: https://cd.screwdriver.cd/pipelines/3067
