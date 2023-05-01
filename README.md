@@ -20,7 +20,7 @@
 
 ## Background
 
-Denali V3 is a theme on top of Dasiy UI. By leveraging Daisy Ui we provide all of the exsisiting components and all of the utilites of TailwindCSS giving developers tons of flexibility. Are primary objective is to proivide consistency between design and development for fast work flow and easier maintaince.
+Introducing Denali V3, a dynamic theme built upon the robust foundation of Daisy UI. By harnessing the power of Daisy UI, developers can effortlessly access the extensive range of components and utilities provided by TailwindCSS, resulting in unparalleled flexibility. Our primary objective is to foster seamless consistency between design and development, enabling a swift workflow and simplified maintenance. 
 
 You can view Daisy Ui Components: https://daisyui.com/components/ and all TailwindCSS Utilties: 
 
@@ -41,6 +41,8 @@ You will need the following installed:
 > Note: This guide assumes you have the prerequisites installed locally and will not go over install instructions for them. Refer to their websites for guidance if necessary.
 
 #### Installation
+
+
 
 Clone or download this repository.
 ```

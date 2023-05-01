@@ -1,10 +1,11 @@
 {
   "name": "denali-css-theme",
-  "version": "3.0.7-alpha",
+  "version": "3.0.10-alpha",
   "description": "Denali CSS Dasiy UI Theme",
   "main": "index.js",
   "dependencies": {
-    "daisyui": "^2.51.5"
+    "daisyui": "^2.51.5",
+    "tailwindcss": "3.3.2"
   },
   "keywords": [
     "tailwindcss",
