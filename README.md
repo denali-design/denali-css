@@ -68,27 +68,25 @@ Modify content key to match your type of file format. This will be used to purge
 npm install 'live-server';
 ```
 
-And then update you package.json scripts with the following:
+```
+npm install 'npm-run-all';
+```
 
+
+And then update you package.json scripts with the following:
 
 
 ```
 {
   "scripts": {
-    "watch:css": "npx tailwindcss -c ./tailwind.config.js -i ./app.css -o public/output.css",
+       "watch:css": "npx tailwindcss ./tailwind.config.js -i ./app.css -o public/output.css",
     "serve": "live-server ./public",
     "dev": "npm run watch:css & npm run serve",
     "all": "npm-run-all watch:css serve"
   },
-  "dependencies": {
-    "denali-css-theme": "file:../denali-css",
-    "live-server": "^1.2.2",
-    "tailwindcss": "^3.3.2"
-  }
 }
 
 ```
-
 
 
 
