@@ -1,7 +1,6 @@
 # Denali CSS Library
 
-[![npm](https://img.shields.io/npm/v/denali-css?color=red)](https://www.npmjs.com/package/denali-css)
-[![Build Status][status-image]][status-url]
+[![npm](https://img.shields.io/npm/v/denali-css?color=red)](https://www.npmjs.com/package/denali-css-theme)
 ![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/denali-design/denali-css)
 [![slack](https://img.shields.io/badge/slack-Denali-3570f4.svg)](https://denali-design.slack.com/app_redirect?channel=general)
 [![GitHub](https://img.shields.io/github/license/denali-design/denali-css)](https://github.com/denali-design/denali-css/blob/master/LICENSE.md)
@@ -22,50 +21,74 @@
 
 Introducing Denali V3, a dynamic theme built upon the robust foundation of Daisy UI. By harnessing the power of Daisy UI, developers can effortlessly access the extensive range of components and utilities provided by TailwindCSS, resulting in unparalleled flexibility. Our primary objective is to foster seamless consistency between design and development, enabling a swift workflow and simplified maintenance. 
 
-You can view Daisy Ui Components: https://daisyui.com/components/ and all TailwindCSS Utilties: 
+You can view [Daisy Ui Components](https://daisyui.com/components/) and all [TailwindCSS Utilities]( https://tailwindcss.com/)
 
-## Quick Start
+## Example Projects
+- [PostCSS Build](https://github.com/denali-design/denali-example-project)
+- [TailwindCSS & LiveServer](https://github.com/denali-design/denali-example-project)
 
-Check out our [guide](https://denali-design.github.io/denali-css/?path=/story/get-started-installation--page).
 
-
-## Install
-
-#### Prerequisites
-
-You will need the following installed:
-
-1. [TailwindCSS](https://tailwindcss.com/)
-2. [Daisy UI](https://daisyui.com/)
-
-> Note: This guide assumes you have the prerequisites installed locally and will not go over install instructions for them. Refer to their websites for guidance if necessary.
+## Quick Install
 
 #### Installation
+1. Install TailwindCSS by running the following command:
+```
+npm install tailwindcss
+```
+
+2. Next up install Denali CSS Theme Package
+```
+npm install denail-css-theme
+```
+
+3. Now you will need to create a "tailwind.config.js" file in your main folder directory. Add the following:
+
+```
+module.exports = {
+    presets:[
+      require('denali-css-theme/tailwindcss.config.js')
+    ],
+    content: ['./public/*.html'],
+  }
+```
+Modify content key to match your type of file format. This will be used to purge any unused styles.
+
+4. Create am "app.css" in the same directory. Paste the following imports: 
+```
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import 'denali-css-theme/theme.css';
+```
+
+5. If you already have a compiler setup use that or you can use TailwindCSS directly and live-server. You would run 
+
+```
+npm install 'live-server';
+```
+
+And then update you package.json scripts with the following:
 
 
 
-Clone or download this repository.
 ```
-denali-system-language/denali-css.git
+{
+  "scripts": {
+    "watch:css": "npx tailwindcss -c ./tailwind.config.js -i ./app.css -o public/output.css",
+    "serve": "live-server ./public",
+    "dev": "npm run watch:css & npm run serve",
+    "all": "npm-run-all watch:css serve"
+  },
+  "dependencies": {
+    "denali-css-theme": "file:../denali-css",
+    "live-server": "^1.2.2",
+    "tailwindcss": "^3.3.2"
+  }
+}
+
 ```
 
-Use any command line tool and navigate to where you downloaded the repository.
-```
-cd path-to-folder/denali-css
-```
-
-Use NPM to install packages.
-```
-npm install
-```
-
-
-###### Storybook Docs
-
-To view storybook docs use the command below.
-```
-npm run storybook
-```
 
 
 

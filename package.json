@@ -1,6 +1,6 @@
 {
   "name": "denali-css-theme",
-  "version": "3.0.10-alpha",
+  "version": "3.0.0-beta",
   "description": "Denali CSS Dasiy UI Theme",
   "main": "index.js",
   "scripts": {
