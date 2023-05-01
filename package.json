@@ -3,8 +3,19 @@
   "version": "3.0.10-alpha",
   "description": "Denali CSS Dasiy UI Theme",
   "main": "index.js",
+  "scripts": {
+    "watch:css": "npx tailwindcss -c ./tailwindcss.config.js -i ./tailwind.css -o public/output.css",
+    "serve": "live-server ./public",
+    "dev": "npm run watch:css & npm run serve",
+    "all": "npm-run-all watch:css serve"
+  },
   "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^7.0.0",
     "daisyui": "^2.51.5",
+    "live-server": "^1.2.1",
+    "postcss": "^8.4.7",
+    "postcss-import": "^15.1.0",
     "tailwindcss": "3.3.2"
   },
   "keywords": [
@@ -21,5 +32,9 @@
   "bugs": {
     "url": "https://github.com/denali-design/denali-css/issues"
   },
-  "homepage": "https://github.com/denali-design/denali-css#readme"
+  "homepage": "https://github.com/denali-design/denali-css#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0"
+  }
 }

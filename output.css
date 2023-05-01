@@ -1,0 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+/* include denali theme */
+/* @import 'denali-css-theme/theme.css'; */
+
+/* include your projects custom styles */
+
+/* @import "./components/body.css"; */
+/* @import "./components/alert.css"; */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhaWx3aW5kLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJvdXRwdXQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAndGFpbHdpbmRjc3MvYmFzZSc7XG5AaW1wb3J0ICd0YWlsd2luZGNzcy9jb21wb25lbnRzJztcbkBpbXBvcnQgJ3RhaWx3aW5kY3NzL3V0aWxpdGllcyc7XG5cblxuLyogaW5jbHVkZSBkZW5hbGkgdGhlbWUgKi9cbi8qIEBpbXBvcnQgJ2RlbmFsaS1jc3MtdGhlbWUvdGhlbWUuY3NzJzsgKi9cblxuLyogaW5jbHVkZSB5b3VyIHByb2plY3RzIGN1c3RvbSBzdHlsZXMgKi9cblxuLyogQGltcG9ydCBcIi4vY29tcG9uZW50cy9ib2R5LmNzc1wiOyAqL1xuLyogQGltcG9ydCBcIi4vY29tcG9uZW50cy9hbGVydC5jc3NcIjsgKi8iXX0= */
