@@ -17,7 +17,7 @@ module.exports = {
           "warning": "#FBBD23",
           "error": "#F87272",
           // denali rainbow colors
-          "grey": {
+          "denaliGray": {
             100: "#FFFFFF",
             200: "#F8F8F8",
             300: "#F2F2F2",
@@ -28,7 +28,7 @@ module.exports = {
             800: "#303030",
             900: "#000000",
           },
-          "red": {
+          "denaliRed": {
             100: "#FFBDBD",
             200: "#F89494",
             300: "#F16A6A",
@@ -39,7 +39,7 @@ module.exports = {
             800: "#AB0606",
             900: "#990000",
           },
-          "orange": {
+          "denaliOrange": {
             100: "#FFDCC0",
             200: "#FCC391",
             300: "#F8A962",
@@ -50,7 +50,7 @@ module.exports = {
             800: "#B35102",
             900: "#9E4502",
           },
-          "yellow": {
+          "denaliYellow": {
             100: "#FFFCD2",
             200: "#FFF4A9",
             300: "#FFEB71",
@@ -61,7 +61,7 @@ module.exports = {
             800: "#E99E00",
             900: "#E28B00",
           },
-          "lime": {
+          "denaliLime": {
             100: "#E8FFC0",
             200: "#D0F595",
             300: "#B8EC69",
@@ -72,7 +72,7 @@ module.exports = {
             800: "#62950D",
             900: "#557F0B",
           },
-          "green": {
+          "denaliGreen": {
             100: "#D3FFD2",
             200: "#A6EFB4",
             300: "#7AE097",
@@ -83,7 +83,7 @@ module.exports = {
             800: "#17863D",
             900: "#147233",
           },
-          "sky": {
+          "denaliSky": {
             100: "#BEF0FC",
             200: "#96E8FC",
             300: "#6DDDFA",
@@ -94,7 +94,7 @@ module.exports = {
             800: "#128295",
             900: "#106B75",
           },
-          "blue": {
+          "denaliBlue": {
             100: "#C0E3FF",
             200: "#90C7F7",
             300: "#60ABEF",
@@ -105,7 +105,7 @@ module.exports = {
             800: "#004B80",
             900: "#003E60",
           },
-          "purple": {
+          "denaliPurple": {
             100: "#DBD0FD",
             200: "#C8B6FF",
             300: "#AA89EA",
@@ -116,7 +116,7 @@ module.exports = {
             800: "#30006D",
             900: "#20004E",
           },
-          "violet": {
+          "denaliViolet": {
             100: "#E9B7F3",
             200: "#DE9BEB",
             300: "#C777D6",
@@ -127,7 +127,7 @@ module.exports = {
             800: "#571B64",
             900: "#41154C",
           },
-          "pink": {
+          "denaliPink": {
             100: "#FABCDC",
             200: "#FF9DCC",
             300: "#FF7AB8",
