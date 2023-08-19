@@ -1,47 +1,48 @@
-.dn-field {
-    &--label {@apply font-bold text-sm text-black;
-        &-disabled{@apply text-opacity-black-150}
+.field {
+    .label {@apply font-bold text-sm text-black;
+        &.disabled{@apply text-gray-500}
     }
-    &--message {@apply text-xs text-opacity-gray-500;
-        &-error{@apply text-alerts-danger}
+    .message {@apply text-xs text-opacity-gray-500;
+        &.error{@apply text-alerts-danger}
     }
-    &--icon {@apply bg-primary-300 text-white w-[30px] h-8 rounded-r flex items-center justify-center shrink-0 cursor-pointer;
-        &-light { @apply text-primary-300 bg-opacity-primary-400 }
+    .icon {@apply bg-primary-300 text-white w-[30px] h-8 rounded-r flex items-center justify-center shrink-0 cursor-pointer;
+        &.light { @apply text-primary-300 bg-opacity-primary-400 }
     }
-    &--input {
+    .input {
         @apply bg-opacity-primary-400 text-sm text-gray-800 h-8 flex w-full items-center rounded justify-between space-x-2.5 px-2 border-b-2 border-transparent;
-        &-disabled { @apply bg-gray-300; .text-gray-700 {@apply text-opacity-black-250}}
+        &.disabled { @apply bg-gray-300; .text-gray-700 {@apply text-opacity-black-250}}
         &:has(input:focus) {@apply border-primary-300;}
         input {
             @apply bg-transparent border-0 outline-0 w-full;
         }
         &.has-error { @apply border-alerts-danger}
     }
-    &--group {
+    .group {
         @apply flex items-center;
-        .dn-field--input {@apply rounded-r-none}
+        .field--input {@apply rounded-r-none}
      }
-    &--textarea {
+    .textarea {
         @apply bg-opacity-primary-400 text-sm text-gray-800 flex rounded justify-between space-x-2.5 p-2.5 border-b-2 border-transparent;
         &:has(textarea:focus) {@apply border-primary-300;}
         &.has-error { @apply border-alerts-danger}
         &.is-disabled { @apply bg-gray-300 border-b-gray-300; textarea, .d-icon, i {@apply text-opacity-black-250}}
         textarea {@apply w-full bg-transparent border-0 outline-0 min-h-[70px] text-sm text-gray-700 focus:text-gray-800}
     }
-    &--upload {
+    .upload {
         @apply bg-[#EFF4FF] border border-dashed border-[#3570F4] h-[60px] relative rounded flex items-center px-3;
         input {@apply absolute inset-0 opacity-0 cursor-pointer}
-        &-title {@apply text-sm font-bold ml-3; span {@apply text-primary-300}}
+        &.title {@apply text-sm font-bold ml-3; 
+            span {@apply text-primary-300}}
      }
 }
 
-.dn-select {
+.select {
     @apply bg-[#ebf4ff] rounded h-9 w-[250px] relative cursor-pointer;
     select { @apply rounded bg-[#ebf4ff] text-[#303030] w-full h-full px-3 text-sm outline-none cursor-pointer appearance-none border-b-2 border-transparent focus:border-b-primary-300 ;}
     option { @apply cursor-pointer }
-    &--arrow { @apply absolute right-3 top-1/2 translate-y-[-50%]; pointer-events: none}
-    &--sm { @apply h-6 }
-    &--md { @apply h-8 }
-    &--lg { @apply h-11 }
-    &--disabled { @apply bg-[rgba(48,48,48,.05)]; select {@apply bg-[rgba(48,48,48,.05)]} .dn-select--arrow {@apply opacity-40} }
+    .arrow { @apply absolute right-3 top-1/2 translate-y-[-50%]; pointer-events: none}
+    .sm { @apply h-6 }
+    .md { @apply h-8 }
+    .lg { @apply h-11 }
+    .disabled { @apply bg-[rgba(48,48,48,.05)]; select {@apply bg-[rgba(48,48,48,.05)]} .select--arrow {@apply opacity-40} }
 }

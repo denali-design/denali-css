@@ -1,0 +1,53 @@
+.card {
+    @apply rounded-md p-4 bg-white;
+  
+    &.bordered {
+        @apply border border-gray-400;
+     }
+    
+}
+
+/*    
+    &.compact .card-body {
+      @apply p-12 text-sm;
+    }
+  
+    > .card-body {
+      @apply flex flex-col gap-2 px-8 bg-black;
+    }
+  
+    > .card-title {
+      @apply flex items-center gap-2 text-xl font-semibold;
+    }
+  
+    &.image-full {
+      &:before {
+        @apply z-10 bg-gray-700 opacity-75 rounded-md;
+      }
+  
+      > &-body {
+        @apply z-20 text-gray-700;
+      }
+      
+      :where(figure) {
+        @apply overflow-hidden;
+        border-radius: inherit;
+      }
+    } */
+
+/*   
+  .card :where(figure:first-child) {
+    border-start-start-radius: inherit;
+    border-start-end-radius: inherit;
+    border-end-start-radius: unset;
+    border-end-end-radius: unset;
+  }
+  
+  .card :where(figure:last-child) {
+    overflow-hidden;
+    border-start-start-radius: unset;
+    border-start-end-radius: unset;
+    border-end-start-radius: inherit;
+    border-end-end-radius: inherit;
+  } */
+  

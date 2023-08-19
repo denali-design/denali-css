@@ -1,4 +1,4 @@
-.dn-btn {
+.btn {
     @apply text-base
     cursor-pointer
     inline-flex
@@ -11,9 +11,11 @@
     border
     border-transparent
     outline-4
+    text-white
+    capitalize
     min-w-[120px];
 
-    &.dn-btn-primary {
+    &.btn-primary {
         @apply bg-primary
         text-white
         hover:bg-primary
@@ -23,9 +25,11 @@
         h-9;
     }
 
-    &.dn-btn-secondary {
+    &.btn-secondary {
         @apply border-primary
+        border-2
         text-blue-500
+        bg-transparent
         hover:border-primary
         hover:text-primary
         /* hover:bg-primaryOpacity-400 */
@@ -38,8 +42,8 @@
         no-underline
         h-9;
     }
-    &.dn-btn-link {
-        @apply no-underline hover:underline;
+    &.btn-link {
+        @apply no-underline hover:underline text-primary;
     }
 
     &--transparent {
@@ -47,8 +51,8 @@
      }
 
     /* Button size */
-    &.dn-btn--medium {@apply h-8}
-    &.dn-btn--small {@apply h-7}
-    &.dn-btn--large {@apply h-11}
+    &.btn--medium {@apply h-8}
+    &.btn--small {@apply h-7}
+    &.btn--large {@apply h-11}
 }
 

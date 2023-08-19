@@ -2,11 +2,5 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
-/* include denali theme */
 @import 'theme.css';
 
-/* include your projects custom styles */
-
-/* @import "./components/body.css"; */
-/* @import "./components/alert.css"; */

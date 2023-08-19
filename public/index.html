@@ -6,23 +6,275 @@
   <title>Example Dashboard Denali Theme</title>
   <link rel="stylesheet" href="output.css" />
 </head>
-<body>
+<body class="bg-white p-12">
+
+  
+    <h1 class="h2">Denali CSS Components</h1>
  
-    <button class="bg-blue-400 text-white font-bold">Example</button>
 
-    <button class="btn btn-primary">exampl es</button>
+    <div class="flex flex-col w-full">
+      <div class="grid h-20 card bg-base-300 rounded-box place-items-center">content</div>
+      <div class="divider">OR</div>
+      <div class="grid h-20 card bg-base-300 rounded-box place-items-center">content</div>
+    </div>
 
+    <div class="flex">
+      <form>
 
-    <div class="w-48 h-48 test-bg">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name">
+
+          <button class="btn-primary">Save</button>
+        </div>
+      </form>
 
     </div>
 
-    <div class="alert alert-info shadow-lg">
+
+    <div class="divider">Headings</div>
+    <div class="divider divider-vertical">OR</div>
+
+    <div class="grid grid-cols-2">
       <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        <span>New software update available.</span>
+        <h2>Standard Headings</h2>
+        <h1 class="h1">Heading 1</h1>
+        <h2 class="h2">Heading 2</h2>
+        <h3 class="h3">Heading 3</h3>
+        <h4 class="h4">Heading 4</h4>
+        <h5 class="h5">Heading 5</h5>
+        <h5 class="h6">Heading 6</h5>
+      </div>
+
+      <div>
+        <h2>Display Headings</h2>
+        <h1 class="display-1">Display 1</h1>
+        <h2 class="display-2">Display 2</h2>
+        <h3 class="display-3">Display 3</h3>
+        <h4 class="display-4">Display 4</h4>
+        <h5 class="display-5">Display 5</h5>
+        <h5 class="display-6">Display 6</h5>
       </div>
     </div>
+
+
+      <div class="divider">Card</div>
+
+      <section class="flex gap-8 p-12 bg-gray-200">
+        <div class="card card-compact w-96">
+          <div class="card-body">
+            <h2 class="h4">Example Card Title</h2>
+            <p>This is an example card description</p>
+            <div class="card-actions flex justify-start space-x-4 mt-12">
+              <button class="btn btn-primary">Join</button>
+              <button class="btn btn-link">Cancel</button>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card bordered w-96">
+          <div class="card-body">
+            <h2 class="h4">Example Card Title</h2>
+            <p>This is an example card description</p>
+            <div class="card-actions justify-end mt-12">
+              <button class="btn btn-secondary">Cancel</button>
+              <button class="btn btn-primary">Join</button>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <div class="divider">Colors</div>
+    <section class="space-y-4">
+
+      <div class="flex flex-col">
+        <h2 class="h4">Main</h2>
+        <div class="flex">
+          <div class="w-24 h-24 bg-primary"></div>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col">
+      <h2 class="h4">Gray</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-gray-100"></div>
+        <div class="w-24 h-24 bg-gray-200"></div>
+        <div class="w-24 h-24 bg-gray-300"></div>
+        <div class="w-24 h-24 bg-gray-400"></div>
+        <div class="w-24 h-24 bg-gray-500"></div>
+        <div class="w-24 h-24 bg-gray-600"></div>
+        <div class="w-24 h-24 bg-gray-700"></div>
+        <div class="w-24 h-24 bg-gray-800"></div>
+        <div class="w-24 h-24 bg-gray-900"></div>
+      </div>
+    </div>
+
+      <div class="flex flex-col">
+    <h2 class="h4">Red</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-red-100"></div>
+        <div class="w-24 h-24 bg-red-200"></div>
+        <div class="w-24 h-24 bg-red-300"></div>
+        <div class="w-24 h-24 bg-red-400"></div>
+        <div class="w-24 h-24 bg-red-500"></div>
+        <div class="w-24 h-24 bg-red-600"></div>
+        <div class="w-24 h-24 bg-red-700"></div>
+        <div class="w-24 h-24 bg-red-800"></div>
+        <div class="w-24 h-24 bg-red-900"></div>
+      </div>
+    </div>
+
+        <div class="flex flex-col">
+      <h2 class="h4">Blue</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-blue-100"></div>
+        <div class="w-24 h-24 bg-blue-200"></div>
+        <div class="w-24 h-24 bg-blue-300"></div>
+        <div class="w-24 h-24 bg-blue-400"></div>
+        <div class="w-24 h-24 bg-blue-500"></div>
+        <div class="w-24 h-24 bg-blue-600"></div>
+        <div class="w-24 h-24 bg-blue-700"></div>
+        <div class="w-24 h-24 bg-blue-800"></div>
+        <div class="w-24 h-24 bg-blue-900"></div>
+      </div>
+    </div>
+
+        <div class="flex flex-col">
+      <h2 class="h4">Sky</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-sky-100"></div>
+        <div class="w-24 h-24 bg-sky-200"></div>
+        <div class="w-24 h-24 bg-sky-300"></div>
+        <div class="w-24 h-24 bg-sky-400"></div>
+        <div class="w-24 h-24 bg-sky-500"></div>
+        <div class="w-24 h-24 bg-sky-600"></div>
+        <div class="w-24 h-24 bg-sky-700"></div>
+        <div class="w-24 h-24 bg-sky-800"></div>
+        <div class="w-24 h-24 bg-sky-900"></div>
+      </div>
+    </div>
+
+        <div class="flex flex-col">
+      <h2 class="h4">Orange</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-orange-100"></div>
+        <div class="w-24 h-24 bg-orange-200"></div>
+        <div class="w-24 h-24 bg-orange-300"></div>
+        <div class="w-24 h-24 bg-orange-400"></div>
+        <div class="w-24 h-24 bg-orange-500"></div>
+        <div class="w-24 h-24 bg-orange-600"></div>
+        <div class="w-24 h-24 bg-orange-700"></div>
+        <div class="w-24 h-24 bg-orange-800"></div>
+        <div class="w-24 h-24 bg-orange-900"></div>
+      </div>
+    </div>
+
+        <div class="flex flex-col">
+      <h2 class="h4">Yellow</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-yellow-100"></div>
+        <div class="w-24 h-24 bg-yellow-200"></div>
+        <div class="w-24 h-24 bg-yellow-300"></div>
+        <div class="w-24 h-24 bg-yellow-400"></div>
+        <div class="w-24 h-24 bg-yellow-500"></div>
+        <div class="w-24 h-24 bg-yellow-600"></div>
+        <div class="w-24 h-24 bg-yellow-700"></div>
+        <div class="w-24 h-24 bg-yellow-800"></div>
+        <div class="w-24 h-24 bg-yellow-900"></div>
+      </div>
+    </div>
+
+        <div class="flex flex-col">
+      <h2 class="h4">Lime</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-lime-100"></div>
+        <div class="w-24 h-24 bg-lime-200"></div>
+        <div class="w-24 h-24 bg-lime-300"></div>
+        <div class="w-24 h-24 bg-lime-400"></div>
+        <div class="w-24 h-24 bg-lime-500"></div>
+        <div class="w-24 h-24 bg-lime-600"></div>
+        <div class="w-24 h-24 bg-lime-700"></div>
+        <div class="w-24 h-24 bg-lime-800"></div>
+        <div class="w-24 h-24 bg-lime-900"></div>
+      </div>
+    </div>
+
+        <div class="flex flex-col">
+      <h2 class="h4">Green</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-green-100"></div>
+        <div class="w-24 h-24 bg-green-200"></div>
+        <div class="w-24 h-24 bg-green-300"></div>
+        <div class="w-24 h-24 bg-green-400"></div>
+        <div class="w-24 h-24 bg-green-500"></div>
+        <div class="w-24 h-24 bg-green-600"></div>
+        <div class="w-24 h-24 bg-green-700"></div>
+        <div class="w-24 h-24 bg-green-800"></div>
+        <div class="w-24 h-24 bg-green-900"></div>
+      </div>
+    </div>
+
+        <div class="flex flex-col">
+      <h2 class="h4">Purple</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-purple-100"></div>
+        <div class="w-24 h-24 bg-purple-200"></div>
+        <div class="w-24 h-24 bg-purple-300"></div>
+        <div class="w-24 h-24 bg-purple-400"></div>
+        <div class="w-24 h-24 bg-purple-500"></div>
+        <div class="w-24 h-24 bg-purple-600"></div>
+        <div class="w-24 h-24 bg-purple-700"></div>
+        <div class="w-24 h-24 bg-purple-800"></div>
+        <div class="w-24 h-24 bg-purple-900"></div>
+      </div>
+    </div>
+
+        <div class="flex flex-col">
+      <h2 class="h4">Violet</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-violet-100"></div>
+        <div class="w-24 h-24 bg-violet-200"></div>
+        <div class="w-24 h-24 bg-violet-300"></div>
+        <div class="w-24 h-24 bg-violet-400"></div>
+        <div class="w-24 h-24 bg-violet-500"></div>
+        <div class="w-24 h-24 bg-violet-600"></div>
+        <div class="w-24 h-24 bg-violet-700"></div>
+        <div class="w-24 h-24 bg-violet-800"></div>
+        <div class="w-24 h-24 bg-violet-900"></div>
+      </div>
+    </div>
+
+        <div class="flex flex-col">
+      <h2 class="h4">Pink</h2>
+      <div class="flex">
+        <div class="w-24 h-24 bg-pink-100"></div>
+        <div class="w-24 h-24 bg-pink-200"></div>
+        <div class="w-24 h-24 bg-pink-300"></div>
+        <div class="w-24 h-24 bg-pink-400"></div>
+        <div class="w-24 h-24 bg-pink-500"></div>
+        <div class="w-24 h-24 bg-pink-600"></div>
+        <div class="w-24 h-24 bg-pink-700"></div>
+        <div class="w-24 h-24 bg-pink-800"></div>
+        <div class="w-24 h-24 bg-pink-900"></div>
+      </div>
+    </div>
+      
+      
+    
+
+    </section>
+
+    <div class="divider">Tabs</div>
+
+    <div class="tabs">
+      <a class="tab tab-bordered">Tab 1</a> 
+      <a class="tab tab-bordered tab-active">Tab 2</a> 
+      <a class="tab tab-bordered">Tab 3</a>
+    </div>
+
+  
 
 </body>
 </html>
