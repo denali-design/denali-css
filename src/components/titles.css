@@ -1,14 +1,26 @@
 .dn-title {
     @apply flex items-stretch;
+
     &--bar {
         @apply w-0.5 rounded-sm bg-gray-500 mr-[18px];
-        &-success { @apply w-1 mr-4 bg-[#15C046] }
+
+        &-success {
+            @apply w-1 mr-4 bg-[#15C046]
+        }
     }
+
     &--title {
         @apply text-xl text-black;
-        &-bold { @apply font-bold}
-        &-success { @apply text-[#15C046] }
+
+        &-bold {
+            @apply font-bold
+        }
+
+        &-success {
+            @apply text-[#15C046]
+        }
     }
+
     &--label {
         @apply text-sm text-opacity-black-500 uppercase;
     }

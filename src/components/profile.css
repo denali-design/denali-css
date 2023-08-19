@@ -1,10 +1,32 @@
 .dn-profile {
-    @apply p-5 rounded-sm border border-[rgba(48,48,48,0.1)] text-black shadow-md;
-    &--avatar { @apply w-[56px] h-[56px] }
-    &--header { @apply flex }
-    &--info { @apply ml-3.5 }
-    &--title { @apply text-base font-bold }
-    &--mail { @apply flex items-center text-xs my-[5px] }
-    &--icon { @apply mr-1; font-size: 12px !important; }
-    &--btn { @apply border-0 bg-[rgba(1,110,255,0.1)] rounded-md h-8 text-primary-300 text-sm mt-[5px] w-full }
+    @apply p-5 rounded-sm border border-[rgba(48, 48, 48, 0.1)] text-black shadow-md;
+
+    &--avatar {
+        @apply w-[56px] h-[56px]
+    }
+
+    &--header {
+        @apply flex
+    }
+
+    &--info {
+        @apply ml-3.5
+    }
+
+    &--title {
+        @apply text-base font-bold
+    }
+
+    &--mail {
+        @apply flex items-center text-xs my-[5px]
+    }
+
+    &--icon {
+        @apply mr-1;
+        font-size: 12px !important;
+    }
+
+    &--btn {
+        @apply border-0 bg-[rgba(1, 110, 255, 0.1)] rounded-md h-8 text-primary-300 text-sm mt-[5px] w-full
+    }
 }

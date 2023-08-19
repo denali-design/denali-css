@@ -1,8 +1,27 @@
 .dn-toast {
     @apply bg-gray-800 rounded-md px-[14px] py-[18px] text-white text-sm;
-    i {@apply cursor-pointer}
-    &--header {@apply flex justify-between items-center;}
-    &--title {@apply text-base}
-    &--content {@apply mt-3}
-    &--small { @apply w-[280px]; .dn-toast--title {@apply text-sm}}
+
+    i {
+        @apply cursor-pointer
+    }
+
+    &--header {
+        @apply flex justify-between items-center;
+    }
+
+    &--title {
+        @apply text-base
+    }
+
+    &--content {
+        @apply mt-3
+    }
+
+    &--small {
+        @apply w-[280px];
+
+        .dn-toast--title {
+            @apply text-sm
+        }
+    }
 }

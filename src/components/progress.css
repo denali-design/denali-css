@@ -1,15 +1,38 @@
 .dn-progress {
     @apply h-4 rounded bg-gray-400 overflow-hidden flex;
+
     &--bar {
         @apply bg-primary-300 h-full ml-0.5;
-        &:first-child { @apply ml-0 }
+
+        &:first-child {
+            @apply ml-0
+        }
     }
-    &--sm {@apply h-2.5 }
-    &--md {@apply h-5 }
-    &--lg {@apply h-6 }
-    &--danger { @apply bg-alerts-danger }
-    &--warning { @apply bg-alerts-warning }
-    &--success { @apply bg-alerts-success }
+
+    &--sm {
+        @apply h-2.5
+    }
+
+    &--md {
+        @apply h-5
+    }
+
+    &--lg {
+        @apply h-6
+    }
+
+    &--danger {
+        @apply bg-alerts-danger
+    }
+
+    &--warning {
+        @apply bg-alerts-warning
+    }
+
+    &--success {
+        @apply bg-alerts-success
+    }
+
     &--loader {
         animation: loadingShimmer 1s linear infinite;
         animation-fill-mode: forwards;
@@ -21,6 +44,11 @@
 }
 
 @keyframes loadingShimmer {
-    from { background-position: -100% }
-    to { background-position: 200% }
+    from {
+        background-position: -100%
+    }
+
+    to {
+        background-position: 200%
+    }
 }

@@ -1,6 +1,19 @@
 .dn-link {
-    @apply text-sm text-primary-300 hover:text-primary-400 active:text-primary-700 flex items-center space-x-1;
-    & i.dn-link--icon { @apply text-[12px] }
-    &--disabled { @apply text-gray-700 cursor-not-allowed hover:text-gray-700 active:text-gray-700 }
-    &--small { @apply text-xs; & i.dn-link--icon { @apply text-[10px] } }
+    @apply text-sm text-blue-500 hover: text-primary-600 active:text-blue-700 flex items-center space-x-1;
+
+    & i.dn-link--icon {
+        @apply text-[12px]
+    }
+
+    &--disabled {
+        @apply text-gray-700 cursor-not-allowed hover: text-gray-700 active:text-gray-700
+    }
+
+    &--small {
+        @apply text-xs;
+
+        & i.dn-link--icon {
+            @apply text-[10px]
+        }
+    }
 }

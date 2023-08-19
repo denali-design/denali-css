@@ -1,0 +1,8 @@
+{
+    "plugins": [
+      "prettier",
+      "prettier-plugin-tailwindcss"
+    ],
+    "pluginSearchDirs": false
+  }
+  

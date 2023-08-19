@@ -1,15 +1,29 @@
 .dn-menu {
     @apply inline-block relative;
+
     &--content {
         @apply absolute z-20 bg-white invisible opacity-0 transition-all duration-200 top-full left-1/2 w-max translate-x-[-50%] border-2 border-gray-400 rounded shadow-xl p-5;
-        .dn-link { @apply py-[5px] whitespace-nowrap }
+
+        .dn-link {
+            @apply py-[5px] whitespace-nowrap
+        }
     }
-    &:hover .dn-menu--content, &.dn-menu--active .dn-menu--content, &--trigger:hover + .dn-menu--content { @apply visible opacity-100 }
+
+    &:hover .dn-menu--content,
+    &.dn-menu--active .dn-menu--content,
+    &--trigger:hover+.dn-menu--content {
+        @apply visible opacity-100
+    }
+
     &--line {
         @apply h-0.5 bg-gray-400 my-5 w-[calc(100%+40px)] ml-[-20px];
     }
+
     &--nav {
         @apply h-full;
-        .dn-menu--content { @apply left-auto right-0 translate-x-0 top-[calc(100%-10px)] }
+
+        .dn-menu--content {
+            @apply left-auto right-0 translate-x-0 top-[calc(100%-10px)]
+        }
     }
 }

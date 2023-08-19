@@ -1,7 +1,22 @@
 .dn-chip {
-    @apply text-sm bg-primary-100 p-1 rounded text-gray-800;
-    &--sm {@apply py-0.5 text-xs}
-    &--group {@apply flex items-center;}
-    &--left {@apply rounded-r-none bg-primary-200}
-    &--right {@apply rounded-l-none}
+    @apply text-sm
+    /* bg-primary-100  */
+    p-1 rounded text-gray-800;
+
+    &--sm {
+        @apply py-0.5 text-xs
+    }
+
+    &--group {
+        @apply flex items-center;
+    }
+
+    &--left {
+        @apply rounded-r-none
+        /* bg-primary-200 */
+    }
+
+    &--right {
+        @apply rounded-l-none
+    }
 }

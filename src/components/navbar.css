@@ -1,5 +1,5 @@
 .navbar {
-    @apply bg-gray-800 flex items-center h-[60px] lg:px-[18px] px-3;
+    @apply bg-gray-800 flex items-center h-[50px] px-3;
     /* &--left { @apply lg:max-w-[300px] w-full flex items-center justify-between }
     &--mobile-menu { @apply lg:hidden text-white}
     &--responsive {@apply w-full hidden lg:block h-full }

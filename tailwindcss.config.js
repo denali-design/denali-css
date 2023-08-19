@@ -132,12 +132,12 @@ module.exports = {
         900: "#7F1C57",
       },
       //  status colors
-      "status": {
-        "error": "#EA0000",
-        "warning": "#F4CB00",
-        "success": "#15C046",
-        "info": "#0066DF",
-      }
+      // "status": {
+      //   "error": "#EA0000",
+      //   "warning": "#F4CB00",
+      //   "success": "#15C046",
+      //   "info": "#0066DF",
+      // }
+    },
   },
-},
 }
