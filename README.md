@@ -10,27 +10,20 @@
 - [Denali CSS Library](#denali-css-library)
   - [Table of contents](#table-of-contents)
   - [Background](#background)
-  - [Example Projects](#example-projects)
   - [Quick Install](#quick-install)
       - [Installation](#installation)
   - [Browser Support](#browser-support)
   - [Versioning](#versioning)
   - [Contribute](#contribute)
-  - [Maintainers](#maintainers)
   - [License](#license)
 
 ---
 
 ## Background
 
-Introducing Denali V3, a dynamic theme built upon the robust foundation of Daisy UI. By harnessing the power of Daisy UI, developers can effortlessly access the extensive range of components and utilities provided by TailwindCSS, resulting in unparalleled flexibility. Our primary objective is to foster seamless consistency between design and development, enabling a swift workflow and simplified maintenance. 
+Introducing Denali V3, a dynamic theme built upon the robust foundation of TailwindCSS. By harnessing the power of TailwindCSS, developers can effortlessly access the extensive range of utilities provided by TailwindCSS, resulting in unparalleled flexibility. Our primary objective is to foster seamless consistency between design and development, enabling a swift workflow and simplified maintenance. 
 
-You can view [Daisy Ui Components](https://daisyui.com/components/) and all [TailwindCSS Utilities]( https://tailwindcss.com/)
-
-## Example Projects
-- [PostCSS Build](https://github.com/denali-design/denali-example-project)
-- [TailwindCSS & LiveServer](https://github.com/denali-design/denali-example-project)
-
+You can view [TailwindCSS Utilities]( https://tailwindcss.com/)
 
 ## Quick Install
 
@@ -86,8 +79,6 @@ And then update you package.json scripts with the following:
 
 ```
 
-
-
 ## Browser Support
 Learn more about the browsers and devices we support [here](https://denali.design/browsers).
 - **Chrome** on Android, Windows, macOS, and Linux
@@ -103,14 +94,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Contribute
 
 To start contributing to Denali, have a look at our guidelines, as well as pointers on where to start making changes, in our [contributing guide](https://github.com/denali-design/denali-css/blob/master/CONTRIBUTE.md).
-
-
-## Maintainers
-
-- **Jon Kilroy** kilroy@yahooinc.com
-- **Anusha Ganti** annapoorna.ganti@yahooinc.com
-- **Trevor Greenleaf** trevor.greenleaf@yahooinc.com
-
 
 ## License
 

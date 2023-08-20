@@ -1,6 +1,6 @@
 {
-  "name": "denali-css-theme",
-  "version": "3.0.0-beta",
+  "name": "@trevorgreenleaf/denali",
+  "version": "3.0.0-alpha.1",
   "description": "Denali CSS UI",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:denali-design/denali-css.git"
+    "url": "git+ssh://git@github.com/denali-design/denali-css.git"
   },
   "author": "Yahoo",
   "license": "MIT",
