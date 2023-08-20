@@ -2,5 +2,16 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import 'theme.css';
+@import './src/components/headings.css';
+@import './src/components/headings-display.css';
+@import './src/components/dividers.css';
+@import './src/components/card.css';
+@import './src/components/buttons.css';
+@import './src/components/navbar.css';
+@import './src/components/fields.css';
+
+
+.custom-class {
+    @apply bg-primary text-white;
+}
 
