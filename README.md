@@ -7,13 +7,17 @@
 
 ## Table of contents
  
-- [Background](#background)
-- [Quick Start](#quick-start)
-- [Install](#install)
-- [Browser support](#browser-support)
-- [Versioning](#versioning)
-- [Contribute](#contribute)
-- [License](#license)
+- [Denali CSS Library](#denali-css-library)
+  - [Table of contents](#table-of-contents)
+  - [Background](#background)
+  - [Example Projects](#example-projects)
+  - [Quick Install](#quick-install)
+      - [Installation](#installation)
+  - [Browser Support](#browser-support)
+  - [Versioning](#versioning)
+  - [Contribute](#contribute)
+  - [Maintainers](#maintainers)
+  - [License](#license)
 
 ---
 
@@ -58,15 +62,9 @@ Modify content key to match your type of file format. This will be used to purge
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
-@import 'denali-css-theme/theme.css';
 ```
 
 5. If you already have a compiler setup use that or you can use TailwindCSS directly and live-server. You would run 
-
-```
-npm install 'live-server';
-```
 
 ```
 npm install 'npm-run-all';

@@ -1,7 +1,5 @@
 docs/
 gulpfile.js
 screwdriver.yaml
-.storybook
-stories
 node_modules
 *.log
