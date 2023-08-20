@@ -22,7 +22,3 @@
 .divider-vertical {
   @apply mx-0 my-4 h-4 w-auto;
 }
-
-body {
-  @apply bg-black;
-}
