@@ -2,7 +2,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  darkMode: "media",
+  darkMode: "class",
   content: ["./public/*.html"], // turn off after testing
   theme: {
     extend: {
@@ -12,8 +12,8 @@ module.exports = {
         secondary: colors.violet[600],
         "secondary-content": colors.neutral[50],
         base: colors.neutral[50],
-        "base-dark": colors.neutral[400],
-        "base-light": colors.neutral[100],
+        "base-dark": colors.neutral[950],
+        "base-light": colors.neutral[300],
         success: colors.green[600],
         "success-light": colors.green[300],
         "success-dark": colors.green[900],
