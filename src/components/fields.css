@@ -21,7 +21,7 @@
         text-white h-8 rounded-r flex items-center justify-center shrink-0 cursor-pointer;
 
         &.light {
-            /* @apply text-primary-300 bg-opacity-primary-400 */
+            @apply text-primary;
         }
     }
 

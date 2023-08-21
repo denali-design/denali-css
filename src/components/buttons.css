@@ -2,13 +2,13 @@
     @apply text-base cursor-pointer inline-flex justify-center items-center transition px-2.5 py-0.5 rounded-md border border-transparent outline-4 text-white capitalize min-w-[120px];
 
     &.btn-primary {
-        /* @apply bg-primary
+        @apply bg-primary
         text-white
         hover:bg-primary
         active:bg-primary
         disabled:bg-gray-500
         disabled:text-gray-700
-        h-9; */
+        h-9;
     }
 
     &.btn-secondary {

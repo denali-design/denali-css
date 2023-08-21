@@ -3,7 +3,11 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   darkMode: "class",
-  content: ["./public/*.html"], // turn off after testing
+  // content: ["./public/*.html"], // turn off after testing
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+  ],
   theme: {
     extend: {
       colors: {

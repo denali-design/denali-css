@@ -9,8 +9,7 @@
     "build": "NODE_ENV=production npx tailwindcss -c ./tailwindcss.config.js -i ./tailwind.css -o public/output.css"
   },
   "dependencies": {
-    "concurrently": "^7.0.0",
-    "postcss-import": "^15.1.0"
+    "concurrently": "^7.0.0"
   },
   "keywords": [
     "component",
@@ -37,13 +36,16 @@
   },
   "homepage": "https://github.com/denali-design/denali-css#readme",
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.4",
+    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.27",
     "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
     "postcss-nesting": "^12.0.1",
-    "tailwindcss": "^3.3.3",
     "prettier": "^3.0.1",
-    "prettier-plugin-tailwindcss": "^0.4.1"
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "tailwindcss": "^3.3.3"
   }
 }
