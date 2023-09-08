@@ -18,7 +18,6 @@ N/A
 
 ### Pre-Merge Checklist:
 
-
 #### Reviewer # 1
 
 - [ ] Review **Source** code.
@@ -26,9 +25,7 @@ N/A
 - [ ] Review **Snapshot**.
 - [ ] Review PR **Storybook**.
 
-
 **NOTE:** To review PR **Storybook** for the last build, **download** PR storybook from CI build **Artifacts**.
-
 
 #### PR Owner
 

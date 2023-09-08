@@ -6,12 +6,12 @@
 [![GitHub](https://img.shields.io/github/license/denali-design/denali-css)](https://github.com/denali-design/denali-css/blob/master/LICENSE.md)
 
 ## Table of contents
- 
+
 - [Denali CSS Library](#denali-css-library)
   - [Table of contents](#table-of-contents)
   - [Background](#background)
   - [Quick Install](#quick-install)
-      - [Installation](#installation)
+    - [Installation](#installation)
   - [Browser Support](#browser-support)
   - [Versioning](#versioning)
   - [Contribute](#contribute)
@@ -21,19 +21,22 @@
 
 ## Background
 
-Introducing Denali V3, a dynamic theme built upon the robust foundation of TailwindCSS. By harnessing the power of TailwindCSS, developers can effortlessly access the extensive range of utilities provided by TailwindCSS, resulting in unparalleled flexibility. Our primary objective is to foster seamless consistency between design and development, enabling a swift workflow and simplified maintenance. 
+Introducing Denali V3, a dynamic theme built upon the robust foundation of TailwindCSS. By harnessing the power of TailwindCSS, developers can effortlessly access the extensive range of utilities provided by TailwindCSS, resulting in unparalleled flexibility. Our primary objective is to foster seamless consistency between design and development, enabling a swift workflow and simplified maintenance.
 
-You can view [TailwindCSS Utilities]( https://tailwindcss.com/)
+You can view [TailwindCSS Utilities](https://tailwindcss.com/)
 
 ## Quick Install
 
 #### Installation
+
 1. Install TailwindCSS by running the following command:
+
 ```
 npm install tailwindcss
 ```
 
 2. Next up install Denali CSS Theme Package
+
 ```
 npm install denail-css-theme
 ```
@@ -48,24 +51,24 @@ module.exports = {
     content: ['./public/*.html'],
   }
 ```
+
 Modify content key to match your type of file format. This will be used to purge any unused styles.
 
-4. Create am "app.css" in the same directory. Paste the following imports: 
+4. Create am "app.css" in the same directory. Paste the following imports:
+
 ```
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 ```
 
-5. If you already have a compiler setup use that or you can use TailwindCSS directly and live-server. You would run 
+5. If you already have a compiler setup use that or you can use TailwindCSS directly and live-server. You would run
 
 ```
 npm install 'npm-run-all';
 ```
 
-
 And then update you package.json scripts with the following:
-
 
 ```
 {
@@ -80,16 +83,16 @@ And then update you package.json scripts with the following:
 ```
 
 ## Browser Support
+
 Learn more about the browsers and devices we support [here](https://denali.design/browsers).
+
 - **Chrome** on Android, Windows, macOS, and Linux
 - **Firefox** on Windows, macOS, and Linux
 - **Safari** on iOS and macOS
 
-
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this [repository](https://github.com/denali-design/denali-css/tags).
-
 
 ## Contribute
 
@@ -98,4 +101,3 @@ To start contributing to Denali, have a look at our guidelines, as well as point
 ## License
 
 Code licensed under the MIT license. See [LICENSE file](https://github.com/denali-design/denali-css/blob/master/LICENSE.md) for terms.
-

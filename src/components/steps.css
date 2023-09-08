@@ -1,9 +1,9 @@
 .dn-steps .dn-step:after,
 .dn-steps .dn-step:before {
-    @apply bg-gray-200;
+  @apply bg-gray-200;
 }
 
-.dn-steps .dn-step-primary+.dn-step-primary:before,
+.dn-steps .dn-step-primary + .dn-step-primary:before,
 .dn-steps .dn-step-primary:after {
-    @apply bg-primary text-white;
+  @apply color-background-primary-light text-white;
 }

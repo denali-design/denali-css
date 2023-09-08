@@ -1,31 +1,31 @@
 .dn-modal {
-    @apply bg-white rounded text-gray-700 text-sm border-2 border-gray-400 max-w-[850px] ml-5 mr-5 shadow-lg;
+  @apply ml-5 mr-5 max-w-[850px] rounded border-2 border-gray-400 bg-white text-sm text-gray-700 shadow-lg;
 
-    &--close {
-        @apply text-gray-700 block ml-auto cursor-pointer
+  &--close {
+    @apply ml-auto block cursor-pointer text-gray-700;
+  }
+
+  &--title {
+    @apply font-bold;
+  }
+
+  &--header {
+    @apply flex items-center border-b-2 border-b-gray-400 p-3;
+  }
+
+  &--content {
+    @apply p-3;
+  }
+
+  &--footer {
+    @apply border-t-2 border-t-gray-400 p-3;
+  }
+
+  &--overlay {
+    @apply bg-opacity-gray-100 fixed inset-0 hidden items-center justify-center;
+
+    &.open {
+      @apply flex;
     }
-
-    &--title {
-        @apply font-bold
-    }
-
-    &--header {
-        @apply flex items-center border-b-2 border-b-gray-400 p-3
-    }
-
-    &--content {
-        @apply p-3
-    }
-
-    &--footer {
-        @apply border-t-2 border-t-gray-400 p-3
-    }
-
-    &--overlay {
-        @apply fixed inset-0 bg-opacity-gray-100 hidden items-center justify-center;
-
-        &.open {
-            @apply flex
-        }
-    }
+  }
 }

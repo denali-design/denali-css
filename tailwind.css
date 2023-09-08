@@ -1,17 +1,15 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import './src/components/headings.css';
-@import './src/components/headings-display.css';
-@import './src/components/dividers.css';
-@import './src/components/card.css';
-@import './src/components/buttons.css';
-@import './src/components/navbar.css';
-@import './src/components/fields.css';
-
+@import "./src/components/headings.css";
+@import "./src/components/headings-display.css";
+@import "./src/components/dividers.css";
+@import "./src/components/card.css";
+@import "./src/components/buttons.css";
+@import "./src/components/navbar.css";
+@import "./src/components/fields.css";
 
 .custom-class {
-    @apply bg-primary text-white;
+  @apply bg-color-background-primary-light text-white;
 }
-

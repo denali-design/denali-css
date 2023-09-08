@@ -1,31 +1,31 @@
 .dn-shadow {
-    @apply shadow;
+  @apply shadow;
 
-    &--sm {
-        @apply shadow-sm
-    }
+  &--sm {
+    @apply shadow-sm;
+  }
 
-    &--md {
-        @apply shadow-md
-    }
+  &--md {
+    @apply shadow-md;
+  }
 
-    &--lg {
-        @apply shadow-lg
-    }
+  &--lg {
+    @apply shadow-lg;
+  }
 
-    &--xl {
-        @apply shadow-xl
-    }
+  &--xl {
+    @apply shadow-xl;
+  }
 
-    &--2xl {
-        @apply shadow-2xl
-    }
+  &--2xl {
+    @apply shadow-2xl;
+  }
 
-    &--inner {
-        @apply shadow-inner
-    }
+  &--inner {
+    @apply shadow-inner;
+  }
 
-    &--none {
-        @apply shadow-none
-    }
+  &--none {
+    @apply shadow-none;
+  }
 }

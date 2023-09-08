@@ -1,67 +1,67 @@
 .dn-drawer {
-    @apply border-2 border-gray-400 w-full bg-white shadow-lg rounded;
+  @apply w-full rounded border-2 border-gray-400 bg-white shadow-lg;
 
-    &--divider {
-        @apply h-[2px] bg-gray-400;
+  &--divider {
+    @apply h-[2px] bg-gray-400;
 
-        &-spaces {
-            @apply my-5
-        }
+    &-spaces {
+      @apply my-5;
     }
+  }
 
-    &--padding {
-        @apply p-5
+  &--padding {
+    @apply p-5;
+  }
+
+  &--header {
+    @apply flex items-center;
+
+    &-title {
+      @apply text-lg font-bold;
     }
+  }
 
-    &--header {
-        @apply flex items-center;
+  &--checkbox {
+    @apply my-5;
+  }
 
-        &-title {
-            @apply text-lg font-bold
-        }
+  .dn-tabs {
+    @apply w-full p-0;
+  }
+
+  .dn-tag {
+    @apply mb-2.5;
+  }
+
+  .dn-switch {
+    @apply mb-2;
+  }
+
+  .dn-box {
+    @apply border-2;
+  }
+
+  &--half {
+    @apply w-1/2 shrink-0;
+  }
+
+  &--menu {
+    @apply flex justify-between px-[60px] py-10;
+
+    ul li {
+      @apply mt-3.5 block text-sm;
     }
+  }
 
-    &--checkbox {
-        @apply my-5
+  &--blog {
+    @apply flex flex-col justify-between bg-gray-400 py-10 pl-[60px] pr-10;
+
+    &-item {
+      @apply mb-5 flex items-start;
+
+      img {
+        @apply mr-4;
+      }
     }
-
-    .dn-tabs {
-        @apply w-full p-0
-    }
-
-    .dn-tag {
-        @apply mb-2.5
-    }
-
-    .dn-switch {
-        @apply mb-2
-    }
-
-    .dn-box {
-        @apply border-2
-    }
-
-    &--half {
-        @apply w-1/2 shrink-0
-    }
-
-    &--menu {
-        @apply px-[60px] py-10 flex justify-between;
-
-        ul li {
-            @apply mt-3.5 text-sm block
-        }
-    }
-
-    &--blog {
-        @apply bg-gray-400 pl-[60px] pr-10 py-10 flex justify-between flex-col;
-
-        &-item {
-            @apply flex items-start mb-5;
-
-            img {
-                @apply mr-4
-            }
-        }
-    }
+  }
 }

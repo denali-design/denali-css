@@ -1,10 +1,9 @@
 .card {
-    @apply rounded-md p-4 bg-white;
-  
-    &.bordered {
-        @apply border border-gray-400;
-     }
-    
+  @apply rounded-md bg-white p-4;
+
+  &.bordered {
+    @apply border border-gray-400;
+  }
 }
 
 /*    
@@ -50,4 +49,3 @@
     border-end-start-radius: inherit;
     border-end-end-radius: inherit;
   } */
-  

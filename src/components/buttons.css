@@ -1,44 +1,33 @@
 .btn {
-    @apply text-base cursor-pointer inline-flex justify-center items-center transition px-2.5 py-0.5 rounded-md border border-transparent outline-4 text-white capitalize min-w-[120px];
+  @apply border-color-border-primary-light inline-flex min-w-[120px] cursor-pointer items-center justify-center rounded-md px-2.5 py-0.5 text-base capitalize outline-4 transition;
 
-    &.btn-primary {
-        @apply bg-primary
-        text-white
-        hover:bg-primary
-        active:bg-primary
-        disabled:bg-gray-500
-        disabled:text-gray-700
+  &.btn-primary {
+    @apply bg-color-action-primary-default-light
+        hover:bg-color-action-primary-default-light
+        active:bg-color-action-primary-pressed-light
+        disabled:bg-color-action-primary-disabled-light
+        disabled:text-color-text-secondary-light
         h-9;
-    }
+  }
 
-    &.btn-secondary {
-        /* @apply */
-        /* border-primary border-2 text-blue-500 bg-transparent hover: border-primary hover:text-primary */
-        /* hover:bg-primaryOpacity-400 */
-        /* active: text-primary active:border-primary */
-        /* active:bg-primaryOpacity-700 */
-        /* disabled: border-gray-700 disabled:bg-gray-500 disabled:text-gray-700 no-underline h-9; */
-    }
+  &.btn-link {
+    @apply text-color-action-text-default-light no-underline hover:underline;
+  }
 
-    &.btn-link {
-        @apply no-underline hover:underline text-primary;
-    }
+  &--transparent {
+    @apply bg-color-action-primary-default-light;
+  }
 
-    &--transparent {
-        @apply bg-transparent
-        /* text-primary */
-    }
+  /* Button size */
+  &.btn--medium {
+    @apply h-8;
+  }
 
-    /* Button size */
-    &.btn--medium {
-        @apply h-8
-    }
+  &.btn--small {
+    @apply h-7;
+  }
 
-    &.btn--small {
-        @apply h-7
-    }
-
-    &.btn--large {
-        @apply h-11
-    }
+  &.btn--large {
+    @apply h-11;
+  }
 }

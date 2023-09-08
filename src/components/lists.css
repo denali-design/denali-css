@@ -1,15 +1,15 @@
 .dn-list {
-    @apply pl-5;
+  @apply pl-5;
 
-    & li {
-        @apply text-sm;
-    }
+  & li {
+    @apply text-sm;
+  }
 
-    &--ordered {
-        @apply list-decimal
-    }
+  &--ordered {
+    @apply list-decimal;
+  }
 
-    &--unordered {
-        @apply list-disc
-    }
+  &--unordered {
+    @apply list-disc;
+  }
 }

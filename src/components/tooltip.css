@@ -1,12 +1,22 @@
 .dn-tooltip {
-    @apply relative text-sm text-primary-700 cursor-pointer hover:text-primary-800 px-2 py-1;
-    &:after {
-        content: attr(data-tooltip);
-        @apply absolute top-full right-1/2 translate-x-1/2 bg-opacity-black-900 text-white rounded text-xs px-1.5 py-1 opacity-0 invisible transition-all duration-200
-    }
-    &--small:after { @apply text-[10px] px-1 py-[3px]}
-    &--top:after {@apply bottom-full top-auto }
-    &--left:after {@apply right-full translate-x-0 translate-y-[-50%] top-1/2 }
-    &--right:after {@apply left-full right-auto translate-x-0 translate-y-[-50%] top-1/2 }
-    &:hover:after {@apply visible opacity-100}
+  @apply text-primary-700 hover:text-primary-800 relative cursor-pointer px-2 py-1 text-sm;
+  &:after {
+    content: attr(data-tooltip);
+    @apply bg-opacity-black-900 invisible absolute right-1/2 top-full translate-x-1/2 rounded px-1.5 py-1 text-xs text-white opacity-0 transition-all duration-200;
+  }
+  &--small:after {
+    @apply px-1 py-[3px] text-[10px];
+  }
+  &--top:after {
+    @apply bottom-full top-auto;
+  }
+  &--left:after {
+    @apply right-full top-1/2 translate-x-0 translate-y-[-50%];
+  }
+  &--right:after {
+    @apply left-full right-auto top-1/2 translate-x-0 translate-y-[-50%];
+  }
+  &:hover:after {
+    @apply visible opacity-100;
+  }
 }

@@ -1,6 +1,6 @@
 .navbar {
-    @apply bg-gray-800 flex items-center h-[50px] px-3;
-    /* &--left { @apply lg:max-w-[300px] w-full flex items-center justify-between }
+  /* @apply bg-gray-800 flex items-center h-[50px] px-3; */
+  /* &--left { @apply lg:max-w-[300px] w-full flex items-center justify-between }
     &--mobile-menu { @apply lg:hidden text-white}
     &--responsive {@apply w-full hidden lg:block h-full }
     &--right { @apply flex items-center justify-end w-full h-full }
@@ -20,4 +20,29 @@
 
         i { @apply text-primary }
     } */
+}
+
+.navbar {
+  @apply flex items-center bg-white px-6 text-black;
+}
+
+.navbar__primary-nav,
+.navbar__secondary-nav {
+  @apply flex items-center gap-4;
+}
+
+.navbar__primary-nav {
+  @apply order-3;
+}
+
+.navbar__secondary-nav {
+  @apply order-4 ml-auto;
+}
+
+.navbar__global-nav {
+  @apply order-2 mx-6;
+}
+
+.navbar__auth-user {
+  @apply order-5 ml-6;
 }

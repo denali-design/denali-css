@@ -24,7 +24,7 @@
   </head>
   <body class="bg-base dark:bg-base-dark dark:text-base-light">
     <header
-      class="bg-primary flex items-center gap-3 px-8 py-6 text-base font-bold"
+      class="color-background-primary-light flex items-center gap-3 px-8 py-6 text-base font-bold"
     >
       <h1 class="text-lg md:text-2xl">Colors</h1>
       <button
@@ -58,124 +58,482 @@
         </svg>
       </button>
     </header>
-    <main class="mx-auto flex max-w-3xl flex-col gap-6 p-4 pb-14">
-      <section class="flex flex-col">
-        <h2 class="h4 mb-2">Primary</h2>
-        <div class="flex gap-4">
-          <div>
-            <div class="bg-primary h-24 w-24"></div>
-            <p class="text-sm">Primary</p>
+    <main class="mx-auto grid grid-cols-1 gap-6 p-4 pb-14 md:grid-cols-2">
+      <!-- LIGHT MODE -->
+      <div class="flex flex-col gap-10 rounded-lg p-8">
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Background</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-background-primary-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Primary</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-background-secondary-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Secondary</p>
+            </div>
           </div>
-          <div>
-            <div class="bg-primary-content h-24 w-24"></div>
-            <p class="text-sm">Primary Content</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="flex flex-col">
-        <h2 class="h4 mb-2">Secondary</h2>
-        <div class="flex gap-4">
-          <div>
-            <div class="bg-secondary h-24 w-24"></div>
-            <p class="text-sm">Secondary</p>
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Border</h2>
+          <div class="flex gap-4">
+            <div>
+              <div class="bg-color-border-primary-light h-24 w-24"></div>
+              <p class="text-sm">Primary</p>
+            </div>
           </div>
-          <div>
-            <div class="bg-secondary-content h-24 w-24"></div>
-            <p class="text-sm">Secondary Content</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="flex flex-col">
-        <h2 class="h4 mb-2">Base</h2>
-        <div class="flex gap-4">
-          <div>
-            <div class="bg-base-light h-24 w-24"></div>
-            <p class="text-sm">Base Light</p>
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Text</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-text-primary-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Primary</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-text-secondary-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Secondary</p>
+            </div>
           </div>
-          <div>
-            <div class="bg-base h-24 w-24"></div>
-            <p class="text-sm">Base</p>
-          </div>
-          <div>
-            <div class="bg-base-dark h-24 w-24"></div>
-            <p class="text-sm">Base Dark</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="flex flex-col">
-        <h2 class="h4 mb-2">Success</h2>
-        <div class="flex gap-4">
-          <div>
-            <div class="bg-success-light h-24 w-24"></div>
-            <p class="text-sm">Success Light</p>
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Action (Text)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-action-text-default-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-text-hover-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Hover</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-text-pressed-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Pressed</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-text-disabled-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Disabled</p>
+            </div>
           </div>
-          <div>
-            <div class="bg-success h-24 w-24"></div>
-            <p class="text-sm">Success</p>
-          </div>
-          <div>
-            <div class="bg-success-dark h-24 w-24"></div>
-            <p class="text-sm">Success Dark</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="flex flex-col">
-        <h2 class="h4 mb-2">Warning</h2>
-        <div class="flex gap-4">
-          <div>
-            <div class="bg-warning-light h-24 w-24"></div>
-            <p class="text-sm">Warning Light</p>
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Action (Primary)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-action-primary-default-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-primary-hover-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Hover</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-primary-pressed-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Pressed</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-primary-disabled-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Disabled</p>
+            </div>
           </div>
-          <div>
-            <div class="bg-warning h-24 w-24"></div>
-            <p class="text-sm">Warning</p>
-          </div>
-          <div>
-            <div class="bg-warning-dark h-24 w-24"></div>
-            <p class="text-sm">Warning Dark</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="flex flex-col">
-        <h2 class="h4 mb-2">Danger</h2>
-        <div class="flex gap-4">
-          <div>
-            <div class="bg-danger-light h-24 w-24"></div>
-            <p class="text-sm">Danger Light</p>
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Action (Secondary)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-action-secondary-default-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-secondary-hover-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Hover</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-secondary-pressed-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Pressed</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-secondary-disabled-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Disabled</p>
+            </div>
           </div>
-          <div>
-            <div class="bg-danger h-24 w-24"></div>
-            <p class="text-sm">Danger</p>
-          </div>
-          <div>
-            <div class="bg-danger-dark h-24 w-24"></div>
-            <p class="text-sm">Danger Dark</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="flex flex-col">
-        <h2 class="h4 mb-2">Info</h2>
-        <div class="flex gap-4">
-          <div>
-            <div class="bg-info-light h-24 w-24"></div>
-            <p class="text-sm">Info Light</p>
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Status (Success)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-status-success-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-success-icon-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Icon</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-success-background-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Background</p>
+            </div>
           </div>
-          <div>
-            <div class="bg-info h-24 w-24"></div>
-            <p class="text-sm">Info</p>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Status (Warning)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-status-warning-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-warning-icon-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Icon</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-warning-background-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Background</p>
+            </div>
           </div>
-          <div>
-            <div class="bg-info-dark h-24 w-24"></div>
-            <p class="text-sm">Info Dark</p>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Status (Danger)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-status-danger-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-danger-icon-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Icon</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-danger-background-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Background</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 mb-2">Status (Info)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-status-info-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-info-icon-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Icon</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-info-background-light border-color-border-primary-light h-24 w-24 border"
+              ></div>
+              <p class="text-sm">Background</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- END LIGHT MODE -->
+
+      <!-- DARK MODE -->
+      <div
+        class="bg-color-background-primary-dark flex flex-col gap-10 rounded-lg p-8"
+      >
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">Background</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-background-primary-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Primary</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-background-secondary-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Secondary</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">Border</h2>
+          <div class="flex gap-4">
+            <div>
+              <div class="bg-color-border-primary-dark h-24 w-24"></div>
+              <p class="text-color-text-primary-dark text-sm">Primary</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">Text</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-text-primary-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Primary</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-text-secondary-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Secondary</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">Action (Text)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-action-text-default-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-text-hover-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Hover</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-text-pressed-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Pressed</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-text-disabled-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Disabled</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">Action (Primary)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-action-primary-default-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-primary-hover-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Hover</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-primary-pressed-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Pressed</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-primary-disabled-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Disabled</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">
+            Action (Secondary)
+          </h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-action-secondary-default-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-secondary-hover-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Hover</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-secondary-pressed-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Pressed</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-action-secondary-disabled-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Disabled</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">Status (Success)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-status-success-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-success-icon-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Icon</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-success-background-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Background</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">Status (Warning)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-status-warning-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-warning-icon-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Icon</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-warning-background-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Background</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">Status (Danger)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-status-danger-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-danger-icon-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Icon</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-danger-background-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Background</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col">
+          <h2 class="h4 text-color-text-primary-dark mb-2">Status (Info)</h2>
+          <div class="flex gap-4">
+            <div>
+              <div
+                class="bg-color-status-info-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Default</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-info-icon-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Icon</p>
+            </div>
+            <div>
+              <div
+                class="bg-color-status-info-background-dark border-color-border-primary-dark h-24 w-24 border"
+              ></div>
+              <p class="text-color-text-primary-dark text-sm">Background</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- END DARK MODE -->
     </main>
 
     <script>

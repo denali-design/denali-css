@@ -1,64 +1,64 @@
 .dn-loader {
-    @apply w-2.5 h-2.5 relative rounded-full top-[-10px];
-    animation: .9s ease .2s infinite alternate loaderDefault;
+  @apply relative top-[-10px] h-2.5 w-2.5 rounded-full;
+  animation: 0.9s ease 0.2s infinite alternate loaderDefault;
+
+  &:before,
+  &:after {
+    @apply absolute inline-block h-2.5 w-2.5 rounded-full;
+    content: "";
+    animation: 0.9s ease infinite alternate loaderDefault;
+  }
+
+  &:before {
+    @apply left-3.5;
+    animation-delay: 0.3s;
+  }
+
+  &:after {
+    @apply right-3.5;
+    animation-delay: 0.1s;
+  }
+
+  &--inverse {
+    animation-name: loaderInverse;
 
     &:before,
     &:after {
-        @apply w-2.5 h-2.5 rounded-full inline-block absolute;
-        content: '';
-        animation: .9s ease infinite alternate loaderDefault;
+      animation-name: loaderInverse;
     }
-
-    &:before {
-        @apply left-3.5;
-        animation-delay: .3s
-    }
-
-    &:after {
-        @apply right-3.5;
-        animation-delay: .1s
-    }
-
-    &--inverse {
-        animation-name: loaderInverse;
-
-        &:before,
-        &:after {
-            animation-name: loaderInverse
-        }
-    }
+  }
 }
 
 @keyframes loaderDefault {
-    0% {
-        box-shadow: 0 10px 0 -10px #016eff;
-        opacity: 0;
-    }
+  0% {
+    box-shadow: 0 10px 0 -10px #016eff;
+    opacity: 0;
+  }
 
-    50% {
-        box-shadow: 0 10px 0 #016eff;
-        opacity: .75;
-    }
+  50% {
+    box-shadow: 0 10px 0 #016eff;
+    opacity: 0.75;
+  }
 
-    100% {
-        box-shadow: 0 10px 0 #016eff;
-        opacity: 1;
-    }
+  100% {
+    box-shadow: 0 10px 0 #016eff;
+    opacity: 1;
+  }
 }
 
 @keyframes loaderInverse {
-    0% {
-        box-shadow: 0 10px 0 -10px #fff;
-        opacity: 0;
-    }
+  0% {
+    box-shadow: 0 10px 0 -10px #fff;
+    opacity: 0;
+  }
 
-    50% {
-        box-shadow: 0 10px 0 #fff;
-        opacity: .75;
-    }
+  50% {
+    box-shadow: 0 10px 0 #fff;
+    opacity: 0.75;
+  }
 
-    100% {
-        box-shadow: 0 10px 0 #fff;
-        opacity: 1;
-    }
+  100% {
+    box-shadow: 0 10px 0 #fff;
+    opacity: 1;
+  }
 }

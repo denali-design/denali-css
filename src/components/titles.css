@@ -1,27 +1,27 @@
 .dn-title {
-    @apply flex items-stretch;
+  @apply flex items-stretch;
 
-    &--bar {
-        @apply w-0.5 rounded-sm bg-gray-500 mr-[18px];
+  &--bar {
+    @apply mr-[18px] w-0.5 rounded-sm bg-gray-500;
 
-        &-success {
-            @apply w-1 mr-4 bg-[#15C046]
-        }
+    &-success {
+      @apply mr-4 w-1 bg-[#15C046];
+    }
+  }
+
+  &--title {
+    @apply text-xl text-black;
+
+    &-bold {
+      @apply font-bold;
     }
 
-    &--title {
-        @apply text-xl text-black;
-
-        &-bold {
-            @apply font-bold
-        }
-
-        &-success {
-            @apply text-[#15C046]
-        }
+    &-success {
+      @apply text-[#15C046];
     }
+  }
 
-    &--label {
-        @apply text-sm text-opacity-black-500 uppercase;
-    }
+  &--label {
+    @apply text-opacity-black-500 text-sm uppercase;
+  }
 }

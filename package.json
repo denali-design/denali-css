@@ -4,6 +4,7 @@
   "description": "Denali CSS UI",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write .",
     "dev": "npx tailwindcss -c ./tailwindcss.config.js -i ./tailwind.css -o public/output.css",
     "watch": "npx tailwindcss -c ./tailwindcss.config.js -i ./tailwind.css -o public/output.css --watch",
     "build": "NODE_ENV=production npx tailwindcss -c ./tailwindcss.config.js -i ./tailwind.css -o public/output.css"

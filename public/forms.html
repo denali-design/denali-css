@@ -1,92 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Example Dashboard Denali Theme</title>
-  <link rel="stylesheet" href="output.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example Dashboard Denali Theme</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="mb-8 px-8">
+      <a href="/" class="text-4xl font-bold">Denali V3</a>
 
-      <!-- header -->
-      <header class="px-8 mb-8">
-        <a href="/" class="text-4xl font-bold">Denali V3</a>
-  
-        <nav class="font-bold space-x-4">
-          <a href="/">Home</a>
-          <a href="/colors.html">Colors</a>
-          <a href="/typography.html">Typography</a>
-          <a href="/forms.html">Forms</a>
-          <a href="/cards.html">Cards</a>
-          <a href="/nav.html">Nav</a>
-        </nav>
-      </header>
-      <!-- X Header -->
+      <nav class="space-x-4 font-bold">
+        <a href="/">Home</a>
+        <a href="/colors.html">Colors</a>
+        <a href="/typography.html">Typography</a>
+        <a href="/forms.html">Forms</a>
+        <a href="/cards.html">Cards</a>
+        <a href="/nav.html">Nav</a>
+      </nav>
+    </header>
+    <!-- X Header -->
 
     <h1>Forms</h1>
 
     <form action="#" method="post">
-        <!-- Text Input -->
-        <label for="text-input">Text Input:</label>
-        <input type="text" id="text-input" name="text-input"><br><br>
+      <!-- Text Input -->
+      <label for="text-input">Text Input:</label>
+      <input type="text" id="text-input" name="text-input" /><br /><br />
 
-        <!-- Password Input -->
-        <label for="password-input">Password Input:</label>
-        <input type="password" id="password-input" name="password-input"><br><br>
+      <!-- Password Input -->
+      <label for="password-input">Password Input:</label>
+      <input
+        type="password"
+        id="password-input"
+        name="password-input"
+      /><br /><br />
 
-        <!-- Radio Buttons -->
-        <p>Radio Buttons:</p>
-        <input type="radio" id="radio1" name="radio-group" value="option1">
-        <label for="radio1">Option 1</label><br>
-        <input type="radio" id="radio2" name="radio-group" value="option2">
-        <label for="radio2">Option 2</label><br><br>
+      <!-- Radio Buttons -->
+      <p>Radio Buttons:</p>
+      <input type="radio" id="radio1" name="radio-group" value="option1" />
+      <label for="radio1">Option 1</label><br />
+      <input type="radio" id="radio2" name="radio-group" value="option2" />
+      <label for="radio2">Option 2</label><br /><br />
 
-        <!-- Checkbox -->
-        <input type="checkbox" id="checkbox" name="checkbox">
-        <label for="checkbox">Checkbox</label><br><br>
+      <!-- Checkbox -->
+      <input type="checkbox" id="checkbox" name="checkbox" />
+      <label for="checkbox">Checkbox</label><br /><br />
 
-        <!-- Textarea -->
-        <label for="textarea">Textarea:</label><br>
-        <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea><br><br>
+      <!-- Textarea -->
+      <label for="textarea">Textarea:</label><br />
+      <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea
+      ><br /><br />
 
-        <!-- Dropdown/Select -->
-        <label for="dropdown">Dropdown:</label>
-        <select id="dropdown" name="dropdown">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-        </select><br><br>
+      <!-- Dropdown/Select -->
+      <label for="dropdown">Dropdown:</label>
+      <select id="dropdown" name="dropdown">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option></select
+      ><br /><br />
 
-        <!-- Number Input -->
-        <label for="number-input">Number Input:</label>
-        <input type="number" id="number-input" name="number-input"><br><br>
+      <!-- Number Input -->
+      <label for="number-input">Number Input:</label>
+      <input type="number" id="number-input" name="number-input" /><br /><br />
 
-        <!-- Email Input -->
-        <label for="email-input">Email Input:</label>
-        <input type="email" id="email-input" name="email-input"><br><br>
+      <!-- Email Input -->
+      <label for="email-input">Email Input:</label>
+      <input type="email" id="email-input" name="email-input" /><br /><br />
 
-        <!-- Date Input -->
-        <label for="date-input">Date Input:</label>
-        <input type="date" id="date-input" name="date-input"><br><br>
+      <!-- Date Input -->
+      <label for="date-input">Date Input:</label>
+      <input type="date" id="date-input" name="date-input" /><br /><br />
 
-        <!-- File Input -->
-        <label for="file-input">File Input:</label>
-        <input type="file" id="file-input" name="file-input"><br><br>
+      <!-- File Input -->
+      <label for="file-input">File Input:</label>
+      <input type="file" id="file-input" name="file-input" /><br /><br />
 
-        <!-- Range Input -->
-        <label for="range-input">Range Input:</label>
-        <input type="range" id="range-input" name="range-input"><br><br>
+      <!-- Range Input -->
+      <label for="range-input">Range Input:</label>
+      <input type="range" id="range-input" name="range-input" /><br /><br />
 
-        <!-- Color Input -->
-        <label for="color-input">Color Picker:</label>
-        <input type="color" id="color-input" name="color-input"><br><br>
+      <!-- Color Input -->
+      <label for="color-input">Color Picker:</label>
+      <input type="color" id="color-input" name="color-input" /><br /><br />
 
-        <!-- Submit Button -->
-        <input type="submit" value="Submit">
+      <!-- Submit Button -->
+      <input type="submit" value="Submit" />
     </form>
-
-    
-
-
-</body>
+  </body>
 </html>

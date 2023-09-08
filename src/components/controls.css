@@ -1,145 +1,145 @@
 /* switch styles */
 .dn-switch {
-    @apply flex items-center space-x-3 h-5 w-full;
+  @apply flex h-5 w-full items-center space-x-3;
 
-    &--circle {
-        @apply w-[18px] h-[18px] border-2
-        /* border-primary-200 */
-        bg-white rounded-full transition-all ease-linear duration-200
+  &--circle {
+    @apply /* border-primary-200 */
+        h-[18px] w-[18px] rounded-full
+        border-2 bg-white transition-all duration-200 ease-linear;
+  }
+
+  &--input {
+    @apply hidden;
+
+    &:checked ~ .dn-switch--label {
+      @apply bg-opacity-green-500;
+
+      .dn-switch--circle {
+        @apply /*
+                bg-alerts-success border-alerts-success */ ml-[14px];
+      }
     }
 
-    &--input {
-        @apply hidden;
+    &:checked:disabled ~ .dn-switch--label {
+      @apply cursor-not-allowed;
 
-        &:checked~.dn-switch--label {
-            @apply bg-opacity-green-500;
-
-            .dn-switch--circle {
-                @apply ml-[14px]
-                /* bg-alerts-success border-alerts-success */
-            }
-        }
-
-        &:checked:disabled~.dn-switch--label {
-            @apply cursor-not-allowed;
-
-            .dn-switch--circle {
-                @apply bg-gray-500
-            }
-        }
-
-        &:disabled~.dn-switch--label {
-            @apply bg-[#F2F2F2] cursor-not-allowed;
-
-            .dn-switch--circle {
-                @apply border-gray-500
-            }
-        }
+      .dn-switch--circle {
+        @apply bg-gray-500;
+      }
     }
 
-    &--label {
-        @apply block w-8 h-1 rounded-full flex items-center cursor-pointer;
+    &:disabled ~ .dn-switch--label {
+      @apply cursor-not-allowed bg-[#F2F2F2];
 
-        &-title {
-            @apply text-sm cursor-pointer
-        }
-
-        &:hover {
-            .dn-switch--circle {
-                /* @apply border-primary-300 */
-            }
-        }
+      .dn-switch--circle {
+        @apply border-gray-500;
+      }
     }
+  }
+
+  &--label {
+    @apply block flex h-1 w-8 cursor-pointer items-center rounded-full;
+
+    &-title {
+      @apply cursor-pointer text-sm;
+    }
+
+    &:hover {
+      .dn-switch--circle {
+        /* @apply border-primary-300 */
+      }
+    }
+  }
 }
 
 /* checkbox styles */
 .dn-checkbox {
-    @apply flex items-center;
+  @apply flex items-center;
 
-    &--input {
-        @apply hidden;
+  &--input {
+    @apply hidden;
 
-        &:checked~.dn-checkbox--label {
-            /* @apply border-primary-300 bg-primary-300 */
-        }
-
-        &:checked:disabled~.dn-checkbox--label {
-            @apply border-gray-500 bg-gray-500 cursor-not-allowed
-        }
-
-        &:disabled~.dn-checkbox--label {
-            @apply border-gray-500 cursor-not-allowed
-        }
+    &:checked ~ .dn-checkbox--label {
+      /* @apply border-primary-300 color-background-primary-light-300 */
     }
 
-    &--label {
-        @apply block bg-white w-4 h-4 border-2 rounded-sm cursor-pointer flex items-center justify-center transition-all ease-linear duration-200;
-
-        .dn-checkbox--icon {
-            @apply scale-[0.65] mt-0.5 transition-all ease-linear duration-200
-        }
+    &:checked:disabled ~ .dn-checkbox--label {
+      @apply cursor-not-allowed border-gray-500 bg-gray-500;
     }
 
-    &--partial {
-        &-icon {
-            @apply w-2 rounded-xl h-[2px] transition-all ease-linear duration-200
-        }
-
-        .dn-checkbox--input {
-            &:checked~.dn-checkbox--label {
-                /* @apply border-primary-300 bg-white; */
-
-                .dn-checkbox--partial-icon {
-                    /* @apply bg-primary-300 */
-                }
-            }
-
-            &:checked:disabled~.dn-checkbox--label {
-                /* @apply border-gray-500 bg-white cursor-not-allowed; */
-
-                .dn-checkbox--partial-icon {
-                    @apply bg-gray-500
-                }
-            }
-
-            &:disabled~.dn-checkbox--label {
-                @apply border-gray-500 bg-white cursor-not-allowed
-            }
-        }
+    &:disabled ~ .dn-checkbox--label {
+      @apply cursor-not-allowed border-gray-500;
     }
+  }
+
+  &--label {
+    @apply block flex h-4 w-4 cursor-pointer items-center justify-center rounded-sm border-2 bg-white transition-all duration-200 ease-linear;
+
+    .dn-checkbox--icon {
+      @apply mt-0.5 scale-[0.65] transition-all duration-200 ease-linear;
+    }
+  }
+
+  &--partial {
+    &-icon {
+      @apply h-[2px] w-2 rounded-xl transition-all duration-200 ease-linear;
+    }
+
+    .dn-checkbox--input {
+      &:checked ~ .dn-checkbox--label {
+        /* @apply border-primary-300 bg-white; */
+
+        .dn-checkbox--partial-icon {
+          /* @apply color-background-primary-light-300 */
+        }
+      }
+
+      &:checked:disabled ~ .dn-checkbox--label {
+        /* @apply border-gray-500 bg-white cursor-not-allowed; */
+
+        .dn-checkbox--partial-icon {
+          @apply bg-gray-500;
+        }
+      }
+
+      &:disabled ~ .dn-checkbox--label {
+        @apply cursor-not-allowed border-gray-500 bg-white;
+      }
+    }
+  }
 }
 
 /* radio styles */
 .dn-radio {
-    &--input {
-        @apply hidden;
+  &--input {
+    @apply hidden;
 
-        &:checked~.dn-radio--label {
-            /* @apply border-primary-300; */
+    &:checked ~ .dn-radio--label {
+      /* @apply border-primary-300; */
 
-            .dn-radio--active {
-                /* @apply bg-primary-300 */
-            }
-        }
-
-        &:checked:disabled~.dn-radio--label {
-            @apply border-gray-500 cursor-not-allowed;
-
-            .dn-radio--active {
-                @apply bg-gray-500
-            }
-        }
-
-        &:disabled~.dn-radio--label {
-            @apply border-gray-500 cursor-not-allowed
-        }
+      .dn-radio--active {
+        /* @apply color-background-primary-light-300 */
+      }
     }
 
-    &--label {
-        @apply block bg-white w-4 h-4 border-2 rounded-full cursor-pointer flex items-center justify-center;
+    &:checked:disabled ~ .dn-radio--label {
+      @apply cursor-not-allowed border-gray-500;
+
+      .dn-radio--active {
+        @apply bg-gray-500;
+      }
     }
 
-    &--active {
-        @apply w-2 h-2 rounded-full transition-all ease-linear duration-200
+    &:disabled ~ .dn-radio--label {
+      @apply cursor-not-allowed border-gray-500;
     }
+  }
+
+  &--label {
+    @apply block flex h-4 w-4 cursor-pointer items-center justify-center rounded-full border-2 bg-white;
+  }
+
+  &--active {
+    @apply h-2 w-2 rounded-full transition-all duration-200 ease-linear;
+  }
 }
