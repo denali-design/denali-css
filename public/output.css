@@ -757,6 +757,10 @@ select {
   height: 1.25rem;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .w-24 {
   width: 6rem;
 }
@@ -769,8 +773,40 @@ select {
   width: 1.25rem;
 }
 
+.w-compressed {
+  width: 4px;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-loose {
+  width: 40px;
+}
+
+.w-none {
+  width: 0px;
+}
+
+.w-normal {
+  width: 24px;
+}
+
+.w-relaxed {
+  width: 32px;
+}
+
+.w-snug {
+  width: 16px;
+}
+
+.w-squeezed {
+  width: 2px;
+}
+
+.w-tight {
+  width: 8px;
 }
 
 .grid-cols-1 {
@@ -1148,9 +1184,19 @@ select {
   padding-right: 2rem;
 }
 
+.px-loose {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-normal {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .pb-14 {
@@ -1194,11 +1240,6 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-color-text-secondary-dark {
-  --tw-text-opacity: 1;
-  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 .h1,
@@ -1899,6 +1940,42 @@ h5 {
       opacity: 0.4;
     }
   }
+}
+
+/* .dn-table {
+  @apply w-full
+} */
+
+.dn-table--auto {
+  table-layout: auto;
+}
+
+.dn-table__head {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240 / var(--tw-border-opacity));
+  text-align: left;
+}
+
+.dn-table__head th {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.dn-table__row {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240 / var(--tw-border-opacity));
+  text-align: left;
+}
+
+.dn-table__row td {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .custom-class {

@@ -1,84 +1,23 @@
-.dn-table {
-  @apply w-full rounded-b-md bg-white text-sm;
+/* .dn-table {
+  @apply w-full
+} */
 
-  td,
-  th {
-    @apply px-3;
-  }
+.dn-table--auto {
+  @apply table-auto
+}
 
-  &--icon {
-    font-size: 14px !important;
-  }
+.dn-table__head {
+  @apply text-left border-b border-color-border-primary-light
+}
 
-  &--foot {
-    .dn-table--row {
-      @apply border-transparent bg-gray-500;
+.dn-table__head th {
+  @apply px-snug py-tight
+}
 
-      td {
-        &:first-child {
-          @apply rounded-bl-md;
-        }
+.dn-table__row {
+  @apply text-left border-b border-color-border-primary-light
+}
 
-        &:last-child {
-          @apply rounded-br-md;
-        }
-      }
-    }
-  }
-
-  &--head {
-    @apply border-b border-[#9A9A9A] font-normal text-gray-700;
-
-    th {
-      @apply text-left font-normal uppercase;
-    }
-  }
-
-  &--row {
-    @apply h-[48px] border-b border-[#C4C4C4];
-  }
-
-  &--condensed {
-    .dn-table--row {
-      @apply h-10;
-    }
-  }
-
-  &--relaxed {
-    .dn-table--row {
-      @apply h-[56px];
-    }
-  }
-
-  &--striped {
-    .dn-table--row {
-      @apply border-transparent;
-    }
-
-    .dn-table--row:nth-child(even) {
-      @apply bg-[#f5f5f5];
-    }
-  }
-
-  &--card {
-    @apply border-separate border-spacing-y-2.5;
-
-    .dn-table--foot {
-      @apply bg-gray-400;
-    }
-
-    .dn-table--row {
-      td {
-        @apply border-b border-t border-gray-500;
-
-        &:first-child {
-          @apply rounded-l-md border border-r-transparent;
-        }
-
-        &:last-child {
-          @apply rounded-r-md border border-l-transparent;
-        }
-      }
-    }
-  }
+.dn-table__row td {
+  @apply px-snug py-tight
 }

@@ -9,6 +9,7 @@
 @import "./src/components/buttons.css";
 @import "./src/components/navbar.css";
 @import "./src/components/fields.css";
+@import "./src/components/table.css";
 
 .custom-class {
   @apply bg-color-background-primary-light text-white;

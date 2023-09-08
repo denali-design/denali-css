@@ -4,7 +4,7 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   darkMode: "class",
   content: ["./public/*.html"], // turn off after testing
-  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms"), require('postcss-nested')],
   theme: {
     extend: {
       colors: {
@@ -81,6 +81,16 @@ module.exports = {
         "color-status-info-dark": colors.blue[800],
         "color-status-info-icon-dark": colors.blue[600],
         "color-status-info-background-dark": colors.blue[950],
+      },
+      spacing: {
+        none: "0px",
+        squeezed: "2px",
+        compressed: "4px",
+        tight: "8px",
+        snug: "16px",
+        normal: "24px",
+        relaxed: "32px",
+        loose: "40px",
       },
     },
   },
